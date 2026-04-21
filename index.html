@@ -559,6 +559,9 @@
       const success  = document.querySelector('[data-fs-success]');
       const errorBox = document.querySelector('[data-fs-error]:not([data-fs-error="name"]):not([data-fs-error="email"]):not([data-fs-error="message"])');
 
+      // Ukrywamy ewentualny błąd z poprzedniej próby
+      if (errorBox) { errorBox.style.display = 'none'; }
+
       // Stan ładowania
       btn.textContent = 'Wysyłanie...';
       btn.disabled = true;
@@ -570,29 +573,22 @@
           headers: { 'Accept': 'application/json' }
         });
 
+        // Jeśli status odpowiedzi jest OK (200-299)
         if (res.ok) {
-          // Ukryj formularz, pokaż potwierdzenie
           form.style.display = 'none';
           success.style.display = 'block';
-          // Restart animacji ptaszka
-          const svg = success.querySelector('svg');
-          svg.style.animation = 'none';
-          svg.getBoundingClientRect();
-          svg.style.animation = '';
         } else {
-          const data = await res.json();
-          if (errorBox) { errorBox.style.display = 'block'; }
-          btn.textContent = 'Wyślij zapytanie →';
-          btn.disabled = false;
+          // Wystąpił błąd po stronie serwera
+          throw new Error('Form submission failed');
         }
       } catch(err) {
+        console.error(err);
         if (errorBox) { errorBox.style.display = 'block'; }
         btn.textContent = 'Wyślij zapytanie →';
         btn.disabled = false;
       }
     });
   </script>
-
   <script>
     /* ── Cursor ── */
     const dot  = document.getElementById('curDot');
