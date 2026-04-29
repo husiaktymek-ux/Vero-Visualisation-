@@ -335,54 +335,51 @@
   <div class="rule mx-10 md:mx-16"></div>
 
 
-  <section id="portfolio" class="px-10 md:px-16 py-20 md:py-32">
+ <section id="portfolio" class="px-10 md:px-16 py-20 md:py-32">
+  
+  <!-- NAGŁÓWEK Z TWOIMI ANIMACJAMI REVEAL -->
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6">
+    <div>
+      <p class="section-label reveal mb-6">Portfolio</p>
+      <h2 class="reveal" style="font-family:'Cormorant',serif;font-weight:300;font-size:clamp(28px,3.5vw,48px);letter-spacing:-.01em;">Realizacje</h2>
+    </div>
+    <p class="reveal" style="font-size:11px;letter-spacing:.1em;color:#9a9990;max-width:240px;line-height:1.8;transition-delay:.1s;">
+      Wybrane projekty i realizacje. Zobacz nasze najnowsze fotorealistyczne wizualizacje wnętrz i architektury.
+    </p>
+  </div>
 
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6">
-      <div>
-        <p class="section-label reveal mb-6">Portfolio</p>
-        <h2 class="reveal" style="font-family:'Cormorant',serif;font-weight:300;font-size:clamp(28px,3.5vw,48px);letter-spacing:-.01em;">Realizacje</h2>
-      </div>
-      <p class="reveal" style="font-size:11px;letter-spacing:.1em;color:#9a9990;max-width:240px;line-height:1.8;transition-delay:.1s;">
-        Pełne portfolio jest w przygotowaniu. Wkrótce pokażemy zrealizowane projekty.
-      </p>
+  <!-- NOWA SIATKA ZE ZDJĘCIAMI I WIDEO -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    
+    <!-- WIDEO (zajmuje całą szerokość) -->
+    <div class="md:col-span-2 overflow-hidden group cursor-pointer mb-6 md:mb-10 reveal">
+      <video autoplay loop muted playsinline class="w-full h-auto object-cover transition-transform duration-700 ease-in-out group-hover:scale-105">
+        <source src="animacja.mp4" type="video/mp4" />
+      </video>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-
-      <div class="coming-card reveal col-span-1 lg:col-span-2" style="aspect-ratio:unset;min-height:280px;">
-        <div class="coming-dot"></div>
-        <p style="font-family:'Cormorant',serif;font-size:16px;font-weight:300;letter-spacing:.12em;color:#9a9990;">Projekt 01</p>
-        <p style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#c4c3be;">Wnętrze · Wkrótce</p>
-      </div>
-
-      <div class="coming-card reveal" style="transition-delay:.1s;min-height:280px;">
-        <div class="coming-dot" style="animation-delay:.6s;"></div>
-        <p style="font-family:'Cormorant',serif;font-size:16px;font-weight:300;letter-spacing:.12em;color:#9a9990;">Projekt 02</p>
-        <p style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#c4c3be;">Elewacja · Wkrótce</p>
-      </div>
-
-      <div class="coming-card reveal" style="transition-delay:.15s;min-height:220px;">
-        <div class="coming-dot" style="animation-delay:1s;"></div>
-        <p style="font-family:'Cormorant',serif;font-size:16px;font-weight:300;letter-spacing:.12em;color:#9a9990;">Projekt 03</p>
-        <p style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#c4c3be;">Rzut 3D · Wkrótce</p>
-      </div>
-
-      <div class="coming-card reveal col-span-1 sm:col-span-2" style="transition-delay:.2s;min-height:220px;aspect-ratio:unset;">
-        <div class="coming-dot" style="animation-delay:1.4s;"></div>
-        <p style="font-family:'Cormorant',serif;font-size:16px;font-weight:300;letter-spacing:.12em;color:#9a9990;">Projekt 04</p>
-        <p style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#c4c3be;">Animacja · Wkrótce</p>
-      </div>
-
+    <!-- Zdjęcie 1: Onyks -->
+    <div class="overflow-hidden group cursor-pointer reveal">
+      <img src="detal-onyks.jpg" alt="Wizualizacja detalu z onyksem" class="w-full h-auto object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
     </div>
 
-    <div class="reveal mt-12 flex items-center gap-4" style="transition-delay:.3s">
-      <div class="coming-dot" style="flex-shrink:0;"></div>
-      <p style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#9a9990;">
-        Portfolio w przygotowaniu — realizacje zostaną opublikowane wkrótce
-      </p>
+    <!-- Zdjęcie 2: Jadalnia (obniżona na komputerze) -->
+    <div class="overflow-hidden group cursor-pointer md:mt-16 reveal" style="transition-delay: .1s;">
+      <img src="jadalnia.jpg" alt="Wizualizacja jadalni" class="w-full h-auto object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
     </div>
 
-  </section>
+    <!-- Zdjęcie 3: Elewacja -->
+    <div class="overflow-hidden group cursor-pointer reveal">
+      <img src="elewacja.jpg" alt="Wizualizacja elewacji biurowca" class="w-full h-auto object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+    </div>
+
+    <!-- Zdjęcie 4: Jasna łazienka (obniżona na komputerze) -->
+    <div class="overflow-hidden group cursor-pointer md:mt-16 reveal" style="transition-delay: .1s;">
+      <img src="lazienka.jpg" alt="Wizualizacja jasnej łazienki" class="w-full h-auto object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+    </div>
+
+  </div>
+</section>
 
   <div class="rule mx-10 md:mx-16"></div>
 
