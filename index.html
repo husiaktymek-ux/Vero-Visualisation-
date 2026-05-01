@@ -8,7 +8,20 @@
   <link rel="icon" type="image/png" href="favicon.png" />
   
   <!-- TU WKLEJ KOD GOOGLE ADS / GA4 (Zaraz przed zamknięciem sekcji head) -->
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-987654321"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    // Tu wklejasz kod z Analytics (GA4)
+    gtag('config', 'G-MMKPPR2ZC5'); 
+    
+    // Tu wklejasz kod z Ads
+    gtag('config', 'AW-18132232207');
+  </script>
+  
   <script src="https://cdn.tailwindcss.com"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -549,13 +562,18 @@
           headers: { 'Accept': 'application/json' }
         });
 
-     if (res.ok) {
+        if (res.ok) {
           form.style.display = 'none';
           success.style.display = 'block';
           const svg = success.querySelector('svg');
           svg.style.animation = 'none';
           svg.getBoundingClientRect();
           svg.style.animation = 'drawCheck 1.5s 0.2s ease forwards';
+          
+          // SYGNAŁ KONWERSJI DLA GOOGLE ADS:
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'conversion', {'send_to': 'AW-18132232207/vcgZCPyQ7KUcEI_Qj8ZD'});
+          }
         } else {
           if (errorBox) { errorBox.style.display = 'block'; }
           btn.textContent = 'Wyślij zapytanie →';
