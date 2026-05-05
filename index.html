@@ -98,16 +98,18 @@
     .reveal.visible { opacity:1;transform:translateY(0); }
 
     /* ─── CTA button ─── */
-    .btn-cta {
-      display:inline-flex;align-items:center;gap:14px;
-      background:#0a0a09;color:#fafaf8;
-      font-family:'Jost',sans-serif;font-weight:200;
-      font-size:10px;letter-spacing:.28em;text-transform:uppercase;
-      padding:18px 36px;text-decoration:none;
-      transition:background .35s,gap .35s,box-shadow .35s;
-      cursor:none;
-      border:1px solid #0a0a09;
-    }
+    /* ─── CTA button ─── */
+.btn-cta {
+  display:inline-flex;align-items:center;gap:14px;
+  background:#0a0a09;color:#fafaf8;
+  font-family:'Jost',sans-serif;font-weight:500; /* Zmienione z 200 na 500 (pogrubienie) */
+  font-size:12px; /* Zmienione z 10px na 12px (powiększenie) */
+  letter-spacing:.28em;text-transform:uppercase;
+  padding:18px 36px;text-decoration:none;
+  transition:background .35s,gap .35s,box-shadow .35s;
+  cursor:none;
+  border:1px solid #0a0a09;
+}
     .btn-cta:hover { background:#1c1c1a;gap:24px;box-shadow:0 12px 40px rgba(10,10,9,.14); }
 
     /* ─── Service card ─── */
