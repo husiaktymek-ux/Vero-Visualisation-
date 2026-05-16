@@ -254,231 +254,165 @@
   <!-- PORTFOLIO -->
   <section id="portfolio" class="py-20 md:py-32 relative">
   
-    <div class="px-10 md:px-16 flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6">
-      <div>
-        <p class="section-label reveal mb-6">Portfolio</p>
-        <h2 class="reveal" style="font-family:'Cormorant',serif;font-weight:300;font-size:clamp(28px,3.5vw,48px);letter-spacing:-.01em;">Realizacje</h2>
-      </div>
-      
-      <div class="reveal flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10" style="transition-delay:.1s;">
-        <p style="font-size:11px;letter-spacing:.1em;color:#9a9990;max-width:240px;line-height:1.8;">
-          Przesuń, aby zobaczyć nasze najnowsze projekty inwestycyjne i wnętrza prywatne.
-        </p>
-        <div class="flex gap-3 hidden md:flex">
-          <button id="btnPrev" class="w-12 h-12 border border-[rgba(10,10,9,.15)] rounded-full flex items-center justify-center transition-all hover:bg-[#0a0a09] hover:text-[#fafaf8]">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-          </button>
-          <button id="btnNext" class="w-12 h-12 border border-[rgba(10,10,9,.15)] rounded-full flex items-center justify-center transition-all hover:bg-[#0a0a09] hover:text-[#fafaf8]">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
-   <div class="relative w-full reveal pl-10 md:pl-16" style="transition-delay: .2s;">
-      <div id="sliderTrack" class="flex gap-6 md:gap-10 overflow-x-auto no-scrollbar snap-x snap-mandatory pr-10 md:pr-16 pb-12 cursor-grab" style="scroll-behavior: smooth;">
-        
-        <div class="flex-none snap-start group select-none">
-          <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
-            <img src="w 6 p(1).jpg" alt="Nowoczesna willa" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
-          </div>
-          <div class="mt-5 flex justify-between items-start gap-6">
-            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Willa w Lesie</p>
-            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Elewacje</p>
-          </div>
-        </div>
-
-        <div class="flex-none snap-start group select-none">
-          <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
-            <img src="skomp.jpg" alt="Osiedle domów jednorodzinnych" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
-          </div>
-          <div class="mt-5 flex justify-between items-start gap-6">
-            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Zabudowa Bliźniacza</p>
-            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Dla Deweloperów</p>
-          </div>
-        </div>
-
-        <div class="flex-none snap-start group select-none">
-          <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
-            <img src="elewacja.jpg" alt="Nowoczesny biurowiec" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
-          </div>
-          <div class="mt-5 flex justify-between items-start gap-6">
-            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Elewacje</p>
-            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Architektura Komercyjna</p>
-          </div>
-        </div>
-
-        <div class="flex-none snap-start group select-none">
-          <div class="overflow-hidden h-[50vh] md:h-[65vh] aspect-square bg-[#f0f0f0]">
-            <img src="FINALNA WIZKA (1).jpg" alt="Ciemny salon loft" draggable="false" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
-          </div>
-          <div class="mt-5 flex justify-between items-start gap-6">
-            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Przestronny Loft</p>
-            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Strefa Dzienna</p>
-          </div>
-        </div>
-
-        <div class="flex-none snap-start group select-none">
-          <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
-            <img src="kuchnia 1ps(1).jpg" alt="Nowoczesna czarna kuchnia" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
-          </div>
-          <div class="mt-5 flex justify-between items-start gap-6">
-            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Czarna Kuchnia z Wyspą</p>
-            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Projekt Wnętrza</p>
-          </div>
-        </div>
-
-        <div class="flex-none snap-start group select-none">
-          <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
-            <img src="spalnia(1).jpg" alt="Bordowa sypialnia z garderobą" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
-          </div>
-          <div class="mt-5 flex justify-between items-start gap-6">
-            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Sypialnia Premium</p>
-            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Wnętrza Prywatne</p>
-          </div>
-        </div>
-
-        <div class="flex-none snap-start group select-none">
-          <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
-            <img src="bedroom1(1).jpg" alt="Jasna sypialnia boho japandi" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
-          </div>
-          <div class="mt-5 flex justify-between items-start gap-6">
-            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Jasna Sypialnia</p>
-            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Strefa Nocna</p>
-          </div>
-        </div>
-
-        <div class="flex-none snap-start group select-none">
-          <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
-            <img src="lazienka.jpg" alt="Zielona łazienka z ryflowanymi płytkami" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
-          </div>
-          <div class="mt-5 flex justify-between items-start gap-6">
-            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Szałwiowa Łazienka</p>
-            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Projekt Wnętrza</p>
-          </div>
-        </div>
-
-        <div class="flex-none snap-start group select-none">
-          <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
-            <img src="detal-onyks.jpg" alt="Onyks" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
-          </div>
-          <div class="mt-5 flex justify-between items-start gap-6">
-            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Detal Wnętrza</p>
-            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Materiały Premium</p>
-          </div>
-        </div>
-
-        <div class="flex-none snap-start group select-none">
-          <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
-            <img src="jadalnia.jpg" alt="Jadalnia" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
-          </div>
-          <div class="mt-5 flex justify-between items-start gap-6">
-            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Apartament Inwestycyjny</p>
-            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Strefa Dzienna</p>
-          </div>
-        </div>
-
-        <div class="flex-none snap-start group select-none">
-          <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
-            <video autoplay loop muted playsinline class="w-auto h-full object-cover pointer-events-none">
-              <source src="animacja-salon.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="mt-5 flex justify-between items-start gap-6">
-            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Wnętrze Wabi-Sabi</p>
-            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Animacja 3D</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- O PRACOWNI -->
-  <section id="o-nas" class="px-10 md:px-16 py-24 md:py-36 grid md:grid-cols-2 gap-16 md:gap-24 items-start">
-
+  <div class="px-10 md:px-16 flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6">
     <div>
-      <p class="section-label reveal mb-10">O pracowni</p>
-      <h2 class="reveal" style="font-family:'Cormorant',serif;font-weight:300;font-size:clamp(34px,4.5vw,64px);line-height:1.1;letter-spacing:-.01em;">
-        Przestrzeń<br/>
-        ujęta w <em style="font-style:italic;">precyzji</em><br/>
-        i szczególe
-      </h2>
+      <p class="section-label reveal mb-6">Portfolio</p>
+      <h2 class="reveal" style="font-family:'Cormorant',serif;font-weight:300;font-size:clamp(28px,3.5vw,48px);letter-spacing:-.01em;">Realizacje</h2>
     </div>
-
-    <div class="md:pt-20">
-      <p class="reveal" style="font-size:15px;line-height:1.9;color:#6b6b65;letter-spacing:.02em;margin-bottom:32px;">
-        Vero Visualisation to pracownia specjalizująca się w tworzeniu fotorealistycznych wizualizacji architektonicznych. Łączymy techniczną dokładność z wyczuciem estetyki — każdy projekt opowiada historię przestrzeni, zanim jeszcze powstanie.
+    
+    <div class="reveal flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10" style="transition-delay:.1s;">
+      <p style="font-size:11px;letter-spacing:.1em;color:#9a9990;max-width:240px;line-height:1.8;">
+        Przesuń, aby zobaczyć nasze najnowsze projekty inwestycyjne i wnętrza prywatne.
       </p>
-      <p class="reveal" style="font-size:15px;line-height:1.9;color:#6b6b65;letter-spacing:.02em;margin-bottom:48px;transition-delay:.12s">
-        Współpracujemy z architektami, deweloperami i inwestorami — od koncepcji, przez rendery, po gotowe animacje prezentacyjne.
-      </p>
-      <div class="reveal grid grid-cols-2 gap-8" style="transition-delay:.22s">
-        <div>
-          <p style="font-family:'Cormorant',serif;font-weight:300;font-size:52px;line-height:1;letter-spacing:-.02em;">3D</p>
-          <p style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#9a9990;margin-top:6px;">Projekty &amp; Animacje</p>
+      <div class="flex gap-3 hidden md:flex">
+        <button id="btnPrev" class="w-12 h-12 border border-[rgba(10,10,9,.15)] rounded-full flex items-center justify-center transition-all hover:bg-[#0a0a09] hover:text-[#fafaf8]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+        <button id="btnNext" class="w-12 h-12 border border-[rgba(10,10,9,.15)] rounded-full flex items-center justify-center transition-all hover:bg-[#0a0a09] hover:text-[#fafaf8]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative w-full reveal pl-10 md:pl-16" style="transition-delay: .2s;">
+    <div id="sliderTrack" class="flex gap-6 md:gap-10 overflow-x-auto no-scrollbar snap-x snap-mandatory pr-10 md:pr-16 pb-12 cursor-grab" style="scroll-behavior: smooth;">
+      
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <img src="w 6 p(1).jpg" alt="Nowoczesna willa" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
         </div>
-        <div>
-          <p style="font-family:'Cormorant',serif;font-weight:300;font-size:52px;line-height:1;letter-spacing:-.02em;">360°</p>
-          <p style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#9a9990;margin-top:6px;">Pełne spojrzenie</p>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Willa w Lesie</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Elewacje</p>
         </div>
       </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <img src="elewacja.jpg" alt="Nowoczesny biurowiec" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Elewacje</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Architektura Komercyjna</p>
+        </div>
+      </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <img src="ps1.jpg" alt="Elegancki salon ze sztukaterią" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Elegancki Salon</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Strefa Dzienna</p>
+        </div>
+      </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <img src="wŁ4_1p.jpg" alt="Ciemna łazienka premium" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Łazienka Premium</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Projekt Wnętrza</p>
+        </div>
+      </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <img src="childroom 1f.jpg" alt="Jasny pokój dziecięcy" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Pokój Dziecięcy</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Wnętrza Prywatne</p>
+        </div>
+      </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] aspect-square bg-[#f0f0f0]">
+          <img src="FINALNA WIZKA (1).jpg" alt="Ciemny salon loft" draggable="false" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Przestronny Loft</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Strefa Dzienna</p>
+        </div>
+      </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <img src="kuchnia 1ps(1).jpg" alt="Nowoczesna czarna kuchnia" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Czarna Kuchnia z Wyspą</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Projekt Wnętrza</p>
+        </div>
+      </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <img src="spalnia(1).jpg" alt="Bordowa sypialnia z garderobą" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Sypialnia Premium</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Wnętrza Prywatne</p>
+        </div>
+      </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <img src="bedroom1(1).jpg" alt="Jasna sypialnia boho japandi" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Jasna Sypialnia</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Strefa Nocna</p>
+        </div>
+      </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <img src="lazienka.jpg" alt="Zielona łazienka z ryflowanymi płytkami" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Szałwiowa Łazienka</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Projekt Wnętrza</p>
+        </div>
+      </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <img src="detal-onyks.jpg" alt="Onyks" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Detal Wnętrza</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Materiały Premium</p>
+        </div>
+      </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <img src="jadalnia.jpg" alt="Jadalnia" draggable="false" class="w-auto h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Apartament Inwestycyjny</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Strefa Dzienna</p>
+        </div>
+      </div>
+
+      <div class="flex-none snap-start group select-none">
+        <div class="overflow-hidden h-[50vh] md:h-[65vh] bg-[#f0f0f0]">
+          <video autoplay loop muted playsinline class="w-auto h-full object-cover pointer-events-none">
+            <source src="animacja-salon.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="mt-5 flex justify-between items-start gap-6">
+          <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Wnętrze Wabi-Sabi</p>
+          <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase; text-align:right;">Animacja 3D</p>
+        </div>
+      </div>
+
     </div>
-
-  </section>
-
-  <div class="rule mx-10 md:mx-16"></div>
-
-  <!-- USŁUGI -->
-  <section id="uslugi" class="px-10 md:px-16 py-20 md:py-32">
-
-    <div class="flex items-start justify-between mb-14 reveal">
-      <h2 style="font-family:'Cormorant',serif;font-weight:300;font-size:clamp(28px,3.5vw,48px);letter-spacing:-.01em;">Zakres usług</h2>
-      <p class="section-label" style="margin-bottom:0;">04 Specjalizacje</p>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-
-      <div class="service-card reveal" style="border-right:1px solid rgba(10,10,9,.08);padding-right:28px;">
-        <p style="font-size:11px;letter-spacing:.32em;color:#9a9990;margin-bottom:28px;">01</p>
-        <svg class="mb-5 opacity-50" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1">
-          <rect x="3" y="7" width="22" height="17"/><line x1="3" y1="7" x2="14" y2="2"/><line x1="25" y1="7" x2="14" y2="2"/>
-          <line x1="9" y1="24" x2="9" y2="17"/><line x1="14" y1="24" x2="14" y2="17"/><line x1="19" y1="24" x2="19" y2="17"/>
-        </svg>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;line-height:1.3;margin-bottom:12px;">Wizualizacje<br/>Wnętrz</h3>
-        <p style="font-size:14px;line-height:1.8;color:#6b6b65;letter-spacing:.02em;">Fotorealistyczne rendery przestrzeni wewnętrznych — mieszkania, biura, hotele. Każde ujęcie dobrane pod kąt i klimat.</p>
-      </div>
-
-      <div class="service-card reveal md:pl-7 md:pr-7" style="transition-delay:.1s;border-right:1px solid rgba(10,10,9,.08);">
-        <p style="font-size:11px;letter-spacing:.32em;color:#9a9990;margin-bottom:28px;">02</p>
-        <svg class="mb-5 opacity-50" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1">
-          <rect x="5" y="9" width="18" height="14"/><line x1="5" y1="9" x2="14" y2="4"/><line x1="23" y1="9" x2="14" y2="4"/>
-          <rect x="9" y="16" width="5" height="7"/><rect x="16" y="13" width="5" height="4"/>
-        </svg>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;line-height:1.3;margin-bottom:12px;">Elewacje<br/>&amp; Zewnętrze</h3>
-        <p style="font-size:14px;line-height:1.8;color:#6b6b65;letter-spacing:.02em;">Wizualizacje fasad i otoczenia budynku. Realistyczne materiały, naturalne oświetlenie, właściwe proporcje bryły.</p>
-      </div>
-
-      <div class="service-card reveal md:pl-7 md:pr-7" style="transition-delay:.2s;border-right:1px solid rgba(10,10,9,.08);">
-        <p style="font-size:11px;letter-spacing:.32em;color:#9a9990;margin-bottom:28px;">03</p>
-        <svg class="mb-5 opacity-50" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1">
-          <rect x="2" y="2" width="24" height="24"/><line x1="2" y1="14" x2="26" y2="14"/><line x1="14" y1="2" x2="14" y2="26"/>
-          <rect x="5" y="5" width="4" height="4"/><rect x="19" y="5" width="4" height="4"/>
-        </svg>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;line-height:1.3;margin-bottom:12px;">Rzuty<br/>3D</h3>
-        <p style="font-size:14px;line-height:1.8;color:#6b6b65;letter-spacing:.02em;">Izometryczne i perspektywiczne rzuty kondygnacji. Czytelne, estetyczne, gotowe do prezentacji inwestorskiej.</p>
-      </div>
-
-      <div class="service-card reveal md:pl-7" style="transition-delay:.3s;border-right:none;">
-        <p style="font-size:11px;letter-spacing:.32em;color:#9a9990;margin-bottom:28px;">04</p>
-        <svg class="mb-5 opacity-50" width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1">
-          <circle cx="14" cy="14" r="11"/><polygon points="11,9 21,14 11,19" fill="currentColor" opacity=".35"/>
-        </svg>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;line-height:1.3;margin-bottom:12px;">Animacje<br/>Architektoniczne</h3>
-        <p style="font-size:14px;line-height:1.8;color:#6b6b65;letter-spacing:.02em;">Wirtualne spacery i filmy prezentacyjne. Oprowadzamy przez projekt, zanim ekipy wyjdą na budowę.</p>
-      </div>
-
-    </div>
-  </section>
+  </div>
+</section>
 
   <section style="background:#0a0a09;color:#fafaf8;" class="px-10 md:px-16 py-20 md:py-32">
 
