@@ -499,15 +499,15 @@
 
   </section>
 <!-- MODAL - PAKIET 1 -->
-  <div id="modal-pakiet-1" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 invisible transition-all duration-500">
+  <div id="modal-pakiet-1" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 invisible transition-all duration-500" style="cursor: auto;">
     <!-- Ciemne tło w tle -->
-    <div class="absolute inset-0 bg-[#0a0a09]/70 backdrop-blur-sm cursor-none" onclick="closeModal('modal-pakiet-1')"></div>
+    <div class="absolute inset-0 bg-[#0a0a09]/70 backdrop-blur-sm" onclick="closeModal('modal-pakiet-1')"></div>
     
     <!-- Główne okno -->
-    <div class="bg-[#fafaf8] w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 p-10 md:p-14 border border-[rgba(10,10,9,.1)] scale-95 transition-transform duration-500 modal-content" style="scrollbar-width: none;">
+    <div class="bg-[#fafaf8] w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 p-10 md:p-14 border border-[rgba(10,10,9,.1)] scale-95 transition-transform duration-500 modal-content" style="scrollbar-width: none; cursor: auto;">
       
       <!-- Przycisk zamykania -->
-      <button onclick="closeModal('modal-pakiet-1')" class="absolute top-6 right-8 text-4xl font-light text-[#9a9990] hover:text-[#0a0a09] transition-colors cursor-none">&times;</button>
+      <button onclick="closeModal('modal-pakiet-1')" class="absolute top-6 right-8 text-4xl font-light text-[#9a9990] hover:text-[#0a0a09] transition-colors" style="cursor: pointer;">&times;</button>
       
       <p class="section-label mb-6">Brief Projektowy</p>
       <h2 style="font-family:'Cormorant',serif;font-weight:300;font-size:36px;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px;">Pojedyncze Ujęcia</h2>
@@ -520,18 +520,18 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
-            <label style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:6px;">Imię / Nazwa firmy *</label>
-            <input type="text" name="Imie_lub_Firma" class="form-field" required>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Imię / Nazwa firmy *</label>
+            <input type="text" name="Imie_lub_Firma" class="form-field" style="font-size: 16px; cursor: text;" required>
           </div>
           <div>
-            <label style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:6px;">E-mail *</label>
-            <input type="email" name="Email" class="form-field" required>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">E-mail *</label>
+            <input type="email" name="Email" class="form-field" style="font-size: 16px; cursor: text;" required>
           </div>
         </div>
 
         <div class="mb-8">
-          <label style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:6px;">Czego dotyczy wizualizacja?</label>
-          <select name="Rodzaj_projektu" class="form-field" style="cursor:none; background:transparent;">
+          <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Czego dotyczy wizualizacja?</label>
+          <select name="Rodzaj_projektu" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
             <option value="Wnętrze prywatne">Wnętrze prywatne</option>
             <option value="Architektura komercyjna">Architektura komercyjna</option>
             <option value="Elewacja / Bryła budynku">Elewacja / Bryła budynku</option>
@@ -540,8 +540,8 @@
         </div>
 
         <div class="mb-8">
-          <label style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:6px;">Materiały wyjściowe</label>
-          <select name="Materialy" class="form-field" style="cursor:none; background:transparent;">
+          <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Materiały wyjściowe</label>
+          <select name="Materialy" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
             <option value="Gotowy model 3D">Gotowy model 3D (SketchUp, AutoCAD itp.)</option>
             <option value="Rzuty i przekroje 2D">Rzuty i przekroje 2D / PDF</option>
             <option value="Tylko szkice / zdjęcia">Tylko szkice / zdjęcia referencyjne</option>
@@ -550,21 +550,21 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
-            <label style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:6px;">Szacowana liczba ujęć *</label>
-            <input type="number" name="Liczba_ujec" class="form-field" min="1" required>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Szacowana liczba ujęć *</label>
+            <input type="number" name="Liczba_ujec" class="form-field" min="1" style="font-size: 16px; cursor: text;" required>
           </div>
           <div>
-            <label style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:6px;">Oczekiwany termin</label>
-            <input type="date" name="Termin" class="form-field" style="cursor:none;">
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Oczekiwany termin</label>
+            <input type="date" name="Termin" class="form-field" style="font-size: 16px; cursor: pointer;">
           </div>
         </div>
 
         <div class="mb-12">
-          <label style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:6px;">Styl / Klimat (Link lub opis)</label>
-          <input type="text" name="Styl" class="form-field" placeholder="np. link do moodboardu Pinterest, loft...">
+          <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Styl / Klimat (Link lub opis)</label>
+          <input type="text" name="Styl" class="form-field" placeholder="np. link do moodboardu Pinterest, loft..." style="font-size: 16px; cursor: text;">
         </div>
 
-        <button type="submit" class="btn-cta w-full flex justify-center modal-submit-btn">
+        <button type="submit" class="btn-cta w-full flex justify-center modal-submit-btn" style="cursor: pointer;">
           Wyślij brief →
         </button>
         <p class="modal-form-msg mt-6 text-center text-[10px] tracking-widest uppercase hidden"></p>
@@ -848,6 +848,10 @@
       modal.classList.remove('invisible', 'opacity-0');
       modal.querySelector('.modal-content').classList.remove('scale-95');
       document.body.style.overflow = 'hidden'; // Blokuje scrollowanie strony w tle
+      
+      // Wyłączenie custom kursora na czas wypisywania formularza
+      document.getElementById('curDot').style.display = 'none';
+      document.getElementById('curRing').style.display = 'none';
     }
 
     function closeModal(id) {
@@ -857,6 +861,10 @@
       setTimeout(() => {
         modal.classList.add('invisible');
         document.body.style.overflow = ''; // Przywraca scrollowanie
+        
+        // Włączenie custom kursora z powrotem
+        document.getElementById('curDot').style.display = 'block';
+        document.getElementById('curRing').style.display = 'block';
       }, 500);
     }
 
