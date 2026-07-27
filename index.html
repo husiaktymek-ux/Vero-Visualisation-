@@ -906,20 +906,26 @@
       link.addEventListener('click', toggleMenu);
     });
 
-    // Cursor
+   // Cursor
     const dot  = document.getElementById('curDot');
     const ring = document.getElementById('curRing');
     let mx=0,my=0,rx=0,ry=0;
+    
     document.addEventListener('mousemove', e => {
       mx=e.clientX; my=e.clientY;
-      dot.style.left=mx+'px'; dot.style.top=my+'px';
+      // Wymuszamy akcelerację sprzętową karty graficznej (zero klatkowania)
+      dot.style.transform = `translate3d(${mx}px, ${my}px, 0) translate(-50%, -50%)`;
     });
+    
     (function tick(){
-      rx+=(mx-rx)*.11; ry+=(my-ry)*.11;
-      ring.style.left=rx+'px'; ring.style.top=ry+'px';
+      // Zwiększyliśmy mnożnik z .11 na .4 (kółko reaguje 4x szybciej na ruch)
+      rx+=(mx-rx)*.4; 
+      ry+=(my-ry)*.4;
+      ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
       requestAnimationFrame(tick);
     })();
-    document.querySelectorAll('a,button,input,textarea').forEach(el=>{
+    
+    document.querySelectorAll('a,button,input,textarea,select').forEach(el=>{
       el.addEventListener('mouseenter',()=>{ dot.classList.add('hover'); ring.classList.add('hover'); });
       el.addEventListener('mouseleave',()=>{ dot.classList.remove('hover'); ring.classList.remove('hover'); });
     });
