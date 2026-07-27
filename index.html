@@ -641,16 +641,39 @@
           </div>
         </div>
 
-        <div class="mb-8">
-          <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Preferowane oświetlenie wizualizacji</label>
-          <select name="Oswietlenie" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
-            <option value="Tylko dzienne">Tylko dzienne (jasne, naturalne)</option>
-            <option value="Dzienne i wieczorne">Dzienne i wieczorne (klimatyczne, włączone lampy)</option>
-            <option value="Zdam się na Was">Zdam się na Waszą rekomendację</option>
-          </select>
+        <!-- NOWE POLA: Ilość pomieszczeń i Termin -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Ilość pomieszczeń *</label>
+            <input type="number" name="Ilosc_pomieszczen" class="form-field" min="1" style="font-size: 16px; cursor: text;" required>
+          </div>
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Oczekiwany termin</label>
+            <input type="date" name="Termin" class="form-field" style="font-size: 16px; cursor: pointer;">
+          </div>
         </div>
 
-        <div class="mb-8">
+        <!-- NOWE POLA: Materiały i Oświetlenie zgrupowane razem -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Materiały wyjściowe</label>
+            <select name="Materialy" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
+              <option value="Gotowy model 3D">Gotowy model 3D (SketchUp, AutoCAD itp.)</option>
+              <option value="Rzuty i przekroje 2D">Rzuty i przekroje 2D / PDF</option>
+              <option value="Tylko szkice / zdjęcia">Tylko szkice / zdjęcia referencyjne</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Oświetlenie wizualizacji</label>
+            <select name="Oswietlenie" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
+              <option value="Tylko dzienne">Tylko dzienne (jasne, naturalne)</option>
+              <option value="Dzienne i wieczorne">Dzienne i wieczorne (klimatyczne)</option>
+              <option value="Zdam się na Was">Zdam się na Waszą rekomendację</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-12">
           <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Styl / Klimat (Link lub opis)</label>
           <input type="text" name="Styl" class="form-field" placeholder="np. link do moodboardu Pinterest, styl japandi..." style="font-size: 16px; cursor: text;">
         </div>
