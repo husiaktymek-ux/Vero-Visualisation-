@@ -449,6 +449,10 @@
             <li class="flex items-center gap-3"><span style="width:4px;height:4px;background:#0a0a09;border-radius:50%;display:inline-block;"></span> Optymalizacja kadrów pod Social Media</li>
           </ul>
         </div>
+        <!-- PRZYCISK WYWOŁUJĄCY MODAL 2 -->
+        <button type="button" onclick="openModal('modal-pakiet-2')" class="btn-cta mt-8" style="justify-content:center; width:100%;">
+          Wybieram pakiet →
+        </button>
       </div>
 
       <!-- Pakiet 3: Kompleksowy dla pracowni -->
@@ -462,7 +466,11 @@
             <li class="flex items-center gap-3"><span style="width:4px;height:4px;background:#0a0a09;border-radius:50%;display:inline-block;"></span> Wizualizacje oraz animacje 3D</li>
             <li class="flex items-center gap-3"><span style="width:4px;height:4px;background:#0a0a09;border-radius:50%;display:inline-block;"></span> Dedykowane tworzenie stron WWW</li>
           </ul>
-        </div>
+        </div
+          <!-- PRZYCISK WYWOŁUJĄCY MODAL 3 -->
+        <button type="button" onclick="openModal('modal-pakiet-3')" class="btn-cta mt-8" style="justify-content:center; width:100%;">
+          Wybieram pakiet →
+        </button>
       </div>
 
     </div>
@@ -571,7 +579,143 @@
       </form>
     </div>
   </div>
-  
+  <!-- MODAL - PAKIET 2 (Wnętrza) -->
+  <div id="modal-pakiet-2" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 invisible transition-all duration-500" style="cursor: auto;">
+    <!-- Ciemne tło w tle -->
+    <div class="absolute inset-0 bg-[#0a0a09]/70 backdrop-blur-sm" onclick="closeModal('modal-pakiet-2')"></div>
+    
+    <!-- Główne okno -->
+    <div class="bg-[#fafaf8] w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 p-10 md:p-14 border border-[rgba(10,10,9,.1)] scale-95 transition-transform duration-500 modal-content" style="scrollbar-width: none; cursor: auto;">
+      
+      <!-- Przycisk zamykania -->
+      <button onclick="closeModal('modal-pakiet-2')" class="absolute top-6 right-8 text-4xl font-light text-[#9a9990] hover:text-[#0a0a09] transition-colors" style="cursor: pointer;">&times;</button>
+      
+      <p class="section-label mb-6">Brief Projektowy</p>
+      <h2 style="font-family:'Cormorant',serif;font-weight:300;font-size:36px;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px;">Pakiety Wnętrz</h2>
+      <p style="font-size:12px;letter-spacing:.1em;color:#9a9990;line-height:1.8;margin-bottom:40px;">Wypełnij poniższe informacje, abyśmy mogli przygotować wycenę dla Twoich przestrzeni.</p>
+
+      <!-- Formularz -->
+      <form onsubmit="submitModalForm(event)">
+        <input type="hidden" name="Wybrany_Pakiet" value="Pakiety Wnętrz">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Imię / Nazwa firmy *</label>
+            <input type="text" name="Imie_lub_Firma" class="form-field" style="font-size: 16px; cursor: text;" required>
+          </div>
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">E-mail *</label>
+            <input type="email" name="Email" class="form-field" style="font-size: 16px; cursor: text;" required>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Rodzaj Inwestycji</label>
+            <select name="Rodzaj_inwestycji" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
+              <option value="Dom jednorodzinny">Dom jednorodzinny</option>
+              <option value="Apartament / Mieszkanie">Apartament / Mieszkanie</option>
+              <option value="Przestrzeń komercyjna / Biuro">Przestrzeń komercyjna / Biuro</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Szacowany Metraż (m²) *</label>
+            <input type="number" name="Metraz" class="form-field" style="font-size: 16px; cursor: text;" required>
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Preferowane oświetlenie wizualizacji</label>
+          <select name="Oswietlenie" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
+            <option value="Tylko dzienne">Tylko dzienne (jasne, naturalne)</option>
+            <option value="Dzienne i wieczorne">Dzienne i wieczorne (klimatyczne, włączone lampy)</option>
+            <option value="Zdam się na Was">Zdam się na Waszą rekomendację</option>
+          </select>
+        </div>
+
+        <div class="mb-8">
+          <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Styl / Klimat (Link lub opis)</label>
+          <input type="text" name="Styl" class="form-field" placeholder="np. link do moodboardu Pinterest, styl japandi..." style="font-size: 16px; cursor: text;">
+        </div>
+
+        <button type="submit" class="btn-cta w-full flex justify-center modal-submit-btn" style="cursor: pointer;">
+          Wyślij brief →
+        </button>
+        <p class="modal-form-msg mt-6 text-center text-[10px] tracking-widest uppercase hidden"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL - PAKIET 3 (B2B) -->
+  <div id="modal-pakiet-3" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 invisible transition-all duration-500" style="cursor: auto;">
+    <!-- Ciemne tło w tle -->
+    <div class="absolute inset-0 bg-[#0a0a09]/70 backdrop-blur-sm" onclick="closeModal('modal-pakiet-3')"></div>
+    
+    <!-- Główne okno -->
+    <div class="bg-[#fafaf8] w-full max-w-2xl max-h-[90vh] overflow-y-auto relative z-10 p-10 md:p-14 border border-[rgba(10,10,9,.1)] scale-95 transition-transform duration-500 modal-content" style="scrollbar-width: none; cursor: auto;">
+      
+      <!-- Przycisk zamykania -->
+      <button onclick="closeModal('modal-pakiet-3')" class="absolute top-6 right-8 text-4xl font-light text-[#9a9990] hover:text-[#0a0a09] transition-colors" style="cursor: pointer;">&times;</button>
+      
+      <p class="section-label mb-6">Brief Projektowy</p>
+      <h2 style="font-family:'Cormorant',serif;font-weight:300;font-size:36px;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px;">Partnerstwo B2B</h2>
+      <p style="font-size:12px;letter-spacing:.1em;color:#9a9990;line-height:1.8;margin-bottom:40px;">Porozmawiajmy o stałej współpracy i kompleksowej obsłudze Twojej pracowni lub inwestycji.</p>
+
+      <!-- Formularz -->
+      <form onsubmit="submitModalForm(event)">
+        <input type="hidden" name="Wybrany_Pakiet" value="Partnerstwo B2B">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Imię / Nazwa firmy *</label>
+            <input type="text" name="Imie_lub_Firma" class="form-field" style="font-size: 16px; cursor: text;" required>
+          </div>
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">E-mail *</label>
+            <input type="email" name="Email" class="form-field" style="font-size: 16px; cursor: text;" required>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Twój profil działalności</label>
+            <select name="Profil_dzialalnosci" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
+              <option value="Pracownia Architektury Wnętrz">Pracownia Architektury Wnętrz</option>
+              <option value="Pracownia Architektoniczna">Pracownia Architektoniczna</option>
+              <option value="Deweloper / Inwestor">Deweloper / Inwestor</option>
+              <option value="Inne">Inne</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Liczba projektów (miesięcznie)</label>
+            <select name="Ilosc_projektow" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
+              <option value="1-2 projekty">1-2 projekty</option>
+              <option value="3-5 projektów">3-5 projektów</option>
+              <option value="Powyżej 5 projektów">Powyżej 5 projektów</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Zainteresowanie tworzeniem stron WWW?</label>
+          <select name="Zainteresowanie_WWW" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
+            <option value="Tak, szukam kompleksowej obsługi">Tak, szukam kompleksowej obsługi (wizualizacje + strona WWW)</option>
+            <option value="Nie, tylko wizualizacje">Nie, interesują mnie wyłącznie wizualizacje</option>
+          </select>
+        </div>
+
+        <div class="mb-12">
+          <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Link do Twojej obecnej strony / portfolio (opcjonalnie)</label>
+          <input type="text" name="Link_Portfolio" class="form-field" placeholder="www.twojastrona.pl" style="font-size: 16px; cursor: text;">
+        </div>
+
+        <button type="submit" class="btn-cta w-full flex justify-center modal-submit-btn" style="cursor: pointer;">
+          Wyślij brief →
+        </button>
+        <p class="modal-form-msg mt-6 text-center text-[10px] tracking-widest uppercase hidden"></p>
+      </form>
+    </div>
+  </div>
   <!-- KONTAKT -->
   <section id="kontakt" class="px-10 md:px-16 py-24 md:py-40 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
 
