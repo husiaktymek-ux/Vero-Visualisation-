@@ -1053,14 +1053,27 @@
       btn.textContent = 'Wysyłanie...';
       btn.disabled = true;
 
+      const formData = new FormData(form);
+
       try {
-        const res = await fetch('https://hook.eu1.make.com/zo4wxk15os7j19wagnqp0ouw8lpm5o7f', {
+        // 1. GŁÓWNA WYSYŁKA DO CIEBIE (Formspree zostaje!)
+        const res = await fetch('https://formspree.io/f/meevzvzk', {
           method: 'POST',
-          body: new FormData(form),
+          body: formData,
           headers: { 'Accept': 'application/json' }
         });
 
         if (res.ok) {
+          
+          // 2. CICHY ASYSTENT DLA E-BOOKA (Tylko dla Pakietu Wnętrz)
+          if (formData.get('Wybrany_Pakiet') === 'Pakiety Wnętrz') {
+            // TUTAJ WKLEJ SWÓJ LINK Z MAKE.COM ZAMIAST TEGO PONIŻEJ:
+            fetch('https://hook.eu1.make.com/zo4wxk15os7j19wagnqp0ouw8lpm5o7f', {
+              method: 'POST',
+              body: formData
+            }).catch(console.error); // Działa w tle, nie blokuje strony
+          }
+
           msg.textContent = 'Brief wysłany. Odezwiemy się wkrótce!';
           msg.classList.remove('hidden');
           msg.style.color = '#0a0a09';
@@ -1070,6 +1083,20 @@
             gtag('event', 'conversion', {'send_to': 'AW-18132232207/vcgZCPyQ7KUcEI_Qj8ZD'});
           }
           
+          // Automatyczne zamknięcie modala po 3 sekundach
+          setTimeout(() => closeModal(modalId), 3000);
+        } else {
+          throw new Error('Błąd formularza');
+        }
+      } catch(err) {
+        msg.textContent = 'Wystąpił błąd. Spróbuj ponownie.';
+        msg.classList.remove('hidden');
+        msg.style.color = '#a03030';
+      } finally {
+        btn.textContent = 'Wyślij brief →';
+        btn.disabled = false;
+      }
+    }
           // Automatyczne zamknięcie modala po 3 sekundach od wysłania
           setTimeout(() => closeModal(modalId), 3000);
         } else {
