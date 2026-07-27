@@ -1042,7 +1042,7 @@
       }, 500);
     }
 
-    // Wysyłanie formularza z modala
+    /// Wysyłanie formularza z modala
     async function submitModalForm(e) {
       e.preventDefault();
       const form = e.target;
@@ -1067,7 +1067,6 @@
           
           // 2. CICHY ASYSTENT DLA E-BOOKA (Tylko dla Pakietu Wnętrz)
           if (formData.get('Wybrany_Pakiet') === 'Pakiety Wnętrz') {
-            // TUTAJ WKLEJ SWÓJ LINK Z MAKE.COM ZAMIAST TEGO PONIŻEJ:
             fetch('https://hook.eu1.make.com/zo4wxk15os7j19wagnqp0ouw8lpm5o7f', {
               method: 'POST',
               body: formData
@@ -1097,21 +1096,6 @@
         btn.disabled = false;
       }
     }
-          // Automatyczne zamknięcie modala po 3 sekundach od wysłania
-          setTimeout(() => closeModal(modalId), 3000);
-        } else {
-          throw new Error('Błąd');
-        }
-      } catch(err) {
-        msg.textContent = 'Wystąpił błąd. Spróbuj ponownie.';
-        msg.classList.remove('hidden');
-        msg.style.color = '#a03030';
-      } finally {
-        btn.textContent = 'Wyślij brief →';
-        btn.disabled = false;
-      }
-    }
-    // --- KONIEC SKRYPTU SLIDERA ---
   </script>
 
 </body>
