@@ -455,19 +455,19 @@
         </button>
       </div>
 
-      <!-- Pakiet 3: Kompleksowy dla pracowni -->
+      <!-- Pakiet 3: Inwestycje Deweloperskie -->
       <div class="reveal flex flex-col justify-between h-full border border-[#0a0a09] p-8 md:p-10 bg-white relative" style="transition-delay:.3s; box-shadow: 0 10px 40px rgba(10,10,9,.04);">
         <span style="position:absolute; top:-12px; right:24px; background:#0a0a09; color:#fafaf8; padding:4px 12px; font-size:10px; letter-spacing:0.2em; text-transform:uppercase;">Wybór deweloperów</span>
         <div>
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;margin-bottom:8px;letter-spacing:.02em;">Partnerstwo B2B</h3>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;margin-bottom:8px;letter-spacing:.02em;">Inwestycje Deweloperskie</h3>
           <p style="font-size:24px;font-weight:300;margin-bottom:24px;font-family:'Jost',sans-serif;">Projekty od 5000 PLN</p>
-         <ul style="list-style:none;padding:0;margin:0 0 32px 0;font-size:16px;line-height:2.2;color:#6b6b65;">
-            <li class="flex items-center gap-3"><span style="width:4px;height:4px;background:#0a0a09;border-radius:50%;display:inline-block;"></span> Kompleksowa obsługa</li>
-            <li class="flex items-center gap-3"><span style="width:4px;height:4px;background:#0a0a09;border-radius:50%;display:inline-block;"></span> Wizualizacje oraz animacje 3D</li>
-            <li class="flex items-center gap-3"><span style="width:4px;height:4px;background:#0a0a09;border-radius:50%;display:inline-block;"></span> Dedykowane tworzenie stron WWW</li>
+          <ul style="list-style:none;padding:0;margin:0 0 32px 0;font-size:16px;line-height:2.2;color:#6b6b65;">
+            <li class="flex items-center gap-3"><span style="width:4px;height:4px;background:#0a0a09;border-radius:50%;display:inline-block;"></span> Wizualizacje i animacje inwestycji</li>
+            <li class="flex items-center gap-3"><span style="width:4px;height:4px;background:#0a0a09;border-radius:50%;display:inline-block;"></span> Dedykowana strona WWW</li>
+            <li class="flex items-center gap-3"><span style="width:4px;height:4px;background:#0a0a09;border-radius:50%;display:inline-block;"></span> Copywriting sprzedażowy</li>
           </ul>
-        </div
-          <!-- PRZYCISK WYWOŁUJĄCY MODAL 3 -->
+        </div>
+        <!-- PRZYCISK WYWOŁUJĄCY MODAL 3 -->
         <button type="button" onclick="openModal('modal-pakiet-3')" class="btn-cta mt-8" style="justify-content:center; width:100%;">
           Wybieram pakiet →
         </button>
@@ -646,7 +646,7 @@
     </div>
   </div>
 
-  <!-- MODAL - PAKIET 3 (B2B) -->
+  <!-- MODAL - PAKIET 3 (Deweloperzy) -->
   <div id="modal-pakiet-3" class="fixed inset-0 z-[100] flex items-center justify-center opacity-0 invisible transition-all duration-500" style="cursor: auto;">
     <!-- Ciemne tło w tle -->
     <div class="absolute inset-0 bg-[#0a0a09]/70 backdrop-blur-sm" onclick="closeModal('modal-pakiet-3')"></div>
@@ -658,12 +658,12 @@
       <button onclick="closeModal('modal-pakiet-3')" class="absolute top-6 right-8 text-4xl font-light text-[#9a9990] hover:text-[#0a0a09] transition-colors" style="cursor: pointer;">&times;</button>
       
       <p class="section-label mb-6">Brief Projektowy</p>
-      <h2 style="font-family:'Cormorant',serif;font-weight:300;font-size:36px;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px;">Partnerstwo B2B</h2>
-      <p style="font-size:12px;letter-spacing:.1em;color:#9a9990;line-height:1.8;margin-bottom:40px;">Porozmawiajmy o stałej współpracy i kompleksowej obsłudze Twojej pracowni lub inwestycji.</p>
+      <h2 style="font-family:'Cormorant',serif;font-weight:300;font-size:36px;line-height:1.1;letter-spacing:-.01em;margin-bottom:12px;">Inwestycje Deweloperskie</h2>
+      <p style="font-size:12px;letter-spacing:.1em;color:#9a9990;line-height:1.8;margin-bottom:40px;">Porozmawiajmy o materiałach sprzedażowych. Wypełnij krótki brief, a my przygotujemy kompleksową ofertę.</p>
 
       <!-- Formularz -->
       <form onsubmit="submitModalForm(event)">
-        <input type="hidden" name="Wybrany_Pakiet" value="Partnerstwo B2B">
+        <input type="hidden" name="Wybrany_Pakiet" value="Inwestycje Deweloperskie">
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
@@ -678,35 +678,42 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
-            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Twój profil działalności</label>
-            <select name="Profil_dzialalnosci" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
-              <option value="Pracownia Architektury Wnętrz">Pracownia Architektury Wnętrz</option>
-              <option value="Pracownia Architektoniczna">Pracownia Architektoniczna</option>
-              <option value="Deweloper / Inwestor">Deweloper / Inwestor</option>
-              <option value="Inne">Inne</option>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Typ inwestycji</label>
+            <select name="Typ_inwestycji" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
+              <option value="Osiedle domów / Szeregowce">Osiedle domów / Szeregowce</option>
+              <option value="Blok / Zabudowa wielorodzinna">Blok / Zabudowa wielorodzinna</option>
+              <option value="Pojedynczy dom inwestycyjny">Pojedynczy dom inwestycyjny</option>
+              <option value="Obiekt komercyjny">Obiekt komercyjny</option>
             </select>
           </div>
           <div>
-            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Liczba projektów (miesięcznie)</label>
-            <select name="Ilosc_projektow" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
-              <option value="1-2 projekty">1-2 projekty</option>
-              <option value="3-5 projektów">3-5 projektów</option>
-              <option value="Powyżej 5 projektów">Powyżej 5 projektów</option>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Zakres usług</label>
+            <select name="Zakres_uslug" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
+              <option value="Pełen pakiet (Wizualizacje + WWW + Teksty)">Pełen pakiet (Wizualizacje + WWW + Teksty)</option>
+              <option value="Wizualizacje + Strona WWW">Wizualizacje + Strona WWW</option>
+              <option value="Tylko Wizualizacje">Tylko wizualizacje</option>
             </select>
           </div>
         </div>
 
-        <div class="mb-8">
-          <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Zainteresowanie tworzeniem stron WWW?</label>
-          <select name="Zainteresowanie_WWW" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
-            <option value="Tak, szukam kompleksowej obsługi">Tak, szukam kompleksowej obsługi (wizualizacje + strona WWW)</option>
-            <option value="Nie, tylko wizualizacje">Nie, interesują mnie wyłącznie wizualizacje</option>
-          </select>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Materiały wyjściowe</label>
+            <select name="Materialy" class="form-field" style="font-size: 16px; background:transparent; cursor: pointer;">
+              <option value="Projekt Architektoniczny (PDF/DWG)">Projekt architektoniczny (PDF/DWG)</option>
+              <option value="Model 3D budynku">Model 3D budynku</option>
+              <option value="Tylko koncepcja / rzuty">Tylko koncepcja / szkice</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Oczekiwany termin</label>
+            <input type="date" name="Termin" class="form-field" style="font-size: 16px; cursor: pointer;">
+          </div>
         </div>
 
         <div class="mb-12">
-          <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Link do Twojej obecnej strony / portfolio (opcjonalnie)</label>
-          <input type="text" name="Link_Portfolio" class="form-field" placeholder="www.twojastrona.pl" style="font-size: 16px; cursor: text;">
+          <label style="font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Krótki opis inwestycji (opcjonalnie)</label>
+          <input type="text" name="Opis_inwestycji" class="form-field" placeholder="np. kameralne osiedle 4 bliźniaków..." style="font-size: 16px; cursor: text;">
         </div>
 
         <button type="submit" class="btn-cta w-full flex justify-center modal-submit-btn" style="cursor: pointer;">
