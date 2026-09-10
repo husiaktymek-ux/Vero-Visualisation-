@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dziękujemy — Vero Visualisation</title>
+  
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="icon" sizes="192x192" href="favicon.png">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif:  ['Cormorant', 'Cormorant Garamond', 'Georgia', 'serif'],
+            sans:   ['Jost', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: #fafaf8;
+      color: #0a0a09;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* ─── Custom Cursor ─── */
+    .cur-dot  { position:fixed;top:0;left:0;width:7px;height:7px;background:#0a0a09;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s; }
+    .cur-ring { position:fixed;top:0;left:0;width:34px;height:34px;border:1px solid rgba(10,10,9,.3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s; }
+    .cur-dot.hover  { width:4px;height:4px; }
+    .cur-ring.hover { width:54px;height:54px;border-color:rgba(10,10,9,.5); }
+    @media (hover: none) and (pointer: coarse) {
+      body { cursor: auto !important; }
+      .cur-dot, .cur-ring { display: none !important; }
+    }
+
+    /* ─── CTA button ─── */
+    .btn-cta {
+      display:inline-flex;align-items:center;gap:14px;
+      background:#0a0a09;color:#fafaf8;
+      font-family:'Jost',sans-serif;font-weight:500;
+      font-size:12px;
+      letter-spacing:.28em;text-transform:uppercase;
+      padding:18px 36px;text-decoration:none;
+      transition:background .35s, gap .35s, box-shadow .35s, transform .35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor:none;
+      border:1px solid #0a0a09;
+    }
+    .btn-cta:hover { 
+      background:#1c1c1a;
+      gap:24px;
+      box-shadow:0 12px 40px rgba(10,10,9,.14); 
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center relative">
+
+  <!-- Custom Cursor Elements -->
+  <div class="cur-dot"  id="curDot"></div>
+  <div class="cur-ring" id="curRing"></div>
+
+  <!-- Header uproszczony -->
+  <header class="absolute top-0 left-0 right-0 z-50 flex items-center justify-center px-6 py-8">
+    <div class="flex flex-col leading-none text-center">
+      <span style="font-family:'Cormorant',serif;font-weight:600;font-size:15px;letter-spacing:.18em;text-transform:uppercase;">Vero Visualisation</span>
+      <span style="font-family:'Jost',sans-serif;font-weight:200;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#9a9990;margin-top:2px;">Wizualizacje 3D Premium</span>
+    </div>
+  </header>
+
+  <!-- Główna sekcja podziękowania -->
+  <main class="px-6 flex flex-col items-center justify-center text-center mt-12">
+    
+    <!-- Animowany ptaszek/ikona (nawiązanie do tej z szybkiego formularza) -->
+    <div style="margin:0 auto 36px;width:64px;height:64px;border:1px solid rgba(10,10,9,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+      <svg width="26" height="26" viewBox="0 0 22 22" fill="none" stroke="#0a0a09" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+           style="stroke-dasharray:30;stroke-dashoffset:30;animation:drawCheck 1.5s 0.2s ease forwards;">
+        <polyline points="4,11 9,16 18,6"/>
+      </svg>
+    </div>
+
+    <p style="font-family:'Jost',sans-serif;font-weight:200;font-size:12px;letter-spacing:.38em;text-transform:uppercase;color:#6b6b65;margin-bottom:20px;">
+      Sukces
+    </p>
+    
+    <h1 style="font-family:'Cormorant',serif;font-weight:300;font-size:clamp(48px,6vw,84px);line-height:1;letter-spacing:-.02em;margin-bottom:24px;">
+      Dziękujemy za<br/>
+      <em style="font-style:italic;">przesłanie briefu</em>
+    </h1>
+
+    <p style="font-size:14px;letter-spacing:.1em;color:#9a9990;max-width:420px;line-height:1.8;margin-bottom:48px;">
+      Otrzymaliśmy Twoje zgłoszenie. Nasz zespół przeanalizuje materiały i skontaktujemy się z Tobą z gotową wyceną w ciągu najbliższych 24 godzin.
+    </p>
+
+    <a href="/" class="btn-cta">
+      ← Wróć na stronę główną
+    </a>
+  </main>
+
+  <script>
+    // Skrypt do custom kursora (skopiowany ze strony głównej)
+    const dot  = document.getElementById('curDot');
+    const ring = document.getElementById('curRing');
+    let mx=0,my=0,rx=0,ry=0;
+    
+    document.addEventListener('mousemove', e => {
+      mx=e.clientX; my=e.clientY;
+      dot.style.transform = `translate3d(${mx}px, ${my}px, 0) translate(-50%, -50%)`;
+    });
+    
+    (function tick(){
+      rx+=(mx-rx)*.4; 
+      ry+=(my-ry)*.4;
+      ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
+      requestAnimationFrame(tick);
+    })();
+    
+    document.querySelectorAll('a,button').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ dot.classList.add('hover'); ring.classList.add('hover'); });
+      el.addEventListener('mouseleave',()=>{ dot.classList.remove('hover'); ring.classList.remove('hover'); });
+    });
+
+    // Animacja ptaszka
+    const style=document.createElement('style');
+    style.textContent=`
+      @keyframes drawCheck { to { stroke-dashoffset: 0; } }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
