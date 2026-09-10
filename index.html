@@ -1142,8 +1142,13 @@
             gtag('event', 'conversion', {'send_to': 'AW-18132232207/vcgZCPyQ7KUcEI_Qj8ZD'});
           }
           
-          // Automatyczne zamknięcie modala po 3 sekundach
-          setTimeout(() => closeModal(modalId), 3000);
+          // Zmieniamy wiadomość na "Przekierowywanie..."
+          msg.textContent = 'Przekierowywanie...';
+          
+          // Przekierowanie na stronę dziękujemy (opóźnienie 800ms, aby tag Google zdążył wysłać dane)
+          setTimeout(() => {
+              window.location.href = '/dziekujemy.html';
+          }, 800);
         } else {
           throw new Error('Błąd formularza');
         }
