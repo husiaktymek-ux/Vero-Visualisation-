@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wizualizacje i animacje osiedli — Vero Visualisation</title>
+  
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+  <link rel="icon" sizes="192x192" href="/favicon.png">
+  <meta name="description" content="Kompleksowe materiały sprzedażowe dla deweloperów. Fotorealistyczne wizualizacje osiedli, animacje 3D i dedykowane strony WWW dla inwestycji." />
+  
+  <!-- Kod Google Ads / GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18132232207"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MMKPPR2ZC5'); 
+    gtag('config', 'AW-18132232207');
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif:  ['Cormorant', 'Cormorant Garamond', 'Georgia', 'serif'],
+            sans:   ['Jost', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100vw; }
+    body {
+      background-color: #fafaf8;
+      color: #0a0a09;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      max-width: 100vw;
+      cursor: none;
+    }
+
+    /* Custom Cursor */
+    .cur-dot  { position:fixed;top:0;left:0;width:7px;height:7px;background:#0a0a09;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .25s,height .25s; }
+    .cur-ring { position:fixed;top:0;left:0;width:34px;height:34px;border:1px solid rgba(10,10,9,.3);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s; }
+    .cur-dot.hover  { width:4px;height:4px; }
+    .cur-ring.hover { width:54px;height:54px;border-color:rgba(10,10,9,.5); }
+    @media (hover: none) and (pointer: coarse) {
+      body { cursor: auto !important; }
+      .cur-dot, .cur-ring { display: none !important; }
+    }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .cursor-grab { cursor: grab !important; }
+    .cursor-grabbing { cursor: grabbing !important; }
+   
+    .section-label {
+      display:flex;align-items:center;gap:14px;
+      font-family:'Jost',sans-serif;font-weight:200;
+      font-size:12px;letter-spacing:.38em;text-transform:uppercase;color:#6b6b65;
+    }
+    .section-label::before { content:'';display:block;width:28px;height:1px;background:#9a9990;flex-shrink:0; }
+
+    .reveal { opacity:0;transform:translateY(30px); transition:opacity .85s ease,transform .85s ease; }
+    .reveal.visible { opacity:1;transform:translateY(0); }
+
+    .btn-cta {
+      display:inline-flex;align-items:center;gap:14px;
+      background:#0a0a09;color:#fafaf8;
+      font-family:'Jost',sans-serif;font-weight:500;
+      font-size:12px;
+      letter-spacing:.28em;text-transform:uppercase;
+      padding:18px 36px;text-decoration:none;
+      transition:background .35s, gap .35s, box-shadow .35s, transform .35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor:none;
+      border:1px solid #0a0a09;
+    }
+    .btn-cta:hover { background:#1c1c1a; gap:24px; box-shadow:0 12px 40px rgba(10,10,9,.14); transform: scale(1.03); }
+
+    .form-field {
+      width:100%;background:transparent;border:none;border-bottom:1px solid rgba(10,10,9,.18);
+      padding:14px 0;font-family:'Jost',sans-serif;font-weight:300;font-size:13px;
+      letter-spacing:.04em;color:#0a0a09;outline:none; transition:border-color .3s;
+    }
+    .form-field::placeholder { color:#9a9990;font-weight:200; }
+    .form-field:focus { border-bottom-color:#0a0a09; }
+    
+    .footer-link { font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#9a9990;text-decoration:none;transition:color .3s;cursor:none; }
+    .footer-link:hover { color:#0a0a09; }
+  </style>
+</head>
+<body>
+
+  <div class="cur-dot"  id="curDot"></div>
+  <div class="cur-ring" id="curRing"></div>
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 md:px-16 md:py-6"
+          style="background:rgba(250,250,248,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(10,10,9,.06);">
+    <a href="/" class="flex items-center gap-3 cursor-none relative z-50">
+      <div class="flex flex-col leading-none">
+        <span style="font-family:'Cormorant',serif;font-weight:600;font-size:15px;letter-spacing:.18em;text-transform:uppercase;">Vero Visualisation</span>
+        <span style="font-family:'Jost',sans-serif;font-weight:200;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#9a9990;margin-top:2px;">Wizualizacje 3D Premium</span>
+      </div>
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a href="tel:+48516039359" class="footer-link" style="color:#0a0a09; font-weight:400;">+48 516 039 359</a>
+      <a href="#realizacje" class="footer-link">Realizacje</a>
+      <a href="#oferta" class="footer-link">Pakiet Inwestycyjny</a>
+      <a href="#brief" class="btn-cta" style="padding:12px 24px;font-size:12px;">Darmowa wycena →</a>
+    </nav>
+  </header>
+
+  <!-- HERO Z WIDEO INWESTYCJI -->
+  <section class="relative flex flex-col justify-start md:justify-end pt-36 md:pt-0 min-h-[650px] md:min-h-screen px-10 md:px-16 pb-20 md:pb-28 overflow-hidden">
+    <!-- Podmień 'animacja-inwestycji.mp4' na swój film z osiedlem/blokiem -->
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+      <source src="/animacja-salon.mp4" type="video/mp4" /> 
+    </video>
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative z-10 w-full">
+     <div class="mb-16 md:mb-32" style="opacity:0;animation:fadeUp .9s .3s forwards;">
+        <p class="section-label" style="color:#e8e7e2;">
+          <span style="display:block;width:28px;height:1px;background:#e8e7e2;flex-shrink:0;margin-right:14px;"></span>
+          Materiały sprzedażowe dla inwestycji
+        </p>
+      </div>
+
+      <div style="opacity:0;animation:fadeUp 1.1s .5s forwards;max-width:1000px;">
+        <!-- Zoptymalizowany nagłówek pod wyszukiwanie -->
+        <h1 style="color:#fafaf8; font-family:'Cormorant',serif;font-weight:300;font-size:clamp(48px,7vw,110px);line-height:.92;letter-spacing:-.02em;">
+          Wizualizacje i animacje<br/>
+          <em style="font-style:italic;font-weight:300;">nowych</em> osiedli
+        </h1>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-10 mt-10" style="opacity:0;animation:fadeUp 1s .85s forwards;">
+        <p style="font-family:'Jost',sans-serif;font-weight:200;font-size:12px;letter-spacing:.1em;line-height:2.1;color:#e8e7e2;max-width:380px;text-transform:uppercase;">
+          Kompleksowa obsługa deweloperów.<br/>
+          Wizualizacje · Animacje · Strony WWW inwestycji<br/>
+          Sprzedawaj szybciej.
+        </p>
+       <a href="#brief" class="btn-cta" style="background:#fafaf8; color:#0a0a09; border-color:#fafaf8;">
+          Rozpocznij projekt <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO INWESTYCYJNE -->
+  <section id="realizacje" class="pt-20 pb-12 md:pt-32 md:pb-20 relative">
+    <div class="px-10 md:px-16 flex flex-col md:flex-row md:items-end md:justify-between mb-14 gap-6">
+      <div>
+        <p class="section-label reveal mb-6">Skala Makro</p>
+        <h2 class="reveal" style="font-family:'Cormorant',serif;font-weight:300;font-size:clamp(28px,3.5vw,48px);letter-spacing:-.01em;">Architektura Zewnętrzna</h2>
+      </div>
+    </div>
+
+    <!-- W tym sliderze umieść tylko duże obiekty: osiedla, wille, bloki -->
+    <div class="relative w-full reveal pl-10 md:pl-16">
+      <div id="sliderTrack" class="flex gap-6 md:gap-10 overflow-x-auto no-scrollbar snap-x snap-mandatory pr-10 md:pr-16 pb-12 cursor-grab">
+        
+        <div class="flex-none snap-start group select-none">
+          <div class="overflow-hidden h-[50vh] md:h-[65vh] w-[80vw] md:w-[45vw] bg-[#f0f0f0]">
+            <img src="/w 6 p(1).jpg" alt="Zabudowa jednorodzinna" draggable="false" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+          </div>
+          <div class="mt-5 flex justify-between items-start gap-6">
+            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Willa w Lesie</p>
+            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase;">Zabudowa Jednorodzinna</p>
+          </div>
+        </div>
+
+        <div class="flex-none snap-start group select-none">
+          <div class="overflow-hidden h-[50vh] md:h-[65vh] w-[80vw] md:w-[45vw] bg-[#f0f0f0]">
+            <!-- Podmień na render osiedla -->
+            <img src="/elewacja.jpg" alt="Osiedle domów szeregowych" draggable="false" class="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 pointer-events-none" />
+          </div>
+          <div class="mt-5 flex justify-between items-start gap-6">
+            <p style="font-size:15px; font-family:'Cormorant Garamond',serif; line-height:1.3;">Osiedle Szeregówek</p>
+            <p style="font-size:10px; letter-spacing:0.1em; color:#9a9990; text-transform:uppercase;">Inwestycja Deweloperska</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OFERTA I BRIEF (POŁĄCZONE DLA SZYBKIEJ KONWERSJI) -->
+  <section id="oferta" class="px-10 md:px-16 pt-12 pb-24 md:pt-16 md:pb-40" style="background-color: #fafaf8;">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+      
+      <!-- Lewa strona: Opis Pakietu -->
+      <div class="reveal">
+        <p class="section-label mb-10">Współpraca</p>
+        <h2 style="font-family:'Cormorant',serif;font-weight:300;font-size:clamp(44px,5vw,72px);line-height:1;letter-spacing:-.02em;margin-bottom:32px;">
+          Pakiet <em style="font-style:italic;">Inwestycyjny</em>
+        </h2>
+        
+        <p style="font-size:32px;font-weight:300;margin-bottom:40px;font-family:'Jost',sans-serif;">
+          Projekty od 5000 PLN
+        </p>
+
+        <p style="font-size:14px;letter-spacing:.05em;color:#6b6b65;line-height:1.8;margin-bottom:48px;max-width:450px;">
+          Nie sprzedajemy samych obrazków. Dostarczamy deweloperom kompletne narzędzia, które przyspieszają sprzedaż dziury w ziemi i budują zaufanie inwestorów.
+        </p>
+
+        <ul style="list-style:none;padding:0;margin:0 0 40px 0;font-size:16px;line-height:2.4;color:#0a0a09;">
+          <li class="flex items-center gap-4 mb-2"><span style="width:24px;height:1px;background:#0a0a09;display:inline-block;"></span> Wizualizacje osiedli i elewacji (4K)</li>
+          <li class="flex items-center gap-4 mb-2"><span style="width:24px;height:1px;background:#0a0a09;display:inline-block;"></span> Fotorealistyczne animacje i spacery 3D</li>
+          <li class="flex items-center gap-4 mb-2"><span style="width:24px;height:1px;background:#0a0a09;display:inline-block;"></span> Dedykowana strona WWW inwestycji</li>
+          <li class="flex items-center gap-4 mb-2"><span style="width:24px;height:1px;background:#0a0a09;display:inline-block;"></span> Rzuty 3D mieszkań (karty lokali)</li>
+          <li class="flex items-center gap-4"><span style="width:24px;height:1px;background:#0a0a09;display:inline-block;"></span> Copywriting sprzedażowy</li>
+        </ul>
+
+        <div style="border-top:1px solid rgba(10,10,9,.1);padding:24px 0;">
+          <span style="font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:12px;">Bezpośredni kontakt</span>
+          <a href="tel:+48516039359" style="font-family:'Cormorant Garamond',serif;font-size:28px;color:#0a0a09;text-decoration:none;">+48 516 039 359</a>
+        </div>
+      </div>
+
+      <!-- Prawa strona: Odkryty Formularz Briefu -->
+      <div id="brief" class="reveal bg-white border border-[rgba(10,10,9,.1)] p-8 md:p-12 shadow-[0_20px_60px_rgba(10,10,9,0.05)]" style="transition-delay:.2s;">
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;margin-bottom:12px;letter-spacing:.02em;">Szybka Wycena Inwestycji</h3>
+        <p style="font-size:12px;letter-spacing:.1em;color:#9a9990;line-height:1.8;margin-bottom:40px;">Zostaw podstawowe dane. Odezwiemy się w ciągu 24h, aby omówić szczegóły i przygotować ofertę.</p>
+
+        <form id="developerForm">
+          <input type="hidden" name="Wybrany_Pakiet" value="Inwestycje Deweloperskie (Landing Page)">
+          
+          <div class="mb-8">
+            <label style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Nazwa firmy / Imię *</label>
+            <input type="text" name="Imie_lub_Firma" class="form-field" style="font-size: 15px; cursor: text;" required>
+          </div>
+
+          <div class="mb-8">
+            <label style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">E-mail *</label>
+            <input type="email" name="Email" class="form-field" style="font-size: 15px; cursor: text;" required>
+          </div>
+
+          <div class="mb-8">
+            <label style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Telefon (opcjonalnie)</label>
+            <input type="tel" name="Telefon" class="form-field" style="font-size: 15px; cursor: text;">
+          </div>
+
+          <div class="mb-8">
+            <label style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Typ inwestycji</label>
+            <select name="Typ_inwestycji" class="form-field" style="font-size: 15px; background:transparent; cursor: pointer;">
+              <option value="Osiedle domów / Szeregowce">Osiedle domów / Szeregowce</option>
+              <option value="Blok / Zabudowa wielorodzinna">Blok / Zabudowa wielorodzinna</option>
+              <option value="Obiekt komercyjny">Obiekt komercyjny</option>
+            </select>
+          </div>
+
+          <div class="mb-12">
+            <label style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a9990;display:block;margin-bottom:8px;">Krótki opis inwestycji</label>
+            <input type="text" name="Opis_inwestycji" class="form-field" placeholder="np. osiedle 6 bliźniaków..." style="font-size: 15px; cursor: text;">
+          </div>
+
+          <button type="submit" class="btn-cta w-full flex justify-center" id="devSubmitBtn" style="cursor: pointer;">
+            Wyślij brief →
+          </button>
+          
+          <p id="devFormMsg" class="mt-6 text-center text-[10px] tracking-widest uppercase hidden"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(10,10,9,.08);" class="px-10 md:px-16 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+    <span style="font-family:'Cormorant',serif;font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;">Vero Visualisation</span>
+    <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9a9990;">© 2026 Vero Visualisation. Wszelkie prawa zastrzeżone.</p>
+  </footer>
+
+  <script>
+    // Obsługa formularza deweloperskiego
+    document.getElementById('developerForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = document.getElementById('devSubmitBtn');
+      const msg = document.getElementById('devFormMsg');
+      
+      btn.textContent = 'Wysyłanie...';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('https://formspree.io/f/meevzvzk', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (res.ok) {
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'conversion', {'send_to': 'AW-18132232207/vcgZCPyQ7KUcEI_Qj8ZD'});
+          }
+          
+          msg.textContent = 'Przekierowywanie...';
+          msg.classList.remove('hidden');
+          msg.style.color = '#0a0a09';
+          
+          // Przekierowanie na podziękowanie
+          setTimeout(() => {
+              window.location.href = '/dziekujemy';
+          }, 800);
+
+        } else {
+          throw new Error('Błąd formularza');
+        }
+      } catch(err) {
+        msg.textContent = 'Wystąpił błąd. Spróbuj ponownie lub zadzwoń.';
+        msg.classList.remove('hidden');
+        msg.style.color = '#a03030';
+        btn.textContent = 'Wyślij brief →';
+        btn.disabled = false;
+      }
+    });
+
+    // Custom Cursor
+    const dot  = document.getElementById('curDot');
+    const ring = document.getElementById('curRing');
+    let mx=0,my=0,rx=0,ry=0;
+    
+    document.addEventListener('mousemove', e => {
+      mx=e.clientX; my=e.clientY;
+      dot.style.transform = `translate3d(${mx}px, ${my}px, 0) translate(-50%, -50%)`;
+    });
+    
+    (function tick(){
+      rx+=(mx-rx)*.4; ry+=(my-ry)*.4;
+      ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
+      requestAnimationFrame(tick);
+    })();
+    
+    document.querySelectorAll('a,button,input,select').forEach(el=>{
+      el.addEventListener('mouseenter',()=>{ dot.classList.add('hover'); ring.classList.add('hover'); });
+      el.addEventListener('mouseleave',()=>{ dot.classList.remove('hover'); ring.classList.remove('hover'); });
+    });
+
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    },{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const target=document.querySelector(a.getAttribute('href'));
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+      });
+    });
+
+    // Skrypt slidera
+    const track = document.getElementById('sliderTrack');
+    if(track) {
+      let isDown = false; let startX; let scrollLeft;
+      track.addEventListener('mousedown', (e) => {
+        isDown = true; track.classList.remove('cursor-grab'); track.classList.add('cursor-grabbing');
+        track.style.scrollBehavior = 'auto'; 
+        startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft;
+      });
+      track.addEventListener('mouseleave', () => {
+        isDown = false; track.classList.remove('cursor-grabbing'); track.classList.add('cursor-grab');
+        track.style.scrollBehavior = 'smooth';
+      });
+      track.addEventListener('mouseup', () => {
+        isDown = false; track.classList.remove('cursor-grabbing'); track.classList.add('cursor-grab');
+        track.style.scrollBehavior = 'smooth';
+      });
+      track.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - track.offsetLeft;
+        const walk = (x - startX) * 2; 
+        track.scrollLeft = scrollLeft - walk;
+      });
+    }
+
+    const style=document.createElement('style');
+    style.textContent=`@keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }`;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
