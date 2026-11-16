@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#383E42">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300..700&family=Bodoni+Moda:opsz,wght@6..96,400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300..700&family=Bodoni+Moda:opsz,wght@6..96,400..700;400i&display=swap">
 <style>
 
 :root{
@@ -17,6 +17,10 @@
   --m:clamp(20px,2.8vw,40px); --odst:clamp(14px,1.8vw,28px);
   --font:"Albert Sans","Segoe UI",Arial,sans-serif;
   --szeryf:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  
+  /* Kolory butikowe dla UI */
+  --tlo-wybrane: #F8F7F5;
+  --tlo-hover: #FDFDFD;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:64px}
@@ -120,50 +124,67 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .m-pin__cena{font:600 13px var(--font);fill:#fff}
 .m-et{font:500 12px var(--font);fill:#5A6166;paint-order:stroke;stroke:#E6EBE3;stroke-width:3px;stroke-linejoin:round}
 .m-kompas text{font:700 11px var(--font);fill:#383E42}
-.model__domy{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;margin:0;padding:0;list-style:none;background:var(--linia);border-top:1px solid var(--linia)}
-.m-dom{--k:#4A6B35;display:flex;flex-direction:column;gap:3px;height:100%;padding:16px 16px 18px;background:#fff;text-decoration:none;box-shadow:inset 0 4px 0 var(--k)}
-.m-dom:hover{background:#F7F8F9}
-.m-dom[aria-current=true]{background:var(--mgla);box-shadow:inset 0 4px 0 var(--k),inset 0 0 0 2px var(--antracyt)}
-.m-dom b{font:500 28px/1.1 var(--szeryf);font-variation-settings:"opsz" 14}
-.m-dom__st{font-size:14px;font-weight:500;color:var(--k)}
-.m-dom__cena{font-size:15px;font-weight:600}
+
+/* Edytowany wygląd kart modeli (usunięcie szarości i dodanie butikowego sznytu) */
+.model__domy{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;margin:0;padding:0;list-style:none;background:transparent;border-top:2px solid var(--antracyt);border-bottom:1px solid var(--linia)}
+.m-dom{--k:#4A6B35;display:flex;flex-direction:column;gap:3px;height:100%;padding:22px 18px;background:#fff;text-decoration:none;border-right:1px solid var(--linia);position:relative;transition:background-color 0.2s}
+.m-dom:last-child{border-right:none}
+.m-dom:hover{background:var(--tlo-hover)}
+.m-dom[aria-current=true]{background:var(--tlo-wybrane)}
+.m-dom[aria-current=true]::before{content:"";position:absolute;top:-2px;left:-1px;right:-1px;height:3px;background:var(--jesion);z-index:2}
+.m-dom b{font:400 34px/1.1 var(--szeryf);font-variation-settings:"opsz" 14;color:var(--antracyt)}
+.m-dom__st{font-size:11px;font-weight:600;color:var(--k);text-transform:uppercase;letter-spacing:0.1em;margin-top:8px}
+.m-dom__cena{font-size:18px;font-weight:500;color:var(--antracyt);margin-top:2px}
 .m-dom--rez{--k:#A4704A}.m-dom--rez .m-dom__st{color:var(--jesion-c)}
 .m-dom--sprz{--k:#5A6166}.m-dom--sprz .m-dom__cena{color:var(--grafit)}
-.model__uwaga{margin:0;padding:12px 16px;border-top:1px solid var(--linia);font-size:13px;color:var(--grafit)}
+.model__uwaga{margin:0;padding:16px 20px;border-top:1px solid var(--linia);font-size:13px;color:var(--grafit)}
 @media (max-width:900px){
   .model__domy{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .model__domy li:nth-child(3) .m-dom { border-right: none; }
+  .model__domy li:nth-child(n+4) .m-dom { border-top: 1px solid var(--linia); }
   .model__pasek{padding:10px 12px}
   .model__scena{aspect-ratio:16/10}
-  .m-dom{padding:12px 12px 14px}
-  .m-dom b{font-size:24px}
+  .m-dom{padding:16px 14px}
+  .m-dom b{font-size:28px}
 }
 
-
-.cennik{width:calc(100% - 2 * var(--m));margin:clamp(40px,4.5vw,64px) var(--m) 0;border-collapse:collapse}
-.cennik thead th{background:var(--mgla);font-size:13px;font-weight:500;color:var(--grafit);text-align:left;padding:13px 16px}
-.cennik td,.cennik tbody th{padding:18px 16px;text-align:left;border-bottom:1px solid var(--linia);vertical-align:middle}
+/* Edytowana tabela (usunięcie AI-slop vibe) */
+.cennik{width:calc(100% - 2 * var(--m));margin:clamp(40px,4.5vw,64px) var(--m) 0;border-collapse:collapse;border-top:2px solid var(--antracyt);border-bottom:2px solid var(--antracyt)}
+.cennik thead th{background:transparent;font-size:11px;font-weight:600;color:var(--antracyt);text-align:left;padding:16px 20px;text-transform:uppercase;letter-spacing:0.12em;border-bottom:1px solid var(--antracyt)}
+.cennik td,.cennik tbody th{padding:26px 20px;text-align:left;border-bottom:1px solid var(--linia);vertical-align:middle;transition:background-color 0.25s ease}
 .cennik .p{text-align:right}
-.cennik tbody th{font:500 28px/1.1 var(--szeryf);white-space:nowrap}
-.cennik tbody th small{display:block;font-size:13px;font-weight:400;line-height:1.35;color:var(--grafit);margin-top:6px;white-space:normal;max-width:22ch}
-.cennik .cena{font:400 25px/1.1 var(--szeryf);white-space:nowrap}
-.cennik tr[data-dom]{cursor:pointer; transition: background-color 0.2s;}
-.cennik tr[data-dom]:hover > *{background:#F7F8F9}
-/* Zaktualizowane podświetlanie po najechaniu i kliknięciu */
-.cennik tr.wybrany > *,.cennik tr:target > *{background:#E5EEDF !important; transition: background-color 0.3s;} 
-.cennik tr.wybrany > th,.cennik tr:target > th{box-shadow:inset 4px 0 0 var(--zielen)}
+.cennik tbody th{font:400 34px/1 var(--szeryf);white-space:nowrap;color:var(--antracyt)}
+.cennik tbody th small{display:block;font:400 italic 14px/1.4 var(--szeryf);color:var(--grafit);margin-top:10px;white-space:normal;max-width:24ch}
+.cennik .cena{font:500 24px/1.1 var(--font);white-space:nowrap;letter-spacing:-0.02em}
+.cennik tr[data-dom]{cursor:pointer}
+.cennik tr[data-dom]:hover > *{background:var(--tlo-hover)}
+.cennik tr.wybrany > *,.cennik tr:target > *{background:var(--tlo-wybrane) !important}
+.cennik tr.wybrany > th,.cennik tr:target > th{box-shadow:inset 4px 0 0 var(--jesion)}
 
-.st{white-space:nowrap;font-weight:500}
-.st::before{content:"";display:inline-block;width:11px;height:11px;margin-right:9px;vertical-align:-.04em;border-radius:50%}
-.st--dost{color:var(--zielen)}.st--dost::before{background:var(--zielen)}
-.st--rez{color:var(--jesion-c)}.st--rez::before{background:var(--jesion)}
-.st--sprz{color:var(--antracyt)}.st--sprz::before{background:var(--antracyt)}
-.hist{font-size:14px;font-weight:500;color:var(--grafit);text-decoration:underline;text-underline-offset:.2em;white-space:nowrap;min-height:44px}
-.hist[aria-expanded=true]{color:var(--antracyt);text-decoration-color:var(--jarz)}
+/* Tagi statusu (zamiast kropek) */
+.st{display:inline-flex;align-items:center;justify-content:center;padding:5px 12px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap;border:1px solid currentColor}
+.st::before{display:none}
+.st--dost{color:var(--zielen);background:transparent}
+.st--rez{color:var(--jesion-c);background:transparent}
+.st--sprz{color:var(--grafit);background:transparent;opacity:0.8}
+
+/* Przycisk historii zmian */
+.hist{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--antracyt);text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;border:1px solid var(--linia);padding:10px 18px;min-height:auto;border-radius:0;background:transparent;transition:all 0.2s}
+.hist::after{content:"→";font-size:15px;line-height:0;transition:transform 0.2s}
+.hist:hover{border-color:var(--antracyt);background:var(--antracyt);color:#fff}
+.hist:hover::after{transform:translateX(4px)}
+.hist[aria-expanded=true]{background:var(--antracyt);color:#fff;border-color:var(--antracyt)}
+.hist[aria-expanded=true]::after{content:"↓";transform:none}
+
+/* Oś czasu w historii */
 .historia[hidden]{display:none}
-.historia td{background:var(--mgla);padding:0 16px 18px}
-.historia ol{list-style:none;margin:0;padding:6px 0 0;display:grid;gap:4px;font-size:15px}
-.historia li{display:grid;grid-template-columns:140px 1fr;gap:16px}
-.historia time{color:var(--grafit)}
+.historia td{background:var(--tlo-wybrane);padding:30px 40px;border-bottom:1px solid var(--linia)}
+.historia ol{list-style:none;margin:0 0 0 10px;padding:0 0 0 24px;display:grid;gap:18px;font-size:15px;border-left:2px solid var(--jesion)}
+.historia li{display:grid;grid-template-columns:140px 1fr;gap:16px;position:relative}
+.historia li::before{content:"";position:absolute;left:-29px;top:4px;width:8px;height:8px;background:var(--jesion);border-radius:50%}
+.historia time{color:var(--antracyt);font-weight:600;font-size:13px;letter-spacing:0.02em}
+.historia span{font-family:var(--szeryf);font-style:italic;font-size:16px;color:var(--grafit)}
+
 .uwagi{margin:24px var(--m) 0;padding:0;list-style:none;font-size:14px;color:var(--grafit);max-width:90ch}
 .uwagi li + li{margin-top:6px}
 .uwagi b{color:var(--antracyt);font-weight:600}
@@ -267,21 +288,21 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
   .stopka p,.stopka .drobny{margin-top:18px}
   .widok{padding-inline:0}
   .model,.lot{border-inline:0}
-    .cennik{width:auto;display:block;margin-inline:var(--m)}
+    .cennik{width:auto;display:block;margin-inline:var(--m);border-top:none;border-bottom:none}
   .cennik tbody{display:block}
   .cennik thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-  .cennik tr[data-dom]{display:grid;grid-template-columns:1fr 1fr;column-gap:14px;row-gap:12px;padding:18px 0;border-bottom:1px solid var(--linia)}
+  .cennik tr[data-dom]{display:grid;grid-template-columns:1fr 1fr;column-gap:14px;row-gap:12px;padding:24px 0;border-bottom:1px solid var(--linia)}
   .cennik tr[data-dom] > *{padding:0;border:0;background:none}
   .cennik tbody th{grid-column:1;grid-row:1}
-  .cennik td.cena{grid-column:2;grid-row:1;text-align:right;align-self:start;font-size:22px;padding-top:2px}
-  .cennik td[data-l]::before{content:attr(data-l);display:block;font-size:12px;font-weight:500;color:var(--grafit);margin-bottom:2px}
+  .cennik td.cena{grid-column:2;grid-row:1;text-align:right;align-self:start;font-size:24px;padding-top:2px}
+  .cennik td[data-l]::before{content:attr(data-l);display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--grafit);margin-bottom:4px}
   .cennik td.p:not(.cena){text-align:left}
   .cennik td.h{text-align:right;align-self:end}
-  .cennik tr.wybrany,.cennik tr:target{background:var(--mgla);box-shadow:-12px 0 0 var(--mgla),12px 0 0 var(--mgla)}
+  .cennik tr.wybrany,.cennik tr:target{background:var(--tlo-wybrane);box-shadow:-16px 0 0 var(--tlo-wybrane),16px 0 0 var(--tlo-wybrane)}
   .cennik tr.wybrany > th,.cennik tr:target > th{box-shadow:none}
   .historia{display:block}
-  .historia td{display:block;padding:12px 0 16px;background:none}
-  .historia li{grid-template-columns:1fr;gap:0}
+  .historia td{display:block;padding:20px 0 24px;background:none}
+  .historia li{grid-template-columns:1fr;gap:4px}
   .uwagi{margin-inline:var(--m)}
 }
 @media (max-width:420px){
@@ -295,8 +316,7 @@ h2{font-variation-settings:"opsz" 34}
 .hero h1{font-variation-settings:"opsz" 26}
 h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
 .kotwice__nazwa,.fakty__siatka dd,.cennik tbody th,.cennik .cena{font-variation-settings:"opsz" 14}
-.cennik .cena{font-weight:500}
-.cennik tbody th small{font-family:var(--font);font-variation-settings:normal}
+.plan-id{font-variation-settings:"opsz" 11;font-weight:500}
 
 </style>
 <meta property="og:title" content="JARZĘBINOWE – domy w zabudowie bliźniaczej, Mikołów-Mokre">
@@ -415,7 +435,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">899 000 zł</td>
         <td class="p" data-l="Cena za m²">7 532,47 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1A">Historia zmian (3)</button></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1A">Historia zmian</button></td>
       </tr>
       <tr class="historia" id="h-1A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 819 000 zł (6 862,17 zł/m²)</span></li></ol></td></tr>
           <tr id="dom-1B" data-dom="1B">
@@ -426,7 +446,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">879 000 zł</td>
         <td class="p" data-l="Cena za m²">7 364,89 zł</td>
         <td data-l="Status"><span class="st st--sprz">Sprzedany</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1B">Historia zmian (4)</button></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1B">Historia zmian</button></td>
       </tr>
       <tr class="historia" id="h-1B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: dostępny → sprzedany</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
           <tr id="dom-2A" data-dom="2A">
@@ -437,7 +457,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">879 000 zł</td>
         <td class="p" data-l="Cena za m²">7 364,89 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-2A">Historia zmian (3)</button></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-2A">Historia zmian</button></td>
       </tr>
       <tr class="historia" id="h-2A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
           <tr id="dom-2B" data-dom="2B">
@@ -448,7 +468,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">879 000 zł</td>
         <td class="p" data-l="Cena za m²">7 364,89 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-2B">Historia zmian (3)</button></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-2B">Historia zmian</button></td>
       </tr>
       <tr class="historia" id="h-2B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
           <tr id="dom-3A" data-dom="3A">
@@ -459,7 +479,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">899 000 zł</td>
         <td class="p" data-l="Cena za m²">7 532,47 zł</td>
         <td data-l="Status"><span class="st st--rez">Rezerwacja</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-3A">Historia zmian (4)</button></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-3A">Historia zmian</button></td>
       </tr>
       <tr class="historia" id="h-3A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: dostępny → rezerwacja</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 819 000 zł (6 862,17 zł/m²)</span></li></ol></td></tr>
           <tr id="dom-3B" data-dom="3B">
@@ -470,7 +490,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">929 000 zł</td>
         <td class="p" data-l="Cena za m²">7 783,83 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-3B">Historia zmian (4)</button></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-3B">Historia zmian</button></td>
       </tr>
       <tr class="historia" id="h-3B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: rezerwacja → dostępny</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 839 000 zł → 929 000 zł (7 783,83 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: rezerwacja</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 839 000 zł (7 029,74 zł/m²)</span></li></ol></td></tr>
         </tbody>
@@ -566,8 +586,8 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
   </div>
 </footer>
 <script>
-// JARZĘBINOWE v2 – film, zakładki, model 3D osiedla (klik w dom -> wiersz cennika), historia cen, formularz.
-// Bez JavaScriptu lista domów pod modelem prowadzi do wiersza tabeli przez #dom-XX.
+// JARZĘBINOWE v2 – film, przełącznik planu, wybór domu (plan <-> tabela), historia cen, formularz.
+// Strona działa też bez JavaScriptu (plan prowadzi do wiersza tabeli przez #dom-XX).
 (() => {
   const podglad = document.body.hasAttribute('data-podglad');
 
@@ -598,7 +618,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
     if (b) b.addEventListener('click', () => { if (v.paused) { wczytaj(); v.play(); } else v.pause(); });
   }
 
-  // ---------------------------------------------------------------- zakładki: model 3D / z lotu ptaka
+  // ---------------------------------------------------------------- zakładki: plan / z lotu ptaka
   const zakl = [...document.querySelectorAll('.zakladki [role=tab]')];
   const pokaz = (t) => zakl.forEach((x) => {
     const on = x === t;
