@@ -90,52 +90,53 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .zakladki button{min-height:40px;padding:8px 20px;border-radius:999px;font-size:14px;font-weight:600;color:var(--grafit)}
 .zakladki button[aria-selected=true]{background:var(--antracyt);color:#fff}
 .widok{padding-inline:var(--m)}
-.plan,.lot{margin:0;border:1px solid var(--linia);background:var(--mgla)}
+.lot{margin:0;border:1px solid var(--linia);background:var(--mgla)}
 .lot img{width:100%;aspect-ratio:2000/1240;object-fit:cover}
 
-/* Nowy Plan Osiedla HTML/CSS */
-.plan { position: relative; overflow: hidden; padding-bottom: 2rem; }
-.plan-header { background: #EEF1F3; padding: 1.5rem 2rem; border-bottom: 1px solid var(--linia); font-size: 1.1rem; color: var(--grafit); position: relative; }
-.plan-header::after { content: '↑ N'; position: absolute; right: 2rem; top: 1.5rem; font-weight: bold; color: var(--antracyt); }
-.plan-grid { display: flex; width: 100%; min-width: 800px; padding: 2rem 2rem 4rem; position: relative; background-image: radial-gradient(var(--grafit) 1px, transparent 0); background-size: 20px 20px; background-color: #fff; }
-.plan-sasiad { width: 40px; background: #EEF1F3; border: 1px solid var(--linia); position: relative; margin-right: 1rem; }
-.plan-sasiad span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-90deg); white-space: nowrap; color: var(--grafit); font-size: 0.9rem; }
-.plan-laka { width: 40px; border-left: 1px dashed var(--linia); position: relative; margin-left: 1rem; }
-.plan-laka span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg); white-space: nowrap; color: var(--grafit); font-size: 0.9rem; }
-
-.plan-plot { display: flex; flex: 1; border: 1px solid var(--linia); position: relative; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; text-decoration: none; color: inherit; }
-.plan-plot:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); z-index: 10; }
-.plan-plot.status-dost { background-color: #E5EEDF; } /* Dostępny */
-.plan-plot.status-sprz { background-color: #5A6166; color: #fff; } /* Sprzedany */
-.plan-plot.status-rez { background: repeating-linear-gradient(45deg, #fff, #fff 10px, #FDF4EB 10px, #FDF4EB 20px); border-color: var(--jesion); } /* Rezerwacja */
-
-/* Kształt Domu (aksonometria) */
-.plan-house-shape { position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 70%; height: 180px; display: flex; flex-direction: column; align-items: center; pointer-events: none; }
-.plan-roof { width: 100%; height: 60%; background: #2C3236; position: relative; display: flex; justify-content: center; align-items: center; }
-.plan-roof::after { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: rgba(255,255,255,0.1); }
-.plan-wall { width: 90%; height: 40%; background: #fff; border: 1px solid #D5DBDF; border-top: none; display: flex; justify-content: space-around; align-items: center; padding: 0 10%; }
-.plan-window { width: 15px; height: 25px; background: #8BA1B2; }
-.plan-door { width: 20px; height: 35px; background: #A4704A; align-self: flex-end; }
-/* Odwrócenie dla budynków B (lustrzane odbicie) */
-.plan-plot:nth-child(even) .plan-wall { flex-direction: row-reverse; }
-
-.plan-info { position: absolute; bottom: 1.5rem; left: 1.5rem; }
-.plan-id { font: 500 3rem var(--szeryf); margin-bottom: 0.5rem; line-height: 1; }
-.plan-price { font-weight: 600; font-size: 1.2rem; font-family: var(--font); margin-bottom: 0.25rem; }
-.plan-status { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
-.plan-plot.status-dost .plan-status { color: var(--zielen); }
-.plan-plot.status-sprz .plan-status { color: #fff; opacity: 0.8; }
-.plan-plot.status-rez .plan-status { color: var(--jesion-c); }
-
-.plan-footer { display: flex; justify-content: space-between; padding: 1rem 2rem 0; font-size: 0.9rem; color: var(--grafit); position: absolute; bottom: 1rem; width: 100%; left: 0; pointer-events: none; }
-
-.plan-wrapper { overflow-x: auto; width: 100%; }
-
-.legenda{display:flex;flex-wrap:wrap;gap:6px 26px;margin:0;padding:12px 16px;list-style:none; border-top: 1px solid var(--linia); font-size:14px;color:var(--grafit);}
-.znak{display:inline-block;width:16px;height:16px;margin-right:8px;vertical-align:-.2em;border:1.5px solid var(--grafit)}
-.znak--dost{background:var(--zielen-t);border-color:var(--zielen)}
-.znak--rez{border-color:var(--jesion);background: repeating-linear-gradient(45deg, #fff, #fff 4px, #FDF4EB 4px, #FDF4EB 8px);}
-.znak--sprz{background:var(--antracyt);border-color:var(--antracyt)}
+/* Model 3D osiedla (SVG rysowany skryptem; geometria wg projektu PAB) */
+.model{margin:0;border:1px solid var(--linia);background:#fff}
+.model__pasek{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:12px 16px;border-bottom:1px solid var(--linia)}
+.model__legenda{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0;padding:0;list-style:none;font-size:14px;color:var(--grafit)}
+.m-zn{display:inline-block;width:18px;height:14px;margin-right:8px;vertical-align:-.15em;border:1px solid rgba(56,62,66,.35)}
+.m-zn--dost{background:#C3D9AE}
+.m-zn--rez{background:repeating-linear-gradient(45deg,#C49A74 0 2.4px,#F3EDE7 2.4px 7px)}
+.m-zn--sprz{background:#A3ACB2}
+.model__widoki{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--linia);border-radius:999px}
+.model__widoki button{min-height:36px;padding:6px 15px;border-radius:999px;font-size:13px;font-weight:600;color:var(--grafit)}
+.model__widoki button[aria-pressed=true]{background:var(--antracyt);color:#fff}
+.model__scena{position:relative;width:100%;aspect-ratio:16/9;max-height:82vh;background:#E6EBE3;overflow:hidden;cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none}
+.model__scena.ciagnie{cursor:grabbing}
+.model__scena svg{position:absolute;inset:0;width:100%;height:100%}
+.model__scena [data-dom]{cursor:pointer}
+.model__scena.ciagnie [data-dom]{cursor:grabbing}
+.model__brak{position:absolute;left:16px;bottom:12px;margin:0;font-size:14px;color:var(--grafit)}
+.model__scena.gotowy .model__brak{display:none}
+.model__dymek{position:absolute;z-index:2;max-width:270px;padding:10px 12px;background:#fff;border:1px solid var(--linia);border-radius:3px;font-size:14px;line-height:1.4;pointer-events:none}
+.model__dymek b{font:500 19px/1 var(--szeryf);font-variation-settings:"opsz" 14;margin-right:4px}
+.model__dymek small{display:block;margin-top:4px;color:var(--grafit);font-size:13px}
+.m-pin__id{font:500 17px var(--szeryf);font-variation-settings:"opsz" 14;fill:#fff}
+.m-pin__id--maly{font:700 12px var(--font)}
+.m-pin__st{font:600 11px var(--font);fill:#fff}
+.m-pin__cena{font:600 13px var(--font);fill:#fff}
+.m-et{font:500 12px var(--font);fill:#5A6166;paint-order:stroke;stroke:#E6EBE3;stroke-width:3px;stroke-linejoin:round}
+.m-kompas text{font:700 11px var(--font);fill:#383E42}
+.model__domy{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:1px;margin:0;padding:0;list-style:none;background:var(--linia);border-top:1px solid var(--linia)}
+.m-dom{--k:#4A6B35;display:flex;flex-direction:column;gap:3px;height:100%;padding:16px 16px 18px;background:#fff;text-decoration:none;box-shadow:inset 0 4px 0 var(--k)}
+.m-dom:hover{background:#F7F8F9}
+.m-dom[aria-current=true]{background:var(--mgla);box-shadow:inset 0 4px 0 var(--k),inset 0 0 0 2px var(--antracyt)}
+.m-dom b{font:500 28px/1.1 var(--szeryf);font-variation-settings:"opsz" 14}
+.m-dom__st{font-size:14px;font-weight:500;color:var(--k)}
+.m-dom__cena{font-size:15px;font-weight:600}
+.m-dom--rez{--k:#A4704A}.m-dom--rez .m-dom__st{color:var(--jesion-c)}
+.m-dom--sprz{--k:#5A6166}.m-dom--sprz .m-dom__cena{color:var(--grafit)}
+.model__uwaga{margin:0;padding:12px 16px;border-top:1px solid var(--linia);font-size:13px;color:var(--grafit)}
+@media (max-width:900px){
+  .model__domy{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .model__pasek{padding:10px 12px}
+  .model__scena{aspect-ratio:16/10}
+  .m-dom{padding:12px 12px 14px}
+  .m-dom b{font-size:24px}
+}
 
 
 .cennik{width:calc(100% - 2 * var(--m));margin:clamp(40px,4.5vw,64px) var(--m) 0;border-collapse:collapse}
@@ -265,7 +266,7 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
   .formularz{margin-top:40px}
   .stopka p,.stopka .drobny{margin-top:18px}
   .widok{padding-inline:0}
-  .plan,.lot{border-inline:0}
+  .model,.lot{border-inline:0}
     .cennik{width:auto;display:block;margin-inline:var(--m)}
   .cennik tbody{display:block}
   .cennik thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
@@ -295,7 +296,6 @@ h2{font-variation-settings:"opsz" 34}
 h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
 .kotwice__nazwa,.fakty__siatka dd,.cennik tbody th,.cennik .cena{font-variation-settings:"opsz" 14}
 .cennik .cena{font-weight:500}
-.plan-id{font-variation-settings:"opsz" 11;font-weight:500}
 .cennik tbody th small{font-family:var(--font);font-variation-settings:normal}
 
 </style>
@@ -360,137 +360,45 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
 <section class="ceny" id="ceny" aria-labelledby="ceny-t">
   <div class="siatka ceny__glowa">
     <h2 id="ceny-t">Plan osiedla i&nbsp;ceny</h2>
-    <p>Domy stoją w&nbsp;jednym rzędzie wzdłuż ulicy, ogrodami na południe. Wybierz dom na planie, a&nbsp;tabela pokaże jego cenę i&nbsp;historię zmian.<span>Wolne domy: 4 z&nbsp;6. Stan na 16.11.2026, 09:49. Ceny brutto z&nbsp;VAT 8%, stan deweloperski.</span></p>
+    <p>Domy stoją w&nbsp;jednym rzędzie wzdłuż ulicy, ogrodami na południe. Kliknij dom na modelu, a&nbsp;strona przejdzie do jego ceny i&nbsp;historii zmian w&nbsp;tabeli. Model obrócisz, przeciągając go.<span>Wolne domy: <b data-wolne>4</b> z&nbsp;6. Stan na 16.11.2026, 09:49. Ceny brutto z&nbsp;VAT 8%, stan deweloperski.</span></p>
   </div>
 
   <div class="zakladki" role="tablist" aria-label="Widok osiedla">
-    <button type="button" role="tab" id="z-plan" aria-selected="true" aria-controls="p-plan">Plan osiedla</button>
+    <button type="button" role="tab" id="z-model" aria-selected="true" aria-controls="p-model">Model 3D</button>
     <button type="button" role="tab" id="z-lot" aria-selected="false" aria-controls="p-lot" tabindex="-1">Z lotu ptaka</button>
   </div>
 
-  <div class="widok" id="p-plan" role="tabpanel" aria-labelledby="z-plan">
-    <div class="plan">
-      <div class="plan-header">
-        ul. Jarzębinowa
-      </div>
-      
-      <div class="plan-wrapper">
-        <div class="plan-grid">
-          
-          <div class="plan-sasiad">
-            <span>sąsiedni dom</span>
-          </div>
-
-          <!-- Budynek 1 -->
-          <a href="#dom-1A" class="plan-plot status-dost" data-dom="1A" aria-label="Dom 1A: 899 000 zł, dostępny">
-            <div class="plan-house-shape">
-              <div class="plan-roof"></div>
-              <div class="plan-wall">
-                <div class="plan-window"></div>
-                <div class="plan-door"></div>
-              </div>
-            </div>
-            <div class="plan-info">
-              <div class="plan-id">1A</div>
-              <div class="plan-price">899 000 zł</div>
-              <div class="plan-status">dostępny</div>
-            </div>
-          </a>
-          <a href="#dom-1B" class="plan-plot status-sprz" data-dom="1B" aria-label="Dom 1B: 879 000 zł, sprzedany">
-             <div class="plan-house-shape">
-              <div class="plan-roof"></div>
-              <div class="plan-wall">
-                <div class="plan-window"></div>
-                <div class="plan-door"></div>
-              </div>
-            </div>
-            <div class="plan-info">
-              <div class="plan-id">1B</div>
-              <div class="plan-price" style="text-decoration: line-through;">879 000 zł</div>
-              <div class="plan-status">sprzedany</div>
-            </div>
-          </a>
-
-          <!-- Budynek 2 -->
-          <a href="#dom-2A" class="plan-plot status-dost" data-dom="2A" aria-label="Dom 2A: 879 000 zł, dostępny" style="border-left: 1px solid var(--linia);">
-             <div class="plan-house-shape">
-              <div class="plan-roof"></div>
-              <div class="plan-wall">
-                <div class="plan-window"></div>
-                <div class="plan-door"></div>
-              </div>
-            </div>
-            <div class="plan-info">
-              <div class="plan-id">2A</div>
-              <div class="plan-price">879 000 zł</div>
-              <div class="plan-status">dostępny</div>
-            </div>
-          </a>
-          <a href="#dom-2B" class="plan-plot status-dost" data-dom="2B" aria-label="Dom 2B: 879 000 zł, dostępny">
-             <div class="plan-house-shape">
-              <div class="plan-roof"></div>
-              <div class="plan-wall">
-                <div class="plan-window"></div>
-                <div class="plan-door"></div>
-              </div>
-            </div>
-            <div class="plan-info">
-              <div class="plan-id">2B</div>
-              <div class="plan-price">879 000 zł</div>
-              <div class="plan-status">dostępny</div>
-            </div>
-          </a>
-
-          <!-- Budynek 3 -->
-          <a href="#dom-3A" class="plan-plot status-rez" data-dom="3A" aria-label="Dom 3A: 899 000 zł, rezerwacja" style="border-left: 1px solid var(--linia);">
-             <div class="plan-house-shape">
-              <div class="plan-roof"></div>
-              <div class="plan-wall">
-                <div class="plan-window"></div>
-                <div class="plan-door"></div>
-              </div>
-            </div>
-            <div class="plan-info">
-              <div class="plan-id">3A</div>
-              <div class="plan-price">899 000 zł</div>
-              <div class="plan-status">rezerwacja</div>
-            </div>
-          </a>
-          <a href="#dom-3B" class="plan-plot status-dost" data-dom="3B" aria-label="Dom 3B: 929 000 zł, dostępny">
-             <div class="plan-house-shape">
-              <div class="plan-roof"></div>
-              <div class="plan-wall">
-                <div class="plan-window"></div>
-                <div class="plan-door"></div>
-              </div>
-            </div>
-            <div class="plan-info">
-              <div class="plan-id">3B</div>
-              <div class="plan-price">929 000 zł</div>
-              <div class="plan-status">dostępny</div>
-            </div>
-          </a>
-          
-          <div class="plan-laka">
-            <span>łąka</span>
-          </div>
-
-          <div class="plan-footer">
-            <span>ogrody od południa</span>
-            <span>las ok. 300 m ↓</span>
-          </div>
-
+  <div class="widok" id="p-model" role="tabpanel" aria-labelledby="z-model">
+    <figure class="model">
+      <div class="model__pasek">
+        <ul class="model__legenda" aria-label="Kolor działki oznacza status domu">
+          <li><span class="m-zn m-zn--dost"></span>dostępny</li>
+          <li><span class="m-zn m-zn--rez"></span>rezerwacja</li>
+          <li><span class="m-zn m-zn--sprz"></span>sprzedany</li>
+        </ul>
+        <div class="model__widoki" role="group" aria-label="Kierunek widoku modelu">
+          <button type="button" data-widok="ulica" aria-pressed="true">Od ulicy</button>
+          <button type="button" data-widok="ogrody" aria-pressed="false">Od ogrodów</button>
+          <button type="button" data-widok="gora" aria-pressed="false">Z góry</button>
         </div>
       </div>
-      
-      <ul class="legenda" aria-label="Oznaczenia na planie">
-        <li><span class="znak znak--dost"></span>dostępny</li>
-        <li><span class="znak znak--rez"></span>rezerwacja</li>
-        <li><span class="znak znak--sprz"></span>sprzedany (cena zostaje w&nbsp;tabeli)</li>
-      </ul>
-    </div>
+      <div class="model__scena" data-model>
+        <svg role="img" aria-label="Model 3D osiedla: trzy bliźniaki w rzędzie wzdłuż ul. Jarzębinowej, od zachodu domy 1A, 1B, 2A, 2B, 3A i 3B. Od ulicy podjazdy i jarzęby, od południa ogrody z tarasami. Status i cenę każdego domu podaje lista pod modelem."></svg>
+        <p class="model__brak">Model osiedla wymaga włączonego JavaScriptu. Wybierz dom z listy poniżej.</p>
+        <div class="model__dymek" hidden></div>
+      </div>
+      <ol class="model__domy" aria-label="Domy na osiedlu – wybierz, aby zobaczyć cenę i historię w tabeli">
+        <li><a class="m-dom m-dom--dost" href="#dom-1A" data-dom="1A"><b>1A</b><span class="m-dom__st">dostępny</span><span class="m-dom__cena">899 000 zł</span></a></li>
+        <li><a class="m-dom m-dom--sprz" href="#dom-1B" data-dom="1B"><b>1B</b><span class="m-dom__st">sprzedany</span><span class="m-dom__cena">879 000 zł</span></a></li>
+        <li><a class="m-dom m-dom--dost" href="#dom-2A" data-dom="2A"><b>2A</b><span class="m-dom__st">dostępny</span><span class="m-dom__cena">879 000 zł</span></a></li>
+        <li><a class="m-dom m-dom--dost" href="#dom-2B" data-dom="2B"><b>2B</b><span class="m-dom__st">dostępny</span><span class="m-dom__cena">879 000 zł</span></a></li>
+        <li><a class="m-dom m-dom--rez" href="#dom-3A" data-dom="3A"><b>3A</b><span class="m-dom__st">rezerwacja</span><span class="m-dom__cena">899 000 zł</span></a></li>
+        <li><a class="m-dom m-dom--dost" href="#dom-3B" data-dom="3B"><b>3B</b><span class="m-dom__st">dostępny</span><span class="m-dom__cena">929 000 zł</span></a></li>
+      </ol>
+      <figcaption class="model__uwaga">Model poglądowy wg projektu architektonicznego: bryły, dach 40°, okna, okna dachowe i panele PV, a&nbsp;także podjazdy, tarasy, ogrodzenia i&nbsp;jarzęby z&nbsp;planu zagospodarowania. Przeciągnij model, aby go obrócić. Kliknij dom albo działkę, aby przejść do ceny w&nbsp;tabeli.</figcaption>
+    </figure>
   </div>
-  
+
   <div class="widok" id="p-lot" role="tabpanel" aria-labelledby="z-lot" hidden>
     <figure class="lot"><img src="zlotuptaka.png" alt="Osiedle z lotu ptaka: trzy bliźniaki przy ulicy, za nimi łąka i las" width="1672" height="941" loading="lazy" decoding="async">      <figcaption>Wizualizacja z lotu ptaka. Od wschodu i od południa łąka, dalej las.</figcaption></figure>
   </div>
@@ -658,8 +566,8 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
   </div>
 </footer>
 <script>
-// JARZĘBINOWE v2 – film, przełącznik planu, wybór domu (plan <-> tabela), historia cen, formularz.
-// Strona działa też bez JavaScriptu (plan prowadzi do wiersza tabeli przez #dom-XX).
+// JARZĘBINOWE v2 – film, zakładki, model 3D osiedla (klik w dom -> wiersz cennika), historia cen, formularz.
+// Bez JavaScriptu lista domów pod modelem prowadzi do wiersza tabeli przez #dom-XX.
 (() => {
   const podglad = document.body.hasAttribute('data-podglad');
 
@@ -690,7 +598,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
     if (b) b.addEventListener('click', () => { if (v.paused) { wczytaj(); v.play(); } else v.pause(); });
   }
 
-  // ---------------------------------------------------------------- zakładki: plan / z lotu ptaka
+  // ---------------------------------------------------------------- zakładki: model 3D / z lotu ptaka
   const zakl = [...document.querySelectorAll('.zakladki [role=tab]')];
   const pokaz = (t) => zakl.forEach((x) => {
     const on = x === t;
@@ -705,34 +613,384 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
     });
   });
 
-  // ---------------------------------------------------------------- wybór domu: plan <-> tabela
-  const wybierz = (id, przewin) => {
-    // Usunięcie podświetlenia ze wszystkich
-    document.querySelectorAll('.plan-plot').forEach((g) => g.classList.remove('wybrany'));
-    document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.classList.remove('wybrany'));
-    
-    // Dodanie podświetlenia do wybranego
-    const p = document.querySelector(`.plan-plot[data-dom="${id}"]`);
-    if(p) p.classList.add('wybrany');
-    
-    const r = document.querySelector(`.cennik tr[data-dom="${id}"]`);
-    if(r) r.classList.add('wybrany');
+  // ---------------------------------------------------------------- model 3D osiedla (SVG, bez bibliotek)
+  // Bryły wg projektu PAB (rysunki B1–B3 i PZT): budynek 15,20 × 10,40 m, okap +4,28, kalenica +8,64 (dach 40°),
+  // teren −0,30; działki 11,60 × 32,00 m; okna, okna dachowe, panele PV, podjazdy, tarasy, ogrodzenia, jarzęby.
+  // Układ: x – na wschód, y – na północ, z – w górę [m], (0,0) = narożnik SW terenu.
+  // Ceny i statusy czytane z tabeli cen niżej – po zmianie tabeli model zmienia się sam.
+  const model = (() => {
+    const scena = document.querySelector('[data-model]');
+    const svg = scena && scena.querySelector('svg');
+    if (!svg) return null;
+    const dymek = scena.querySelector('.model__dymek');
+    const DOMY = ['1A', '1B', '2A', '2B', '3A', '3B'];
+    const KOL = { dost: '#4A6B35', rez: '#A4704A', sprz: '#5A6166' };          // pinezki
+    const DZ = { dost: '#C3D9AE', rez: 'url(#m-rez)', sprz: '#A3ACB2' };       // działki
 
+    // ---- dane z tabeli cen
+    const dane = {};
+    DOMY.forEach((id) => {
+      const r = document.querySelector('.cennik tr[data-dom="' + id + '"]');
+      const q = (s) => (r && r.querySelector(s) ? r.querySelector(s).textContent.trim() : '');
+      const st = r && r.querySelector('.st');
+      const k = st && (st.className.match(/st--(dost|rez|sprz)/) || [])[1];
+      dane[id] = { st: k || 'dost', status: q('.st').toLowerCase() || 'dostępny', cena: q('.cena'), m2: q('td[data-l="Cena za m²"]') };
+    });
+    document.querySelectorAll('.model__domy [data-dom]').forEach((a) => {
+      const d = dane[a.dataset.dom];
+      if (!d) return;
+      a.className = 'm-dom m-dom--' + d.st;
+      a.querySelector('.m-dom__st').textContent = d.status;
+      a.querySelector('.m-dom__cena').textContent = d.cena;
+    });
+    const wolne = document.querySelector('[data-wolne]');
+    if (wolne) wolne.textContent = DOMY.filter((id) => dane[id].st === 'dost').length;
+
+    // ---- geometria (metry)
+    const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+    const SL = [-0.569, -0.478, 0.669];                                          // kierunek do słońca: płd.-zach., 42°
+    const odcien = (h, k) => '#' + [1, 3, 5].map((i) => Math.min(255, Math.round(parseInt(h.slice(i, i + 2), 16) * k)).toString(16).padStart(2, '0')).join('');
+    const cien = (h, n) => (n ? odcien(h, 0.86 + 0.16 * Math.max(0, dot(n, SL))) : h);
+    const T = -0.3, OK = 4.28, KA = 8.64, KAT = 40 * Math.PI / 180, TG = Math.tan(KAT), SN = Math.sin(KAT), CS = Math.cos(KAT);
+    const Y0 = 15.6, Y1 = 26, YM = 20.8, BX = [4, 27.2, 50.4];
+    const C = { biel: '#F3F2EE', drewno: '#A4704A', antr: '#383E42', dach: '#41474B', cokol: '#4A4D50', szyba: '#5E6F7A',
+      satyna: '#A7B2B8', okd: '#4F5C66', pv: '#232A33', rama: '#2B3033', kostka: '#C4C6C7', taras: '#D5D7D4', chodnik: '#CDD1D3', asfalt: '#8A9095' };
+    const N = [0, 1, 0], S = [0, -1, 0], W = [-1, 0, 0], E = [1, 0, 0], G = [0, 0, 1], RN = [0, SN, CS], RS = [0, -SN, CS];
+    const ziemia = [], obiekty = [];
+
+    function polowa(id, b, A) {                                                   // lokal A (zach.) albo B (wsch., lustro)
+      const bx = BX[b], x0 = bx + (A ? 0 : 7.6), x1 = x0 + 7.6, xg = A ? x0 : x1, NG = A ? W : E;
+      const zk = (a, c) => (A ? [bx + a, bx + c] : [bx + 15.2 - c, bx + 15.2 - a]);
+      const cz = [];
+      const dodaj = (p, n, f, o) => cz.push(Object.assign({ p, n, f: cien(f, n), dom: id }, o));
+      const okno = (p, n, f) => dodaj(p, n, f || C.szyba, { s: C.rama, w: 0.7 });
+      const pN = (a, c, za, zb) => [[a, Y1, za], [c, Y1, za], [c, Y1, zb], [a, Y1, zb]];
+      const pS = (a, c, za, zb) => [[a, Y0, za], [c, Y0, za], [c, Y0, zb], [a, Y0, zb]];
+      const pG = (a, c, za, zb) => [[xg, Y0 + a, za], [xg, Y0 + c, za], [xg, Y0 + c, zb], [xg, Y0 + a, zb]];
+      const zN = (y) => OK + (Y1 - y) * TG, zS = (y) => OK + (y - Y0) * TG;
+      const pDN = (a, c, ya, yb) => [[a, ya, zN(ya)], [c, ya, zN(ya)], [c, yb, zN(yb)], [a, yb, zN(yb)]];
+      const pDS = (a, c, ya, yb) => [[a, ya, zS(ya)], [c, ya, zS(ya)], [c, yb, zS(yb)], [a, yb, zS(yb)]];
+      // elewacja frontowa (płn.): tynk, strefa wejścia z termojesionu, cokół, obróbka okapu, okna, drzwi, doświetlenie
+      dodaj(pN(x0, x1, T, OK), N, C.biel, { k: 1 });
+      dodaj(pN(...zk(5.3, 7.6), 0.15, 4.18), N, C.drewno);
+      dodaj(pN(x0, x1, T, 0.15), N, C.cokol);
+      dodaj(pN(x0, x1, 4.18, OK), N, C.antr);
+      okno(pN(...zk(1.2, 2.7), 1, 2.4), N);
+      okno(pN(...zk(3.96, 4.56), 1.6, 2.4), N, C.satyna);
+      okno(pN(...zk(5.6, 6.7), 0, 2.4), N, C.antr);
+      okno(pN(...zk(6.7, 7.2), 0, 2.4), N, C.satyna);
+      // daszek nad wejściem (wysięg 1,0 m) – widoczny tylko razem z elewacją frontową
+      const [da, dc] = zk(5.2, 7.6), dz = A ? da : dc;
+      dodaj([[da, Y1, 2.78], [dc, Y1, 2.78], [dc, Y1 + 1, 2.78], [da, Y1 + 1, 2.78]], G, C.antr, { v: [N], s: C.rama, w: 0.5 });
+      dodaj([[da, Y1 + 1, 2.62], [dc, Y1 + 1, 2.62], [dc, Y1 + 1, 2.78], [da, Y1 + 1, 2.78]], N, C.antr, { s: C.rama, w: 0.5 });
+      dodaj([[dz, Y1, 2.62], [dz, Y1 + 1, 2.62], [dz, Y1 + 1, 2.78], [dz, Y1, 2.78]], NG, C.antr, { v: [N, NG] });
+      // elewacja ogrodowa (płd.): drzwi przesuwne HS 3,6 m i okno balkonowe
+      dodaj(pS(x0, x1, T, OK), S, C.biel, { k: 1 });
+      dodaj(pS(x0, x1, T, 0.15), S, C.cokol);
+      dodaj(pS(x0, x1, 4.18, OK), S, C.antr);
+      const [ha, hc] = zk(1, 4.6);
+      okno(pS(ha, hc, 0, 2.4), S);
+      cz.push({ l: [[[(ha + hc) / 2, Y0, 0], [(ha + hc) / 2, Y0, 2.4]]], n: S, s: C.rama, w: 1.2 });
+      okno(pS(...zk(5.2, 6.8), 0, 2.4), S);
+      // szczyt: deska od +2,85 do 25 cm pod krawędzią dachu (nad nią wiatrownica), niżej tynk i cokół
+      dodaj([[xg, Y0, T], [xg, Y1, T], [xg, Y1, OK], [xg, YM, KA], [xg, Y0, OK]], NG, C.antr, { k: 1 });
+      dodaj([[xg, Y0, 2.85], [xg, Y1, 2.85], [xg, Y1, OK - 0.25], [xg, YM, KA - 0.25], [xg, Y0, OK - 0.25]], NG, C.drewno);
+      dodaj(pG(0, 10.4, T, 2.85), NG, C.biel);
+      dodaj(pG(0, 10.4, T, 0.15), NG, C.cokol);
+      [[3.2, 5, 0.5, 2.4], [8, 9, 1, 2.4], [2.1, 3.5, 2.95, 5.25], [4.5, 5.7, 3.85, 5.25], [6.8, 8, 3.85, 5.25]]
+        .forEach(([a, c, za, zb]) => okno(pG(a, c, za, zb), NG));
+      // dach: połacie z rąbkiem co 50 cm, okna dachowe 78 × 118, panele PV (7 szt. na połaci płd.)
+      dodaj([[x0, Y1, OK], [x1, Y1, OK], [x1, YM, KA], [x0, YM, KA]], RN, C.dach, { k: 1 });
+      dodaj([[x0, Y0, OK], [x1, Y0, OK], [x1, YM, KA], [x0, YM, KA]], RS, C.dach, { k: 1 });
+      const rabki = [];
+      for (let k = 0; k < 30; k++) { const x = bx + 0.25 + 0.5 * k; if (x > x0 && x < x1) rabki.push(x); }
+      cz.push({ l: rabki.map((x) => [[x, Y1, OK], [x, YM, KA]]), n: RN, s: '#30363A', w: 0.5 });
+      cz.push({ l: rabki.map((x) => [[x, Y0, OK], [x, YM, KA]]), n: RS, s: '#30363A', w: 0.5 });
+      [[2.11, 2.89], [5.67, 6.45]].forEach(([a, c]) => okno(pDN(...zk(a, c), Y0 + 8.55, Y0 + 9.45), RN, C.okd));
+      okno(pDS(...zk(2.11, 2.89), Y0 + 0.95, Y0 + 1.85), RS, C.okd);
+      const xc = A ? bx + 3.8 : bx + 11.4;
+      const panel = (xa, s0) => {
+        const s1 = s0 + 1.722, ya = Y0 + s0 * CS, yb = Y0 + s1 * CS, za = OK + s0 * SN, zb = OK + s1 * SN;
+        dodaj([[xa, ya, za], [xa + 1.134, ya, za], [xa + 1.134, yb, zb], [xa, yb, zb]], RS, C.pv, { s: '#5B6773', w: 0.5 });
+      };
+      for (let i = 0; i < 4; i++) panel(xc - 2.298 + i * 1.154, 2.72);
+      for (let i = 0; i < 3; i++) panel(xc - 1.721 + i * 1.154, 4.462);
+      obiekty.push({ id, c: [(x0 + x1) / 2, YM, 4], cz });
+    }
+    BX.forEach((_, b) => { polowa(DOMY[2 * b], b, true); polowa(DOMY[2 * b + 1], b, false); });
+
+    // ---- teren wg PZT: działki (kolor = status), podjazdy, dojścia, podesty, tarasy, chodnik, jezdnia
+    const pros = (xa, ya, xb, yb, f, dom) => ziemia.push({ p: [[xa, ya, T], [xb, ya, T], [xb, yb, T], [xa, yb, T]], f, dom });
+    DOMY.forEach((id, i) => pros(11.6 * i, 0, 11.6 * (i + 1), 32, null, id));
+    const linieMP = [];
+    BX.forEach((_, b) => {
+      const o = 23.2 * b, dA = DOMY[2 * b], dB = DOMY[2 * b + 1];
+      pros(o + 0.4, 26.5, o + 5.4, 32, C.kostka, dA); pros(o + 17.8, 26.5, o + 22.8, 32, C.kostka, dB);   // podjazdy (2 MP)
+      pros(o + 9.4, 27, o + 10.9, 32, C.kostka, dA); pros(o + 12.3, 27, o + 13.8, 32, C.kostka, dB);      // dojścia
+      pros(o + 9.1, 26, o + 11.2, 27, C.kostka, dA); pros(o + 12, 26, o + 14.1, 27, C.kostka, dB);        // podesty wejść
+      pros(o + 6, 30.3, o + 7.6, 31.1, C.kostka, dA); pros(o + 15.6, 30.3, o + 17.2, 31.1, C.kostka, dB);  // miejsca na pojemniki
+      pros(o + 4.4, 12.1, o + 9.4, 15.6, C.taras, dA); pros(o + 13.8, 12.1, o + 18.8, 15.6, C.taras, dB); // tarasy
+      linieMP.push([[o + 2.9, 26.8, T], [o + 2.9, 31.7, T]], [[o + 20.3, 26.8, T], [o + 20.3, 31.7, T]]);
+    });
+    pros(-60, 32, 130, 34, C.chodnik);
+    pros(-60, 34, 130, 39.5, C.asfalt);
+    const zywoplot = [];
+    BX.forEach((_, b) => { const o = 23.2 * b; zywoplot.push([o + 5.9, o + 9.1], [o + 11.15, o + 12.05], [o + 14.1, o + 17.3]); });
+
+    // ---- ogrodzenie panelowe h=1,5 m (odcinki do 3 m – do sortowania), ekrany prywatności h=1,8 m, jarzęby, sąsiad
+    [[0, 0, 69.6, 0], [0, 0, 0, 26], [69.6, 0, 69.6, 26], [11.6, 0, 11.6, 12.6], [34.8, 0, 34.8, 12.6], [58, 0, 58, 12.6],
+      [23.2, 0, 23.2, 26], [46.4, 0, 46.4, 26], [0, 26, 1.5, 26], [2.5, 26, 4, 26], [19.2, 26, 20.2, 26], [21.2, 26, 25.2, 26],
+      [26.2, 26, 27.2, 26], [42.4, 26, 43.4, 26], [44.4, 26, 48.4, 26], [49.4, 26, 50.4, 26], [65.6, 26, 67.1, 26], [68.1, 26, 69.6, 26]]
+      .forEach(([xa, ya, xb, yb]) => {
+        const n = Math.max(1, Math.ceil(Math.hypot(xb - xa, yb - ya) / 3));
+        for (let i = 0; i < n; i++) {
+          const a = [xa + (xb - xa) * i / n, ya + (yb - ya) * i / n], c = [xa + (xb - xa) * (i + 1) / n, ya + (yb - ya) * (i + 1) / n];
+          obiekty.push({ c: [(a[0] + c[0]) / 2, (a[1] + c[1]) / 2, 0.45], cz: [
+            { p: [[a[0], a[1], T], [c[0], c[1], T], [c[0], c[1], 1.2], [a[0], a[1], 1.2]], f: C.antr, op: 0.16 },
+            { l: [[[a[0], a[1], 1.2], [c[0], c[1], 1.2]], [[a[0], a[1], T], [a[0], a[1], 1.2]]], s: C.antr, w: 0.8 }] });
+        }
+      });
+    [11.6, 34.8, 58].forEach((x) => [[12.6, 14.1], [14.1, 15.6]].forEach(([ya, yb]) => obiekty.push({ c: [x, (ya + yb) / 2, 0.6],
+      cz: [{ p: [[x, ya, T], [x, yb, T], [x, yb, 1.5], [x, ya, 1.5]], f: C.drewno, s: '#7A5236', w: 0.6 }] })));
+    const JAG = [[-0.32, 0.3], [0.08, 0.42], [0.38, 0.14], [-0.08, 0.02], [0.22, -0.28], [-0.4, -0.22], [0.02, -0.46]];
+    [7.2, 16, 30.4, 39.2, 53.6, 62.4].forEach((x) => obiekty.push({ c: [x, 28.3, 2.6], drzewo: [x, 28.3] }));
+    (() => {                                                                      // sąsiedni dom od zachodu (tło, bez szczegółów)
+      const cz = [], x0 = -9, x1 = -3, y0 = 15, y1 = 25, ym = 20, ok = 3.2, ka = ok + 5 * TG, k = '#DCE0E3';
+      const d = (p, n) => cz.push({ p, n, f: cien(k, n), k: 1 });
+      d([[x0, y1, T], [x1, y1, T], [x1, y1, ok], [x0, y1, ok]], N);
+      d([[x0, y0, T], [x1, y0, T], [x1, y0, ok], [x0, y0, ok]], S);
+      d([[x0, y0, T], [x0, y1, T], [x0, y1, ok], [x0, ym, ka], [x0, y0, ok]], W);
+      d([[x1, y0, T], [x1, y1, T], [x1, y1, ok], [x1, ym, ka], [x1, y0, ok]], E);
+      d([[x0, y1, ok], [x1, y1, ok], [x1, ym, ka], [x0, ym, ka]], RN);
+      d([[x0, y0, ok], [x1, y0, ok], [x1, ym, ka], [x0, ym, ka]], RS);
+      obiekty.push({ c: [-6, 20, 3], cz, kontur: '#B3BBC1', etykieta: ['sąsiedni dom', [-6, 20, ka + 0.6]] });
+    })();
+
+    // ---- kamera i rzutowanie (aksonometria: azymut kamery od północy zgodnie z zegarem, wysokość nad horyzontem)
+    const WIDOKI = { ulica: { a: 330, f: 30 }, ogrody: { a: 150, f: 30 }, gora: { a: 180, f: 89 } };
+    const kam = { a: 330, f: 30 }, stan = { hov: null, wyb: null };
+    let B = null, Wd = 0, Hd = 0, anim = 0;
+    const P2 = (p) => [B.ox + B.s * dot(p, B.r), B.oy - B.s * dot(p, B.u)];
+    const pt = (p) => { const q = P2(p); return q[0].toFixed(1) + ',' + q[1].toFixed(1); };
+    function ustawKamere() {
+      const a = kam.a * Math.PI / 180, f = kam.f * Math.PI / 180;
+      const c = [Math.sin(a) * Math.cos(f), Math.cos(a) * Math.cos(f), Math.sin(f)];
+      const r = [-Math.cos(a), Math.sin(a), 0];
+      const u = [-r[1] * c[2], r[0] * c[2], -(r[0] * c[1] - r[1] * c[0])];
+      B = { c, r, u, d: [-c[0], -c[1], -c[2]], s: 1, ox: 0, oy: 0 };
+      const maly = Wd < 640, pkt = [];                                          // kadr: działki + chodnik (jezdnia i otoczenie przycięte)
+      (maly ? [0, 69.6] : [-1.5, 71.1]).forEach((x) => [-0.5, 34.5].forEach((y) => pkt.push([x, y, T])));
+      [4, 65.6].forEach((x) => [Y0, Y1].forEach((y) => pkt.push([x, y, KA + 2.5])));
+      let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+      pkt.forEach((p) => { const x = dot(p, r), y = -dot(p, u); x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); });
+      const m = maly ? 8 : 22, mg = maly ? 26 : 44;                             // margines (u góry miejsce na pinezki)
+      B.s = Math.min((Wd - 2 * m) / (x1 - x0), (Hd - m - mg) / (y1 - y0));
+      B.ox = (Wd - B.s * (x0 + x1)) / 2;
+      B.oy = mg + (Hd - m - mg - B.s * (y1 - y0)) / 2 - B.s * y0;
+    }
+
+    // ---- rysowanie (malarz: najpierw teren i cienie, potem obiekty od najdalszego)
+    const widoczna = (cz) => (cz.v || (cz.n ? [cz.n] : [])).every((n) => dot(n, B.c) > 0.002);
+    const poly = (p, at) => '<polygon points="' + p.map(pt).join(' ') + '"' + at + '/>';
+    const linie = (l, s, w) => '<path d="' + l.map((o) => 'M' + pt(o[0]) + 'L' + pt(o[1])).join('') + '" fill="none" stroke="' + s + '" stroke-width="' + w + '"/>';
+    const czesc = (cz) => {
+      if (!widoczna(cz)) return '';
+      if (cz.l) return linie(cz.l, cz.s, cz.w || 0.6);
+      return poly(cz.p, ' fill="' + cz.f + '"' + (cz.op ? ' fill-opacity="' + cz.op + '"' : '') +
+        (cz.s ? ' stroke="' + cz.s + '" stroke-width="' + cz.w + '" stroke-linejoin="round"' : '') + (cz.dom ? ' data-dom="' + cz.dom + '"' : ''));
+    };
+    const naZiemie = (p) => { const k = (p[2] - T) / SL[2]; return [p[0] - SL[0] * k, p[1] - SL[1] * k, T]; };
+    const otoczka = (P) => {
+      P = P.slice().sort((a, b) => a[0] - b[0] || a[1] - b[1]);
+      const kr = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
+      const d = [], g = [];
+      P.forEach((p) => { while (d.length > 1 && kr(d[d.length - 2], d[d.length - 1], p) <= 0) d.pop(); d.push(p); });
+      for (let i = P.length - 1; i >= 0; i--) { const p = P[i]; while (g.length > 1 && kr(g[g.length - 2], g[g.length - 1], p) <= 0) g.pop(); g.push(p); }
+      return d.slice(0, -1).concat(g.slice(0, -1));
+    };
+    const et = (t, p, dy) => { const [x, y] = P2(p); return '<text class="m-et" x="' + x.toFixed(1) + '" y="' + (y + (dy || 0)).toFixed(1) + '" text-anchor="middle">' + t + '</text>'; };
+    const ctx = document.createElement('canvas').getContext('2d');
+    const mierz = (t, f) => { ctx.font = f; return ctx.measureText(t).width; };
+    const pozycja = (id) => { const i = DOMY.indexOf(id), b = i >> 1; return [BX[b] + (i % 2 ? 11.4 : 3.8), YM, KA]; };
+
+    function pinezka(id, kompakt) {
+      const d = dane[id], [x, y] = P2(pozycja(id)), wyb = stan.wyb === id, hov = stan.hov === id, k = KOL[d.st];
+      const obw = wyb ? ' stroke="#B5332E" stroke-width="3"' : hov ? ' stroke="#383E42" stroke-width="2"' : ' stroke="#fff" stroke-width="1.5"';
+      let t = '<g class="m-pin" data-dom="' + id + '">';
+      if (kompakt && !wyb) {
+        const r = 12, cy = y - 9 - r;
+        t += '<line x1="' + x.toFixed(1) + '" y1="' + y.toFixed(1) + '" x2="' + x.toFixed(1) + '" y2="' + (cy + r).toFixed(1) + '" stroke="' + k + '" stroke-width="1.5"/>';
+        t += '<circle cx="' + x.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + r + '" fill="' + k + '"' + obw + '/>';
+        return t + '<text class="m-pin__id m-pin__id--maly" x="' + x.toFixed(1) + '" y="' + (cy + 4.2).toFixed(1) + '" text-anchor="middle">' + id + '</text></g>';
+      }
+      const w1 = mierz(id, '500 17px "Bodoni Moda", Georgia, serif'), w2 = mierz(d.status, '600 11px "Albert Sans", Arial, sans-serif');
+      const w3 = wyb ? mierz(d.cena, '600 13px "Albert Sans", Arial, sans-serif') : 0;
+      const w = Math.ceil(Math.max(w1, w2, w3) + 20), h = wyb ? 58 : 42, x0 = x - w / 2, y0 = y - 10 - h;
+      t += '<line x1="' + x.toFixed(1) + '" y1="' + y.toFixed(1) + '" x2="' + x.toFixed(1) + '" y2="' + (y0 + h).toFixed(1) + '" stroke="' + k + '" stroke-width="1.5"/>';
+      t += '<rect x="' + x0.toFixed(1) + '" y="' + y0.toFixed(1) + '" width="' + w + '" height="' + h + '" rx="3" fill="' + k + '"' + obw + '/>';
+      t += '<text class="m-pin__id" x="' + (x0 + 10).toFixed(1) + '" y="' + (y0 + 19).toFixed(1) + '">' + id + '</text>';
+      t += '<text class="m-pin__st" x="' + (x0 + 10).toFixed(1) + '" y="' + (y0 + 34).toFixed(1) + '">' + d.status + '</text>';
+      if (wyb) t += '<text class="m-pin__cena" x="' + (x0 + 10).toFixed(1) + '" y="' + (y0 + 50).toFixed(1) + '">' + d.cena + '</text>';
+      return t + '</g>';
+    }
+
+    function rysuj() {
+      if (Wd < 10 || Hd < 10) return;
+      ustawKamere();
+      let s = '<defs><pattern id="m-rez" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">' +
+        '<rect width="7" height="7" fill="#F3EDE7"/><rect width="2.4" height="7" fill="#C49A74"/></pattern></defs>';
+      // teren
+      ziemia.forEach((g) => { s += poly(g.p, ' fill="' + (g.f || DZ[dane[g.dom].st]) + '"' + (g.f ? '' : ' stroke="#fff" stroke-width="1"') + (g.dom ? ' data-dom="' + g.dom + '"' : '')); });
+      s += linie(linieMP, '#E9EBEC', 1);
+      s += linie([[[-60, 34, T], [130, 34, T]], [[-60, 39.5, T], [130, 39.5, T]]], '#F4F5F5', 1.2);
+      s += '<path d="' + zywoplot.map(([a, c]) => 'M' + pt([a, 31.65, T]) + 'L' + pt([c, 31.65, T])).join('') +
+        '" stroke="#6F8F5E" stroke-width="' + Math.max(2, 0.6 * B.s).toFixed(1) + '" stroke-linecap="round" fill="none"/>';
+      // podpisy terenu tylko po stronie zwróconej do kamery (inaczej wychodzą zza domów)
+      if (B.c[1] > -0.3) s += et('ul. Jarzębinowa', [34.8, 36.75, T], 4);
+      if (Wd >= 640 && B.c[1] < 0.3) s += et('ogrody od południa, dalej łąka i las', [34.8, -1.4, T], 4);
+      if (Wd >= 640 && B.c[0] > -0.3) s += et('łąka', [74, 13, T], 4);
+      // obwódka działki wskazanej i wybranej
+      [[stan.hov, '#383E42', 2], [stan.wyb, '#B5332E', 3]].forEach(([id, k, w]) => {
+        const g = id && ziemia.find((z) => z.dom === id && !z.f);
+        if (g) s += poly(g.p, ' fill="none" stroke="' + k + '" stroke-width="' + w + '" stroke-linejoin="round" pointer-events="none"');
+      });
+      // cienie budynków i drzew
+      s += '<g fill="#1E262C" fill-opacity=".14" pointer-events="none">';
+      BX.forEach((bx) => {
+        const pk = [];
+        [bx, bx + 15.2].forEach((x) => { [Y0, Y1].forEach((y) => { pk.push([x, y, T], naZiemie([x, y, OK])); }); pk.push(naZiemie([x, YM, KA])); });
+        s += '<polygon points="' + otoczka(pk.map(P2)).map((q) => q[0].toFixed(1) + ',' + q[1].toFixed(1)).join(' ') + '"/>';
+      });
+      obiekty.forEach((o) => {
+        if (!o.drzewo) return;
+        const [x, y] = P2(naZiemie([o.drzewo[0], o.drzewo[1], 3.4]));
+        s += '<ellipse cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" rx="' + (1.5 * B.s).toFixed(1) + '" ry="' + (1.5 * B.s * Math.max(0.05, B.c[2])).toFixed(1) + '"/>';
+      });
+      s += '</g>';
+      // obiekty od najdalszego
+      obiekty.map((o) => [dot(o.c, B.d), o]).sort((a, b) => b[0] - a[0]).forEach(([, o]) => {
+        if (o.drzewo) {
+          const [x, y] = o.drzewo, [px, py] = P2([x, y, T]), [kx, ky] = P2([x, y, 3.4]), r = 1.5 * B.s;
+          s += '<line x1="' + px.toFixed(1) + '" y1="' + py.toFixed(1) + '" x2="' + kx.toFixed(1) + '" y2="' + ky.toFixed(1) + '" stroke="#6B5A4A" stroke-width="' + Math.max(1.2, 0.16 * B.s).toFixed(1) + '"/>';
+          s += '<circle cx="' + kx.toFixed(1) + '" cy="' + ky.toFixed(1) + '" r="' + r.toFixed(1) + '" fill="#8AA875" stroke="#66844F" stroke-width=".8"/>';
+          JAG.forEach(([a, b]) => { s += '<circle cx="' + (kx + a * r).toFixed(1) + '" cy="' + (ky + b * r).toFixed(1) + '" r="' + Math.max(1.1, 0.08 * r).toFixed(1) + '" fill="#B5332E"/>'; });
+          return;
+        }
+        o.cz.forEach((cz) => { s += czesc(cz); });
+        // kontur bryły: zwykły, wskazany (antracyt) albo wybrany (czerwień jarzębiny)
+        const k = o.id && stan.wyb === o.id ? ['#B5332E', 2.4] : o.id && stan.hov === o.id ? ['#383E42', 1.8] : [o.kontur || C.rama, 0.9];
+        o.cz.forEach((cz) => { if (cz.k && widoczna(cz)) s += poly(cz.p, ' fill="none" stroke="' + k[0] + '" stroke-width="' + k[1] + '" stroke-linejoin="round" pointer-events="none"'); });
+        if (o.etykieta && Wd >= 640) s += et(o.etykieta[0], o.etykieta[1], 0);
+      });
+      // pinezki: wskazana i wybrana na wierzchu
+      const [a1, a2] = [P2(pozycja('1A')), P2(pozycja('1B'))];
+      const kompakt = Math.hypot(a1[0] - a2[0], a1[1] - a2[1]) < 84;
+      DOMY.slice().sort((a, b) => (a === stan.wyb) - (b === stan.wyb) || (a === stan.hov) - (b === stan.hov) || dot(pozycja(b), B.d) - dot(pozycja(a), B.d))
+        .forEach((id) => { s += pinezka(id, kompakt); });
+      // strzałka północy
+      const nx = B.r[1], ny = -B.u[1], nl = Math.hypot(nx, ny) || 1, cx = Wd - 30, cy = Hd - 30, ux = nx / nl, uy = ny / nl;
+      s += '<g class="m-kompas" pointer-events="none"><circle cx="' + cx + '" cy="' + cy + '" r="18" fill="#fff" fill-opacity=".85" stroke="#D5DBDF"/>' +
+        '<path d="M' + (cx + ux * 11).toFixed(1) + ',' + (cy + uy * 11).toFixed(1) + 'L' + (cx - uy * 5 - ux * 6).toFixed(1) + ',' + (cy + ux * 5 - uy * 6).toFixed(1) +
+        'L' + (cx + uy * 5 - ux * 6).toFixed(1) + ',' + (cy - ux * 5 - uy * 6).toFixed(1) + 'Z" fill="#B5332E"/>' +
+        '<text x="' + (cx - ux * 11).toFixed(1) + '" y="' + (cy - uy * 11 + 4).toFixed(1) + '" text-anchor="middle">N</text></g>';
+      svg.innerHTML = s;
+    }
+
+    // ---- obsługa: przeciąganie obraca, klik wybiera dom, przyciski widoków
+    const przyciski = [...document.querySelectorAll('[data-widok]')];
+    const zaznaczWidok = (w) => przyciski.forEach((p) => p.setAttribute('aria-pressed', String(p.dataset.widok === w)));
+    function jedz(cel) {
+      cancelAnimationFrame(anim);
+      const a0 = kam.a, f0 = kam.f, da = ((cel.a - a0) % 360 + 540) % 360 - 180;
+      if (mniejRuchu) { kam.a = cel.a; kam.f = cel.f; rysuj(); return; }
+      const t0 = performance.now();
+      const krok = (t) => {
+        const k = Math.min(1, (t - t0) / 700), e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        kam.a = a0 + da * e; kam.f = f0 + (cel.f - f0) * e; rysuj();
+        if (k < 1) anim = requestAnimationFrame(krok);
+      };
+      anim = requestAnimationFrame(krok);
+    }
+    przyciski.forEach((p) => p.addEventListener('click', () => { zaznaczWidok(p.dataset.widok); jedz(WIDOKI[p.dataset.widok]); }));
+
+    const idPod = (e) => { const el = e.target.closest && e.target.closest('[data-dom]'); return el ? el.getAttribute('data-dom') : null; };
+    const pokazDymek = (id, e) => {
+      if (!id || e.pointerType !== 'mouse') { dymek.hidden = true; return; }
+      const d = dane[id];
+      dymek.innerHTML = '<b>' + id + '</b>' + d.cena + (d.m2 ? ', ' + d.m2 + '/m²' : '') + ', ' + d.status + '<small>Kliknij, aby zobaczyć w cenniku.</small>';
+      dymek.hidden = false;
+      const r = scena.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+      dymek.style.left = Math.min(x + 16, r.width - dymek.offsetWidth - 8) + 'px';
+      dymek.style.top = (y + 18 + dymek.offsetHeight > r.height ? y - dymek.offsetHeight - 12 : y + 18) + 'px';
+    };
+    let ciag = null;
+    svg.addEventListener('pointerdown', (e) => {
+      if (e.button) return;
+      cancelAnimationFrame(anim);
+      ciag = { x: e.clientX, y: e.clientY, a: kam.a, f: kam.f, ruch: false, id: e.pointerId };
+    });
+    svg.addEventListener('pointermove', (e) => {
+      if (ciag) {
+        const dx = e.clientX - ciag.x, dy = e.clientY - ciag.y;
+        if (!ciag.ruch && Math.hypot(dx, dy) > 6) {
+          ciag.ruch = true; stan.hov = null; scena.classList.add('ciagnie'); dymek.hidden = true;
+          try { svg.setPointerCapture(ciag.id); } catch (_) { /* wskaźnik już zwolniony */ }
+        }
+        if (ciag.ruch) {
+          kam.a = ciag.a - dx * 0.4;
+          if (e.pointerType === 'mouse') kam.f = Math.max(12, Math.min(89, ciag.f + dy * 0.3));
+          zaznaczWidok(null); rysuj();
+          return;
+        }
+      }
+      const id = idPod(e);
+      if (id !== stan.hov) { stan.hov = id; rysuj(); }
+      pokazDymek(id, e);
+    });
+    const koniec = (e) => {
+      if (!ciag) return;
+      const byl = ciag.ruch;
+      ciag = null; scena.classList.remove('ciagnie');
+      if (byl || e.type !== 'pointerup') return;
+      const id = idPod(e);
+      if (id) { wybierz(id, true); history.replaceState(null, '', '#dom-' + id); }
+    };
+    svg.addEventListener('pointerup', koniec);
+    svg.addEventListener('pointercancel', koniec);
+    svg.addEventListener('pointerleave', () => { if (!ciag && stan.hov) { stan.hov = null; rysuj(); } dymek.hidden = true; });
+
+    const rozmiar = () => {
+      const w = scena.clientWidth, h = scena.clientHeight;
+      if (w === Wd && h === Hd) return;
+      Wd = w; Hd = h;
+      svg.setAttribute('viewBox', '0 0 ' + Wd + ' ' + Hd);
+      rysuj();
+    };
+    if ('ResizeObserver' in window) new ResizeObserver(rozmiar).observe(scena);
+    else addEventListener('resize', rozmiar);
+    rozmiar();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(rysuj);
+    scena.classList.add('gotowy');
+    return { wybierz: (id) => { stan.wyb = id; rysuj(); } };
+  })();
+
+  // ---------------------------------------------------------------- wybór domu: model / lista <-> tabela
+  const wybierz = (id, przewin) => {
+    document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.classList.toggle('wybrany', r.dataset.dom === id));
+    document.querySelectorAll('.model__domy [data-dom]').forEach((a) => a.setAttribute('aria-current', String(a.dataset.dom === id)));
+    if (model) model.wybierz(id);
     const wiersz = document.getElementById('dom-' + id);
     if (wiersz && przewin) {
-        // Obliczamy pozycję, aby wiersz był mniej więcej w 1/3 wysokości ekranu od góry
-        const y = wiersz.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 3);
-        window.scrollTo({top: y, behavior: 'smooth'});
+      // wiersz ok. 1/3 wysokości ekranu od góry
+      const y = wiersz.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 3);
+      window.scrollTo({ top: y, behavior: mniejRuchu ? 'auto' : 'smooth' });
     }
   };
-  
-  document.querySelectorAll('.plan-plot').forEach((a) => a.addEventListener('click', (e) => {
+  document.querySelectorAll('.model__domy [data-dom]').forEach((a) => a.addEventListener('click', (e) => {
     e.preventDefault();
-    const id = a.dataset.dom;
-    wybierz(id, true); // Kliknięcie na planie zawsze przewija do tabeli
-    history.replaceState(null, '', '#dom-' + id);
+    wybierz(a.dataset.dom, true);
+    history.replaceState(null, '', '#dom-' + a.dataset.dom);
   }));
-  
   document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.addEventListener('click', (e) => {
     if (e.target.closest('button, a')) return;
     wybierz(r.dataset.dom, false); // Kliknięcie w tabeli tylko podświetla
