@@ -90,46 +90,53 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .zakladki button{min-height:40px;padding:8px 20px;border-radius:999px;font-size:14px;font-weight:600;color:var(--grafit)}
 .zakladki button[aria-selected=true]{background:var(--antracyt);color:#fff}
 .widok{padding-inline:var(--m)}
-.plan,.lot{margin:0;border:1px solid var(--linia)}
-.plan svg{width:100%;height:auto;background:var(--mgla)}
-.plan figcaption,.lot figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding:12px 16px;border-top:1px solid var(--linia);font-size:14px;color:var(--grafit)}
+.plan,.lot{margin:0;border:1px solid var(--linia);background:var(--mgla)}
 .lot img{width:100%;aspect-ratio:2000/1240;object-fit:cover}
-.legenda{display:flex;flex-wrap:wrap;gap:6px 26px;margin:0;padding:0;list-style:none}
+
+/* Nowy Plan Osiedla HTML/CSS */
+.plan { position: relative; overflow: hidden; padding-bottom: 2rem; }
+.plan-header { background: #EEF1F3; padding: 1.5rem 2rem; border-bottom: 1px solid var(--linia); font-size: 1.1rem; color: var(--grafit); position: relative; }
+.plan-header::after { content: '↑ N'; position: absolute; right: 2rem; top: 1.5rem; font-weight: bold; color: var(--antracyt); }
+.plan-grid { display: flex; width: 100%; min-width: 800px; padding: 2rem 2rem 4rem; position: relative; background-image: radial-gradient(var(--grafit) 1px, transparent 0); background-size: 20px 20px; background-color: #fff; }
+.plan-sasiad { width: 40px; background: #EEF1F3; border: 1px solid var(--linia); position: relative; margin-right: 1rem; }
+.plan-sasiad span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-90deg); white-space: nowrap; color: var(--grafit); font-size: 0.9rem; }
+.plan-laka { width: 40px; border-left: 1px dashed var(--linia); position: relative; margin-left: 1rem; }
+.plan-laka span { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg); white-space: nowrap; color: var(--grafit); font-size: 0.9rem; }
+
+.plan-plot { display: flex; flex: 1; border: 1px solid var(--linia); position: relative; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; text-decoration: none; color: inherit; }
+.plan-plot:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); z-index: 10; }
+.plan-plot.status-dost { background-color: #E5EEDF; } /* Dostępny */
+.plan-plot.status-sprz { background-color: #5A6166; color: #fff; } /* Sprzedany */
+.plan-plot.status-rez { background: repeating-linear-gradient(45deg, #fff, #fff 10px, #FDF4EB 10px, #FDF4EB 20px); border-color: var(--jesion); } /* Rezerwacja */
+
+/* Kształt Domu (aksonometria) */
+.plan-house-shape { position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 70%; height: 180px; display: flex; flex-direction: column; align-items: center; pointer-events: none; }
+.plan-roof { width: 100%; height: 60%; background: #2C3236; position: relative; display: flex; justify-content: center; align-items: center; }
+.plan-roof::after { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: rgba(255,255,255,0.1); }
+.plan-wall { width: 90%; height: 40%; background: #fff; border: 1px solid #D5DBDF; border-top: none; display: flex; justify-content: space-around; align-items: center; padding: 0 10%; }
+.plan-window { width: 15px; height: 25px; background: #8BA1B2; }
+.plan-door { width: 20px; height: 35px; background: #A4704A; align-self: flex-end; }
+/* Odwrócenie dla budynków B (lustrzane odbicie) */
+.plan-plot:nth-child(even) .plan-wall { flex-direction: row-reverse; }
+
+.plan-info { position: absolute; bottom: 1.5rem; left: 1.5rem; }
+.plan-id { font: 500 3rem var(--szeryf); margin-bottom: 0.5rem; line-height: 1; }
+.plan-price { font-weight: 600; font-size: 1.2rem; font-family: var(--font); margin-bottom: 0.25rem; }
+.plan-status { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+.plan-plot.status-dost .plan-status { color: var(--zielen); }
+.plan-plot.status-sprz .plan-status { color: #fff; opacity: 0.8; }
+.plan-plot.status-rez .plan-status { color: var(--jesion-c); }
+
+.plan-footer { display: flex; justify-content: space-between; padding: 1rem 2rem 0; font-size: 0.9rem; color: var(--grafit); position: absolute; bottom: 1rem; width: 100%; left: 0; pointer-events: none; }
+
+.plan-wrapper { overflow-x: auto; width: 100%; }
+
+.legenda{display:flex;flex-wrap:wrap;gap:6px 26px;margin:0;padding:12px 16px;list-style:none; border-top: 1px solid var(--linia); font-size:14px;color:var(--grafit);}
 .znak{display:inline-block;width:16px;height:16px;margin-right:8px;vertical-align:-.2em;border:1.5px solid var(--grafit)}
 .znak--dost{background:var(--zielen-t);border-color:var(--zielen)}
-.znak--rez{border-color:var(--jesion);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M0 6L6 0M-1 1L1-1M5 7L7 5' stroke='%23A4704A' stroke-width='1.6'/%3E%3C/svg%3E") #FFFFFF}
+.znak--rez{border-color:var(--jesion);background: repeating-linear-gradient(45deg, #fff, #fff 4px, #FDF4EB 4px, #FDF4EB 8px);}
 .znak--sprz{background:var(--antracyt);border-color:var(--antracyt)}
 
-.p-laka{fill:url(#laka)}
-.p-ulica{fill:#D3D8DB}
-.p-kraw{fill:none;stroke:#9AA3A8;stroke-width:2}
-.p-ulica-t{font:400 46px var(--szeryf);fill:var(--antracyt)}
-.p-n{font:600 30px var(--font);fill:var(--antracyt)}
-.p-dzialka{stroke:var(--grafit);stroke-width:2.5;transition:fill .15s}
-.p-dom.dost .p-dzialka{fill:var(--zielen-t)}
-.p-dom.rez .p-dzialka{fill:url(#kreski)}
-.p-dom.sprz .p-dzialka{fill:#4C5357}
-.p-dom a{outline:none;cursor:pointer}
-.p-dom.dost a:hover .p-dzialka{fill:#D3E2C9}
-.p-dom a:focus-visible .p-ramka{stroke:var(--jarz);stroke-width:7}
-.p-ramka{fill:none;stroke:none}
-.p-dom.wybrany .p-ramka{stroke:var(--antracyt);stroke-width:9}
-.p-podjazd{fill:#DADFE2}
-.p-ozdoby,.p-dom text{pointer-events:none}
-.p-sasiad{fill:#E1E5E8}
-.p-etykieta{fill:none}
-.p-dom.rez .p-etykieta{fill:#FFFFFF}
-.p-dom.sprz .p-etykieta{fill:#4C5357}
-.p-dach{fill:var(--antracyt)}
-.p-rabek{stroke:#fff;stroke-opacity:.22;stroke-width:1.4}
-.p-sciana{stroke:#fff;stroke-opacity:.8;stroke-width:3}
-.p-taras{fill:#C9CED2}
-.p-id{font:400 104px var(--szeryf);fill:var(--antracyt)}
-.p-cena{font:600 31px var(--font);fill:var(--antracyt)}
-.p-st{font:500 27px var(--font);fill:var(--zielen)}
-.p-dom.rez .p-st{fill:var(--jesion-c)}
-.p-dom.sprz .p-id,.p-dom.sprz .p-cena,.p-dom.sprz .p-st{fill:#fff}
-.p-opis{font:400 32px var(--font);fill:var(--grafit)}
 
 .cennik{width:calc(100% - 2 * var(--m));margin:clamp(40px,4.5vw,64px) var(--m) 0;border-collapse:collapse}
 .cennik thead th{background:var(--mgla);font-size:13px;font-weight:500;color:var(--grafit);text-align:left;padding:13px 16px}
@@ -138,10 +145,12 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .cennik tbody th{font:500 28px/1.1 var(--szeryf);white-space:nowrap}
 .cennik tbody th small{display:block;font-size:13px;font-weight:400;line-height:1.35;color:var(--grafit);margin-top:6px;white-space:normal;max-width:22ch}
 .cennik .cena{font:400 25px/1.1 var(--szeryf);white-space:nowrap}
-.cennik tr[data-dom]{cursor:pointer}
+.cennik tr[data-dom]{cursor:pointer; transition: background-color 0.2s;}
 .cennik tr[data-dom]:hover > *{background:#F7F8F9}
-.cennik tr.wybrany > *,.cennik tr:target > *{background:var(--mgla)}
-.cennik tr.wybrany > th,.cennik tr:target > th{box-shadow:inset 4px 0 0 var(--antracyt)}
+/* Zaktualizowane podświetlanie po najechaniu i kliknięciu */
+.cennik tr.wybrany > *,.cennik tr:target > *{background:#E5EEDF !important; transition: background-color 0.3s;} 
+.cennik tr.wybrany > th,.cennik tr:target > th{box-shadow:inset 4px 0 0 var(--zielen)}
+
 .st{white-space:nowrap;font-weight:500}
 .st::before{content:"";display:inline-block;width:11px;height:11px;margin-right:9px;vertical-align:-.04em;border-radius:50%}
 .st--dost{color:var(--zielen)}.st--dost::before{background:var(--zielen)}
@@ -255,10 +264,6 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
   .okolica__mapa{margin-top:36px}
   .formularz{margin-top:40px}
   .stopka p,.stopka .drobny{margin-top:18px}
-    .p-id{font-size:150px}
-  .p-cena,.p-st,.p-opis{display:none}
-  .p-ulica-t{font-size:72px}
-  .p-n{font-size:48px}
   .widok{padding-inline:0}
   .plan,.lot{border-inline:0}
     .cennik{width:auto;display:block;margin-inline:var(--m)}
@@ -287,10 +292,10 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 
 h2{font-variation-settings:"opsz" 34}
 .hero h1{font-variation-settings:"opsz" 26}
-h3,.kadr__tytul,.kontakt__tel,.p-ulica-t{font-variation-settings:"opsz" 22}
+h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
 .kotwice__nazwa,.fakty__siatka dd,.cennik tbody th,.cennik .cena{font-variation-settings:"opsz" 14}
 .cennik .cena{font-weight:500}
-.p-id{font-variation-settings:"opsz" 11;font-weight:500}
+.plan-id{font-variation-settings:"opsz" 11;font-weight:500}
 .cennik tbody th small{font-family:var(--font);font-variation-settings:normal}
 
 </style>
@@ -324,7 +329,6 @@ h3,.kadr__tytul,.kontakt__tel,.p-ulica-t{font-variation-settings:"opsz" 22}
 </section>
 
 <nav class="kotwice" aria-label="Sekcje strony">
-  <!-- Zmiana: obrazek loga zamiast tekstu w pasku po przewinięciu -->
   <a class="kotwice__nazwa" href="#tresc" aria-label="JARZĘBINOWE"><img src="logo2.png" alt="JARZĘBINOWE"></a>
   <div class="kotwice__linki">
     <a href="#fakty">Najważniejsze</a><a href="#ceny">Plan i ceny</a><a href="#dom">Dom i rzuty</a><a href="#wnetrza">Wnętrza i ogród</a><a href="#okolica">Okolica</a><a href="#kontakt">Kontakt</a>
@@ -365,100 +369,128 @@ h3,.kadr__tytul,.kontakt__tel,.p-ulica-t{font-variation-settings:"opsz" 22}
   </div>
 
   <div class="widok" id="p-plan" role="tabpanel" aria-labelledby="z-plan">
-    <figure class="plan">
-      <svg viewBox="0 0 2000 1240" role="group" aria-label="Plan osiedla: sześć działek w rzędzie wzdłuż ul. Jarzębinowej, od zachodu 1A do wschodu 3B">
-        <defs>
-          <pattern id="kreski" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="16" height="16" fill="#FFFFFF"/><path d="M0 0v16" stroke="#A4704A" stroke-width="4"/></pattern>
-          <pattern id="laka" width="34" height="34" patternUnits="userSpaceOnUse"><rect width="34" height="34" fill="#EEF1F3"/><circle cx="8" cy="9" r="2" fill="#9AA79A"/><circle cx="25" cy="26" r="2" fill="#9AA79A"/></pattern>
-        </defs>
-        <rect class="p-laka" x="0" y="262" width="2000" height="978"/>
-        <rect class="p-sasiad" x="0" y="262" width="80" height="848"/>
-        <text class="p-opis" x="52" y="900" transform="rotate(-90 52 900)">sąsiedni dom</text>
-        <rect class="p-ulica" x="0" y="60" width="2000" height="150"/>
-        <path class="p-kraw" d="M0 60H2000M0 210H2000M0 262H2000"/>
-        <text class="p-ulica-t" x="70" y="152">ul. Jarzębinowa</text>
-        <g transform="translate(1928 110)" aria-hidden="true"><path d="M0 50V-30" stroke="#383E42" stroke-width="4"/><path d="M0-48L-15-12H15Z" fill="#B5332E"/><text class="p-n" x="-10" y="92">N</text></g>
-                <g class="p-dom dost" data-dom="1A"><a href="#dom-1A" aria-label="Dom 1A: 899 000 zł, dostępny">
-          <rect class="p-dzialka" x="80" y="262" width="307" height="848"/>
-          <rect class="p-podjazd" x="90" y="266" width="134" height="144"/>
-          <rect class="p-etykieta" x="94" y="866" width="279" height="214"/>
-          <text class="p-id" x="108" y="962">1A</text>
-          <text class="p-cena" x="111" y="1016">899 000 zł</text>
-          <text class="p-st" x="111" y="1058">dostępny</text>
-          <rect class="p-ramka" x="85" y="267" width="297" height="838"/>
-        </a></g>
-                <g class="p-dom sprz" data-dom="1B"><a href="#dom-1B" aria-label="Dom 1B: 879 000 zł, sprzedany">
-          <rect class="p-dzialka" x="387" y="262" width="307" height="848"/>
-          <rect class="p-podjazd" x="550" y="266" width="134" height="144"/>
-          <rect class="p-etykieta" x="401" y="866" width="279" height="214"/>
-          <text class="p-id" x="415" y="962">1B</text>
-          <text class="p-cena" x="418" y="1016">879 000 zł</text>
-          <text class="p-st" x="418" y="1058">sprzedany</text>
-          <rect class="p-ramka" x="392" y="267" width="297" height="838"/>
-        </a></g>
-                <g class="p-dom dost" data-dom="2A"><a href="#dom-2A" aria-label="Dom 2A: 879 000 zł, dostępny">
-          <rect class="p-dzialka" x="694" y="262" width="307" height="848"/>
-          <rect class="p-podjazd" x="704" y="266" width="134" height="144"/>
-          <rect class="p-etykieta" x="708" y="866" width="279" height="214"/>
-          <text class="p-id" x="722" y="962">2A</text>
-          <text class="p-cena" x="725" y="1016">879 000 zł</text>
-          <text class="p-st" x="725" y="1058">dostępny</text>
-          <rect class="p-ramka" x="699" y="267" width="297" height="838"/>
-        </a></g>
-                <g class="p-dom dost" data-dom="2B"><a href="#dom-2B" aria-label="Dom 2B: 879 000 zł, dostępny">
-          <rect class="p-dzialka" x="1001" y="262" width="307" height="848"/>
-          <rect class="p-podjazd" x="1164" y="266" width="134" height="144"/>
-          <rect class="p-etykieta" x="1015" y="866" width="279" height="214"/>
-          <text class="p-id" x="1029" y="962">2B</text>
-          <text class="p-cena" x="1032" y="1016">879 000 zł</text>
-          <text class="p-st" x="1032" y="1058">dostępny</text>
-          <rect class="p-ramka" x="1006" y="267" width="297" height="838"/>
-        </a></g>
-                <g class="p-dom rez" data-dom="3A"><a href="#dom-3A" aria-label="Dom 3A: 899 000 zł, rezerwacja">
-          <rect class="p-dzialka" x="1308" y="262" width="307" height="848"/>
-          <rect class="p-podjazd" x="1318" y="266" width="134" height="144"/>
-          <rect class="p-etykieta" x="1322" y="866" width="279" height="214"/>
-          <text class="p-id" x="1336" y="962">3A</text>
-          <text class="p-cena" x="1339" y="1016">899 000 zł</text>
-          <text class="p-st" x="1339" y="1058">rezerwacja</text>
-          <rect class="p-ramka" x="1313" y="267" width="297" height="838"/>
-        </a></g>
-                <g class="p-dom dost" data-dom="3B"><a href="#dom-3B" aria-label="Dom 3B: 929 000 zł, dostępny">
-          <rect class="p-dzialka" x="1615" y="262" width="307" height="848"/>
-          <rect class="p-podjazd" x="1778" y="266" width="134" height="144"/>
-          <rect class="p-etykieta" x="1629" y="866" width="279" height="214"/>
-          <text class="p-id" x="1643" y="962">3B</text>
-          <text class="p-cena" x="1646" y="1016">929 000 zł</text>
-          <text class="p-st" x="1646" y="1058">dostępny</text>
-          <rect class="p-ramka" x="1620" y="267" width="297" height="838"/>
-        </a></g>
-                <g class="p-ozdoby" aria-hidden="true">
-                    <rect class="p-taras" x="196" y="697" width="132" height="93"/><rect class="p-taras" x="445" y="697" width="132" height="93"/>
-          <rect class="p-dach" x="186" y="423" width="402" height="274"/>
-          <path class="p-rabek" d="M206 423v274M226 423v274M246 423v274M266 423v274M286 423v274M306 423v274M326 423v274M346 423v274M366 423v274M406 423v274M426 423v274M446 423v274M466 423v274M486 423v274M506 423v274M526 423v274M546 423v274M566 423v274M586 423v274"/>
-          <path class="p-sciana" d="M387 423v274"/>
-                    <rect class="p-taras" x="810" y="697" width="132" height="93"/><rect class="p-taras" x="1059" y="697" width="132" height="93"/>
-          <rect class="p-dach" x="800" y="423" width="402" height="274"/>
-          <path class="p-rabek" d="M820 423v274M840 423v274M860 423v274M880 423v274M900 423v274M920 423v274M940 423v274M960 423v274M980 423v274M1020 423v274M1040 423v274M1060 423v274M1080 423v274M1100 423v274M1120 423v274M1140 423v274M1160 423v274M1180 423v274M1200 423v274"/>
-          <path class="p-sciana" d="M1001 423v274"/>
-                    <rect class="p-taras" x="1424" y="697" width="132" height="93"/><rect class="p-taras" x="1673" y="697" width="132" height="93"/>
-          <rect class="p-dach" x="1414" y="423" width="402" height="274"/>
-          <path class="p-rabek" d="M1434 423v274M1454 423v274M1474 423v274M1494 423v274M1514 423v274M1534 423v274M1554 423v274M1574 423v274M1594 423v274M1634 423v274M1654 423v274M1674 423v274M1694 423v274M1714 423v274M1734 423v274M1754 423v274M1774 423v274M1794 423v274M1814 423v274"/>
-          <path class="p-sciana" d="M1615 423v274"/>
-                    <text class="p-opis" x="1946" y="640" transform="rotate(90 1946 640)">łąka</text>
-          <text class="p-opis" x="80" y="1176">ogrody od południa</text>
-          <text class="p-opis" x="1640" y="1176">las ok. 300 m</text>
-          <path d="M1930 1146v56M1916 1186l14 16 14-16" stroke="#5A6166" stroke-width="3" fill="none"/>
-        </g>
-      </svg>
-      <figcaption>
-        <ul class="legenda" aria-label="Oznaczenia na planie">
-          <li><span class="znak znak--dost"></span>dostępny</li><li><span class="znak znak--rez"></span>rezerwacja</li><li><span class="znak znak--sprz"></span>sprzedany (cena zostaje w&nbsp;tabeli)</li>
-        </ul>
-        <span>Plan poglądowy według projektu zagospodarowania terenu.</span>
-      </figcaption>
-    </figure>
+    <div class="plan">
+      <div class="plan-header">
+        ul. Jarzębinowa
+      </div>
+      
+      <div class="plan-wrapper">
+        <div class="plan-grid">
+          
+          <div class="plan-sasiad">
+            <span>sąsiedni dom</span>
+          </div>
+
+          <!-- Budynek 1 -->
+          <a href="#dom-1A" class="plan-plot status-dost" data-dom="1A" aria-label="Dom 1A: 899 000 zł, dostępny">
+            <div class="plan-house-shape">
+              <div class="plan-roof"></div>
+              <div class="plan-wall">
+                <div class="plan-window"></div>
+                <div class="plan-door"></div>
+              </div>
+            </div>
+            <div class="plan-info">
+              <div class="plan-id">1A</div>
+              <div class="plan-price">899 000 zł</div>
+              <div class="plan-status">dostępny</div>
+            </div>
+          </a>
+          <a href="#dom-1B" class="plan-plot status-sprz" data-dom="1B" aria-label="Dom 1B: 879 000 zł, sprzedany">
+             <div class="plan-house-shape">
+              <div class="plan-roof"></div>
+              <div class="plan-wall">
+                <div class="plan-window"></div>
+                <div class="plan-door"></div>
+              </div>
+            </div>
+            <div class="plan-info">
+              <div class="plan-id">1B</div>
+              <div class="plan-price" style="text-decoration: line-through;">879 000 zł</div>
+              <div class="plan-status">sprzedany</div>
+            </div>
+          </a>
+
+          <!-- Budynek 2 -->
+          <a href="#dom-2A" class="plan-plot status-dost" data-dom="2A" aria-label="Dom 2A: 879 000 zł, dostępny" style="border-left: 1px solid var(--linia);">
+             <div class="plan-house-shape">
+              <div class="plan-roof"></div>
+              <div class="plan-wall">
+                <div class="plan-window"></div>
+                <div class="plan-door"></div>
+              </div>
+            </div>
+            <div class="plan-info">
+              <div class="plan-id">2A</div>
+              <div class="plan-price">879 000 zł</div>
+              <div class="plan-status">dostępny</div>
+            </div>
+          </a>
+          <a href="#dom-2B" class="plan-plot status-dost" data-dom="2B" aria-label="Dom 2B: 879 000 zł, dostępny">
+             <div class="plan-house-shape">
+              <div class="plan-roof"></div>
+              <div class="plan-wall">
+                <div class="plan-window"></div>
+                <div class="plan-door"></div>
+              </div>
+            </div>
+            <div class="plan-info">
+              <div class="plan-id">2B</div>
+              <div class="plan-price">879 000 zł</div>
+              <div class="plan-status">dostępny</div>
+            </div>
+          </a>
+
+          <!-- Budynek 3 -->
+          <a href="#dom-3A" class="plan-plot status-rez" data-dom="3A" aria-label="Dom 3A: 899 000 zł, rezerwacja" style="border-left: 1px solid var(--linia);">
+             <div class="plan-house-shape">
+              <div class="plan-roof"></div>
+              <div class="plan-wall">
+                <div class="plan-window"></div>
+                <div class="plan-door"></div>
+              </div>
+            </div>
+            <div class="plan-info">
+              <div class="plan-id">3A</div>
+              <div class="plan-price">899 000 zł</div>
+              <div class="plan-status">rezerwacja</div>
+            </div>
+          </a>
+          <a href="#dom-3B" class="plan-plot status-dost" data-dom="3B" aria-label="Dom 3B: 929 000 zł, dostępny">
+             <div class="plan-house-shape">
+              <div class="plan-roof"></div>
+              <div class="plan-wall">
+                <div class="plan-window"></div>
+                <div class="plan-door"></div>
+              </div>
+            </div>
+            <div class="plan-info">
+              <div class="plan-id">3B</div>
+              <div class="plan-price">929 000 zł</div>
+              <div class="plan-status">dostępny</div>
+            </div>
+          </a>
+          
+          <div class="plan-laka">
+            <span>łąka</span>
+          </div>
+
+          <div class="plan-footer">
+            <span>ogrody od południa</span>
+            <span>las ok. 300 m ↓</span>
+          </div>
+
+        </div>
+      </div>
+      
+      <ul class="legenda" aria-label="Oznaczenia na planie">
+        <li><span class="znak znak--dost"></span>dostępny</li>
+        <li><span class="znak znak--rez"></span>rezerwacja</li>
+        <li><span class="znak znak--sprz"></span>sprzedany (cena zostaje w&nbsp;tabeli)</li>
+      </ul>
+    </div>
   </div>
+  
   <div class="widok" id="p-lot" role="tabpanel" aria-labelledby="z-lot" hidden>
     <figure class="lot"><img src="zlotuptaka.png" alt="Osiedle z lotu ptaka: trzy bliźniaki przy ulicy, za nimi łąka i las" width="1672" height="941" loading="lazy" decoding="async">      <figcaption>Wizualizacja z lotu ptaka. Od wschodu i od południa łąka, dalej las.</figcaption></figure>
   </div>
@@ -675,23 +707,35 @@ h3,.kadr__tytul,.kontakt__tel,.p-ulica-t{font-variation-settings:"opsz" 22}
 
   // ---------------------------------------------------------------- wybór domu: plan <-> tabela
   const wybierz = (id, przewin) => {
-    document.querySelectorAll('.p-dom').forEach((g) => g.classList.toggle('wybrany', g.dataset.dom === id));
-    document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.classList.toggle('wybrany', r.dataset.dom === id));
+    // Usunięcie podświetlenia ze wszystkich
+    document.querySelectorAll('.plan-plot').forEach((g) => g.classList.remove('wybrany'));
+    document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.classList.remove('wybrany'));
+    
+    // Dodanie podświetlenia do wybranego
+    const p = document.querySelector(`.plan-plot[data-dom="${id}"]`);
+    if(p) p.classList.add('wybrany');
+    
+    const r = document.querySelector(`.cennik tr[data-dom="${id}"]`);
+    if(r) r.classList.add('wybrany');
+
     const wiersz = document.getElementById('dom-' + id);
     if (wiersz && przewin) {
-        // Przewiń tak, aby wiersz był lekko poniżej środka ekranu, aby klient od razu widział cenę
-        wiersz.scrollIntoView({ block: 'center', behavior: mniejRuchu ? 'auto' : 'smooth' });
+        // Obliczamy pozycję, aby wiersz był mniej więcej w 1/3 wysokości ekranu od góry
+        const y = wiersz.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 3);
+        window.scrollTo({top: y, behavior: 'smooth'});
     }
   };
-  document.querySelectorAll('.p-dom a').forEach((a) => a.addEventListener('click', (e) => {
+  
+  document.querySelectorAll('.plan-plot').forEach((a) => a.addEventListener('click', (e) => {
     e.preventDefault();
-    const id = a.closest('.p-dom').dataset.dom;
-    wybierz(id, true); // Zmieniono na true - zawsze przewija po kliknięciu na planie
+    const id = a.dataset.dom;
+    wybierz(id, true); // Kliknięcie na planie zawsze przewija do tabeli
     history.replaceState(null, '', '#dom-' + id);
   }));
+  
   document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.addEventListener('click', (e) => {
     if (e.target.closest('button, a')) return;
-    wybierz(r.dataset.dom, false);
+    wybierz(r.dataset.dom, false); // Kliknięcie w tabeli tylko podświetla
   }));
   const zAdresu = location.hash.match(/^#dom-([1-3][AB])$/);
   if (zAdresu) wybierz(zAdresu[1], false);
