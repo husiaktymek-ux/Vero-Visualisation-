@@ -54,7 +54,7 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 
 .hero{position:relative;height:100svh;min-height:560px;max-height:1040px;overflow:hidden;background:#62696d;color:#fff}
 .hero__film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 62%}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);z-index:1}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);z-index:1}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:var(--antracyt);z-index:2}
 .hero__tekst{position:absolute;z-index:3;left:var(--m);right:var(--m);bottom:calc(16px + clamp(36px,5vw,72px))}
 .hero h1{margin:0;font:500 clamp(52px,9vw,136px)/.98 var(--szeryf);letter-spacing:-.012em;text-shadow:0 2px 34px rgba(20,24,26,.4)}
@@ -62,7 +62,8 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .hero__pauza{position:absolute;z-index:3;right:var(--m);bottom:calc(16px + clamp(36px,5vw,72px));color:#fff;font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:.2em;text-shadow:0 1px 10px rgba(20,24,26,.5);min-height:44px}
 
 .kotwice{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;height:58px;padding:0 var(--m);background:#fff;border-bottom:1px solid var(--linia)}
-.kotwice__nazwa{font:500 19px/1 var(--szeryf);text-decoration:none;white-space:nowrap}
+.kotwice__nazwa{display:flex;align-items:center;text-decoration:none;white-space:nowrap;height:100%}
+.kotwice__nazwa img{height:36px;width:auto}
 .kotwice__linki{display:flex;gap:clamp(18px,2.4vw,36px);font-size:14px;font-weight:500;color:var(--grafit);overflow-x:auto;scrollbar-width:none}
 .kotwice__linki::-webkit-scrollbar{display:none}
 .kotwice__linki a{text-decoration:none;white-space:nowrap;padding:18px 0}
@@ -230,7 +231,7 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
   .siatka > *{grid-column:1/-1 !important}
   .nag{padding:16px var(--m)}
   .nag__logo img{height:34px}
-  .nag__logo{padding:5px 10px}
+  .nag__logo{padding:0}
   .nag__tel{display:none}
     .hero{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;background:var(--antracyt)}
   .hero::before,.hero::after{display:none}
@@ -240,7 +241,7 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
   .hero__tekst p{margin:8px 0 22px;font-size:16px}
   .hero__pauza{bottom:auto;top:76px;min-height:32px}
   .kotwice{height:52px}
-  .kotwice__nazwa{display:none}
+  .kotwice__nazwa img{height:28px}
   .kotwice__linki a{padding:15px 0}
   .fakty__obraz{grid-row:auto;margin-top:44px}
   .fakty__siatka{grid-row:auto;margin-top:44px}
@@ -323,7 +324,8 @@ h3,.kadr__tytul,.kontakt__tel,.p-ulica-t{font-variation-settings:"opsz" 22}
 </section>
 
 <nav class="kotwice" aria-label="Sekcje strony">
-  <a class="kotwice__nazwa" href="#tresc">Jarzębinowe</a>
+  <!-- Zmiana: obrazek loga zamiast tekstu w pasku po przewinięciu -->
+  <a class="kotwice__nazwa" href="#tresc" aria-label="JARZĘBINOWE"><img src="logo1.webp" alt="JARZĘBINOWE"></a>
   <div class="kotwice__linki">
     <a href="#fakty">Najważniejsze</a><a href="#ceny">Plan i ceny</a><a href="#dom">Dom i rzuty</a><a href="#wnetrza">Wnętrza i ogród</a><a href="#okolica">Okolica</a><a href="#kontakt">Kontakt</a>
   </div>
@@ -676,12 +678,15 @@ h3,.kadr__tytul,.kontakt__tel,.p-ulica-t{font-variation-settings:"opsz" 22}
     document.querySelectorAll('.p-dom').forEach((g) => g.classList.toggle('wybrany', g.dataset.dom === id));
     document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.classList.toggle('wybrany', r.dataset.dom === id));
     const wiersz = document.getElementById('dom-' + id);
-    if (wiersz && przewin) wiersz.scrollIntoView({ block: 'center', behavior: mniejRuchu ? 'auto' : 'smooth' });
+    if (wiersz && przewin) {
+        // Przewiń tak, aby wiersz był lekko poniżej środka ekranu, aby klient od razu widział cenę
+        wiersz.scrollIntoView({ block: 'center', behavior: mniejRuchu ? 'auto' : 'smooth' });
+    }
   };
   document.querySelectorAll('.p-dom a').forEach((a) => a.addEventListener('click', (e) => {
     e.preventDefault();
     const id = a.closest('.p-dom').dataset.dom;
-    wybrierz(id, true);
+    wybierz(id, true); // Zmieniono na true - zawsze przewija po kliknięciu na planie
     history.replaceState(null, '', '#dom-' + id);
   }));
   document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.addEventListener('click', (e) => {
