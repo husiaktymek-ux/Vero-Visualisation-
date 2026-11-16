@@ -40,8 +40,9 @@
     <section class="relative h-[calc(100vh-4.5rem)] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                <source src="film.mp4" type="video/mp4">
-                <img src="Słoneczne osiedle domów bliźniaczych na skraju lasu.png" alt="Osiedle Jarzębinowe" class="w-full h-full object-cover">
+                <source src="/jarzebinowe/film.mp4" type="video/mp4">
+                <!-- Zapasowy obrazek jeśli wideo się nie załaduje -->
+                <img src="/jarzebinowe/Słoneczne osiedle domów bliźniaczych na skraju lasu.png" alt="Osiedle Jarzębinowe" class="w-full h-full object-cover">
             </video>
             <div class="absolute inset-0 hero-overlay"></div>
         </div>
@@ -73,8 +74,9 @@
                     </ul>
                 </div>
                 <div class="space-y-6">
-                    <img src="front.png" alt="Wizualizacja frontu" class="rounded-lg shadow-xl w-full">
-                    <img src="zlotuptaka.png" alt="Widok z lotu ptaka" class="rounded-lg shadow-xl w-full">
+                    <!-- Zaktualizowana nazwa ścieżki i dodane brakujące domyślnie przez github rozszerzenie .png -->
+                    <img src="front.png" onerror="this.src='front'" alt="Wizualizacja frontu" class="rounded-lg shadow-xl w-full">
+                    <img src="zlotuptaka.png" onerror="this.src='zlotuptaka'" alt="Widok z lotu ptaka" class="rounded-lg shadow-xl w-full">
                 </div>
             </div>
         </div>
@@ -122,10 +124,12 @@
                             <th class="p-4 border-b text-center">Opcje</th>
                         </tr>
                     </thead>
-                    <tbody class="text-gray-700">
+                    <tbody class="text-gray-700 align-middle">
                         <!-- Dom 1A -->
                         <tr class="hover:bg-gray-50 transition border-b">
-                            <td class="p-4 font-bold text-gray-900">1A</td>
+                            <td class="p-4 house-cell" data-house="1A" data-status="available">
+                                <span class="font-bold text-gray-900 block">1A</span>
+                            </td>
                             <td class="p-4">119,35 m²</td>
                             <td class="p-4">371 m²</td>
                             <td class="p-4 font-semibold text-lg text-gray-900">899 000 zł <span class="text-xs font-normal text-gray-500 block">7 532 zł/m²</span></td>
@@ -134,7 +138,9 @@
                         </tr>
                         <!-- Dom 1B (Sprzedany) -->
                         <tr class="bg-gray-50 opacity-60 transition border-b">
-                            <td class="p-4 font-bold text-gray-600">1B</td>
+                            <td class="p-4 house-cell" data-house="1B" data-status="sold">
+                                <span class="font-bold text-gray-600 block">1B</span>
+                            </td>
                             <td class="p-4 text-gray-500">119,35 m²</td>
                             <td class="p-4 text-gray-500">371 m²</td>
                             <td class="p-4 font-semibold text-lg text-gray-500 line-through">879 000 zł <span class="text-xs font-normal text-gray-400 block line-through">7 365 zł/m²</span></td>
@@ -143,7 +149,9 @@
                         </tr>
                         <!-- Dom 2A -->
                         <tr class="hover:bg-gray-50 transition border-b">
-                            <td class="p-4 font-bold text-gray-900">2A</td>
+                            <td class="p-4 house-cell" data-house="2A" data-status="available">
+                                <span class="font-bold text-gray-900 block">2A</span>
+                            </td>
                             <td class="p-4">119,35 m²</td>
                             <td class="p-4">371 m²</td>
                             <td class="p-4 font-semibold text-lg text-gray-900">879 000 zł <span class="text-xs font-normal text-gray-500 block">7 365 zł/m²</span></td>
@@ -152,7 +160,9 @@
                         </tr>
                         <!-- Dom 2B -->
                         <tr class="hover:bg-gray-50 transition border-b">
-                            <td class="p-4 font-bold text-gray-900">2B</td>
+                            <td class="p-4 house-cell" data-house="2B" data-status="available">
+                                <span class="font-bold text-gray-900 block">2B</span>
+                            </td>
                             <td class="p-4">119,35 m²</td>
                             <td class="p-4">371 m²</td>
                             <td class="p-4 font-semibold text-lg text-gray-900">879 000 zł <span class="text-xs font-normal text-gray-500 block">7 365 zł/m²</span></td>
@@ -161,7 +171,9 @@
                         </tr>
                         <!-- Dom 3A -->
                         <tr class="hover:bg-gray-50 transition border-b">
-                            <td class="p-4 font-bold text-gray-900">3A</td>
+                            <td class="p-4 house-cell" data-house="3A" data-status="reserved">
+                                <span class="font-bold text-gray-900 block">3A</span>
+                            </td>
                             <td class="p-4">119,35 m²</td>
                             <td class="p-4">371 m²</td>
                             <td class="p-4 font-semibold text-lg text-gray-900">899 000 zł <span class="text-xs font-normal text-gray-500 block">7 532 zł/m²</span></td>
@@ -170,7 +182,7 @@
                         </tr>
                         <!-- Dom 3B -->
                         <tr class="hover:bg-gray-50 transition border-b">
-                            <td class="p-4">
+                            <td class="p-4 house-cell" data-house="3B" data-status="available">
                                 <span class="font-bold text-gray-900 block">3B</span>
                                 <span class="text-xs text-blue-600 font-medium">Skrajny, widok na łąkę</span>
                             </td>
@@ -315,27 +327,59 @@
         </div>
     </div>
 
-    <!-- JS dla Modala -->
+    <!-- JS dla Modala i Rysowania Osiedla -->
     <script>
+        // --- 1. RYSOWANIE SCHEMATU OSIEDLA W TABELI ---
+        document.addEventListener("DOMContentLoaded", () => {
+            function generateMiniMap(activeId, status) {
+                // Dobieramy kolor wyróżnienia na podstawie statusu
+                let activeColor = 'bg-green-500';
+                if(status === 'sold') activeColor = 'bg-gray-500';
+                if(status === 'reserved') activeColor = 'bg-orange-400';
+
+                const isActive = (id) => id === activeId ? activeColor : 'bg-gray-200';
+
+                return `
+                <div class="flex items-center gap-1.5 mt-2" title="Plan osiedla (zaznaczony dom: ${activeId})">
+                    <!-- Budynek 1 (1A, 1B) -->
+                    <div class="flex border border-gray-300 rounded-sm overflow-hidden h-3.5 w-8 shadow-sm">
+                        <div class="w-1/2 h-full ${isActive('1A')} transition-colors"></div>
+                        <div class="w-1/2 h-full border-l border-gray-300 ${isActive('1B')} transition-colors"></div>
+                    </div>
+                    <!-- Budynek 2 (2A, 2B) -->
+                    <div class="flex border border-gray-300 rounded-sm overflow-hidden h-3.5 w-8 shadow-sm">
+                        <div class="w-1/2 h-full ${isActive('2A')} transition-colors"></div>
+                        <div class="w-1/2 h-full border-l border-gray-300 ${isActive('2B')} transition-colors"></div>
+                    </div>
+                    <!-- Budynek 3 (3A, 3B) -->
+                    <div class="flex border border-gray-300 rounded-sm overflow-hidden h-3.5 w-8 shadow-sm">
+                        <div class="w-1/2 h-full ${isActive('3A')} transition-colors"></div>
+                        <div class="w-1/2 h-full border-l border-gray-300 ${isActive('3B')} transition-colors"></div>
+                    </div>
+                </div>
+                `;
+            }
+
+            // Szukamy wszystkich komórek z atrybutem data-house i dodajemy im schemat
+            document.querySelectorAll('.house-cell').forEach(cell => {
+                const houseId = cell.getAttribute('data-house');
+                const status = cell.getAttribute('data-status');
+                
+                // Wrzuca minimapę na koniec komórki (pod nazwą/opisem)
+                cell.insertAdjacentHTML('beforeend', generateMiniMap(houseId, status));
+            });
+        });
+
+        // --- 2. OBSŁUGA MODALA HISTORII CEN ---
         const priceHistory = {
-            '1A': [
-                { date: '27.10.2026', price: '899 000 zł' }
-            ],
-            '1B': [
-                { date: '27.10.2026', price: '879 000 zł' }
-            ],
-            '2A': [
-                { date: '27.10.2026', price: '879 000 zł' }
-            ],
-            '2B': [
-                { date: '27.10.2026', price: '879 000 zł' }
-            ],
-            '3A': [
-                { date: '27.10.2026', price: '899 000 zł' }
-            ],
-            '3B': [
+            '1A': [ { date: '27.10.2026', price: '899 000 zł' } ],
+            '1B': [ { date: '27.10.2026', price: '879 000 zł' } ],
+            '2A': [ { date: '27.10.2026', price: '879 000 zł' } ],
+            '2B': [ { date: '27.10.2026', price: '879 000 zł' } ],
+            '3A': [ { date: '27.10.2026', price: '899 000 zł' } ],
+            '3B': [ 
                 { date: '15.11.2026', price: '929 000 zł' },
-                { date: '27.10.2026', price: '909 000 zł' }
+                { date: '27.10.2026', price: '909 000 zł' } 
             ]
         };
 
@@ -346,17 +390,13 @@
 
         function openModal(houseId) {
             document.getElementById('modalHouseId').innerText = 'Dom ' + houseId;
-            
-            // Wyczyść listę
             historyList.innerHTML = '';
             
-            // Zbuduj elementy listy
             const records = priceHistory[houseId] || [];
             records.forEach((record, index) => {
                 const item = document.createElement('div');
                 item.className = 'flex justify-between items-center p-3 bg-gray-50 rounded border';
                 
-                // Opis daty - dla pierwszej (najnowszej) wartości pokaż że to aktualna jeśli jest więcej niż 1, w przeciwnym razie po prostu "Cena"
                 let label = 'Cena ofertowa';
                 if (records.length > 1) {
                     label = index === 0 ? 'Aktualna cena' : 'Cena historyczna';
@@ -375,7 +415,6 @@
             modal.classList.remove('hidden');
             modal.classList.add('flex');
             
-            // Animation
             setTimeout(() => {
                 modalContent.classList.remove('scale-95');
                 modalContent.classList.add('scale-100');
@@ -395,7 +434,6 @@
             }, 200);
         }
 
-        // Zamknięcie po kliknięciu w tło
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
                 closeModal();
