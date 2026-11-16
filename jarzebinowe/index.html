@@ -46,7 +46,7 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .przycisk--obrys:hover{background:#fff}
 
 .nag{position:absolute;inset:0 0 auto;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px var(--m)}
-.nag__logo{display:block;background:#fff;padding:6px 14px;border-radius:3px;line-height:0}
+.nag__logo{display:block;background:transparent;padding:0;line-height:0}
 .nag__logo img{height:52px;width:auto}
 .nag__prawa{display:flex;align-items:center;gap:26px}
 .nag__tel{color:#fff;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap;text-shadow:0 1px 12px rgba(20,24,26,.4)}
@@ -54,7 +54,7 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 
 .hero{position:relative;height:100svh;min-height:560px;max-height:1040px;overflow:hidden;background:#62696d;color:#fff}
 .hero__film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 62%}
-.hero::before{content:"";position:absolute;inset:0;background:rgba(28,32,35,.16);z-index:1}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);z-index:1}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:var(--antracyt);z-index:2}
 .hero__tekst{position:absolute;z-index:3;left:var(--m);right:var(--m);bottom:calc(16px + clamp(36px,5vw,72px))}
 .hero h1{margin:0;font:500 clamp(52px,9vw,136px)/.98 var(--szeryf);letter-spacing:-.012em;text-shadow:0 2px 34px rgba(20,24,26,.4)}
@@ -346,7 +346,7 @@ h3,.kadr__tytul,.kontakt__tel,.p-ulica-t{font-variation-settings:"opsz" 22}
       <div><dt>Do lasu</dt><dd>ok. 300&nbsp;m</dd></div>
       <div><dt>Ogrzewanie</dt><dd>pompa ciepła, podłogówka</dd></div>
       <div class="ciemne"><dt>Oddanie kluczy</dt><dd>IV kw. 2027</dd></div>
-      <div class="ciemne"><dt>Ceny brutto</dt><dd>od 879 000 zł</dd></div>
+      <div class="ciemne"><dt>Ceny brutto</dt><dd>od 879 000 zł</dd></div>
     </dl>
   </div>
 </section>
@@ -376,57 +376,57 @@ h3,.kadr__tytul,.kontakt__tel,.p-ulica-t{font-variation-settings:"opsz" 22}
         <path class="p-kraw" d="M0 60H2000M0 210H2000M0 262H2000"/>
         <text class="p-ulica-t" x="70" y="152">ul. Jarzębinowa</text>
         <g transform="translate(1928 110)" aria-hidden="true"><path d="M0 50V-30" stroke="#383E42" stroke-width="4"/><path d="M0-48L-15-12H15Z" fill="#B5332E"/><text class="p-n" x="-10" y="92">N</text></g>
-                <g class="p-dom dost" data-dom="1A"><a href="#dom-1A" aria-label="Dom 1A: 899 000 zł, dostępny">
+                <g class="p-dom dost" data-dom="1A"><a href="#dom-1A" aria-label="Dom 1A: 899 000 zł, dostępny">
           <rect class="p-dzialka" x="80" y="262" width="307" height="848"/>
           <rect class="p-podjazd" x="90" y="266" width="134" height="144"/>
           <rect class="p-etykieta" x="94" y="866" width="279" height="214"/>
           <text class="p-id" x="108" y="962">1A</text>
-          <text class="p-cena" x="111" y="1016">899 000 zł</text>
+          <text class="p-cena" x="111" y="1016">899 000 zł</text>
           <text class="p-st" x="111" y="1058">dostępny</text>
           <rect class="p-ramka" x="85" y="267" width="297" height="838"/>
         </a></g>
-                <g class="p-dom sprz" data-dom="1B"><a href="#dom-1B" aria-label="Dom 1B: 879 000 zł, sprzedany">
+                <g class="p-dom sprz" data-dom="1B"><a href="#dom-1B" aria-label="Dom 1B: 879 000 zł, sprzedany">
           <rect class="p-dzialka" x="387" y="262" width="307" height="848"/>
           <rect class="p-podjazd" x="550" y="266" width="134" height="144"/>
           <rect class="p-etykieta" x="401" y="866" width="279" height="214"/>
           <text class="p-id" x="415" y="962">1B</text>
-          <text class="p-cena" x="418" y="1016">879 000 zł</text>
+          <text class="p-cena" x="418" y="1016">879 000 zł</text>
           <text class="p-st" x="418" y="1058">sprzedany</text>
           <rect class="p-ramka" x="392" y="267" width="297" height="838"/>
         </a></g>
-                <g class="p-dom dost" data-dom="2A"><a href="#dom-2A" aria-label="Dom 2A: 879 000 zł, dostępny">
+                <g class="p-dom dost" data-dom="2A"><a href="#dom-2A" aria-label="Dom 2A: 879 000 zł, dostępny">
           <rect class="p-dzialka" x="694" y="262" width="307" height="848"/>
           <rect class="p-podjazd" x="704" y="266" width="134" height="144"/>
           <rect class="p-etykieta" x="708" y="866" width="279" height="214"/>
           <text class="p-id" x="722" y="962">2A</text>
-          <text class="p-cena" x="725" y="1016">879 000 zł</text>
+          <text class="p-cena" x="725" y="1016">879 000 zł</text>
           <text class="p-st" x="725" y="1058">dostępny</text>
           <rect class="p-ramka" x="699" y="267" width="297" height="838"/>
         </a></g>
-                <g class="p-dom dost" data-dom="2B"><a href="#dom-2B" aria-label="Dom 2B: 879 000 zł, dostępny">
+                <g class="p-dom dost" data-dom="2B"><a href="#dom-2B" aria-label="Dom 2B: 879 000 zł, dostępny">
           <rect class="p-dzialka" x="1001" y="262" width="307" height="848"/>
           <rect class="p-podjazd" x="1164" y="266" width="134" height="144"/>
           <rect class="p-etykieta" x="1015" y="866" width="279" height="214"/>
           <text class="p-id" x="1029" y="962">2B</text>
-          <text class="p-cena" x="1032" y="1016">879 000 zł</text>
+          <text class="p-cena" x="1032" y="1016">879 000 zł</text>
           <text class="p-st" x="1032" y="1058">dostępny</text>
           <rect class="p-ramka" x="1006" y="267" width="297" height="838"/>
         </a></g>
-                <g class="p-dom rez" data-dom="3A"><a href="#dom-3A" aria-label="Dom 3A: 899 000 zł, rezerwacja">
+                <g class="p-dom rez" data-dom="3A"><a href="#dom-3A" aria-label="Dom 3A: 899 000 zł, rezerwacja">
           <rect class="p-dzialka" x="1308" y="262" width="307" height="848"/>
           <rect class="p-podjazd" x="1318" y="266" width="134" height="144"/>
           <rect class="p-etykieta" x="1322" y="866" width="279" height="214"/>
           <text class="p-id" x="1336" y="962">3A</text>
-          <text class="p-cena" x="1339" y="1016">899 000 zł</text>
+          <text class="p-cena" x="1339" y="1016">899 000 zł</text>
           <text class="p-st" x="1339" y="1058">rezerwacja</text>
           <rect class="p-ramka" x="1313" y="267" width="297" height="838"/>
         </a></g>
-                <g class="p-dom dost" data-dom="3B"><a href="#dom-3B" aria-label="Dom 3B: 929 000 zł, dostępny">
+                <g class="p-dom dost" data-dom="3B"><a href="#dom-3B" aria-label="Dom 3B: 929 000 zł, dostępny">
           <rect class="p-dzialka" x="1615" y="262" width="307" height="848"/>
           <rect class="p-podjazd" x="1778" y="266" width="134" height="144"/>
           <rect class="p-etykieta" x="1629" y="866" width="279" height="214"/>
           <text class="p-id" x="1643" y="962">3B</text>
-          <text class="p-cena" x="1646" y="1016">929 000 zł</text>
+          <text class="p-cena" x="1646" y="1016">929 000 zł</text>
           <text class="p-st" x="1646" y="1058">dostępny</text>
           <rect class="p-ramka" x="1620" y="267" width="297" height="838"/>
         </a></g>
@@ -470,67 +470,67 @@ h3,.kadr__tytul,.kontakt__tel,.p-ulica-t{font-variation-settings:"opsz" 22}
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
         <td data-l="Pokoje">4</td>
-        <td class="p cena">899 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 532,47 zł</td>
+        <td class="p cena">899 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 532,47 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
         <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1A">Historia zmian (3)</button></td>
       </tr>
-      <tr class="historia" id="h-1A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 819 000 zł (6 862,17 zł/m²)</span></li></ol></td></tr>
+      <tr class="historia" id="h-1A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 819 000 zł (6 862,17 zł/m²)</span></li></ol></td></tr>
           <tr id="dom-1B" data-dom="1B">
         <th scope="row">1B</th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
         <td data-l="Pokoje">4</td>
-        <td class="p cena">879 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
+        <td class="p cena">879 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
         <td data-l="Status"><span class="st st--sprz">Sprzedany</span></td>
         <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1B">Historia zmian (4)</button></td>
       </tr>
-      <tr class="historia" id="h-1B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: dostępny → sprzedany</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
+      <tr class="historia" id="h-1B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: dostępny → sprzedany</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
           <tr id="dom-2A" data-dom="2A">
         <th scope="row">2A</th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
         <td data-l="Pokoje">4</td>
-        <td class="p cena">879 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
+        <td class="p cena">879 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
         <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-2A">Historia zmian (3)</button></td>
       </tr>
-      <tr class="historia" id="h-2A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
+      <tr class="historia" id="h-2A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
           <tr id="dom-2B" data-dom="2B">
         <th scope="row">2B</th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
         <td data-l="Pokoje">4</td>
-        <td class="p cena">879 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
+        <td class="p cena">879 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
         <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-2B">Historia zmian (3)</button></td>
       </tr>
-      <tr class="historia" id="h-2B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
+      <tr class="historia" id="h-2B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
           <tr id="dom-3A" data-dom="3A">
         <th scope="row">3A</th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
         <td data-l="Pokoje">4</td>
-        <td class="p cena">899 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 532,47 zł</td>
+        <td class="p cena">899 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 532,47 zł</td>
         <td data-l="Status"><span class="st st--rez">Rezerwacja</span></td>
         <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-3A">Historia zmian (4)</button></td>
       </tr>
-      <tr class="historia" id="h-3A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: dostępny → rezerwacja</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 819 000 zł (6 862,17 zł/m²)</span></li></ol></td></tr>
+      <tr class="historia" id="h-3A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: dostępny → rezerwacja</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 819 000 zł (6 862,17 zł/m²)</span></li></ol></td></tr>
           <tr id="dom-3B" data-dom="3B">
         <th scope="row">3B<small>skrajny od wschodu – otwarty widok na łąkę</small></th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
         <td data-l="Pokoje">4</td>
-        <td class="p cena">929 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 783,83 zł</td>
+        <td class="p cena">929 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 783,83 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
         <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-3B">Historia zmian (4)</button></td>
       </tr>
-      <tr class="historia" id="h-3B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: rezerwacja → dostępny</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 839 000 zł → 929 000 zł (7 783,83 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: rezerwacja</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 839 000 zł (7 029,74 zł/m²)</span></li></ol></td></tr>
+      <tr class="historia" id="h-3B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: rezerwacja → dostępny</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 839 000 zł → 929 000 zł (7 783,83 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: rezerwacja</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 839 000 zł (7 029,74 zł/m²)</span></li></ol></td></tr>
         </tbody>
   </table>
   <ul class="uwagi">
@@ -681,7 +681,7 @@ h3,.kadr__tytul,.kontakt__tel,.p-ulica-t{font-variation-settings:"opsz" 22}
   document.querySelectorAll('.p-dom a').forEach((a) => a.addEventListener('click', (e) => {
     e.preventDefault();
     const id = a.closest('.p-dom').dataset.dom;
-    wybierz(id, true);
+    wybrierz(id, true);
     history.replaceState(null, '', '#dom-' + id);
   }));
   document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.addEventListener('click', (e) => {
