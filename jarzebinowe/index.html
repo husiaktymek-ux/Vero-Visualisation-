@@ -1,542 +1,749 @@
-<!DOCTYPE html>
-<html lang="pl" class="scroll-smooth">
+<!doctype html>
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JARZĘBINOWE - Nowoczesne domy w Mikołowie (Koncept)</title>
-    
-    <!-- Google Fonts: Playfair Display (dla eleganckich nagłówków) i Inter (dla czytelnego tekstu) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .modal-active { overflow: hidden; }
-        .hero-overlay { background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%); }
-        
-        /* Wzory na planie osiedla */
-        .roof-pattern { 
-            background: repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(0,0,0,0.04) 4px, rgba(0,0,0,0.04) 5px), #e5e7eb; 
-            border: 1px solid #d1d5db; 
-        }
-        .hatched-pattern { 
-            background: repeating-linear-gradient(45deg, rgba(34,197,94,0.02), rgba(34,197,94,0.02) 5px, transparent 5px, transparent 10px); 
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JARZĘBINOWE – sześć domów w zabudowie bliźniaczej, Mikołów-Mokre</title>
+<meta name="description" content="6 domów w trzech bliźniakach przy ul. Jarzębinowej w Mikołowie-Mokrem: 119 m², 4 pokoje, działka ok. 371 m², ogród od południa. Plan osiedla, ceny z historią, rzuty, kontakt.">
+<meta name="theme-color" content="#383E42">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300..700&family=Bodoni+Moda:opsz,wght@6..96,400..700&display=swap">
+<style>
+
+:root{
+  --biel:#FFFFFF; --mgla:#EEF1F3; --linia:#D5DBDF; --antracyt:#383E42; --grafit:#5A6166;
+  --zielen:#4A6B35; --zielen-t:#E5EEDF; --jesion:#A4704A; --jesion-c:#7A5236; --jarz:#B5332E;
+  --m:clamp(20px,2.8vw,40px); --odst:clamp(14px,1.8vw,28px);
+  --font:"Albert Sans","Segoe UI",Arial,sans-serif;
+  --szeryf:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:64px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--biel);color:var(--antracyt);font:400 17px/1.6 var(--font);font-variant-numeric:lining-nums}
+img,video,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.2em}
+a:hover{text-decoration-color:var(--jarz)}
+:focus-visible{outline:2px solid var(--jarz);outline-offset:3px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+h2{margin:0;font:400 clamp(38px,5.4vw,78px)/1.08 var(--szeryf);letter-spacing:-.01em;font-optical-sizing:auto}
+h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
+.wstep{font:300 clamp(20px,1.95vw,28px)/1.5 var(--font);margin:0;text-indent:2.2em;max-width:30em}
+.drobny{font-size:14px;color:var(--grafit)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pomin{position:absolute;left:-999px;top:8px;z-index:30;background:var(--antracyt);color:#fff;padding:8px 14px}
+.pomin:focus{left:8px}
+.siatka{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--odst);padding-inline:var(--m)}
+
+.przycisk{display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border-radius:3px;background:var(--antracyt);color:#fff;font-size:15px;font-weight:600;text-decoration:none;border:1px solid var(--antracyt)}
+.przycisk:hover{background:#2B3033;text-decoration:none}
+.przycisk--jasny{background:#fff;color:var(--antracyt);border-color:#fff}
+.przycisk--jasny:hover{background:var(--mgla)}
+.przycisk--obrys{background:transparent;color:var(--antracyt)}
+.przycisk--obrys:hover{background:#fff}
+
+.nag{position:absolute;inset:0 0 auto;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px var(--m)}
+.nag__logo{display:block;background:#fff;padding:6px 14px;border-radius:3px;line-height:0}
+.nag__logo img{height:52px;width:auto}
+.nag__prawa{display:flex;align-items:center;gap:26px}
+.nag__tel{color:#fff;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap;text-shadow:0 1px 12px rgba(20,24,26,.4)}
+.nag__tel:hover{text-decoration:underline}
+
+.hero{position:relative;height:100svh;min-height:560px;max-height:1040px;overflow:hidden;background:#62696d;color:#fff}
+.hero__film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 62%}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(28,32,35,.16);z-index:1}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:var(--antracyt);z-index:2}
+.hero__tekst{position:absolute;z-index:3;left:var(--m);right:var(--m);bottom:calc(16px + clamp(36px,5vw,72px))}
+.hero h1{margin:0;font:500 clamp(52px,9vw,136px)/.98 var(--szeryf);letter-spacing:-.012em;text-shadow:0 2px 34px rgba(20,24,26,.4)}
+.hero__tekst p{margin:14px 0 26px;font-size:clamp(17px,1.5vw,21px);font-weight:500;text-shadow:0 1px 16px rgba(20,24,26,.5)}
+.hero__pauza{position:absolute;z-index:3;right:var(--m);bottom:calc(16px + clamp(36px,5vw,72px));color:#fff;font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:.2em;text-shadow:0 1px 10px rgba(20,24,26,.5);min-height:44px}
+
+.kotwice{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;height:58px;padding:0 var(--m);background:#fff;border-bottom:1px solid var(--linia)}
+.kotwice__nazwa{font:500 19px/1 var(--szeryf);text-decoration:none;white-space:nowrap}
+.kotwice__linki{display:flex;gap:clamp(18px,2.4vw,36px);font-size:14px;font-weight:500;color:var(--grafit);overflow-x:auto;scrollbar-width:none}
+.kotwice__linki::-webkit-scrollbar{display:none}
+.kotwice__linki a{text-decoration:none;white-space:nowrap;padding:18px 0}
+.kotwice__linki a:hover,.kotwice__linki a[aria-current=true]{color:var(--antracyt);box-shadow:inset 0 -2px 0 var(--antracyt)}
+
+.fakty{background:var(--mgla);padding:clamp(72px,9vw,140px) 0}
+.fakty__wstep{grid-column:1/7}
+.przyciski{display:flex;flex-wrap:wrap;gap:10px;margin:36px 0 0}
+.fakty__obraz{grid-column:8/13;grid-row:1/3;margin:0}
+.fakty__obraz img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:46% 50%}
+.fakty__siatka{grid-column:1/7;grid-row:2;align-self:end;margin:clamp(56px,7vw,110px) 0 0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linia);border:1px solid var(--linia)}
+.fakty__siatka div{background:#fff;padding:20px 22px 22px;display:flex;flex-direction:column}
+.fakty__siatka dt{font-size:13px;font-weight:500;color:var(--grafit)}
+.fakty__siatka dd{margin:8px 0 0;font:400 clamp(22px,2.1vw,30px)/1.2 var(--szeryf)}
+.fakty__siatka .ciemne{background:var(--antracyt);color:#fff}
+.fakty__siatka .ciemne dt{color:rgba(255,255,255,.78)}
+
+.ceny{padding:clamp(80px,9vw,140px) 0 clamp(80px,9vw,130px)}
+.ceny__glowa{align-items:end}
+.ceny__glowa h2{grid-column:1/7}
+.ceny__glowa p{grid-column:8/13;margin:0;max-width:36em}
+.ceny__glowa p span{display:block;margin-top:10px;font-size:14px;color:var(--grafit)}
+.zakladki{display:inline-flex;gap:4px;margin:clamp(36px,4vw,56px) var(--m) 18px;padding:4px;border:1px solid var(--linia);border-radius:999px}
+.zakladki button{min-height:40px;padding:8px 20px;border-radius:999px;font-size:14px;font-weight:600;color:var(--grafit)}
+.zakladki button[aria-selected=true]{background:var(--antracyt);color:#fff}
+.widok{padding-inline:var(--m)}
+.plan,.lot{margin:0;border:1px solid var(--linia)}
+.plan svg{width:100%;height:auto;background:var(--mgla)}
+.plan figcaption,.lot figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;padding:12px 16px;border-top:1px solid var(--linia);font-size:14px;color:var(--grafit)}
+.lot img{width:100%;aspect-ratio:2000/1240;object-fit:cover}
+.legenda{display:flex;flex-wrap:wrap;gap:6px 26px;margin:0;padding:0;list-style:none}
+.znak{display:inline-block;width:16px;height:16px;margin-right:8px;vertical-align:-.2em;border:1.5px solid var(--grafit)}
+.znak--dost{background:var(--zielen-t);border-color:var(--zielen)}
+.znak--rez{border-color:var(--jesion);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Cpath d='M0 6L6 0M-1 1L1-1M5 7L7 5' stroke='%23A4704A' stroke-width='1.6'/%3E%3C/svg%3E") #FFFFFF}
+.znak--sprz{background:var(--antracyt);border-color:var(--antracyt)}
+
+.p-laka{fill:url(#laka)}
+.p-ulica{fill:#D3D8DB}
+.p-kraw{fill:none;stroke:#9AA3A8;stroke-width:2}
+.p-ulica-t{font:400 46px var(--szeryf);fill:var(--antracyt)}
+.p-n{font:600 30px var(--font);fill:var(--antracyt)}
+.p-dzialka{stroke:var(--grafit);stroke-width:2.5;transition:fill .15s}
+.p-dom.dost .p-dzialka{fill:var(--zielen-t)}
+.p-dom.rez .p-dzialka{fill:url(#kreski)}
+.p-dom.sprz .p-dzialka{fill:#4C5357}
+.p-dom a{outline:none;cursor:pointer}
+.p-dom.dost a:hover .p-dzialka{fill:#D3E2C9}
+.p-dom a:focus-visible .p-ramka{stroke:var(--jarz);stroke-width:7}
+.p-ramka{fill:none;stroke:none}
+.p-dom.wybrany .p-ramka{stroke:var(--antracyt);stroke-width:9}
+.p-podjazd{fill:#DADFE2}
+.p-ozdoby,.p-dom text{pointer-events:none}
+.p-sasiad{fill:#E1E5E8}
+.p-etykieta{fill:none}
+.p-dom.rez .p-etykieta{fill:#FFFFFF}
+.p-dom.sprz .p-etykieta{fill:#4C5357}
+.p-dach{fill:var(--antracyt)}
+.p-rabek{stroke:#fff;stroke-opacity:.22;stroke-width:1.4}
+.p-sciana{stroke:#fff;stroke-opacity:.8;stroke-width:3}
+.p-taras{fill:#C9CED2}
+.p-id{font:400 104px var(--szeryf);fill:var(--antracyt)}
+.p-cena{font:600 31px var(--font);fill:var(--antracyt)}
+.p-st{font:500 27px var(--font);fill:var(--zielen)}
+.p-dom.rez .p-st{fill:var(--jesion-c)}
+.p-dom.sprz .p-id,.p-dom.sprz .p-cena,.p-dom.sprz .p-st{fill:#fff}
+.p-opis{font:400 32px var(--font);fill:var(--grafit)}
+
+.cennik{width:calc(100% - 2 * var(--m));margin:clamp(40px,4.5vw,64px) var(--m) 0;border-collapse:collapse}
+.cennik thead th{background:var(--mgla);font-size:13px;font-weight:500;color:var(--grafit);text-align:left;padding:13px 16px}
+.cennik td,.cennik tbody th{padding:18px 16px;text-align:left;border-bottom:1px solid var(--linia);vertical-align:middle}
+.cennik .p{text-align:right}
+.cennik tbody th{font:500 28px/1.1 var(--szeryf);white-space:nowrap}
+.cennik tbody th small{display:block;font-size:13px;font-weight:400;line-height:1.35;color:var(--grafit);margin-top:6px;white-space:normal;max-width:22ch}
+.cennik .cena{font:400 25px/1.1 var(--szeryf);white-space:nowrap}
+.cennik tr[data-dom]{cursor:pointer}
+.cennik tr[data-dom]:hover > *{background:#F7F8F9}
+.cennik tr.wybrany > *,.cennik tr:target > *{background:var(--mgla)}
+.cennik tr.wybrany > th,.cennik tr:target > th{box-shadow:inset 4px 0 0 var(--antracyt)}
+.st{white-space:nowrap;font-weight:500}
+.st::before{content:"";display:inline-block;width:11px;height:11px;margin-right:9px;vertical-align:-.04em;border-radius:50%}
+.st--dost{color:var(--zielen)}.st--dost::before{background:var(--zielen)}
+.st--rez{color:var(--jesion-c)}.st--rez::before{background:var(--jesion)}
+.st--sprz{color:var(--antracyt)}.st--sprz::before{background:var(--antracyt)}
+.hist{font-size:14px;font-weight:500;color:var(--grafit);text-decoration:underline;text-underline-offset:.2em;white-space:nowrap;min-height:44px}
+.hist[aria-expanded=true]{color:var(--antracyt);text-decoration-color:var(--jarz)}
+.historia[hidden]{display:none}
+.historia td{background:var(--mgla);padding:0 16px 18px}
+.historia ol{list-style:none;margin:0;padding:6px 0 0;display:grid;gap:4px;font-size:15px}
+.historia li{display:grid;grid-template-columns:140px 1fr;gap:16px}
+.historia time{color:var(--grafit)}
+.uwagi{margin:24px var(--m) 0;padding:0;list-style:none;font-size:14px;color:var(--grafit);max-width:90ch}
+.uwagi li + li{margin-top:6px}
+.uwagi b{color:var(--antracyt);font-weight:600}
+
+.dom{background:var(--mgla);padding:clamp(80px,9vw,140px) 0}
+.dom__glowa{row-gap:28px}
+.dom__glowa h2{grid-column:1/8}
+.dom__glowa .wstep{grid-column:1/8}
+.rzuty{margin-top:clamp(48px,5vw,72px);row-gap:48px}
+.rzuty figure{margin:0;grid-column:span 6;background:#fff;padding:clamp(16px,2vw,28px)}
+.rzuty figure > img,.rzuty figure picture img{width:100%}
+.rzuty figcaption{margin:18px 0 8px;font-size:15px}
+.rzuty figcaption b{font-weight:600;margin-right:6px}
+.pom{width:100%;border-collapse:collapse;font-size:15px}
+.pom th,.pom td{padding:7px 0;border-top:1px solid var(--linia);text-align:left;font-weight:400}
+.pom td{text-align:right;white-space:nowrap}
+.dom__przypis{padding-inline:var(--m);margin:22px 0 0;max-width:110ch}
+.standard{margin-top:clamp(64px,7vw,104px)}
+.standard h3{grid-column:1/4}
+.standard dl{grid-column:4/13;margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:var(--odst)}
+.standard dl div{padding:14px 0 16px;border-top:1px solid var(--linia)}
+.standard dt{font-size:13px;font-weight:600}
+.standard dd{margin:4px 0 0;font-size:15px;color:var(--grafit)}
+
+.wnetrza{padding:clamp(80px,9vw,140px) 0 clamp(56px,6vw,96px)}
+.kadr{position:relative;margin:0}
+.kadr img{width:100%;height:clamp(380px,56vw,880px);object-fit:cover}
+.kadr__tytul{position:absolute;left:0;bottom:0;background:var(--antracyt);color:#fff;padding:22px var(--m) 20px;font:400 clamp(26px,3.4vw,52px)/1.1 var(--szeryf);max-width:92%}
+.kadr__dalej{margin:clamp(28px,3vw,44px) 0 clamp(80px,9vw,140px);align-items:start}
+.kadr__dalej p{grid-column:1/6;margin:0;font:300 clamp(19px,1.6vw,23px)/1.55 var(--font);max-width:30em}
+.kadr__dalej figure{grid-column:7/13;margin:0}
+.kadr__dalej figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.wnetrza__przypis{padding-inline:var(--m);margin:-60px 0 0}
+
+.okolica{padding:clamp(80px,9vw,140px) 0;border-top:1px solid var(--linia)}
+.okolica__tekst{grid-column:1/6}
+.okolica__tekst .wstep{margin-top:28px;text-indent:0}
+.okolica__tekst p:last-child{margin-top:24px;font-weight:500}
+.okolica__mapa{grid-column:6/13;margin:0}
+.okolica__mapa img{width:100%;border:1px solid var(--linia)}
+.okolica__mapa figcaption{margin-top:10px;font-size:13px;color:var(--grafit)}
+
+.kontakt{background:var(--antracyt);color:#fff;padding:clamp(80px,9vw,140px) 0}
+.kontakt__dane{grid-column:1/6}
+.kontakt__dane p{color:rgba(255,255,255,.86);max-width:30em}
+.kontakt__tel{margin:28px 0 4px;font:400 clamp(32px,3.4vw,50px)/1.1 var(--szeryf)}
+.kontakt__tel a{color:#fff;text-decoration:none}
+.kontakt__tel a:hover{text-decoration:underline}
+.kontakt :focus-visible{outline-color:#fff}
+.formularz{grid-column:7/13;display:grid;grid-template-columns:1fr 1fr;gap:18px var(--odst);align-content:start}
+.formularz label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
+.formularz label small{font-weight:400;color:rgba(255,255,255,.75)}
+.formularz .szeroko{grid-column:1/-1}
+.formularz input,.formularz select,.formularz textarea{min-height:48px;padding:11px 14px;border:1px solid rgba(255,255,255,.35);border-radius:3px;background:#fff;color:var(--antracyt);font-size:16px;font-weight:400}
+.formularz textarea{resize:vertical}
+.formularz .zgoda{flex-direction:row;align-items:flex-start;gap:12px;font-weight:400;font-size:13px;line-height:1.5;color:rgba(255,255,255,.86)}
+.formularz .zgoda input{min-height:0;width:20px;height:20px;margin:2px 0 0;flex:none;accent-color:var(--antracyt)}
+.formularz .hp{position:absolute;left:-9999px}
+.formularz button{justify-self:start}
+.komunikat{margin:0;padding:12px 16px;border-radius:3px;font-size:15px;background:#fff;color:var(--antracyt)}
+.komunikat--ok{box-shadow:inset 4px 0 0 var(--zielen)}
+.komunikat--blad{box-shadow:inset 4px 0 0 var(--jarz)}
+
+.stopka{padding:56px 0 64px;font-size:14px}
+.stopka img{grid-column:1/4;height:52px;width:auto}
+.stopka p{grid-column:4/8;margin:0}
+.stopka .drobny{grid-column:8/13;margin:0}
+
+.brak-obrazu{background:var(--mgla);aspect-ratio:16/9}
+
+@media (max-width:1100px){
+  .fakty__siatka dd{font-size:22px}
+}
+@media (max-width:900px){
+  .siatka > *{grid-column:1/-1 !important}
+  .nag{padding:16px var(--m)}
+  .nag__logo img{height:34px}
+  .nag__logo{padding:5px 10px}
+  .nag__tel{display:none}
+    .hero{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;background:var(--antracyt)}
+  .hero::before,.hero::after{display:none}
+  .hero__film{position:relative;inset:auto;height:auto;aspect-ratio:1/1}
+  .hero__tekst{position:static;padding:24px var(--m) 32px}
+  .hero h1,.hero__tekst p{text-shadow:none}
+  .hero__tekst p{margin:8px 0 22px;font-size:16px}
+  .hero__pauza{bottom:auto;top:76px;min-height:32px}
+  .kotwice{height:52px}
+  .kotwice__nazwa{display:none}
+  .kotwice__linki a{padding:15px 0}
+  .fakty__obraz{grid-row:auto;margin-top:44px}
+  .fakty__siatka{grid-row:auto;margin-top:44px}
+  .ceny__glowa p{margin-top:22px}
+  .rzuty figure{grid-column:1/-1}
+  .standard dl{grid-template-columns:1fr;margin-top:24px}
+  .kadr img{height:auto;aspect-ratio:4/3}
+  .kadr__tytul{position:static;max-width:none;padding:16px var(--m)}
+  .kadr__dalej figure{margin-top:28px}
+  .wnetrza__przypis{margin-top:-40px}
+  .okolica__mapa{margin-top:36px}
+  .formularz{margin-top:40px}
+  .stopka p,.stopka .drobny{margin-top:18px}
+    .p-id{font-size:150px}
+  .p-cena,.p-st,.p-opis{display:none}
+  .p-ulica-t{font-size:72px}
+  .p-n{font-size:48px}
+  .widok{padding-inline:0}
+  .plan,.lot{border-inline:0}
+    .cennik{width:auto;display:block;margin-inline:var(--m)}
+  .cennik tbody{display:block}
+  .cennik thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .cennik tr[data-dom]{display:grid;grid-template-columns:1fr 1fr;column-gap:14px;row-gap:12px;padding:18px 0;border-bottom:1px solid var(--linia)}
+  .cennik tr[data-dom] > *{padding:0;border:0;background:none}
+  .cennik tbody th{grid-column:1;grid-row:1}
+  .cennik td.cena{grid-column:2;grid-row:1;text-align:right;align-self:start;font-size:22px;padding-top:2px}
+  .cennik td[data-l]::before{content:attr(data-l);display:block;font-size:12px;font-weight:500;color:var(--grafit);margin-bottom:2px}
+  .cennik td.p:not(.cena){text-align:left}
+  .cennik td.h{text-align:right;align-self:end}
+  .cennik tr.wybrany,.cennik tr:target{background:var(--mgla);box-shadow:-12px 0 0 var(--mgla),12px 0 0 var(--mgla)}
+  .cennik tr.wybrany > th,.cennik tr:target > th{box-shadow:none}
+  .historia{display:block}
+  .historia td{display:block;padding:12px 0 16px;background:none}
+  .historia li{grid-template-columns:1fr;gap:0}
+  .uwagi{margin-inline:var(--m)}
+}
+@media (max-width:420px){
+  .formularz{grid-template-columns:1fr}
+  .fakty__siatka{grid-template-columns:1fr 1fr}
+  .fakty__siatka div{padding:16px 14px 18px}
+  .fakty__siatka dd{font-size:19px}
+}
+
+h2{font-variation-settings:"opsz" 34}
+.hero h1{font-variation-settings:"opsz" 26}
+h3,.kadr__tytul,.kontakt__tel,.p-ulica-t{font-variation-settings:"opsz" 22}
+.kotwice__nazwa,.fakty__siatka dd,.cennik tbody th,.cennik .cena{font-variation-settings:"opsz" 14}
+.cennik .cena{font-weight:500}
+.p-id{font-variation-settings:"opsz" 11;font-weight:500}
+.cennik tbody th small{font-family:var(--font);font-variation-settings:normal}
+
+</style>
+<meta property="og:title" content="JARZĘBINOWE – domy w zabudowie bliźniaczej, Mikołów-Mokre">
+<meta property="og:description" content="119 m², 4 pokoje, działka ok. 371 m², ogród od południa. Oddanie IV kw. 2027.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Residence","name":"JARZĘBINOWE – domy w zabudowie bliźniaczej","address":{"@type":"PostalAddress","streetAddress":"ul. Jarzębinowa","addressLocality":"Mikołów-Mokre","addressCountry":"PL"},"url":"https://jarzebinowe.pl"}</script>
 </head>
-<body class="font-sans text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+<body data-statyczna>
+<a class="pomin" href="#tresc">Przejdź do treści</a>
 
-    <!-- Pasek portfolio -->
-    <div class="bg-gray-900 text-gray-300 text-xs py-1.5 text-center relative z-[60] tracking-wide">
-        Projekt koncepcyjny – inwestycja, deweloper i ceny są fikcyjne. Wizualizacje i strona: <strong class="text-white">Vero Visualisation</strong>.
+<header class="nag">
+  <a class="nag__logo" href="#" aria-label="JARZĘBINOWE – początek strony"><img src="logo1.webp" alt="JARZĘBINOWE" width="460" height="120"></a>
+  <div class="nag__prawa">
+    <a class="nag__tel" href="tel:+48672432888">+48 672 432 888</a>
+    <a class="przycisk przycisk--jasny" href="#kontakt">Zapytaj o dom</a>
+  </div>
+</header>
+
+<main id="tresc">
+<section class="hero" aria-labelledby="tytul">
+  <video class="hero__film" data-film autoplay muted loop playsinline preload="none" poster="Słoneczne%20osiedle%20domów%20bliźniaczych%20na%20skraju%20lasu.png" width="1280" height="720"
+    aria-label="Film: przejazd wzdłuż ulicy Jarzębinowej, bliźniaki z drewnianymi szczytami i jarzęby przed domami (wizualizacja)">
+    <source src="film.mp4" type="video/mp4">
+  </video>
+  <div class="hero__tekst">
+    <h1 id="tytul">Jarzębinowe</h1>
+    <p>Sześć domów w zabudowie bliźniaczej, Mikołów-Mokre</p>
+    <a class="przycisk przycisk--jasny" href="#ceny">Plan osiedla i ceny</a>
+  </div>
+  <button class="hero__pauza" type="button" data-film-przelacz aria-pressed="false">Zatrzymaj film</button>
+</section>
+
+<nav class="kotwice" aria-label="Sekcje strony">
+  <a class="kotwice__nazwa" href="#tresc">Jarzębinowe</a>
+  <div class="kotwice__linki">
+    <a href="#fakty">Najważniejsze</a><a href="#ceny">Plan i ceny</a><a href="#dom">Dom i rzuty</a><a href="#wnetrza">Wnętrza i ogród</a><a href="#okolica">Okolica</a><a href="#kontakt">Kontakt</a>
+  </div>
+</nav>
+
+<section class="fakty" id="fakty" aria-label="Najważniejsze informacje">
+  <div class="siatka">
+    <div class="fakty__wstep">
+      <p class="wstep">Sześć domów w&nbsp;trzech bliźniakach przy ul.&nbsp;Jarzębinowej w&nbsp;Mikołowie-Mokrem. Ogrody od południa, od wschodu łąka, a&nbsp;300&nbsp;metrów dalej las. Każdy dom ma 119&nbsp;m², cztery pokoje i&nbsp;własną działkę ok.&nbsp;371&nbsp;m².</p>
+      <p class="przyciski">
+        <a class="przycisk" href="#ceny">Plan i ceny</a>
+        <a class="przycisk przycisk--obrys" href="JARZ_karta_domu_A4_podglad.png" target="_blank" rel="noopener">Karta domu (rzuty)</a>      </p>
     </div>
+    <figure class="fakty__obraz"><img src="front.png" alt="Bliźniak od frontu: białe ściany, wejścia w drewnie termojesionu, jarzęby przy podjazdach" width="1672" height="941" loading="lazy" decoding="async"></figure>
+    <dl class="fakty__siatka">
+      <div><dt>Powierzchnia użytkowa</dt><dd>119,35&nbsp;m²</dd></div>
+      <div><dt>Działka</dt><dd>ok. 371&nbsp;m²</dd></div>
+      <div><dt>Pokoje</dt><dd>4, w&nbsp;tym 3 sypialnie</dd></div>
+      <div><dt>Wyjście do ogrodu</dt><dd>drzwi 3,6&nbsp;m na południe</dd></div>
+      <div><dt>Do lasu</dt><dd>ok. 300&nbsp;m</dd></div>
+      <div><dt>Ogrzewanie</dt><dd>pompa ciepła, podłogówka</dd></div>
+      <div class="ciemne"><dt>Oddanie kluczy</dt><dd>IV kw. 2027</dd></div>
+      <div class="ciemne"><dt>Ceny brutto</dt><dd>od 879 000 zł</dd></div>
+    </dl>
+  </div>
+</section>
 
-    <!-- Nawigacja -->
-    <nav class="sticky top-0 w-full z-50 bg-white/95 backdrop-blur shadow-sm transition-all border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                
-                <!-- Eleganckie Logo (Zastąpiono tekst obrazkiem) -->
-                <div class="flex-shrink-0 flex items-center">
-                    <img src="/jarzebinowe/logo1.webp" onerror="this.src='logo1.webp'" alt="JARZĘBINOWE Logo" class="h-12 w-auto object-contain">
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="#o-inwestycji" class="text-gray-600 hover:text-green-700 transition font-medium">O inwestycji</a>
-                    <a href="#galeria" class="text-gray-600 hover:text-green-700 transition font-medium">Galeria</a>
-                    <a href="#oferta" class="text-gray-600 hover:text-green-700 transition font-medium">Plan i Ceny</a>
-                    <a href="#rzuty" class="text-gray-600 hover:text-green-700 transition font-medium">Rzuty</a>
-                    <a href="#standard" class="text-gray-600 hover:text-green-700 transition font-medium">Standard</a>
-                    <a href="#kontakt" class="text-gray-600 hover:text-green-700 transition font-medium">Kontakt</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<section class="ceny" id="ceny" aria-labelledby="ceny-t">
+  <div class="siatka ceny__glowa">
+    <h2 id="ceny-t">Plan osiedla i&nbsp;ceny</h2>
+    <p>Domy stoją w&nbsp;jednym rzędzie wzdłuż ulicy, ogrodami na południe. Wybierz dom na planie, a&nbsp;tabela pokaże jego cenę i&nbsp;historię zmian.<span>Wolne domy: 4 z&nbsp;6. Stan na 16.11.2026, 09:49. Ceny brutto z&nbsp;VAT 8%, stan deweloperski.</span></p>
+  </div>
 
-    <!-- Hero Section z wideo -->
-    <section class="relative h-[calc(100vh-5.5rem)] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                <source src="/jarzebinowe/film.mp4" type="video/mp4">
-                <img src="/jarzebinowe/Słoneczne osiedle domów bliźniaczych na skraju lasu.png" alt="Osiedle Jarzębinowe" class="w-full h-full object-cover">
-            </video>
-            <div class="absolute inset-0 hero-overlay"></div>
-        </div>
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-8">
-            <span class="inline-block bg-green-700/90 text-white px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest mb-6 uppercase shadow-sm">
-                Nowe domy • od 879 000 zł
-            </span>
-            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 tracking-tight">Osiedle Jarzębinowe</h1>
-            <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light">Twoja przestrzeń do życia w sercu Mikołowa-Mokrego</p>
-            <a href="#oferta" class="bg-green-700 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-medium transition shadow-lg inline-block">Wybierz swój dom</a>
-        </div>
-    </section>
+  <div class="zakladki" role="tablist" aria-label="Widok osiedla">
+    <button type="button" role="tab" id="z-plan" aria-selected="true" aria-controls="p-plan">Plan osiedla</button>
+    <button type="button" role="tab" id="z-lot" aria-selected="false" aria-controls="p-lot" tabindex="-1">Z lotu ptaka</button>
+  </div>
 
-    <!-- O inwestycji -->
-    <section id="o-inwestycji" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-4xl font-serif font-bold mb-6 text-gray-900">Kameralna inwestycja blisko natury</h2>
-                    <p class="text-gray-600 text-lg mb-4 leading-relaxed font-light">
-                        JARZĘBINOWE to zespół 6 nowoczesnych domów w 3 budynkach w zabudowie bliźniaczej, zlokalizowanych przy ul. Jarzębinowej w Mikołowie-Mokrym. Zaledwie 5 minut od centrum Mikołowa.
-                    </p>
-                    <ul class="space-y-3 text-gray-700 mt-8 font-medium">
-                        <li class="flex items-center"><svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Domy od 879 000 zł</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> 119,35 m² powierzchni użytkowej (4 pokoje)</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Działki ok. 371 m² z ogrodami od południa</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> 2 miejsca postojowe w cenie dla każdego domu</li>
-                        <li class="flex items-center"><svg class="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg> Oddanie: IV kwartał 2027 r.</li>
-                    </ul>
-                </div>
-                <div class="space-y-6">
-                    <img src="front.png" onerror="this.src='front'" alt="Wizualizacja frontu" class="rounded-lg shadow-xl w-full">
-                    <img src="zlotuptaka.png" onerror="this.src='zlotuptaka'" alt="Widok z lotu ptaka" class="rounded-lg shadow-xl w-full">
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="widok" id="p-plan" role="tabpanel" aria-labelledby="z-plan">
+    <figure class="plan">
+      <svg viewBox="0 0 2000 1240" role="group" aria-label="Plan osiedla: sześć działek w rzędzie wzdłuż ul. Jarzębinowej, od zachodu 1A do wschodu 3B">
+        <defs>
+          <pattern id="kreski" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="16" height="16" fill="#FFFFFF"/><path d="M0 0v16" stroke="#A4704A" stroke-width="4"/></pattern>
+          <pattern id="laka" width="34" height="34" patternUnits="userSpaceOnUse"><rect width="34" height="34" fill="#EEF1F3"/><circle cx="8" cy="9" r="2" fill="#9AA79A"/><circle cx="25" cy="26" r="2" fill="#9AA79A"/></pattern>
+        </defs>
+        <rect class="p-laka" x="0" y="262" width="2000" height="978"/>
+        <rect class="p-sasiad" x="0" y="262" width="80" height="848"/>
+        <text class="p-opis" x="52" y="900" transform="rotate(-90 52 900)">sąsiedni dom</text>
+        <rect class="p-ulica" x="0" y="60" width="2000" height="150"/>
+        <path class="p-kraw" d="M0 60H2000M0 210H2000M0 262H2000"/>
+        <text class="p-ulica-t" x="70" y="152">ul. Jarzębinowa</text>
+        <g transform="translate(1928 110)" aria-hidden="true"><path d="M0 50V-30" stroke="#383E42" stroke-width="4"/><path d="M0-48L-15-12H15Z" fill="#B5332E"/><text class="p-n" x="-10" y="92">N</text></g>
+                <g class="p-dom dost" data-dom="1A"><a href="#dom-1A" aria-label="Dom 1A: 899 000 zł, dostępny">
+          <rect class="p-dzialka" x="80" y="262" width="307" height="848"/>
+          <rect class="p-podjazd" x="90" y="266" width="134" height="144"/>
+          <rect class="p-etykieta" x="94" y="866" width="279" height="214"/>
+          <text class="p-id" x="108" y="962">1A</text>
+          <text class="p-cena" x="111" y="1016">899 000 zł</text>
+          <text class="p-st" x="111" y="1058">dostępny</text>
+          <rect class="p-ramka" x="85" y="267" width="297" height="838"/>
+        </a></g>
+                <g class="p-dom sprz" data-dom="1B"><a href="#dom-1B" aria-label="Dom 1B: 879 000 zł, sprzedany">
+          <rect class="p-dzialka" x="387" y="262" width="307" height="848"/>
+          <rect class="p-podjazd" x="550" y="266" width="134" height="144"/>
+          <rect class="p-etykieta" x="401" y="866" width="279" height="214"/>
+          <text class="p-id" x="415" y="962">1B</text>
+          <text class="p-cena" x="418" y="1016">879 000 zł</text>
+          <text class="p-st" x="418" y="1058">sprzedany</text>
+          <rect class="p-ramka" x="392" y="267" width="297" height="838"/>
+        </a></g>
+                <g class="p-dom dost" data-dom="2A"><a href="#dom-2A" aria-label="Dom 2A: 879 000 zł, dostępny">
+          <rect class="p-dzialka" x="694" y="262" width="307" height="848"/>
+          <rect class="p-podjazd" x="704" y="266" width="134" height="144"/>
+          <rect class="p-etykieta" x="708" y="866" width="279" height="214"/>
+          <text class="p-id" x="722" y="962">2A</text>
+          <text class="p-cena" x="725" y="1016">879 000 zł</text>
+          <text class="p-st" x="725" y="1058">dostępny</text>
+          <rect class="p-ramka" x="699" y="267" width="297" height="838"/>
+        </a></g>
+                <g class="p-dom dost" data-dom="2B"><a href="#dom-2B" aria-label="Dom 2B: 879 000 zł, dostępny">
+          <rect class="p-dzialka" x="1001" y="262" width="307" height="848"/>
+          <rect class="p-podjazd" x="1164" y="266" width="134" height="144"/>
+          <rect class="p-etykieta" x="1015" y="866" width="279" height="214"/>
+          <text class="p-id" x="1029" y="962">2B</text>
+          <text class="p-cena" x="1032" y="1016">879 000 zł</text>
+          <text class="p-st" x="1032" y="1058">dostępny</text>
+          <rect class="p-ramka" x="1006" y="267" width="297" height="838"/>
+        </a></g>
+                <g class="p-dom rez" data-dom="3A"><a href="#dom-3A" aria-label="Dom 3A: 899 000 zł, rezerwacja">
+          <rect class="p-dzialka" x="1308" y="262" width="307" height="848"/>
+          <rect class="p-podjazd" x="1318" y="266" width="134" height="144"/>
+          <rect class="p-etykieta" x="1322" y="866" width="279" height="214"/>
+          <text class="p-id" x="1336" y="962">3A</text>
+          <text class="p-cena" x="1339" y="1016">899 000 zł</text>
+          <text class="p-st" x="1339" y="1058">rezerwacja</text>
+          <rect class="p-ramka" x="1313" y="267" width="297" height="838"/>
+        </a></g>
+                <g class="p-dom dost" data-dom="3B"><a href="#dom-3B" aria-label="Dom 3B: 929 000 zł, dostępny">
+          <rect class="p-dzialka" x="1615" y="262" width="307" height="848"/>
+          <rect class="p-podjazd" x="1778" y="266" width="134" height="144"/>
+          <rect class="p-etykieta" x="1629" y="866" width="279" height="214"/>
+          <text class="p-id" x="1643" y="962">3B</text>
+          <text class="p-cena" x="1646" y="1016">929 000 zł</text>
+          <text class="p-st" x="1646" y="1058">dostępny</text>
+          <rect class="p-ramka" x="1620" y="267" width="297" height="838"/>
+        </a></g>
+                <g class="p-ozdoby" aria-hidden="true">
+                    <rect class="p-taras" x="196" y="697" width="132" height="93"/><rect class="p-taras" x="445" y="697" width="132" height="93"/>
+          <rect class="p-dach" x="186" y="423" width="402" height="274"/>
+          <path class="p-rabek" d="M206 423v274M226 423v274M246 423v274M266 423v274M286 423v274M306 423v274M326 423v274M346 423v274M366 423v274M406 423v274M426 423v274M446 423v274M466 423v274M486 423v274M506 423v274M526 423v274M546 423v274M566 423v274M586 423v274"/>
+          <path class="p-sciana" d="M387 423v274"/>
+                    <rect class="p-taras" x="810" y="697" width="132" height="93"/><rect class="p-taras" x="1059" y="697" width="132" height="93"/>
+          <rect class="p-dach" x="800" y="423" width="402" height="274"/>
+          <path class="p-rabek" d="M820 423v274M840 423v274M860 423v274M880 423v274M900 423v274M920 423v274M940 423v274M960 423v274M980 423v274M1020 423v274M1040 423v274M1060 423v274M1080 423v274M1100 423v274M1120 423v274M1140 423v274M1160 423v274M1180 423v274M1200 423v274"/>
+          <path class="p-sciana" d="M1001 423v274"/>
+                    <rect class="p-taras" x="1424" y="697" width="132" height="93"/><rect class="p-taras" x="1673" y="697" width="132" height="93"/>
+          <rect class="p-dach" x="1414" y="423" width="402" height="274"/>
+          <path class="p-rabek" d="M1434 423v274M1454 423v274M1474 423v274M1494 423v274M1514 423v274M1534 423v274M1554 423v274M1574 423v274M1594 423v274M1634 423v274M1654 423v274M1674 423v274M1694 423v274M1714 423v274M1734 423v274M1754 423v274M1774 423v274M1794 423v274M1814 423v274"/>
+          <path class="p-sciana" d="M1615 423v274"/>
+                    <text class="p-opis" x="1946" y="640" transform="rotate(90 1946 640)">łąka</text>
+          <text class="p-opis" x="80" y="1176">ogrody od południa</text>
+          <text class="p-opis" x="1640" y="1176">las ok. 300 m</text>
+          <path d="M1930 1146v56M1916 1186l14 16 14-16" stroke="#5A6166" stroke-width="3" fill="none"/>
+        </g>
+      </svg>
+      <figcaption>
+        <ul class="legenda" aria-label="Oznaczenia na planie">
+          <li><span class="znak znak--dost"></span>dostępny</li><li><span class="znak znak--rez"></span>rezerwacja</li><li><span class="znak znak--sprz"></span>sprzedany (cena zostaje w&nbsp;tabeli)</li>
+        </ul>
+        <span>Plan poglądowy według projektu zagospodarowania terenu.</span>
+      </figcaption>
+    </figure>
+  </div>
+  <div class="widok" id="p-lot" role="tabpanel" aria-labelledby="z-lot" hidden>
+    <figure class="lot"><img src="zlotuptaka.png" alt="Osiedle z lotu ptaka: trzy bliźniaki przy ulicy, za nimi łąka i las" width="1672" height="941" loading="lazy" decoding="async">      <figcaption>Wizualizacja z lotu ptaka. Od wschodu i od południa łąka, dalej las.</figcaption></figure>
+  </div>
 
-    <!-- Galeria (Wnętrza i Ogród) -->
-    <section id="galeria" class="py-20 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-serif font-bold mb-12 text-center text-gray-900">Przestrzeń, która inspiruje</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-                <div class="group overflow-hidden rounded-lg shadow-md bg-white border border-gray-200">
-                    <img src="Jasne wnętrze z widokiem na ogród.png" alt="Salon" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="p-5"><p class="text-center font-medium text-gray-800">Jasny salon z wyjściem do ogrodu</p></div>
-                </div>
-                <div class="group overflow-hidden rounded-lg shadow-md bg-white border border-gray-200">
-                    <img src="Słoneczny salon z kuchnią i schodami.png" alt="Kuchnia i jadalnia" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="p-5"><p class="text-center font-medium text-gray-800">Otwarta strefa dzienna z kuchnią</p></div>
-                </div>
-                <div class="group overflow-hidden rounded-lg shadow-md bg-white border border-gray-200">
-                    <img src="Rodzinne popołudnie w ogrodzie nowoczesnych domów.png" alt="Ogród" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-500">
-                    <div class="p-5"><p class="text-center font-medium text-gray-800">Południowe ogrody z tarasem</p></div>
-                </div>
-            </div>
-            <p class="text-center text-sm text-gray-500 mt-4 italic font-light">
-                * Przykładowa aranżacja wnętrza. Domy sprzedawane w stanie deweloperskim – wykończenie i meble nie są wliczone w cenę.
-            </p>
-        </div>
-    </section>
+  <table class="cennik">
+    <caption class="sr">Cennik domów JARZĘBINOWE, ceny brutto z VAT 8%, stan deweloperski</caption>
+    <thead><tr><th scope="col">Dom</th><th scope="col">Pow. użytkowa</th><th scope="col">Działka</th><th scope="col">Pokoje</th><th scope="col" class="p">Cena brutto</th><th scope="col" class="p">Cena za m²</th><th scope="col">Status</th><th scope="col"><span class="sr">Historia zmian</span></th></tr></thead>
+    <tbody>
+          <tr id="dom-1A" data-dom="1A">
+        <th scope="row">1A<small>od zachodu sąsiad – istniejący dom</small></th>
+        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
+        <td data-l="Działka">371,2&nbsp;m²</td>
+        <td data-l="Pokoje">4</td>
+        <td class="p cena">899 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 532,47 zł</td>
+        <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1A">Historia zmian (3)</button></td>
+      </tr>
+      <tr class="historia" id="h-1A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 819 000 zł (6 862,17 zł/m²)</span></li></ol></td></tr>
+          <tr id="dom-1B" data-dom="1B">
+        <th scope="row">1B</th>
+        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
+        <td data-l="Działka">371,2&nbsp;m²</td>
+        <td data-l="Pokoje">4</td>
+        <td class="p cena">879 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
+        <td data-l="Status"><span class="st st--sprz">Sprzedany</span></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1B">Historia zmian (4)</button></td>
+      </tr>
+      <tr class="historia" id="h-1B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: dostępny → sprzedany</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
+          <tr id="dom-2A" data-dom="2A">
+        <th scope="row">2A</th>
+        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
+        <td data-l="Działka">371,2&nbsp;m²</td>
+        <td data-l="Pokoje">4</td>
+        <td class="p cena">879 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
+        <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-2A">Historia zmian (3)</button></td>
+      </tr>
+      <tr class="historia" id="h-2A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
+          <tr id="dom-2B" data-dom="2B">
+        <th scope="row">2B</th>
+        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
+        <td data-l="Działka">371,2&nbsp;m²</td>
+        <td data-l="Pokoje">4</td>
+        <td class="p cena">879 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
+        <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-2B">Historia zmian (3)</button></td>
+      </tr>
+      <tr class="historia" id="h-2B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
+          <tr id="dom-3A" data-dom="3A">
+        <th scope="row">3A</th>
+        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
+        <td data-l="Działka">371,2&nbsp;m²</td>
+        <td data-l="Pokoje">4</td>
+        <td class="p cena">899 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 532,47 zł</td>
+        <td data-l="Status"><span class="st st--rez">Rezerwacja</span></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-3A">Historia zmian (4)</button></td>
+      </tr>
+      <tr class="historia" id="h-3A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: dostępny → rezerwacja</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 819 000 zł (6 862,17 zł/m²)</span></li></ol></td></tr>
+          <tr id="dom-3B" data-dom="3B">
+        <th scope="row">3B<small>skrajny od wschodu – otwarty widok na łąkę</small></th>
+        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
+        <td data-l="Działka">371,2&nbsp;m²</td>
+        <td data-l="Pokoje">4</td>
+        <td class="p cena">929 000 zł</td>
+        <td class="p" data-l="Cena za m²">7 783,83 zł</td>
+        <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
+        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-3B">Historia zmian (4)</button></td>
+      </tr>
+      <tr class="historia" id="h-3B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: rezerwacja → dostępny</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 839 000 zł → 929 000 zł (7 783,83 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: rezerwacja</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 839 000 zł (7 029,74 zł/m²)</span></li></ol></td></tr>
+        </tbody>
+  </table>
+  <ul class="uwagi">
+    <li><b>W cenie:</b> 2 miejsca postojowe na działce (podjazd) – w cenie domu, 0 zł.</li>
+    <li><b>Koszty po stronie kupującego:</b> [do uzupełnienia przez inwestora – np. koszty umowy notarialnej i wpisów do ksiąg wieczystych wg taksy, po stronie nabywcy].</li>
+    <li>Każda zmiana ceny i statusu jest zapisywana z datą. <a href="data:text/csv;charset=utf-8;base64,77u/IkNlbm5payDigJMgc3RhbiBuYSI7IjE2LjExLjIwMjYsIDA5OjQ5Igpkb207YnVkeW5laztwb3dfdXp5dGtvd2FfbTI7ZHppYWxrYV9tMjtwb2tvamU7Y2VuYV9icnV0dG9femw7Y2VuYV96YV9tMl96bDtzdGF0dXM7cG9taWVzemN6ZW5pYV9wcnp5bmFsZXpuZTtrb3N6dHlfZG9kYXRrb3dlCjFBO0IxOzExOSwzNTszNzEsMjs0Ozg5OTAwMDs3NTMyLDQ3O0Rvc3TEmXBueTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKMUI7QjE7MTE5LDM1OzM3MSwyOzQ7ODc5MDAwOzczNjQsODk7U3ByemVkYW55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIGR6aWHFgmNlIChwb2RqYXpkKSDigJMgdyBjZW5pZSBkb211LCAwIHrFgiI7IltkbyB1enVwZcWCbmllbmlhIHByemV6IGlud2VzdG9yYSDigJMgbnAuIGtvc3p0eSB1bW93eSBub3RhcmlhbG5laiBpIHdwaXPDs3cgZG8ga3NpxIVnIHdpZWN6eXN0eWNoIHdnIHRha3N5LCBwbyBzdHJvbmllIG5hYnl3Y3ldIgoyQTtCMjsxMTksMzU7MzcxLDI7NDs4NzkwMDA7NzM2NCw4OTtEb3N0xJlwbnk7IjIgbWllanNjYSBwb3N0b2pvd2UgbmEgZHppYcWCY2UgKHBvZGphemQpIOKAkyB3IGNlbmllIGRvbXUsIDAgesWCIjsiW2RvIHV6dXBlxYJuaWVuaWEgcHJ6ZXogaW53ZXN0b3JhIOKAkyBucC4ga29zenR5IHVtb3d5IG5vdGFyaWFsbmVqIGkgd3Bpc8OzdyBkbyBrc2nEhWcgd2llY3p5c3R5Y2ggd2cgdGFrc3ksIHBvIHN0cm9uaWUgbmFieXdjeV0iCjJCO0IyOzExOSwzNTszNzEsMjs0Ozg3OTAwMDs3MzY0LDg5O0Rvc3TEmXBueTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKM0E7QjM7MTE5LDM1OzM3MSwyOzQ7ODk5MDAwOzc1MzIsNDc7UmV6ZXJ3YWNqYTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKM0I7QjM7MTE5LDM1OzM3MSwyOzQ7OTI5MDAwOzc3ODMsODM7RG9zdMSZcG55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIGR6aWHFgmNlIChwb2RqYXpkKSDigJMgdyBjZW5pZSBkb211LCAwIHrFgiI7IltkbyB1enVwZcWCbmllbmlhIHByemV6IGlud2VzdG9yYSDigJMgbnAuIGtvc3p0eSB1bW93eSBub3RhcmlhbG5laiBpIHdwaXPDs3cgZG8ga3NpxIVnIHdpZWN6eXN0eWNoIHdnIHRha3N5LCBwbyBzdHJvbmllIG5hYnl3Y3ldIgoKIkhpc3RvcmlhIHptaWFuIgpkYXRhX2lfZ29kemluYTtkb207cG9sZTtieWxvO2plc3Q7Y2VuYV9tMl9ieWxvO2NlbmFfbTJfamVzdAoyNy4xMC4yMDI2OzFBO2NlbmE7OzgxOTAwMDs7Njg2MiwxNwoyNy4xMC4yMDI2OzFBO3N0YXR1czs7RG9zdMSZcG55OzsKMjcuMTAuMjAyNjsxQjtjZW5hOzs4MDkwMDA7OzY3NzgsMzgKMjcuMTAuMjAyNjsxQjtzdGF0dXM7O0Rvc3TEmXBueTs7CjI3LjEwLjIwMjY7MkE7Y2VuYTs7ODA5MDAwOzs2Nzc4LDM4CjI3LjEwLjIwMjY7MkE7c3RhdHVzOztEb3N0xJlwbnk7OwoyNy4xMC4yMDI2OzJCO2NlbmE7OzgwOTAwMDs7Njc3OCwzOAoyNy4xMC4yMDI2OzJCO3N0YXR1czs7RG9zdMSZcG55OzsKMjcuMTAuMjAyNjszQTtjZW5hOzs4MTkwMDA7OzY4NjIsMTcKMjcuMTAuMjAyNjszQTtzdGF0dXM7O0Rvc3TEmXBueTs7CjI3LjEwLjIwMjY7M0I7Y2VuYTs7ODM5MDAwOzs3MDI5LDc0CjI3LjEwLjIwMjY7M0I7c3RhdHVzOztSZXplcndhY2phOzsKIjE2LjExLjIwMjYsIDA5OjQ5IjsxQTtjZW5hOzgxOTAwMDs4OTkwMDA7Njg2MiwxNzs3NTMyLDQ3CiIxNi4xMS4yMDI2LCAwOTo0OSI7MUI7Y2VuYTs4MDkwMDA7ODc5MDAwOzY3NzgsMzg7NzM2NCw4OQoiMTYuMTEuMjAyNiwgMDk6NDkiOzFCO3N0YXR1cztEb3N0xJlwbnk7U3ByemVkYW55OzsKIjE2LjExLjIwMjYsIDA5OjQ5IjsyQTtjZW5hOzgwOTAwMDs4NzkwMDA7Njc3OCwzODs3MzY0LDg5CiIxNi4xMS4yMDI2LCAwOTo0OSI7MkI7Y2VuYTs4MDkwMDA7ODc5MDAwOzY3NzgsMzg7NzM2NCw4OQoiMTYuMTEuMjAyNiwgMDk6NDkiOzNBO2NlbmE7ODE5MDAwOzg5OTAwMDs2ODYyLDE3Ozc1MzIsNDcKIjE2LjExLjIwMjYsIDA5OjQ5IjszQTtzdGF0dXM7RG9zdMSZcG55O1JlemVyd2FjamE7OwoiMTYuMTEuMjAyNiwgMDk6NDkiOzNCO2NlbmE7ODM5MDAwOzkyOTAwMDs3MDI5LDc0Ozc3ODMsODMKIjE2LjExLjIwMjYsIDA5OjQ5IjszQjtzdGF0dXM7UmV6ZXJ3YWNqYTtEb3N0xJlwbnk7Owo=" download="JARZEBINOWE_cennik.csv">Cennik z&nbsp;historią w&nbsp;pliku CSV</a>.</li>
+  </ul>
+</section>
 
-    <!-- Plan i Oferta -->
-    <section id="oferta" class="py-20 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="flex flex-col md:flex-row justify-between items-end mb-10 border-b border-gray-100 pb-6">
-                <div>
-                    <h2 class="text-4xl font-serif font-bold text-gray-900 mb-3">Plan osiedla i ceny</h2>
-                    <p class="text-gray-500 font-light text-lg">Wybierz dom na planie lub z tabeli, aby sprawdzić historię ceny.</p>
-                </div>
-                <div class="text-right text-sm text-gray-400 mt-4 md:mt-0 font-medium">
-                    Stan na 27.10.2026. Ceny brutto (8% VAT).
-                </div>
-            </div>
+<section class="dom" id="dom" aria-labelledby="dom-t">
+  <div class="siatka dom__glowa">
+    <h2 id="dom-t">Dom 119&nbsp;m² na dwóch kondygnacjach</h2>
+    <p class="wstep">Wszystkie domy mają ten sam układ, domy B są jego lustrzanym odbiciem. Na parterze otwarta strefa dzienna z&nbsp;wyjściem na taras, na poddaszu trzy sypialnie, łazienka i&nbsp;garderoba.</p>
+  </div>
+  <div class="siatka rzuty">
+    <figure>
+      <img src="JARZ_rzut_parter.png" alt="Rzut parteru domu A z przykładowym umeblowaniem" width="1200" height="1697" loading="lazy" decoding="async">      <figcaption><b>Parter</b> 65,78&nbsp;m²</figcaption>
+      <table class="pom"><tbody><tr><th scope="row">Wiatrołap</th><td>4,05&nbsp;m²</td></tr><tr><th scope="row">WC</th><td>2,18&nbsp;m²</td></tr><tr><th scope="row">Hol</th><td>5,26&nbsp;m²</td></tr><tr><th scope="row">Kuchnia</th><td>9,30&nbsp;m²</td></tr><tr><th scope="row">Salon z jadalnią</th><td>42,69&nbsp;m²</td></tr><tr><th scope="row">Schowek</th><td>2,30&nbsp;m²</td></tr></tbody></table>
+    </figure>
+    <figure>
+      <img src="JARZ_rzut_poddasze.png" alt="Rzut poddasza domu A z przykładowym umeblowaniem" width="1200" height="1697" loading="lazy" decoding="async">      <figcaption><b>Poddasze</b> 53,57&nbsp;m² powierzchni użytkowej</figcaption>
+      <table class="pom"><tbody><tr><th scope="row">Hol</th><td>8,94&nbsp;m²</td></tr><tr><th scope="row">Sypialnia 1</th><td>11,48&nbsp;m²</td></tr><tr><th scope="row">Sypialnia 2</th><td>12,50&nbsp;m²</td></tr><tr><th scope="row">Sypialnia 3</th><td>10,92&nbsp;m²</td></tr><tr><th scope="row">Łazienka</th><td>4,98&nbsp;m²</td></tr><tr><th scope="row">Garderoba</th><td>4,75&nbsp;m²</td></tr></tbody></table>
+    </figure>
+  </div>
+  <p class="drobny dom__przypis">Powierzchnia użytkowa wg PN-ISO 9836: parter 65,78&nbsp;m² + poddasze 53,57&nbsp;m² = 119,35&nbsp;m². Rzuty poglądowe, aranżacja przykładowa. <a href="JARZ_karta_domu_A4_podglad.png" target="_blank" rel="noopener">Karta domu (rzuty)</a>.</p>
 
-            <!-- Interaktywny Plan Osiedla -->
-            <div class="border border-gray-200 rounded-xl bg-white shadow-sm relative overflow-hidden mb-12">
-                <!-- Ulica -->
-                <div class="bg-gray-100 py-5 px-6 border-b border-gray-300 text-gray-500 font-medium relative tracking-wider uppercase text-sm">
-                    ul. Jarzębinowa
-                    <div class="absolute right-6 top-3 text-center text-xs font-bold text-gray-700">
-                        <span class="text-red-600 block text-lg leading-none mb-1 font-serif">↑</span>N
-                    </div>
-                </div>
+  <div class="siatka standard">
+    <h3>Standard deweloperski</h3>
+    <dl><div><dt>Konstrukcja</dt><dd>ściany z bloczków silikatowych, ściana międzylokalowa podwójna z wełną (dobra akustyka), strop żelbetowy</dd></div><div><dt>Ocieplenie</dt><dd>styropian grafitowy 15 cm, dach – wełna 25 cm</dd></div><div><dt>Dach</dt><dd>blacha na rąbek stojący, antracyt, rynny ukryte, bez okapów</dd></div><div><dt>Elewacja</dt><dd>tynk silikonowy biały + deska z termojesionu (szczyty i strefa wejścia)</dd></div><div><dt>Okna</dt><dd>trzyszybowe, antracyt na zewnątrz; w salonie drzwi przesuwne HS 3,6 m; 3 okna dachowe</dd></div><div><dt>Drzwi wejściowe</dt><dd>aluminiowe, antywłamaniowe RC2, z doświetleniem</dd></div><div><dt>Ogrzewanie</dt><dd>pompa ciepła powietrze-woda, ogrzewanie podłogowe w całym domu</dd></div><div><dt>Wentylacja</dt><dd>przygotowanie pod rekuperację (kanały w stropie)</dd></div><div><dt>Fotowoltaika</dt><dd>instalacja PV ok. 3 kWp na każdym domu</dd></div><div><dt>Instalacje</dt><dd>elektryczna, wod.-kan., przygotowanie pod klimatyzację w sypialni 1, gniazda przy tarasie</dd></div><div><dt>Wnętrza</dt><dd>tynki gipsowe, wylewki, parapety wewnętrzne; schody dębowe w cenie</dd></div><div><dt>Teren</dt><dd>utwardzony podjazd na 2 auta, dojście, taras z płyt gres, ogrodzenie ogrodu, ekran prywatności tarasu</dd></div><div><dt>Nie w cenie</dt><dd>trawnik i nasadzenia w ogrodzie (poza drzewkiem od frontu), wykończenie wnętrz</dd></div></dl>
+  </div>
+</section>
 
-                <!-- Działki -->
-                <div class="grid grid-cols-3 relative">
-                    <!-- Budynek 1 -->
-                    <div class="flex relative border-r border-gray-300">
-                        <div class="absolute top-12 left-6 right-6 h-36 roof-pattern shadow-md z-10 pointer-events-none rounded-sm"></div>
-                        <!-- 1A -->
-                        <div class="w-1/2 border-r border-gray-200 pt-56 pb-8 px-4 cursor-pointer transition-colors duration-300 group" id="plan-1A" onmouseenter="hoverHouse('1A', 'available')" onmouseleave="unhoverHouse('1A')" onclick="openModal('1A')">
-                            <div class="text-5xl font-serif text-gray-900 mb-2 transition-transform group-hover:-translate-y-1 duration-300">1A</div>
-                            <div class="font-bold text-gray-800 text-lg">899 000 zł</div>
-                            <div class="text-xs text-green-600 font-medium mt-1 uppercase tracking-wider">Dostępny</div>
-                        </div>
-                        <!-- 1B -->
-                        <div class="w-1/2 pt-56 pb-8 px-4 cursor-pointer transition-colors duration-300 bg-gray-50 opacity-70 group" id="plan-1B" onmouseenter="hoverHouse('1B', 'sold')" onmouseleave="unhoverHouse('1B')" onclick="openModal('1B')">
-                            <div class="text-5xl font-serif text-gray-400 mb-2 transition-transform group-hover:-translate-y-1 duration-300">1B</div>
-                            <div class="font-bold text-gray-500 line-through text-lg">879 000 zł</div>
-                            <div class="text-xs text-gray-500 font-medium mt-1 uppercase tracking-wider">Sprzedany</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Budynek 2 -->
-                    <div class="flex relative border-r border-gray-300">
-                        <div class="absolute top-12 left-6 right-6 h-36 roof-pattern shadow-md z-10 pointer-events-none rounded-sm"></div>
-                        <!-- 2A -->
-                        <div class="w-1/2 border-r border-gray-200 pt-56 pb-8 px-4 cursor-pointer transition-colors duration-300 group" id="plan-2A" onmouseenter="hoverHouse('2A', 'available')" onmouseleave="unhoverHouse('2A')" onclick="openModal('2A')">
-                            <div class="text-5xl font-serif text-gray-900 mb-2 transition-transform group-hover:-translate-y-1 duration-300">2A</div>
-                            <div class="font-bold text-gray-800 text-lg">879 000 zł</div>
-                            <div class="text-xs text-green-600 font-medium mt-1 uppercase tracking-wider">Dostępny</div>
-                        </div>
-                        <!-- 2B -->
-                        <div class="w-1/2 pt-56 pb-8 px-4 cursor-pointer transition-colors duration-300 group" id="plan-2B" onmouseenter="hoverHouse('2B', 'available')" onmouseleave="unhoverHouse('2B')" onclick="openModal('2B')">
-                            <div class="text-5xl font-serif text-gray-900 mb-2 transition-transform group-hover:-translate-y-1 duration-300">2B</div>
-                            <div class="font-bold text-gray-800 text-lg">879 000 zł</div>
-                            <div class="text-xs text-green-600 font-medium mt-1 uppercase tracking-wider">Dostępny</div>
-                        </div>
-                    </div>
+<section class="wnetrza" id="wnetrza" aria-label="Wnętrza i ogród">
+  <figure class="kadr">
+    <img src="Słoneczny%20salon%20z%20kuchnią%20i%20schodami.png" alt="Salon z jadalnią i kuchnią, schody na poddasze, jasna podłoga z drewna" width="1672" height="941" loading="lazy" decoding="async">    <figcaption class="kadr__tytul">Salon z&nbsp;kuchnią, 52&nbsp;m²</figcaption>
+  </figure>
+  <div class="siatka kadr__dalej">
+    <p>Parter to jedna otwarta przestrzeń: kuchnia, jadalnia i&nbsp;salon. Drzwi przesuwne o&nbsp;szerokości 3,6&nbsp;m prowadzą na taras od południa. Dębowe schody na poddasze są w&nbsp;cenie domu.</p>
+    <figure><img src="Jasne%20wnętrze%20z%20widokiem%20na%20ogród.png" alt="Strefa dzienna z wyjściem na taras i widokiem na łąkę" width="1672" height="941" loading="lazy" decoding="async"></figure>
+  </div>
+  <figure class="kadr">
+    <img src="Rodzinne%20popołudnie%20w%20ogrodzie%20nowoczesnych%20domów.png" alt="Ogród i taras od południa, rodzina przy stole na tarasie" width="1672" height="941" loading="lazy" decoding="async">    <figcaption class="kadr__tytul">Ogród od południa</figcaption>
+  </figure>
+  <div class="siatka kadr__dalej">
+    <p>Za domem ogród na działce ok.&nbsp;371&nbsp;m². W&nbsp;cenie są taras z&nbsp;płyt gres, ekran prywatności między tarasami, ogrodzenie ogrodu i&nbsp;podjazd na dwa auta. Trawnik i&nbsp;nasadzenia w&nbsp;ogrodzie urządza kupujący, drzewko przed domem jest w&nbsp;cenie.</p>
+    <figure><img src="Słoneczne%20osiedle%20domów%20bliźniaczych%20na%20skraju%20lasu.png" alt="Ulica Jarzębinowa: bliźniaki z drewnianymi szczytami, jarzęby przy chodniku" width="1672" height="941" loading="lazy" decoding="async"></figure>
+  </div>
+  <p class="drobny wnetrza__przypis">Wizualizacje mają charakter poglądowy. Zieleń pokazano ok. 2–3 lata po oddaniu osiedla.</p>
+</section>
 
-                    <!-- Budynek 3 -->
-                    <div class="flex relative">
-                        <div class="absolute top-12 left-6 right-6 h-36 roof-pattern shadow-md z-10 pointer-events-none rounded-sm"></div>
-                        <!-- 3A -->
-                        <div class="w-1/2 border-r border-gray-200 pt-56 pb-8 px-4 cursor-pointer transition-colors duration-300 bg-orange-50/40 group" id="plan-3A" onmouseenter="hoverHouse('3A', 'reserved')" onmouseleave="unhoverHouse('3A')" onclick="openModal('3A')">
-                            <div class="text-5xl font-serif text-gray-900 mb-2 transition-transform group-hover:-translate-y-1 duration-300">3A</div>
-                            <div class="font-bold text-gray-800 text-lg">899 000 zł</div>
-                            <div class="text-xs text-orange-600 font-medium mt-1 uppercase tracking-wider">Rezerwacja</div>
-                        </div>
-                        <!-- 3B -->
-                        <div class="w-1/2 pt-56 pb-8 px-4 cursor-pointer transition-colors duration-300 hatched-pattern relative group" id="plan-3B" onmouseenter="hoverHouse('3B', 'available')" onmouseleave="unhoverHouse('3B')" onclick="openModal('3B')">
-                            <div class="text-5xl font-serif text-gray-900 mb-2 transition-transform group-hover:-translate-y-1 duration-300">3B</div>
-                            <div class="font-bold text-gray-800 text-lg">929 000 zł</div>
-                            <div class="text-xs text-green-600 font-medium mt-1 uppercase tracking-wider">Dostępny</div>
-                            <div class="absolute right-[-24px] top-1/2 transform -translate-y-1/2 rotate-90 text-[10px] font-bold text-gray-400 tracking-[0.3em] whitespace-nowrap pointer-events-none">ŁĄKA</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Footer planu -->
-                <div class="bg-gray-50 py-4 px-6 border-t border-gray-200 text-gray-400 text-xs flex justify-between items-center font-medium tracking-wide uppercase">
-                    <span>Ogrody od południa</span>
-                    <div class="hidden sm:flex gap-6">
-                        <span class="flex items-center"><div class="w-3 h-3 bg-white border border-gray-300 rounded-sm mr-2"></div> Dostępny</span>
-                        <span class="flex items-center"><div class="w-3 h-3 bg-orange-50 border border-orange-200 rounded-sm mr-2"></div> Rezerwacja</span>
-                        <span class="flex items-center"><div class="w-3 h-3 bg-gray-100 border border-gray-200 rounded-sm mr-2"></div> Sprzedany</span>
-                    </div>
-                    <span>Las ok. 300 m &darr;</span>
-                </div>
-            </div>
-
-            <!-- Tabela Cennika -->
-            <div class="overflow-x-auto shadow-sm rounded-lg border border-gray-200">
-                <table class="w-full text-left border-collapse whitespace-nowrap">
-                    <thead>
-                        <tr class="bg-gray-50 text-gray-500 text-xs uppercase tracking-wider font-semibold border-b border-gray-200">
-                            <th class="p-5">Dom</th>
-                            <th class="p-5">Pow. użytkowa</th>
-                            <th class="p-5">Działka</th>
-                            <th class="p-5">Pokoje</th>
-                            <th class="p-5">Cena brutto</th>
-                            <th class="p-5">Status</th>
-                            <th class="p-5 text-center">Szczegóły</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-gray-700 align-middle bg-white font-medium">
-                        <tr class="transition-colors duration-200 border-b cursor-pointer" id="row-1A" onmouseenter="hoverHouse('1A', 'available')" onmouseleave="unhoverHouse('1A')" onclick="openModal('1A')">
-                            <td class="p-5"><span class="font-serif font-bold text-gray-900 text-xl">1A</span></td>
-                            <td class="p-5">119,35 m²</td>
-                            <td class="p-5">371 m²</td>
-                            <td class="p-5">4</td>
-                            <td class="p-5"><span class="font-bold text-gray-900 text-base">899 000 zł</span> <span class="text-xs text-gray-400 ml-2 font-normal">7 532 zł/m²</span></td>
-                            <td class="p-5"><span class="text-green-700 text-sm font-semibold uppercase tracking-wide">Dostępny</span></td>
-                            <td class="p-5 text-center"><button class="text-xs text-gray-500 hover:text-gray-900 border-b border-gray-300 pb-0.5 uppercase tracking-wide font-semibold">Historia ceny</button></td>
-                        </tr>
-                        <tr class="transition-colors duration-200 border-b cursor-pointer bg-gray-50 opacity-75" id="row-1B" onmouseenter="hoverHouse('1B', 'sold')" onmouseleave="unhoverHouse('1B')" onclick="openModal('1B')">
-                            <td class="p-5"><span class="font-serif font-bold text-gray-500 text-xl">1B</span></td>
-                            <td class="p-5 text-gray-500">119,35 m²</td>
-                            <td class="p-5 text-gray-500">371 m²</td>
-                            <td class="p-5 text-gray-500">4</td>
-                            <td class="p-5"><span class="font-bold text-gray-500 line-through text-base">879 000 zł</span> <span class="text-xs text-gray-400 ml-2 font-normal line-through">7 365 zł/m²</span></td>
-                            <td class="p-5"><span class="text-gray-500 text-sm font-semibold uppercase tracking-wide">Sprzedany</span></td>
-                            <td class="p-5 text-center"><button class="text-xs text-gray-400 hover:text-gray-700 border-b border-gray-300 pb-0.5 uppercase tracking-wide font-semibold">Historia ceny</button></td>
-                        </tr>
-                        <tr class="transition-colors duration-200 border-b cursor-pointer" id="row-2A" onmouseenter="hoverHouse('2A', 'available')" onmouseleave="unhoverHouse('2A')" onclick="openModal('2A')">
-                            <td class="p-5"><span class="font-serif font-bold text-gray-900 text-xl">2A</span></td>
-                            <td class="p-5">119,35 m²</td>
-                            <td class="p-5">371 m²</td>
-                            <td class="p-5">4</td>
-                            <td class="p-5"><span class="font-bold text-gray-900 text-base">879 000 zł</span> <span class="text-xs text-gray-400 ml-2 font-normal">7 365 zł/m²</span></td>
-                            <td class="p-5"><span class="text-green-700 text-sm font-semibold uppercase tracking-wide">Dostępny</span></td>
-                            <td class="p-5 text-center"><button class="text-xs text-gray-500 hover:text-gray-900 border-b border-gray-300 pb-0.5 uppercase tracking-wide font-semibold">Historia ceny</button></td>
-                        </tr>
-                        <tr class="transition-colors duration-200 border-b cursor-pointer" id="row-2B" onmouseenter="hoverHouse('2B', 'available')" onmouseleave="unhoverHouse('2B')" onclick="openModal('2B')">
-                            <td class="p-5"><span class="font-serif font-bold text-gray-900 text-xl">2B</span></td>
-                            <td class="p-5">119,35 m²</td>
-                            <td class="p-5">371 m²</td>
-                            <td class="p-5">4</td>
-                            <td class="p-5"><span class="font-bold text-gray-900 text-base">879 000 zł</span> <span class="text-xs text-gray-400 ml-2 font-normal">7 365 zł/m²</span></td>
-                            <td class="p-5"><span class="text-green-700 text-sm font-semibold uppercase tracking-wide">Dostępny</span></td>
-                            <td class="p-5 text-center"><button class="text-xs text-gray-500 hover:text-gray-900 border-b border-gray-300 pb-0.5 uppercase tracking-wide font-semibold">Historia ceny</button></td>
-                        </tr>
-                        <tr class="transition-colors duration-200 border-b cursor-pointer bg-orange-50/30" id="row-3A" onmouseenter="hoverHouse('3A', 'reserved')" onmouseleave="unhoverHouse('3A')" onclick="openModal('3A')">
-                            <td class="p-5"><span class="font-serif font-bold text-gray-900 text-xl">3A</span></td>
-                            <td class="p-5">119,35 m²</td>
-                            <td class="p-5">371 m²</td>
-                            <td class="p-5">4</td>
-                            <td class="p-5"><span class="font-bold text-gray-900 text-base">899 000 zł</span> <span class="text-xs text-gray-400 ml-2 font-normal">7 532 zł/m²</span></td>
-                            <td class="p-5"><span class="text-orange-600 text-sm font-semibold uppercase tracking-wide">Rezerwacja</span></td>
-                            <td class="p-5 text-center"><button class="text-xs text-gray-500 hover:text-gray-900 border-b border-gray-300 pb-0.5 uppercase tracking-wide font-semibold">Historia ceny</button></td>
-                        </tr>
-                        <tr class="transition-colors duration-200 cursor-pointer" id="row-3B" onmouseenter="hoverHouse('3B', 'available')" onmouseleave="unhoverHouse('3B')" onclick="openModal('3B')">
-                            <td class="p-5">
-                                <span class="font-serif font-bold text-gray-900 text-xl block">3B</span>
-                                <span class="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-1 block">Skrajny</span>
-                            </td>
-                            <td class="p-5">119,35 m²</td>
-                            <td class="p-5">371 m²</td>
-                            <td class="p-5">4</td>
-                            <td class="p-5"><span class="font-bold text-gray-900 text-base">929 000 zł</span> <span class="text-xs text-gray-400 ml-2 font-normal">7 784 zł/m²</span></td>
-                            <td class="p-5"><span class="text-green-700 text-sm font-semibold uppercase tracking-wide">Dostępny</span></td>
-                            <td class="p-5 text-center"><button class="text-xs text-gray-500 hover:text-gray-900 border-b border-gray-300 pb-0.5 uppercase tracking-wide font-semibold">Historia ceny</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Rzuty i Układ -->
-    <section id="rzuty" class="py-20 bg-gray-50 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-serif font-bold mb-12 text-center text-gray-900">Przemyślany układ pomieszczeń</h2>
-            
-            <div class="mb-14 text-center">
-                <img src="JARZ_karta_domu_A4_podglad.png" alt="Karta informacyjna domu" class="mx-auto rounded-xl shadow-lg border border-gray-200 max-w-full lg:max-w-4xl">
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
-                    <h3 class="text-2xl font-serif font-bold mb-6 border-b pb-4 text-gray-900">Parter (65,78 m²)</h3>
-                    <img src="JARZ_rzut_parter.png" alt="Rzut parteru" class="mx-auto rounded w-full">
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center">
-                    <h3 class="text-2xl font-serif font-bold mb-6 border-b pb-4 text-gray-900">Poddasze (53,57 m²)</h3>
-                    <img src="JARZ_rzut_poddasze.png" alt="Rzut poddasza" class="mx-auto rounded w-full">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Standard wykończenia -->
-    <section id="standard" class="py-20 bg-white border-t border-gray-100">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-serif font-bold mb-12 text-center text-gray-900">Wysoki standard deweloperski</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1"><span class="block w-2 h-2 rounded-full bg-green-700"></span></div>
-                    <p class="ml-4 text-gray-700 leading-relaxed"><strong class="text-gray-900 font-semibold">Konstrukcja:</strong> Ściany z bloków silikatowych (silka), ocieplenie styropianem 15 cm.</p>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1"><span class="block w-2 h-2 rounded-full bg-green-700"></span></div>
-                    <p class="ml-4 text-gray-700 leading-relaxed"><strong class="text-gray-900 font-semibold">Dach:</strong> Solidna blacha na rąbek stojący w nowoczesnej stylistyce.</p>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1"><span class="block w-2 h-2 rounded-full bg-green-700"></span></div>
-                    <p class="ml-4 text-gray-700 leading-relaxed"><strong class="text-gray-900 font-semibold">Elewacja:</strong> Tynk strukturalny połączony z naturalnym drewnem (termojesion).</p>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1"><span class="block w-2 h-2 rounded-full bg-green-700"></span></div>
-                    <p class="ml-4 text-gray-700 leading-relaxed"><strong class="text-gray-900 font-semibold">Stolarka:</strong> Okna trzyszybowe, imponujące drzwi tarasowe podnoszono-przesuwne (HS) o szerokości 3,6 m.</p>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1"><span class="block w-2 h-2 rounded-full bg-green-700"></span></div>
-                    <p class="ml-4 text-gray-700 leading-relaxed"><strong class="text-gray-900 font-semibold">Instalacje grzewcze:</strong> Pompa ciepła, pełne ogrzewanie podłogowe w całym domu.</p>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1"><span class="block w-2 h-2 rounded-full bg-green-700"></span></div>
-                    <p class="ml-4 text-gray-700 leading-relaxed"><strong class="text-gray-900 font-semibold">Ekologia i wentylacja:</strong> Fotowoltaika (ok. 3 kWp) oraz przygotowanie instalacji pod rekuperację.</p>
-                </div>
-                <div class="flex items-start">
-                    <div class="flex-shrink-0 mt-1"><span class="block w-2 h-2 rounded-full bg-green-700"></span></div>
-                    <p class="ml-4 text-gray-700 leading-relaxed"><strong class="text-gray-900 font-semibold">Wnętrze:</strong> Gotowe schody dębowe zawarte w cenie stanu deweloperskiego.</p>
-                </div>
-                <div class="flex items-start bg-gray-50 p-4 rounded-lg border border-gray-200 -mt-3">
-                    <div class="flex-shrink-0 mt-1"><span class="block w-2 h-2 rounded-full bg-blue-600"></span></div>
-                    <p class="ml-4 text-gray-800 leading-relaxed"><strong class="text-gray-900 font-semibold">Opcjonalnie:</strong> pakiet wykończenia pod klucz – wycena indywidualna.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sekcja Kontaktowa (Formularz Demo) -->
-    <section id="kontakt" class="py-20 bg-gray-100">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-serif font-bold mb-10 text-center text-gray-900">Zapytaj o dom</h2>
-            <div class="bg-white p-10 rounded-xl shadow-md border border-gray-200">
-                <form onsubmit="alert('To wersja demonstracyjna – formularz nie wysyła wiadomości'); return false;" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">Imię i nazwisko</label>
-                            <input type="text" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-green-700 focus:border-green-700 border p-3 bg-gray-50" required>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">Telefon</label>
-                            <input type="tel" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-green-700 focus:border-green-700 border p-3 bg-gray-50" required>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2 uppercase tracking-wide">Wiadomość (np. interesuje mnie dom 3B)</label>
-                        <textarea rows="4" class="w-full border-gray-300 rounded-md shadow-sm focus:ring-green-700 focus:border-green-700 border p-3 bg-gray-50" required></textarea>
-                    </div>
-                    <div class="text-center pt-4">
-                        <button type="submit" class="bg-green-700 hover:bg-green-800 text-white font-semibold py-4 px-10 rounded-full shadow-lg transition tracking-wide">Wyślij zapytanie</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-14 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div>
-                <!-- Logo w stopce opcjonalnie, lub elegancki tekst -->
-                <h3 class="text-white text-3xl font-serif font-bold mb-4">JARZĘBINOWE</h3>
-                <p class="mb-1 text-gray-300">ul. Jarzębinowa</p>
-                <p class="mb-5 text-gray-300">43-190 Mikołów-Mokre</p>
-                <p class="text-gray-200 flex items-center font-medium">
-                    <svg class="w-5 h-5 mr-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                    +48 000 000 000
-                </p>
-            </div>
-            <div class="md:text-right flex flex-col justify-end">
-                <h4 class="text-white font-semibold mb-2 uppercase tracking-wider text-sm">Deweloper (nazwa fikcyjna)</h4>
-                <p class="mb-2 text-gray-400">ul. Fikcyjna 1, 00-000 Miasto</p>
-                <p class="text-xs mt-8 border-t border-gray-800 pt-5 text-gray-500">© 2026 Projekt koncepcyjny. Wszelkie prawa zastrzeżone.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Modal Historia Ceny -->
-    <div id="priceModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-gray-900/60 backdrop-blur-sm transition-opacity">
-        <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md mx-4 transform scale-95 transition-transform duration-300 border border-gray-100" id="modalContent">
-            <div class="flex justify-between items-center mb-6 border-b border-gray-100 pb-4">
-                <h3 class="text-2xl font-serif font-bold text-gray-900">Historia ceny: <span id="modalHouseId" class="text-green-700"></span></h3>
-                <button onclick="closeModal()" class="text-gray-400 hover:text-gray-800 transition-colors bg-gray-50 hover:bg-gray-100 p-2 rounded-full">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-            <div class="space-y-4" id="modalHistoryList">
-                <!-- Historia generowana przez JS -->
-            </div>
-            <div class="mt-8 text-right">
-                <button onclick="closeModal()" class="bg-gray-900 hover:bg-gray-800 text-white font-semibold px-6 py-2.5 rounded-full text-sm transition tracking-wide shadow-md">Zamknij</button>
-            </div>
-        </div>
+<section class="okolica" id="okolica" aria-labelledby="okolica-t">
+  <div class="siatka">
+    <div class="okolica__tekst">
+      <h2 id="okolica-t">ul. Jarzębinowa, Mikołów-Mokre</h2>
+      <p class="wstep">Spokojna ulica z&nbsp;domami jednorodzinnymi. Od wschodu i&nbsp;od południa łąka, około 300&nbsp;m na południe las. Dojazd ulicą asfaltową.</p>
+      <p><a href="https://www.openstreetmap.org/#map=16/50.1783/18.8591" rel="noopener" target="_blank">Otwórz mapę w&nbsp;OpenStreetMap</a></p>
     </div>
+    <figure class="okolica__mapa"><iframe title="Mapa: Mikołów-Mokre" loading="lazy" style="width:100%;aspect-ratio:4/3;border:1px solid var(--linia)" src="https://www.openstreetmap.org/export/embed.html?bbox=18.8461%2C50.1723%2C18.8721%2C50.1843&amp;layer=mapnik&amp;marker=50.1783%2C18.8591"></iframe><figcaption>Przybliżony obszar inwestycji. Mapa © autorzy OpenStreetMap (licencja ODbL).</figcaption></figure>
+  </div>
+</section>
 
-    <!-- JS (Podświetlanie i Modal) -->
-    <script>
-        // Logika powiązań Planu Osiedla z Tabelą
-        function hoverHouse(id, status) {
-            const plan = document.getElementById('plan-' + id);
-            const row = document.getElementById('row-' + id);
-            
-            // Dobór koloru podświetlenia po statusie
-            let hoverClass = 'bg-green-50/80'; // available
-            if(status === 'sold') hoverClass = 'bg-gray-200';
-            if(status === 'reserved') hoverClass = 'bg-orange-50';
+<section class="kontakt" id="kontakt" aria-labelledby="kontakt-t">
+  <div class="siatka">
+    <div class="kontakt__dane">
+      <h2 id="kontakt-t">Zapytaj o&nbsp;dom</h2>
+      <p class="kontakt__tel"><a href="tel:+48672432888">+48 672 432 888</a></p>
+      <p>pon.–sob. 8:00–18:00</p>
+      <p>Pokażemy działki na miejscu i&nbsp;odpowiemy na pytania o&nbsp;standard, terminy i&nbsp;finansowanie.</p>
+    </div>
+    <form class="formularz" method="post" action="mailto:jarzebinowa@biuro.pl" enctype="text/plain" novalidate>
+            <label>Imię i nazwisko<input name="imie" autocomplete="name" required maxlength="100"></label>
+      <label>E-mail<input name="email" type="email" autocomplete="email" required maxlength="150"></label>
+      <label>Telefon <small>(opcjonalnie)</small><input name="telefon" type="tel" autocomplete="tel" maxlength="30"></label>
+      <label>Dom <small>(opcjonalnie)</small><select name="dom"><option value="">dowolny</option><option>1A</option><option>1B</option><option>2A</option><option>2B</option><option>3A</option><option>3B</option></select></label>
+      <label class="szeroko">Wiadomość<textarea name="wiadomosc" rows="4" required maxlength="3000"></textarea></label>
+      <label class="hp" aria-hidden="true">Strona www<input name="strona" tabindex="-1" autocomplete="off"></label>
+      <input type="hidden" name="t" value="1794819200.701990b642b33556df5a">
+      <label class="zgoda szeroko"><input type="checkbox" name="zgoda" value="1" required> <span>Wyrażam zgodę na przetwarzanie moich danych podanych w formularzu w celu odpowiedzi na zapytanie. Administratorem danych jest Kaczmarczyk Inwestycje sp. z o.o.. Dane przechowujemy 12 miesięcy. Zgodę mogę wycofać w każdej chwili. Szczegóły: polityka prywatności (do uzupełnienia).</span></label>
+      <p class="komunikat szeroko" role="status" aria-live="polite" hidden></p>
+      <button class="przycisk przycisk--jasny" type="submit">Wyślij wiadomość</button>
+    </form>
+  </div>
+</section>
+</main>
 
-            if(plan) {
-                plan.classList.add(hoverClass);
-                plan.dataset.hoverColor = hoverClass;
-            }
-            if(row) {
-                row.classList.add(hoverClass);
-                row.dataset.hoverColor = hoverClass;
-            }
-        }
+<footer class="stopka">
+  <div class="siatka">
+    <img src="logo1.webp" alt="JARZĘBINOWE" width="460" height="120" loading="lazy">
+    <p>Kaczmarczyk Inwestycje sp. z o.o.</p>
+    <p class="drobny">Wizualizacje i rzuty mają charakter poglądowy i nie stanowią oferty w rozumieniu Kodeksu cywilnego. Strona nie używa plików cookies ani narzędzi śledzących.</p>
+  </div>
+</footer>
+<script>
+// JARZĘBINOWE v2 – film, przełącznik planu, wybór domu (plan <-> tabela), historia cen, formularz.
+// Strona działa też bez JavaScriptu (plan prowadzi do wiersza tabeli przez #dom-XX).
+(() => {
+  const podglad = document.body.hasAttribute('data-podglad');
 
-        function unhoverHouse(id) {
-            const plan = document.getElementById('plan-' + id);
-            const row = document.getElementById('row-' + id);
-            
-            if(plan && plan.dataset.hoverColor) {
-                plan.classList.remove(plan.dataset.hoverColor);
-            }
-            if(row && row.dataset.hoverColor) {
-                row.classList.remove(row.dataset.hoverColor);
-            }
-        }
+  // ---------------------------------------------------------------- film w nagłówku
+  // Na stronie: plik filmu ładowany dopiero po wczytaniu strony (do tego czasu plakat).
+  // W pliku podglądu: film jest już w src i startuje sam (autoplay, muted, loop, playsinline).
+  const v = document.querySelector('video[data-film]');
+  const b = document.querySelector('[data-film-przelacz]');
+  const mniejRuchu = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const oszczedzaj = !!(navigator.connection && navigator.connection.saveData);
+  const wczytaj = () => {
+    if (!v || v.dataset.wczytany) return;
+    let zmiana = false;
+    v.querySelectorAll('source[data-src]').forEach((s) => { s.src = s.dataset.src; zmiana = true; });
+    v.dataset.wczytany = '1';
+    if (zmiana) v.load();
+  };
+  const przycisk = (gra) => { if (b) { b.textContent = gra ? 'Zatrzymaj film' : 'Odtwórz film'; b.setAttribute('aria-pressed', String(!gra)); } };
+  if (v) {
+    if (mniejRuchu || oszczedzaj) { v.removeAttribute('autoplay'); v.pause(); przycisk(false); }
+    else if (!podglad) {
+      const start = () => { wczytaj(); v.play().catch(() => przycisk(false)); };
+      if (document.readyState === 'complete') setTimeout(start, 200);
+      else addEventListener('load', () => setTimeout(start, 200), { once: true });
+    }
+    v.addEventListener('play', () => przycisk(true));
+    v.addEventListener('pause', () => przycisk(false));
+    if (b) b.addEventListener('click', () => { if (v.paused) { wczytaj(); v.play(); } else v.pause(); });
+  }
 
-        // Logika modala historii ceny
-        const priceHistory = {
-            '1A': [ { date: '27.10.2026', price: '899 000 zł' } ],
-            '1B': [ { date: '27.10.2026', price: '879 000 zł' } ],
-            '2A': [ { date: '27.10.2026', price: '879 000 zł' } ],
-            '2B': [ { date: '27.10.2026', price: '879 000 zł' } ],
-            '3A': [ { date: '27.10.2026', price: '899 000 zł' } ],
-            '3B': [ 
-                { date: '15.11.2026', price: '929 000 zł' },
-                { date: '27.10.2026', price: '909 000 zł' } 
-            ]
-        };
+  // ---------------------------------------------------------------- zakładki: plan / z lotu ptaka
+  const zakl = [...document.querySelectorAll('.zakladki [role=tab]')];
+  const pokaz = (t) => zakl.forEach((x) => {
+    const on = x === t;
+    x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1;
+    document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+  });
+  zakl.forEach((t, i) => {
+    t.addEventListener('click', () => pokaz(t));
+    t.addEventListener('keydown', (e) => {
+      const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (k) { const n = zakl[(i + k + zakl.length) % zakl.length]; pokaz(n); n.focus(); }
+    });
+  });
 
-        const modal = document.getElementById('priceModal');
-        const modalContent = document.getElementById('modalContent');
-        const historyList = document.getElementById('modalHistoryList');
-        const body = document.body;
+  // ---------------------------------------------------------------- wybór domu: plan <-> tabela
+  const wybierz = (id, przewin) => {
+    document.querySelectorAll('.p-dom').forEach((g) => g.classList.toggle('wybrany', g.dataset.dom === id));
+    document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.classList.toggle('wybrany', r.dataset.dom === id));
+    const wiersz = document.getElementById('dom-' + id);
+    if (wiersz && przewin) wiersz.scrollIntoView({ block: 'center', behavior: mniejRuchu ? 'auto' : 'smooth' });
+  };
+  document.querySelectorAll('.p-dom a').forEach((a) => a.addEventListener('click', (e) => {
+    e.preventDefault();
+    const id = a.closest('.p-dom').dataset.dom;
+    wybierz(id, true);
+    history.replaceState(null, '', '#dom-' + id);
+  }));
+  document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.addEventListener('click', (e) => {
+    if (e.target.closest('button, a')) return;
+    wybierz(r.dataset.dom, false);
+  }));
+  const zAdresu = location.hash.match(/^#dom-([1-3][AB])$/);
+  if (zAdresu) wybierz(zAdresu[1], false);
 
-        function openModal(houseId) {
-            document.getElementById('modalHouseId').innerText = 'Dom ' + houseId;
-            historyList.innerHTML = '';
-            
-            const records = priceHistory[houseId] || [];
-            records.forEach((record, index) => {
-                const item = document.createElement('div');
-                item.className = 'flex justify-between items-center p-4 bg-gray-50 rounded-lg border border-gray-100 shadow-sm';
-                
-                let label = 'Cena ofertowa';
-                if (records.length > 1) {
-                    label = index === 0 ? 'Aktualna cena' : 'Cena historyczna';
-                }
+  // ---------------------------------------------------------------- historia cen
+  document.querySelectorAll('[data-historia]').forEach((btn) => btn.addEventListener('click', () => {
+    const el = document.getElementById(btn.getAttribute('aria-controls'));
+    const otw = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!otw));
+    el.hidden = otw;
+    const wiersz = btn.closest('tr[data-dom]');
+    if (!otw && wiersz) wybierz(wiersz.dataset.dom, false);
+  }));
 
-                item.innerHTML = `
-                    <div>
-                        <span class="block font-semibold text-gray-900">${record.date}</span>
-                        <span class="text-xs text-gray-500 uppercase tracking-wide font-medium mt-0.5 block">${label}</span>
-                    </div>
-                    <div class="font-bold text-gray-900 text-lg">${record.price}</div>
-                `;
-                historyList.appendChild(item);
-            });
-            
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            
-            setTimeout(() => {
-                modalContent.classList.remove('scale-95');
-                modalContent.classList.add('scale-100');
-            }, 10);
-            
-            body.classList.add('modal-active');
-        }
+  // ---------------------------------------------------------------- pasek sekcji: zaznaczenie bieżącej
+  const linki = [...document.querySelectorAll('.kotwice__linki a')];
+  if ('IntersectionObserver' in window && linki.length) {
+    const io = new IntersectionObserver((wpisy) => wpisy.forEach((w) => {
+      if (!w.isIntersecting) return;
+      linki.forEach((l) => l.setAttribute('aria-current', String(l.getAttribute('href') === '#' + w.target.id)));
+    }), { rootMargin: '-45% 0px -50% 0px' });
+    linki.forEach((l) => { const s = document.querySelector(l.getAttribute('href')); if (s) io.observe(s); });
+  }
 
-        function closeModal() {
-            modalContent.classList.remove('scale-100');
-            modalContent.classList.add('scale-95');
-            
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-                body.classList.remove('modal-active');
-            }, 200);
-        }
+  // ---------------------------------------------------------------- formularz: wysyłka bez przeładowania
+  const f = document.querySelector('.formularz');
+  if (f) f.addEventListener('submit', (e) => {
+    const msg = f.querySelector('.komunikat[aria-live]');
+    const pokazMsg = (ok, txt) => { msg.hidden = false; msg.textContent = txt; msg.className = 'komunikat szeroko ' + (ok ? 'komunikat--ok' : 'komunikat--blad'); };
+    if (!f.checkValidity()) { e.preventDefault(); f.reportValidity(); return; }
+    e.preventDefault();
+    if (podglad) { pokazMsg(true, 'To jest plik podglądu: na stronie formularz wyśle wiadomość na adres biura sprzedaży.'); return; }
+    if (document.body.hasAttribute('data-statyczna')) {          // GitHub Pages: wiadomość w programie pocztowym
+      const d = new FormData(f), g = (k) => (d.get(k) || '').toString().trim();
+      const temat = 'Zapytanie ze strony JARZĘBINOWE' + (g('dom') ? ' – dom ' + g('dom') : '');
+      const tresc = `Imię i nazwisko: ${g('imie')}
+E-mail: ${g('email')}
+Telefon: ${g('telefon') || '-'}
+Dom: ${g('dom') || 'dowolny'}
 
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-    </script>
+${g('wiadomosc')}
+
+Zgoda na przetwarzanie danych w celu odpowiedzi: TAK`;
+      location.href = f.action + '?subject=' + encodeURIComponent(temat) + '&body=' + encodeURIComponent(tresc);
+      pokazMsg(true, 'Otwieramy program pocztowy z gotową wiadomością. Jeśli się nie otworzył, zadzwoń: +48 672 432 888.');
+      return;
+    }
+    if (!window.fetch) { f.submit(); return; }
+    const btn = f.querySelector('button[type=submit]'); btn.disabled = true;
+    fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
+      .then((r) => r.json())
+      .then((d) => { pokazMsg(d.ok, d.komunikat); if (d.ok) f.reset(); })
+      .catch(() => pokazMsg(false, 'Nie udało się wysłać wiadomości. Prosimy o telefon.'))
+      .then(() => { btn.disabled = false; });
+  });
+})();
+
+</script>
 </body>
 </html>
