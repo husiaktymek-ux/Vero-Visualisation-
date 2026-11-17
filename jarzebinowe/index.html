@@ -94,9 +94,7 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .zakladki button{min-height:40px;padding:8px 20px;border-radius:999px;font-size:14px;font-weight:600;color:var(--grafit)}
 .zakladki button[aria-selected=true]{background:var(--antracyt);color:#fff}
 .widok{padding-inline:var(--m)}
-.lot{margin:0;border:1px solid var(--linia);background:var(--mgla)}
-.lot img{width:100%;aspect-ratio:2000/1240;object-fit:cover}
-  
+
 /* --- NOWA SEKCJA: Interaktywny Render --- */
 .wizualizacja-interaktywna{position:relative;margin:0;border:1px solid var(--linia);background:var(--mgla);overflow:hidden;}
 .wizualizacja-interaktywna img{width:100%;height:auto;display:block;}
@@ -108,12 +106,12 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 /* Klasy nadawane dynamicznie ze skryptu w oparciu o tabele */
 .wizualizacja-interaktywna polygon.status-dost:hover { fill:rgba(255,255,255,0.4); }
 .wizualizacja-interaktywna polygon.status-rez:hover { fill:rgba(255, 140, 0, 0.4); /* pomarańczowy */ }
-.wizualizacja-interaktywna polygon.status-sprz:hover { fill:rgba(255, 51, 51, 0.4); /* czerwony */ }
+.wizualizacja-interaktywna polygon.status-sprz:hover { fill:rgba(181, 51, 46, 0.25); /* elegancki, mniej jaskrawy czerwony */ }
 
 .wizualizacja-interaktywna polygon.wybrany{stroke:var(--jarz);}
 .wizualizacja-interaktywna polygon.status-dost.wybrany { fill:rgba(255,255,255,0.6); }
 .wizualizacja-interaktywna polygon.status-rez.wybrany { fill:rgba(255, 140, 0, 0.6); }
-.wizualizacja-interaktywna polygon.status-sprz.wybrany { fill:rgba(255, 51, 51, 0.6); }
+.wizualizacja-interaktywna polygon.status-sprz.wybrany { fill:rgba(181, 51, 46, 0.45); }
 
 /* Nowy wygląd dymka na renderze 2D (a'la NOHO) */
 .wizualizacja-interaktywna .model__dymek {
@@ -199,6 +197,7 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .wiz-pin.st-dost .wiz-pin-box, .wiz-pin.st-dost::after { background-color: var(--zielen); }
 .wiz-pin.st-rez .wiz-pin-box, .wiz-pin.st-rez::after { background-color: var(--jesion); }
 .wiz-pin.st-sprz .wiz-pin-box, .wiz-pin.st-sprz::after { background-color: var(--grafit); }
+
 /* Model 3D osiedla (SVG rysowany skryptem; geometria wg projektu PAB) */
 .model{margin:0;border:1px solid var(--linia);background:#fff}
 .model__pasek{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:12px 16px;border-bottom:1px solid var(--linia)}
@@ -489,7 +488,6 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
     <!-- Domyślnie wybrana Wizualizacja -->
     <button type="button" role="tab" id="z-wiz" aria-selected="true" aria-controls="p-wiz">Wizualizacja</button>
     <button type="button" role="tab" id="z-model" aria-selected="false" aria-controls="p-model" tabindex="-1">Model 3D</button>
-    <button type="button" role="tab" id="z-lot" aria-selected="false" aria-controls="p-lot" tabindex="-1">Z lotu ptaka</button>
   </div>
 
   <!-- Nowa zakładka z renderem i poligonami (odkryta na start) -->
@@ -503,10 +501,23 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <polygon data-dom="2A" points="2856.5,821.5 2358.5,692.5 2224.5,808.5 2217.5,803.5 1862.5,709.5 1722.5,1028.5 1725.5,1239.5 1556.5,1385.5 2110.5,1559.5 2503.5,1170.5 2603.5,924.5 2611.5,908.5 2727.5,939.5 2735.5,940.5" />
         <polygon data-dom="2B" points="2357.5,692.5 1889.5,571.5 1886.5,571.5 1747.5,678.5 1521.5,618.5 1381.5,927.5 1382.5,958.5 1038.5,1222.5 1555.5,1385.5 1724.5,1239.5 1721.5,1028.5 1862.5,708.5 2217.5,802.5 2224.5,807.5" />
         <polygon data-dom="3A" points="553.5,1069.5 1037.5,1222.5 1381.5,958.5 1380.5,927.5 1521.5,617.5 1747.5,677.5 1883.5,573.5 1885.5,570.5 1441.5,456.5 1263.5,579.5 1178.5,526.5 864.5,442.5 722.5,739.5 739.5,941.5" />
-        <polygon data-dom="3B" points="863.5,442.5 563.5,362.5 421.5,651.5 428.5,718.5 97.5,926.5 547.5,1068.5 554.5,1068.5 738.5,941.5 721.5,739.5" />
+        <!-- Skorygowany obrys 3B obejmujący cały tył ogrodu, idealnie przyklejony do granicy 3A -->
+        <polygon data-dom="3B" points="1441.5,456.5 1020.5,347.5 563.5,362.5 421.5,651.5 97.5,926.5 547.5,1068.5 554.5,1068.5 739.5,941.5 722.5,739.5 864.5,442.5 1178.5,526.5 1263.5,579.5" />
       </svg>
       <!-- Nowa warstwa na stałe etykiety domków -->
       <div class="etykiety-warstwa"></div>
+
+      <!-- Kompas 2D zgrany z oświetleniem i rzutem z kamery -->
+      <div class="wiz-kompas" aria-hidden="true" style="position: absolute; bottom: 20px; right: 20px; z-index: 5; pointer-events: none;">
+        <svg viewBox="0 0 40 40" width="46" height="46">
+          <circle cx="20" cy="20" r="18" fill="#fff" fill-opacity=".85" stroke="#D5DBDF"/>
+          <g style="transform-origin: 20px 20px; transform: rotate(-70deg);">
+            <path d="M20,6 L15,22 L20,19 L25,22 Z" fill="#B5332E"/>
+            <text x="20" y="31" text-anchor="middle" font-family="var(--font)" font-size="10" font-weight="bold" fill="#383E42">N</text>
+          </g>
+        </svg>
+      </div>
+
       <div class="model__dymek" hidden></div>
     </figure>
   </div>
@@ -541,10 +552,6 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       </ol>
       <figcaption class="model__uwaga">Model poglądowy wg projektu architektonicznego: bryły, dach 40°, okna, okna dachowe i panele PV, a&nbsp;także podjazdy, tarasy, ogrodzenia i&nbsp;jarzęby z&nbsp;planu zagospodarowania. Przeciągnij model, aby go obrócić. Kliknij dom albo działkę, aby przejść do ceny w&nbsp;tabeli.</figcaption>
     </figure>
-  </div>
-
-  <div class="widok" id="p-lot" role="tabpanel" aria-labelledby="z-lot" hidden>
-    <figure class="lot"><img src="zlotuptaka.png" alt="Osiedle z lotu ptaka: trzy bliźniaki przy ulicy, za nimi łąka i las" width="1672" height="941" loading="lazy" decoding="async">      <figcaption>Wizualizacja z lotu ptaka. Od wschodu i od południa łąka, dalej las.</figcaption></figure>
   </div>
 
   <table class="cennik">
@@ -1129,7 +1136,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
   const zAdresu = location.hash.match(/^#dom-([1-3][AB])$/);
   if (zAdresu) wybierz(zAdresu[1], false);
 
-  // ---------------------------------------------------------------- interaktywna wizualizacja 2D
+  // ---------------------------------------------------------------- interaktywna wizualizacja (nowa)
   const wiz = document.querySelector('[data-interaktywna]');
   if (wiz) {
     const wizSvg = wiz.querySelector('svg');
@@ -1137,7 +1144,6 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
     const etykietyWarstwa = wiz.querySelector('.etykiety-warstwa');
     const idPodWiz = (e) => { const el = e.target.closest && e.target.closest('[data-dom]'); return el ? el.getAttribute('data-dom') : null; };
 
-    // Punkty orientacyjne dla etykiet, przeliczone z układu 3840x2160 na układ procentowy (0-100%)
     const wizPunkty = {
       '1A': { left: 85, top: 60 },
       '1B': { left: 70, top: 50 },
@@ -1161,7 +1167,6 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       };
     };
 
-    // Budowanie stałych etykiet
     Object.keys(wizPunkty).forEach(id => {
       const d = getDane(id);
       if(!d) return;
@@ -1180,7 +1185,6 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       `;
       etykietyWarstwa.appendChild(pin);
       
-      // Nadanie klasy statusu polgionom dla obsługi koloru hover w CSS
       const pol = wizSvg.querySelector(`polygon[data-dom="${id}"]`);
       if(pol) { pol.classList.add(`status-${d.klasa}`); }
     });
@@ -1216,15 +1220,11 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       }
     });
 
-    // Wpięcie w główną funkcję wybierania (żeby etykiety też zmieniały stan wybrany)
-    const oryginalnyWybierz = window.wybierz || function(){}; // Zakładamy, że gdzieś wyżej zdefiniowane, to obejście do aktualizacji
+    const oryginalnyWybierz = window.wybierz || function(){};
     const aktualizujEtykiety = (id) => {
         document.querySelectorAll('.wiz-pin').forEach(pin => pin.classList.toggle('wybrany', pin.dataset.dom === id));
     };
-    // Rejestrujemy nasłuchiwacz na własne zdarzenie, bo nie chcemy przerabiać całego pliku z `const wybierz`
-    // Ponieważ w poprzednim kodzie `wybierz` jest lokalną zmienną w IIFE, dodamy aktualizację do kliku.
     document.addEventListener('click', (e) => {
-        // Opóźnienie by upewnić się, że główny skrypt ustawił klasę .wybrany na poligonie
         setTimeout(() => {
             const selectedPoly = document.querySelector('.wizualizacja-interaktywna polygon.wybrany');
             if(selectedPoly) {
