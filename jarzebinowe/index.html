@@ -96,16 +96,109 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .widok{padding-inline:var(--m)}
 .lot{margin:0;border:1px solid var(--linia);background:var(--mgla)}
 .lot img{width:100%;aspect-ratio:2000/1240;object-fit:cover}
-
+  
 /* --- NOWA SEKCJA: Interaktywny Render --- */
 .wizualizacja-interaktywna{position:relative;margin:0;border:1px solid var(--linia);background:var(--mgla);overflow:hidden;}
 .wizualizacja-interaktywna img{width:100%;height:auto;display:block;}
 .wizualizacja-interaktywna svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;}
-.wizualizacja-interaktywna polygon{fill:transparent;cursor:pointer;stroke:transparent;stroke-width:4px;transition:fill 0.3s, stroke 0.3s;}
-/* Styl NOHO - delikatna, biała poświata po najechaniu i biała obwódka */
-.wizualizacja-interaktywna polygon:hover{fill:rgba(255,255,255,0.4);stroke:#fff;}
-.wizualizacja-interaktywna polygon.wybrany{fill:rgba(255,255,255,0.6);stroke:var(--antracyt);}
+.wizualizacja-interaktywna polygon{fill:rgba(255,255,255,0);cursor:pointer;stroke:transparent;stroke-width:4px;transition:fill 0.3s, stroke 0.3s;}
 
+/* Podświetlenie na hover zależne od statusu – ustawiane z JS, tu baza */
+.wizualizacja-interaktywna polygon:hover{stroke:#fff;}
+/* Klasy nadawane dynamicznie ze skryptu w oparciu o tabele */
+.wizualizacja-interaktywna polygon.status-dost:hover { fill:rgba(255,255,255,0.4); }
+.wizualizacja-interaktywna polygon.status-rez:hover { fill:rgba(255, 140, 0, 0.4); /* pomarańczowy */ }
+.wizualizacja-interaktywna polygon.status-sprz:hover { fill:rgba(255, 51, 51, 0.4); /* czerwony */ }
+
+.wizualizacja-interaktywna polygon.wybrany{stroke:var(--jarz);}
+.wizualizacja-interaktywna polygon.status-dost.wybrany { fill:rgba(255,255,255,0.6); }
+.wizualizacja-interaktywna polygon.status-rez.wybrany { fill:rgba(255, 140, 0, 0.6); }
+.wizualizacja-interaktywna polygon.status-sprz.wybrany { fill:rgba(255, 51, 51, 0.6); }
+
+/* Nowy wygląd dymka na renderze 2D (a'la NOHO) */
+.wizualizacja-interaktywna .model__dymek {
+    background: #111;
+    color: #fff;
+    border: none;
+    padding: 16px 20px;
+    font-size: 15px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    min-width: 220px;
+    pointer-events: none; /* Dymek podąża za kursorem, nie przeszkadza w klikaniu */
+    border-radius: 4px;
+}
+.wizualizacja-interaktywna .model__dymek b {
+    display: block;
+    font: 600 22px/1.2 var(--font); /* większy i nowocześniejszy font dla ID */
+    margin-bottom: 6px;
+    color: #fff;
+    font-variation-settings: normal;
+}
+.wizualizacja-interaktywna .model__dymek span.cena-txt {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.wizualizacja-interaktywna .model__dymek span.status-txt {
+    display: inline-block;
+    padding: 4px 10px;
+    margin-top: 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 3px;
+    font-weight: 700;
+}
+.wizualizacja-interaktywna .model__dymek span.status-txt.dost { background: rgba(255,255,255,0.2); }
+.wizualizacja-interaktywna .model__dymek span.status-txt.rez { background: rgba(255, 140, 0, 0.3); color: #FFA500; }
+.wizualizacja-interaktywna .model__dymek span.status-txt.sprz { background: rgba(255, 51, 51, 0.3); color: #FF6666; }
+
+.wizualizacja-interaktywna .model__dymek small {
+    display: block;
+    margin-top: 10px;
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+}
+
+/* Kopia przypiętych etykiet z modelu 3D (te kwadraciki z ID i statusem pokazujące się od razu) */
+.wizualizacja-interaktywna .etykiety-warstwa {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+.wiz-pin {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wiz-pin::after {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 15px; /* "Nóżka" etykiety */
+}
+.wiz-pin-box {
+    padding: 6px 12px;
+    border-radius: 3px;
+    text-align: center;
+    border: 1.5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.wiz-pin.wybrany .wiz-pin-box {
+    border: 3px solid #B5332E;
+    padding: 10px 16px;
+}
+.wiz-pin-id { font: 500 17px var(--szeryf); color: #fff; margin-bottom: 2px;}
+.wiz-pin-st { font: 600 11px var(--font); color: #fff; text-transform: uppercase; letter-spacing: 0.1em; }
+.wiz-pin-cena { font: 600 13px var(--font); color: #fff; margin-top: 4px; display: none; }
+.wiz-pin.wybrany .wiz-pin-cena { display: block; }
+
+.wiz-pin.st-dost .wiz-pin-box, .wiz-pin.st-dost::after { background-color: var(--zielen); }
+.wiz-pin.st-rez .wiz-pin-box, .wiz-pin.st-rez::after { background-color: var(--jesion); }
+.wiz-pin.st-sprz .wiz-pin-box, .wiz-pin.st-sprz::after { background-color: var(--grafit); }
 /* Model 3D osiedla (SVG rysowany skryptem; geometria wg projektu PAB) */
 .model{margin:0;border:1px solid var(--linia);background:#fff}
 .model__pasek{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:12px 16px;border-bottom:1px solid var(--linia)}
@@ -403,7 +496,8 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
   <div class="widok" id="p-wiz" role="tabpanel" aria-labelledby="z-wiz">
     <figure class="wizualizacja-interaktywna" data-interaktywna>
       <img src="gemini2.jfif" alt="Wizualizacja osiedla - interaktywna mapa" width="1920" height="1080">
-     <svg viewBox="0 0 3840 2160" preserveAspectRatio="none">
+      
+      <svg viewBox="0 0 3840 2160" preserveAspectRatio="none">
         <polygon data-dom="1A" points="3839.5,1074.5 3389.5,958.5 3385.5,959.5 3275.5,1086.5 3001.5,1013.5 2865.5,1356.5 2850.5,1578.5 2704.5,1746.5 3320.5,1940.5 3343.5,1946.5 3838.5,1258.5" />
         <polygon data-dom="1B" points="3385.5,957.5 2858.5,821.5 2834.5,843.5 2735.5,941.5 2727.5,940.5 2611.5,909.5 2504.5,1170.5 2111.5,1559.5 2703.5,1746.5 2849.5,1578.5 2864.5,1356.5 2999.5,1014.5 3001.5,1012.5 3008.5,1013.5 3275.5,1085.5 3378.5,967.5" />
         <polygon data-dom="2A" points="2856.5,821.5 2358.5,692.5 2224.5,808.5 2217.5,803.5 1862.5,709.5 1722.5,1028.5 1725.5,1239.5 1556.5,1385.5 2110.5,1559.5 2503.5,1170.5 2603.5,924.5 2611.5,908.5 2727.5,939.5 2735.5,940.5" />
@@ -411,6 +505,9 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <polygon data-dom="3A" points="553.5,1069.5 1037.5,1222.5 1381.5,958.5 1380.5,927.5 1521.5,617.5 1747.5,677.5 1883.5,573.5 1885.5,570.5 1441.5,456.5 1263.5,579.5 1178.5,526.5 864.5,442.5 722.5,739.5 739.5,941.5" />
         <polygon data-dom="3B" points="863.5,442.5 563.5,362.5 421.5,651.5 428.5,718.5 97.5,926.5 547.5,1068.5 554.5,1068.5 738.5,941.5 721.5,739.5" />
       </svg>
+      <!-- Nowa warstwa na stałe etykiety domków -->
+      <div class="etykiety-warstwa"></div>
+      <div class="model__dymek" hidden></div>
     </figure>
   </div>
 
@@ -1032,20 +1129,61 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
   const zAdresu = location.hash.match(/^#dom-([1-3][AB])$/);
   if (zAdresu) wybierz(zAdresu[1], false);
 
-  // ---------------------------------------------------------------- interaktywna wizualizacja (nowa)
+  // ---------------------------------------------------------------- interaktywna wizualizacja 2D
   const wiz = document.querySelector('[data-interaktywna]');
   if (wiz) {
     const wizSvg = wiz.querySelector('svg');
     const wizDymek = wiz.querySelector('.model__dymek');
+    const etykietyWarstwa = wiz.querySelector('.etykiety-warstwa');
     const idPodWiz = (e) => { const el = e.target.closest && e.target.closest('[data-dom]'); return el ? el.getAttribute('data-dom') : null; };
+
+    // Punkty orientacyjne dla etykiet, przeliczone z układu 3840x2160 na układ procentowy (0-100%)
+    const wizPunkty = {
+      '1A': { left: 85, top: 60 },
+      '1B': { left: 70, top: 50 },
+      '2A': { left: 55, top: 40 },
+      '2B': { left: 45, top: 35 },
+      '3A': { left: 25, top: 25 },
+      '3B': { left: 15, top: 20 }
+    };
 
     const getDane = (id) => {
       const r = document.querySelector('.cennik tr[data-dom="' + id + '"]');
       if (!r) return null;
       const q = (s) => (r.querySelector(s) ? r.querySelector(s).textContent.trim() : '');
-      const st = r.querySelector('.st');
-      return { status: q('.st').toLowerCase() || 'dostępny', cena: q('.cena'), m2: q('td[data-l="Cena za m²"]') };
+      const stEl = r.querySelector('.st');
+      const klasa = stEl ? (stEl.className.match(/st--(dost|rez|sprz)/) || [])[1] : 'dost';
+      return { 
+          status: q('.st').toLowerCase() || 'dostępny', 
+          cena: q('.cena'), 
+          m2: q('td[data-l="Cena za m²"]'),
+          klasa: klasa || 'dost'
+      };
     };
+
+    // Budowanie stałych etykiet
+    Object.keys(wizPunkty).forEach(id => {
+      const d = getDane(id);
+      if(!d) return;
+      const pin = document.createElement('div');
+      pin.className = `wiz-pin st-${d.klasa}`;
+      pin.dataset.dom = id;
+      pin.style.left = `${wizPunkty[id].left}%`;
+      pin.style.top = `${wizPunkty[id].top}%`;
+      
+      pin.innerHTML = `
+        <div class="wiz-pin-box">
+          <div class="wiz-pin-id">${id}</div>
+          <div class="wiz-pin-st">${d.status}</div>
+          <div class="wiz-pin-cena">${d.cena}</div>
+        </div>
+      `;
+      etykietyWarstwa.appendChild(pin);
+      
+      // Nadanie klasy statusu polgionom dla obsługi koloru hover w CSS
+      const pol = wizSvg.querySelector(`polygon[data-dom="${id}"]`);
+      if(pol) { pol.classList.add(`status-${d.klasa}`); }
+    });
 
     wizSvg.addEventListener('mousemove', (e) => {
       const id = idPodWiz(e);
@@ -1053,18 +1191,46 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
 
       const d = getDane(id);
       if (d) {
-        wizDymek.innerHTML = '<b>' + id + '</b>' + d.cena + (d.m2 ? ', ' + d.m2 + '/m²' : '') + ', ' + d.status + '<small>Kliknij, aby zobaczyć w cenniku.</small>';
+        wizDymek.innerHTML = `
+            <b>${id}</b>
+            <span class="cena-txt">${d.cena}</span>
+            ${d.m2 ? `<span>${d.m2}</span>` : ''}
+            <span class="status-txt ${d.klasa}">${d.status}</span>
+            <small>Kliknij, aby zobaczyć w cenniku.</small>
+        `;
         wizDymek.hidden = false;
         const r = wiz.getBoundingClientRect();
         const x = e.clientX - r.left, y = e.clientY - r.top;
+        
         wizDymek.style.left = Math.min(x + 16, r.width - wizDymek.offsetWidth - 8) + 'px';
         wizDymek.style.top = (y + 18 + wizDymek.offsetHeight > r.height ? y - wizDymek.offsetHeight - 12 : y + 18) + 'px';
       }
     });
+    
     wizSvg.addEventListener('mouseleave', () => { wizDymek.hidden = true; });
     wizSvg.addEventListener('click', (e) => {
       const id = idPodWiz(e);
-      if (id) { wybierz(id, true); history.replaceState(null, '', '#dom-' + id); }
+      if (id) { 
+          wybierz(id, true); 
+          history.replaceState(null, '', '#dom-' + id); 
+      }
+    });
+
+    // Wpięcie w główną funkcję wybierania (żeby etykiety też zmieniały stan wybrany)
+    const oryginalnyWybierz = window.wybierz || function(){}; // Zakładamy, że gdzieś wyżej zdefiniowane, to obejście do aktualizacji
+    const aktualizujEtykiety = (id) => {
+        document.querySelectorAll('.wiz-pin').forEach(pin => pin.classList.toggle('wybrany', pin.dataset.dom === id));
+    };
+    // Rejestrujemy nasłuchiwacz na własne zdarzenie, bo nie chcemy przerabiać całego pliku z `const wybierz`
+    // Ponieważ w poprzednim kodzie `wybierz` jest lokalną zmienną w IIFE, dodamy aktualizację do kliku.
+    document.addEventListener('click', (e) => {
+        // Opóźnienie by upewnić się, że główny skrypt ustawił klasę .wybrany na poligonie
+        setTimeout(() => {
+            const selectedPoly = document.querySelector('.wizualizacja-interaktywna polygon.wybrany');
+            if(selectedPoly) {
+                aktualizujEtykiety(selectedPoly.dataset.dom);
+            }
+        }, 10);
     });
   }
 
