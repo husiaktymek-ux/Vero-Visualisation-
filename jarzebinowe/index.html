@@ -401,14 +401,20 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
   <!-- Nowa zakładka z renderem i poligonami (odkryta na start) -->
   <div class="widok" id="p-wiz" role="tabpanel" aria-labelledby="z-wiz">
     <figure class="wizualizacja-interaktywna" data-interaktywna>
-      <img src="W4_dron_final.jpg" alt="Wizualizacja osiedla - interaktywna mapa" width="1920" height="1080">
+      <img src="gemini2.jfif" alt="Wizualizacja osiedla - interaktywna mapa" width="1920" height="1080">
       <svg viewBox="0 0 1920 1080" preserveAspectRatio="none">
-        <polygon data-dom="1A" points="160,520 420,550 500,850 200,800" />
-        <polygon data-dom="1B" points="420,550 720,580 820,920 500,850" />
-        <polygon data-dom="2A" points="750,450 1010,480 1150,780 850,750" />
-        <polygon data-dom="2B" points="1010,480 1280,510 1440,840 1150,780" />
-        <polygon data-dom="3A" points="1350,380 1590,420 1730,700 1460,650" />
-        <polygon data-dom="3B" points="1590,420 1850,450 1920,730 1730,700" />
+        <!-- Działka 1A (ucięta z lewej, dociągnięta do krawędzi X=0) -->
+        <polygon data-dom="1A" points="0,460 270,540 490,260 0,140" />
+        <!-- Działka 1B -->
+        <polygon data-dom="1B" points="270,540 500,610 720,330 490,260" />
+        <!-- Działka 2A -->
+        <polygon data-dom="2A" points="500,610 750,680 980,390 720,330" />
+        <!-- Działka 2B -->
+        <polygon data-dom="2B" points="750,680 980,750 1240,460 980,390" />
+        <!-- Działka 3A -->
+        <polygon data-dom="3A" points="980,750 1250,830 1520,530 1240,460" />
+        <!-- Działka 3B (skrajna z prawej) -->
+        <polygon data-dom="3B" points="1250,830 1550,920 1850,620 1520,530" />
       </svg>
       <div class="model__dymek" hidden></div>
     </figure>
