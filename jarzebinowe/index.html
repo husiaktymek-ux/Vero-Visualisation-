@@ -97,6 +97,14 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .lot{margin:0;border:1px solid var(--linia);background:var(--mgla)}
 .lot img{width:100%;aspect-ratio:2000/1240;object-fit:cover}
 
+/* --- NOWA SEKCJA: Interaktywny Render --- */
+.wizualizacja-interaktywna{position:relative;margin:0;border:1px solid var(--linia);background:var(--mgla);overflow:hidden;}
+.wizualizacja-interaktywna img{width:100%;height:auto;display:block;}
+.wizualizacja-interaktywna svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;}
+.wizualizacja-interaktywna polygon{fill:transparent;cursor:pointer;stroke:transparent;stroke-width:3px;transition:fill 0.2s, stroke 0.2s;}
+.wizualizacja-interaktywna polygon:hover{fill:rgba(255,255,255,0.15);stroke:var(--antracyt);}
+.wizualizacja-interaktywna polygon.wybrany{fill:rgba(255,255,255,0.25);stroke:var(--jarz);}
+
 /* Model 3D osiedla (SVG rysowany skryptem; geometria wg projektu PAB) */
 .model{margin:0;border:1px solid var(--linia);background:#fff}
 .model__pasek{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:12px 16px;border-bottom:1px solid var(--linia)}
@@ -115,7 +123,7 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .model__scena.ciagnie [data-dom]{cursor:grabbing}
 .model__brak{position:absolute;left:16px;bottom:12px;margin:0;font-size:14px;color:var(--grafit)}
 .model__scena.gotowy .model__brak{display:none}
-.model__dymek{position:absolute;z-index:2;max-width:270px;padding:10px 12px;background:#fff;border:1px solid var(--linia);border-radius:3px;font-size:14px;line-height:1.4;pointer-events:none}
+.model__dymek{position:absolute;z-index:2;max-width:270px;padding:10px 12px;background:#fff;border:1px solid var(--linia);border-radius:3px;font-size:14px;line-height:1.4;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
 .model__dymek b{font:500 19px/1 var(--szeryf);font-variation-settings:"opsz" 14;margin-right:4px}
 .model__dymek small{display:block;margin-top:4px;color:var(--grafit);font-size:13px}
 .m-pin__id{font:500 17px var(--szeryf);font-variation-settings:"opsz" 14;fill:#fff}
@@ -384,11 +392,30 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
   </div>
 
   <div class="zakladki" role="tablist" aria-label="Widok osiedla">
-    <button type="button" role="tab" id="z-model" aria-selected="true" aria-controls="p-model">Model 3D</button>
+    <!-- Domyślnie wybrana Wizualizacja -->
+    <button type="button" role="tab" id="z-wiz" aria-selected="true" aria-controls="p-wiz">Wizualizacja</button>
+    <button type="button" role="tab" id="z-model" aria-selected="false" aria-controls="p-model" tabindex="-1">Model 3D</button>
     <button type="button" role="tab" id="z-lot" aria-selected="false" aria-controls="p-lot" tabindex="-1">Z lotu ptaka</button>
   </div>
 
-  <div class="widok" id="p-model" role="tabpanel" aria-labelledby="z-model">
+  <!-- Nowa zakładka z renderem i poligonami (odkryta na start) -->
+  <div class="widok" id="p-wiz" role="tabpanel" aria-labelledby="z-wiz">
+    <figure class="wizualizacja-interaktywna" data-interaktywna>
+      <img src="W4_dron_final.jpg" alt="Wizualizacja osiedla - interaktywna mapa" width="1920" height="1080">
+      <svg viewBox="0 0 1920 1080" preserveAspectRatio="none">
+        <polygon data-dom="1A" points="160,520 420,550 500,850 200,800" />
+        <polygon data-dom="1B" points="420,550 720,580 820,920 500,850" />
+        <polygon data-dom="2A" points="750,450 1010,480 1150,780 850,750" />
+        <polygon data-dom="2B" points="1010,480 1280,510 1440,840 1150,780" />
+        <polygon data-dom="3A" points="1350,380 1590,420 1730,700 1460,650" />
+        <polygon data-dom="3B" points="1590,420 1850,450 1920,730 1730,700" />
+      </svg>
+      <div class="model__dymek" hidden></div>
+    </figure>
+  </div>
+
+  <!-- Model ukryty na start -->
+  <div class="widok" id="p-model" role="tabpanel" aria-labelledby="z-model" hidden>
     <figure class="model">
       <div class="model__pasek">
         <ul class="model__legenda" aria-label="Kolor działki oznacza status domu">
@@ -592,8 +619,6 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
   const podglad = document.body.hasAttribute('data-podglad');
 
   // ---------------------------------------------------------------- film w nagłówku
-  // Na stronie: plik filmu ładowany dopiero po wczytaniu strony (do tego czasu plakat).
-  // W pliku podglądu: film jest już w src i startuje sam (autoplay, muted, loop, playsinline).
   const v = document.querySelector('video[data-film]');
   const b = document.querySelector('[data-film-przelacz]');
   const mniejRuchu = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -634,18 +659,14 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
   });
 
   // ---------------------------------------------------------------- model 3D osiedla (SVG, bez bibliotek)
-  // Bryły wg projektu PAB (rysunki B1–B3 i PZT): budynek 15,20 × 10,40 m, okap +4,28, kalenica +8,64 (dach 40°),
-  // teren −0,30; działki 11,60 × 32,00 m; okna, okna dachowe, panele PV, podjazdy, tarasy, ogrodzenia, jarzęby.
-  // Układ: x – na wschód, y – na północ, z – w górę [m], (0,0) = narożnik SW terenu.
-  // Ceny i statusy czytane z tabeli cen niżej – po zmianie tabeli model zmienia się sam.
   const model = (() => {
     const scena = document.querySelector('[data-model]');
     const svg = scena && scena.querySelector('svg');
     if (!svg) return null;
     const dymek = scena.querySelector('.model__dymek');
     const DOMY = ['1A', '1B', '2A', '2B', '3A', '3B'];
-    const KOL = { dost: '#4A6B35', rez: '#A4704A', sprz: '#5A6166' };          // pinezki
-    const DZ = { dost: '#C3D9AE', rez: 'url(#m-rez)', sprz: '#A3ACB2' };       // działki
+    const KOL = { dost: '#4A6B35', rez: '#A4704A', sprz: '#5A6166' };
+    const DZ = { dost: '#C3D9AE', rez: 'url(#m-rez)', sprz: '#A3ACB2' };
 
     // ---- dane z tabeli cen
     const dane = {};
@@ -668,7 +689,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
 
     // ---- geometria (metry)
     const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
-    const SL = [-0.569, -0.478, 0.669];                                          // kierunek do słońca: płd.-zach., 42°
+    const SL = [-0.569, -0.478, 0.669];
     const odcien = (h, k) => '#' + [1, 3, 5].map((i) => Math.min(255, Math.round(parseInt(h.slice(i, i + 2), 16) * k)).toString(16).padStart(2, '0')).join('');
     const cien = (h, n) => (n ? odcien(h, 0.86 + 0.16 * Math.max(0, dot(n, SL))) : h);
     const T = -0.3, OK = 4.28, KA = 8.64, KAT = 40 * Math.PI / 180, TG = Math.tan(KAT), SN = Math.sin(KAT), CS = Math.cos(KAT);
@@ -678,7 +699,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
     const N = [0, 1, 0], S = [0, -1, 0], W = [-1, 0, 0], E = [1, 0, 0], G = [0, 0, 1], RN = [0, SN, CS], RS = [0, -SN, CS];
     const ziemia = [], obiekty = [];
 
-    function polowa(id, b, A) {                                                   // lokal A (zach.) albo B (wsch., lustro)
+    function polowa(id, b, A) {
       const bx = BX[b], x0 = bx + (A ? 0 : 7.6), x1 = x0 + 7.6, xg = A ? x0 : x1, NG = A ? W : E;
       const zk = (a, c) => (A ? [bx + a, bx + c] : [bx + 15.2 - c, bx + 15.2 - a]);
       const cz = [];
@@ -690,7 +711,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       const zN = (y) => OK + (Y1 - y) * TG, zS = (y) => OK + (y - Y0) * TG;
       const pDN = (a, c, ya, yb) => [[a, ya, zN(ya)], [c, ya, zN(ya)], [c, yb, zN(yb)], [a, yb, zN(yb)]];
       const pDS = (a, c, ya, yb) => [[a, ya, zS(ya)], [c, ya, zS(ya)], [c, yb, zS(yb)], [a, yb, zS(yb)]];
-      // elewacja frontowa (płn.): tynk, strefa wejścia z termojesionu, cokół, obróbka okapu, okna, drzwi, doświetlenie
+      
       dodaj(pN(x0, x1, T, OK), N, C.biel, { k: 1 });
       dodaj(pN(...zk(5.3, 7.6), 0.15, 4.18), N, C.drewno);
       dodaj(pN(x0, x1, T, 0.15), N, C.cokol);
@@ -699,12 +720,12 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       okno(pN(...zk(3.96, 4.56), 1.6, 2.4), N, C.satyna);
       okno(pN(...zk(5.6, 6.7), 0, 2.4), N, C.antr);
       okno(pN(...zk(6.7, 7.2), 0, 2.4), N, C.satyna);
-      // daszek nad wejściem (wysięg 1,0 m) – widoczny tylko razem z elewacją frontową
+      
       const [da, dc] = zk(5.2, 7.6), dz = A ? da : dc;
       dodaj([[da, Y1, 2.78], [dc, Y1, 2.78], [dc, Y1 + 1, 2.78], [da, Y1 + 1, 2.78]], G, C.antr, { v: [N], s: C.rama, w: 0.5 });
       dodaj([[da, Y1 + 1, 2.62], [dc, Y1 + 1, 2.62], [dc, Y1 + 1, 2.78], [da, Y1 + 1, 2.78]], N, C.antr, { s: C.rama, w: 0.5 });
       dodaj([[dz, Y1, 2.62], [dz, Y1 + 1, 2.62], [dz, Y1 + 1, 2.78], [dz, Y1, 2.78]], NG, C.antr, { v: [N, NG] });
-      // elewacja ogrodowa (płd.): drzwi przesuwne HS 3,6 m i okno balkonowe
+      
       dodaj(pS(x0, x1, T, OK), S, C.biel, { k: 1 });
       dodaj(pS(x0, x1, T, 0.15), S, C.cokol);
       dodaj(pS(x0, x1, 4.18, OK), S, C.antr);
@@ -712,14 +733,14 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       okno(pS(ha, hc, 0, 2.4), S);
       cz.push({ l: [[[(ha + hc) / 2, Y0, 0], [(ha + hc) / 2, Y0, 2.4]]], n: S, s: C.rama, w: 1.2 });
       okno(pS(...zk(5.2, 6.8), 0, 2.4), S);
-      // szczyt: deska od +2,85 do 25 cm pod krawędzią dachu (nad nią wiatrownica), niżej tynk i cokół
+      
       dodaj([[xg, Y0, T], [xg, Y1, T], [xg, Y1, OK], [xg, YM, KA], [xg, Y0, OK]], NG, C.antr, { k: 1 });
       dodaj([[xg, Y0, 2.85], [xg, Y1, 2.85], [xg, Y1, OK - 0.25], [xg, YM, KA - 0.25], [xg, Y0, OK - 0.25]], NG, C.drewno);
       dodaj(pG(0, 10.4, T, 2.85), NG, C.biel);
       dodaj(pG(0, 10.4, T, 0.15), NG, C.cokol);
       [[3.2, 5, 0.5, 2.4], [8, 9, 1, 2.4], [2.1, 3.5, 2.95, 5.25], [4.5, 5.7, 3.85, 5.25], [6.8, 8, 3.85, 5.25]]
         .forEach(([a, c, za, zb]) => okno(pG(a, c, za, zb), NG));
-      // dach: połacie z rąbkiem co 50 cm, okna dachowe 78 × 118, panele PV (7 szt. na połaci płd.)
+      
       dodaj([[x0, Y1, OK], [x1, Y1, OK], [x1, YM, KA], [x0, YM, KA]], RN, C.dach, { k: 1 });
       dodaj([[x0, Y0, OK], [x1, Y0, OK], [x1, YM, KA], [x0, YM, KA]], RS, C.dach, { k: 1 });
       const rabki = [];
@@ -739,17 +760,17 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
     }
     BX.forEach((_, b) => { polowa(DOMY[2 * b], b, true); polowa(DOMY[2 * b + 1], b, false); });
 
-    // ---- teren wg PZT: działki (kolor = status), podjazdy, dojścia, podesty, tarasy, chodnik, jezdnia
+    // ---- teren wg PZT
     const pros = (xa, ya, xb, yb, f, dom) => ziemia.push({ p: [[xa, ya, T], [xb, ya, T], [xb, yb, T], [xa, yb, T]], f, dom });
     DOMY.forEach((id, i) => pros(11.6 * i, 0, 11.6 * (i + 1), 32, null, id));
     const linieMP = [];
     BX.forEach((_, b) => {
       const o = 23.2 * b, dA = DOMY[2 * b], dB = DOMY[2 * b + 1];
-      pros(o + 0.4, 26.5, o + 5.4, 32, C.kostka, dA); pros(o + 17.8, 26.5, o + 22.8, 32, C.kostka, dB);   // podjazdy (2 MP)
-      pros(o + 9.4, 27, o + 10.9, 32, C.kostka, dA); pros(o + 12.3, 27, o + 13.8, 32, C.kostka, dB);      // dojścia
-      pros(o + 9.1, 26, o + 11.2, 27, C.kostka, dA); pros(o + 12, 26, o + 14.1, 27, C.kostka, dB);        // podesty wejść
-      pros(o + 6, 30.3, o + 7.6, 31.1, C.kostka, dA); pros(o + 15.6, 30.3, o + 17.2, 31.1, C.kostka, dB);  // miejsca na pojemniki
-      pros(o + 4.4, 12.1, o + 9.4, 15.6, C.taras, dA); pros(o + 13.8, 12.1, o + 18.8, 15.6, C.taras, dB); // tarasy
+      pros(o + 0.4, 26.5, o + 5.4, 32, C.kostka, dA); pros(o + 17.8, 26.5, o + 22.8, 32, C.kostka, dB);
+      pros(o + 9.4, 27, o + 10.9, 32, C.kostka, dA); pros(o + 12.3, 27, o + 13.8, 32, C.kostka, dB);
+      pros(o + 9.1, 26, o + 11.2, 27, C.kostka, dA); pros(o + 12, 26, o + 14.1, 27, C.kostka, dB);
+      pros(o + 6, 30.3, o + 7.6, 31.1, C.kostka, dA); pros(o + 15.6, 30.3, o + 17.2, 31.1, C.kostka, dB);
+      pros(o + 4.4, 12.1, o + 9.4, 15.6, C.taras, dA); pros(o + 13.8, 12.1, o + 18.8, 15.6, C.taras, dB);
       linieMP.push([[o + 2.9, 26.8, T], [o + 2.9, 31.7, T]], [[o + 20.3, 26.8, T], [o + 20.3, 31.7, T]]);
     });
     pros(-60, 32, 130, 34, C.chodnik);
@@ -757,7 +778,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
     const zywoplot = [];
     BX.forEach((_, b) => { const o = 23.2 * b; zywoplot.push([o + 5.9, o + 9.1], [o + 11.15, o + 12.05], [o + 14.1, o + 17.3]); });
 
-    // ---- ogrodzenie panelowe h=1,5 m (odcinki do 3 m – do sortowania), ekrany prywatności h=1,8 m, jarzęby, sąsiad
+    // ---- ogrodzenie, ekrany, drzewa, sąsiad
     [[0, 0, 69.6, 0], [0, 0, 0, 26], [69.6, 0, 69.6, 26], [11.6, 0, 11.6, 12.6], [34.8, 0, 34.8, 12.6], [58, 0, 58, 12.6],
       [23.2, 0, 23.2, 26], [46.4, 0, 46.4, 26], [0, 26, 1.5, 26], [2.5, 26, 4, 26], [19.2, 26, 20.2, 26], [21.2, 26, 25.2, 26],
       [26.2, 26, 27.2, 26], [42.4, 26, 43.4, 26], [44.4, 26, 48.4, 26], [49.4, 26, 50.4, 26], [65.6, 26, 67.1, 26], [68.1, 26, 69.6, 26]]
@@ -774,7 +795,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       cz: [{ p: [[x, ya, T], [x, yb, T], [x, yb, 1.5], [x, ya, 1.5]], f: C.drewno, s: '#7A5236', w: 0.6 }] })));
     const JAG = [[-0.32, 0.3], [0.08, 0.42], [0.38, 0.14], [-0.08, 0.02], [0.22, -0.28], [-0.4, -0.22], [0.02, -0.46]];
     [7.2, 16, 30.4, 39.2, 53.6, 62.4].forEach((x) => obiekty.push({ c: [x, 28.3, 2.6], drzewo: [x, 28.3] }));
-    (() => {                                                                      // sąsiedni dom od zachodu (tło, bez szczegółów)
+    (() => {
       const cz = [], x0 = -9, x1 = -3, y0 = 15, y1 = 25, ym = 20, ok = 3.2, ka = ok + 5 * TG, k = '#DCE0E3';
       const d = (p, n) => cz.push({ p, n, f: cien(k, n), k: 1 });
       d([[x0, y1, T], [x1, y1, T], [x1, y1, ok], [x0, y1, ok]], N);
@@ -786,7 +807,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       obiekty.push({ c: [-6, 20, 3], cz, kontur: '#B3BBC1', etykieta: ['sąsiedni dom', [-6, 20, ka + 0.6]] });
     })();
 
-    // ---- kamera i rzutowanie (aksonometria: azymut kamery od północy zgodnie z zegarem, wysokość nad horyzontem)
+    // ---- kamera i rzutowanie
     const WIDOKI = { ulica: { a: 330, f: 30 }, ogrody: { a: 150, f: 30 }, gora: { a: 180, f: 89 } };
     const kam = { a: 330, f: 30 }, stan = { hov: null, wyb: null };
     let B = null, Wd = 0, Hd = 0, anim = 0;
@@ -798,18 +819,18 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       const r = [-Math.cos(a), Math.sin(a), 0];
       const u = [-r[1] * c[2], r[0] * c[2], -(r[0] * c[1] - r[1] * c[0])];
       B = { c, r, u, d: [-c[0], -c[1], -c[2]], s: 1, ox: 0, oy: 0 };
-      const maly = Wd < 640, pkt = [];                                          // kadr: działki + chodnik (jezdnia i otoczenie przycięte)
+      const maly = Wd < 640, pkt = [];
       (maly ? [0, 69.6] : [-1.5, 71.1]).forEach((x) => [-0.5, 34.5].forEach((y) => pkt.push([x, y, T])));
       [4, 65.6].forEach((x) => [Y0, Y1].forEach((y) => pkt.push([x, y, KA + 2.5])));
       let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
       pkt.forEach((p) => { const x = dot(p, r), y = -dot(p, u); x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); });
-      const m = maly ? 8 : 22, mg = maly ? 26 : 44;                             // margines (u góry miejsce na pinezki)
+      const m = maly ? 8 : 22, mg = maly ? 26 : 44;
       B.s = Math.min((Wd - 2 * m) / (x1 - x0), (Hd - m - mg) / (y1 - y0));
       B.ox = (Wd - B.s * (x0 + x1)) / 2;
       B.oy = mg + (Hd - m - mg - B.s * (y1 - y0)) / 2 - B.s * y0;
     }
 
-    // ---- rysowanie (malarz: najpierw teren i cienie, potem obiekty od najdalszego)
+    // ---- rysowanie
     const widoczna = (cz) => (cz.v || (cz.n ? [cz.n] : [])).every((n) => dot(n, B.c) > 0.002);
     const poly = (p, at) => '<polygon points="' + p.map(pt).join(' ') + '"' + at + '/>';
     const linie = (l, s, w) => '<path d="' + l.map((o) => 'M' + pt(o[0]) + 'L' + pt(o[1])).join('') + '" fill="none" stroke="' + s + '" stroke-width="' + w + '"/>';
@@ -859,22 +880,18 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       ustawKamere();
       let s = '<defs><pattern id="m-rez" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">' +
         '<rect width="7" height="7" fill="#F3EDE7"/><rect width="2.4" height="7" fill="#C49A74"/></pattern></defs>';
-      // teren
       ziemia.forEach((g) => { s += poly(g.p, ' fill="' + (g.f || DZ[dane[g.dom].st]) + '"' + (g.f ? '' : ' stroke="#fff" stroke-width="1"') + (g.dom ? ' data-dom="' + g.dom + '"' : '')); });
       s += linie(linieMP, '#E9EBEC', 1);
       s += linie([[[-60, 34, T], [130, 34, T]], [[-60, 39.5, T], [130, 39.5, T]]], '#F4F5F5', 1.2);
       s += '<path d="' + zywoplot.map(([a, c]) => 'M' + pt([a, 31.65, T]) + 'L' + pt([c, 31.65, T])).join('') +
         '" stroke="#6F8F5E" stroke-width="' + Math.max(2, 0.6 * B.s).toFixed(1) + '" stroke-linecap="round" fill="none"/>';
-      // podpisy terenu tylko po stronie zwróconej do kamery (inaczej wychodzą zza domów)
       if (B.c[1] > -0.3) s += et('ul. Jarzębinowa', [34.8, 36.75, T], 4);
       if (Wd >= 640 && B.c[1] < 0.3) s += et('ogrody od południa, dalej łąka i las', [34.8, -1.4, T], 4);
       if (Wd >= 640 && B.c[0] > -0.3) s += et('łąka', [74, 13, T], 4);
-      // obwódka działki wskazanej i wybranej
       [[stan.hov, '#383E42', 2], [stan.wyb, '#B5332E', 3]].forEach(([id, k, w]) => {
         const g = id && ziemia.find((z) => z.dom === id && !z.f);
         if (g) s += poly(g.p, ' fill="none" stroke="' + k + '" stroke-width="' + w + '" stroke-linejoin="round" pointer-events="none"');
       });
-      // cienie budynków i drzew
       s += '<g fill="#1E262C" fill-opacity=".14" pointer-events="none">';
       BX.forEach((bx) => {
         const pk = [];
@@ -887,7 +904,6 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         s += '<ellipse cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" rx="' + (1.5 * B.s).toFixed(1) + '" ry="' + (1.5 * B.s * Math.max(0.05, B.c[2])).toFixed(1) + '"/>';
       });
       s += '</g>';
-      // obiekty od najdalszego
       obiekty.map((o) => [dot(o.c, B.d), o]).sort((a, b) => b[0] - a[0]).forEach(([, o]) => {
         if (o.drzewo) {
           const [x, y] = o.drzewo, [px, py] = P2([x, y, T]), [kx, ky] = P2([x, y, 3.4]), r = 1.5 * B.s;
@@ -897,17 +913,14 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
           return;
         }
         o.cz.forEach((cz) => { s += czesc(cz); });
-        // kontur bryły: zwykły, wskazany (antracyt) albo wybrany (czerwień jarzębiny)
         const k = o.id && stan.wyb === o.id ? ['#B5332E', 2.4] : o.id && stan.hov === o.id ? ['#383E42', 1.8] : [o.kontur || C.rama, 0.9];
         o.cz.forEach((cz) => { if (cz.k && widoczna(cz)) s += poly(cz.p, ' fill="none" stroke="' + k[0] + '" stroke-width="' + k[1] + '" stroke-linejoin="round" pointer-events="none"'); });
         if (o.etykieta && Wd >= 640) s += et(o.etykieta[0], o.etykieta[1], 0);
       });
-      // pinezki: wskazana i wybrana na wierzchu
       const [a1, a2] = [P2(pozycja('1A')), P2(pozycja('1B'))];
       const kompakt = Math.hypot(a1[0] - a2[0], a1[1] - a2[1]) < 84;
       DOMY.slice().sort((a, b) => (a === stan.wyb) - (b === stan.wyb) || (a === stan.hov) - (b === stan.hov) || dot(pozycja(b), B.d) - dot(pozycja(a), B.d))
         .forEach((id) => { s += pinezka(id, kompakt); });
-      // strzałka północy
       const nx = B.r[1], ny = -B.u[1], nl = Math.hypot(nx, ny) || 1, cx = Wd - 30, cy = Hd - 30, ux = nx / nl, uy = ny / nl;
       s += '<g class="m-kompas" pointer-events="none"><circle cx="' + cx + '" cy="' + cy + '" r="18" fill="#fff" fill-opacity=".85" stroke="#D5DBDF"/>' +
         '<path d="M' + (cx + ux * 11).toFixed(1) + ',' + (cy + uy * 11).toFixed(1) + 'L' + (cx - uy * 5 - ux * 6).toFixed(1) + ',' + (cy + ux * 5 - uy * 6).toFixed(1) +
@@ -916,7 +929,6 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       svg.innerHTML = s;
     }
 
-    // ---- obsługa: przeciąganie obraca, klik wybiera dom, przyciski widoków
     const przyciski = [...document.querySelectorAll('[data-widok]')];
     const zaznaczWidok = (w) => przyciski.forEach((p) => p.setAttribute('aria-pressed', String(p.dataset.widok === w)));
     function jedz(cel) {
@@ -954,7 +966,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         const dx = e.clientX - ciag.x, dy = e.clientY - ciag.y;
         if (!ciag.ruch && Math.hypot(dx, dy) > 6) {
           ciag.ruch = true; stan.hov = null; scena.classList.add('ciagnie'); dymek.hidden = true;
-          try { svg.setPointerCapture(ciag.id); } catch (_) { /* wskaźnik już zwolniony */ }
+          try { svg.setPointerCapture(ciag.id); } catch (_) { }
         }
         if (ciag.ruch) {
           kam.a = ciag.a - dx * 0.4;
@@ -999,9 +1011,11 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
     document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.classList.toggle('wybrany', r.dataset.dom === id));
     document.querySelectorAll('.model__domy [data-dom]').forEach((a) => a.setAttribute('aria-current', String(a.dataset.dom === id)));
     if (model) model.wybierz(id);
+    
+    document.querySelectorAll('.wizualizacja-interaktywna polygon').forEach((p) => p.classList.toggle('wybrany', p.dataset.dom === id));
+
     const wiersz = document.getElementById('dom-' + id);
     if (wiersz && przewin) {
-      // wiersz ok. 1/3 wysokości ekranu od góry
       const y = wiersz.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 3);
       window.scrollTo({ top: y, behavior: mniejRuchu ? 'auto' : 'smooth' });
     }
@@ -1013,10 +1027,46 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
   }));
   document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.addEventListener('click', (e) => {
     if (e.target.closest('button, a')) return;
-    wybierz(r.dataset.dom, false); // Kliknięcie w tabeli tylko podświetla
+    wybierz(r.dataset.dom, false);
   }));
   const zAdresu = location.hash.match(/^#dom-([1-3][AB])$/);
   if (zAdresu) wybierz(zAdresu[1], false);
+
+  // ---------------------------------------------------------------- interaktywna wizualizacja (nowa)
+  const wiz = document.querySelector('[data-interaktywna]');
+  if (wiz) {
+    const wizSvg = wiz.querySelector('svg');
+    const wizDymek = wiz.querySelector('.model__dymek');
+    const idPodWiz = (e) => { const el = e.target.closest && e.target.closest('[data-dom]'); return el ? el.getAttribute('data-dom') : null; };
+
+    const getDane = (id) => {
+      const r = document.querySelector('.cennik tr[data-dom="' + id + '"]');
+      if (!r) return null;
+      const q = (s) => (r.querySelector(s) ? r.querySelector(s).textContent.trim() : '');
+      const st = r.querySelector('.st');
+      return { status: q('.st').toLowerCase() || 'dostępny', cena: q('.cena'), m2: q('td[data-l="Cena za m²"]') };
+    };
+
+    wizSvg.addEventListener('mousemove', (e) => {
+      const id = idPodWiz(e);
+      if (!id) { wizDymek.hidden = true; return; }
+
+      const d = getDane(id);
+      if (d) {
+        wizDymek.innerHTML = '<b>' + id + '</b>' + d.cena + (d.m2 ? ', ' + d.m2 + '/m²' : '') + ', ' + d.status + '<small>Kliknij, aby zobaczyć w cenniku.</small>';
+        wizDymek.hidden = false;
+        const r = wiz.getBoundingClientRect();
+        const x = e.clientX - r.left, y = e.clientY - r.top;
+        wizDymek.style.left = Math.min(x + 16, r.width - wizDymek.offsetWidth - 8) + 'px';
+        wizDymek.style.top = (y + 18 + wizDymek.offsetHeight > r.height ? y - wizDymek.offsetHeight - 12 : y + 18) + 'px';
+      }
+    });
+    wizSvg.addEventListener('mouseleave', () => { wizDymek.hidden = true; });
+    wizSvg.addEventListener('click', (e) => {
+      const id = idPodWiz(e);
+      if (id) { wybierz(id, true); history.replaceState(null, '', '#dom-' + id); }
+    });
+  }
 
   // ---------------------------------------------------------------- historia cen
   document.querySelectorAll('[data-historia]').forEach((btn) => btn.addEventListener('click', () => {
@@ -1046,7 +1096,7 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
     if (!f.checkValidity()) { e.preventDefault(); f.reportValidity(); return; }
     e.preventDefault();
     if (podglad) { pokazMsg(true, 'To jest plik podglądu: na stronie formularz wyśle wiadomość na adres biura sprzedaży.'); return; }
-    if (document.body.hasAttribute('data-statyczna')) {          // GitHub Pages: wiadomość w programie pocztowym
+    if (document.body.hasAttribute('data-statyczna')) {
       const d = new FormData(f), g = (k) => (d.get(k) || '').toString().trim();
       const temat = 'Zapytanie ze strony JARZĘBINOWE' + (g('dom') ? ' – dom ' + g('dom') : '');
       const tresc = `Imię i nazwisko: ${g('imie')}
