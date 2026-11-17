@@ -101,9 +101,10 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .wizualizacja-interaktywna{position:relative;margin:0;border:1px solid var(--linia);background:var(--mgla);overflow:hidden;}
 .wizualizacja-interaktywna img{width:100%;height:auto;display:block;}
 .wizualizacja-interaktywna svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;}
-.wizualizacja-interaktywna polygon{fill:transparent;cursor:pointer;stroke:transparent;stroke-width:3px;transition:fill 0.2s, stroke 0.2s;}
-.wizualizacja-interaktywna polygon:hover{fill:rgba(255,255,255,0.15);stroke:var(--antracyt);}
-.wizualizacja-interaktywna polygon.wybrany{fill:rgba(255,255,255,0.25);stroke:var(--jarz);}
+.wizualizacja-interaktywna polygon{fill:transparent;cursor:pointer;stroke:transparent;stroke-width:4px;transition:fill 0.3s, stroke 0.3s;}
+/* Styl NOHO - delikatna, biała poświata po najechaniu i biała obwódka */
+.wizualizacja-interaktywna polygon:hover{fill:rgba(255,255,255,0.4);stroke:#fff;}
+.wizualizacja-interaktywna polygon.wybrany{fill:rgba(255,255,255,0.6);stroke:var(--antracyt);}
 
 /* Model 3D osiedla (SVG rysowany skryptem; geometria wg projektu PAB) */
 .model{margin:0;border:1px solid var(--linia);background:#fff}
