@@ -496,27 +496,29 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
       <img src="gemini2.jfif" alt="Wizualizacja osiedla - interaktywna mapa" width="1920" height="1080">
       
       <svg viewBox="0 0 3840 2160" preserveAspectRatio="none">
+        <!-- Poligony działek -->
         <polygon data-dom="1A" points="3839.5,1074.5 3389.5,958.5 3385.5,959.5 3275.5,1086.5 3001.5,1013.5 2865.5,1356.5 2850.5,1578.5 2704.5,1746.5 3320.5,1940.5 3343.5,1946.5 3838.5,1258.5" />
         <polygon data-dom="1B" points="3385.5,957.5 2858.5,821.5 2834.5,843.5 2735.5,941.5 2727.5,940.5 2611.5,909.5 2504.5,1170.5 2111.5,1559.5 2703.5,1746.5 2849.5,1578.5 2864.5,1356.5 2999.5,1014.5 3001.5,1012.5 3008.5,1013.5 3275.5,1085.5 3378.5,967.5" />
         <polygon data-dom="2A" points="2856.5,821.5 2358.5,692.5 2224.5,808.5 2217.5,803.5 1862.5,709.5 1722.5,1028.5 1725.5,1239.5 1556.5,1385.5 2110.5,1559.5 2503.5,1170.5 2603.5,924.5 2611.5,908.5 2727.5,939.5 2735.5,940.5" />
         <polygon data-dom="2B" points="2357.5,692.5 1889.5,571.5 1886.5,571.5 1747.5,678.5 1521.5,618.5 1381.5,927.5 1382.5,958.5 1038.5,1222.5 1555.5,1385.5 1724.5,1239.5 1721.5,1028.5 1862.5,708.5 2217.5,802.5 2224.5,807.5" />
         <polygon data-dom="3A" points="553.5,1069.5 1037.5,1222.5 1381.5,958.5 1380.5,927.5 1521.5,617.5 1747.5,677.5 1883.5,573.5 1885.5,570.5 1441.5,456.5 1263.5,579.5 1178.5,526.5 864.5,442.5 722.5,739.5 739.5,941.5" />
-        <!-- Skorygowany obrys 3B obejmujący cały tył ogrodu -->
         <polygon data-dom="3B" points="1441.5,456.5 1020.5,347.5 563.5,362.5 421.5,651.5 97.5,926.5 547.5,1068.5 554.5,1068.5 739.5,941.5 722.5,739.5 864.5,442.5 1178.5,526.5 1263.5,579.5" />
-      </svg>
-      <!-- Nowa warstwa na stałe etykiety domków -->
-      <div class="etykiety-warstwa"></div>
-
-      <!-- Kompas 2D przeniesiony na prawą górę, powiększony i z cieniem -->
-      <div class="wiz-kompas" aria-hidden="true" style="position: absolute; top: clamp(20px, 3vw, 40px); right: clamp(20px, 3vw, 40px); z-index: 10; pointer-events: none;">
-        <svg viewBox="0 0 50 50" width="60" height="60" style="filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">
+        
+        <!-- Kompas zintegrowany z głównym układem współrzędnych obrazka (prawy górny róg) -->
+        <g class="wiz-kompas" transform="translate(3550, 150) scale(4.5)" style="pointer-events: none; filter: drop-shadow(0px 8px 12px rgba(0,0,0,0.4));">
           <circle cx="25" cy="25" r="23" fill="#fff" fill-opacity=".95" stroke="#D5DBDF" stroke-width="1.5"/>
           <g style="transform-origin: 25px 25px; transform: rotate(-70deg);">
             <path d="M25,6 L17,29 L25,24 L33,29 Z" fill="#B5332E"/>
           </g>
           <text x="11" y="18" text-anchor="middle" font-family="var(--font)" font-size="12" font-weight="bold" fill="#383E42">N</text>
-        </svg>
-      </div>
+        </g>
+      </svg>
+      
+      <!-- Nowa warstwa na stałe etykiety domków -->
+      <div class="etykiety-warstwa"></div>
+      <div class="model__dymek" hidden></div>
+    </figure>
+  </div>
 
       <div class="model__dymek" hidden></div>
     </figure>
