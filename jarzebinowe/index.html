@@ -445,13 +445,18 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
     .cennik{width:auto;display:block;margin-inline:var(--m);border-top:none;border-bottom:none}
   .cennik tbody{display:block}
   .cennik thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-  .cennik tr[data-dom]{display:grid;grid-template-columns:1fr 1fr;column-gap:14px;row-gap:12px;padding:24px 0;border-bottom:1px solid var(--linia)}
+ .cennik tr[data-dom]{display:grid;grid-template-columns:1.1fr 1fr 0.6fr 1.2fr;column-gap:8px;row-gap:8px;padding:12px 0;border-bottom:1px solid var(--linia);font-size:13px;line-height:1.25}
   .cennik tr[data-dom] > *{padding:0;border:0;background:none}
-  .cennik tbody th{grid-column:1;grid-row:1}
-  .cennik td.cena{grid-column:2;grid-row:1;text-align:right;align-self:start;font-size:24px;padding-top:2px}
-  .cennik td[data-l]::before{content:attr(data-l);display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--grafit);margin-bottom:4px}
+  .cennik tbody th{grid-column:1 / 3;grid-row:1;font-size:24px}
+  .cennik tbody th small{font-size:12px;margin-top:2px;max-width:none}
+  .cennik td.cena{grid-column:3 / 5;grid-row:1;text-align:right;align-self:start;font-size:19px;padding-top:2px}
+  .cennik td[data-l]::before{content:attr(data-l);display:block;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--grafit);margin-bottom:2px}
+  .cennik td[data-l="Status"]{grid-column:1 / 3;align-self:center}
+  .cennik td[data-l="Status"]::before{display:none}
   .cennik td.p:not(.cena){text-align:left}
-  .cennik td.h{text-align:right;align-self:end}
+  .cennik td.h{grid-column:3 / 5;text-align:right;align-self:center}
+  .cennik .st{padding:3px 8px;font-size:10px}
+  .cennik .hist{padding:6px 10px;font-size:10px}
   .cennik tr.wybrany,.cennik tr:target{background:var(--tlo-wybrane);box-shadow:-16px 0 0 var(--tlo-wybrane),16px 0 0 var(--tlo-wybrane)}
   .cennik tr.wybrany > th,.cennik tr:target > th{box-shadow:none}
   .historia{display:block}
