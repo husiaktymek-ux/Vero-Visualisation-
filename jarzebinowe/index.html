@@ -197,6 +197,39 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .wiz-pin.st-dost .wiz-pin-box, .wiz-pin.st-dost::after { background-color: var(--zielen); }
 .wiz-pin.st-rez .wiz-pin-box, .wiz-pin.st-rez::after { background-color: var(--jesion); }
 .wiz-pin.st-sprz .wiz-pin-box, .wiz-pin.st-sprz::after { background-color: var(--grafit); }
+  /* Kompaktowe etykiety (kółka) na telefonach */
+@media (max-width: 700px) {
+    .wiz-pin::after {
+        height: 6px;
+        width: 1.5px;
+    }
+    .wiz-pin-box {
+        width: 26px;
+        height: 26px;
+        padding: 0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-width: 1.5px;
+    }
+    .wiz-pin-id {
+        font-family: var(--font);
+        font-size: 11px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 1;
+    }
+    .wiz-pin-st,
+    .wiz-pin.wybrany .wiz-pin-cena {
+        display: none;
+    }
+    .wiz-pin.wybrany .wiz-pin-box {
+        padding: 0;
+        border: 2.5px solid #B5332E;
+        transform: scale(1.15);
+    }
+}
 
 /* Model 3D osiedla (SVG rysowany skryptem; geometria wg projektu PAB) */
 .model{margin:0;border:1px solid var(--linia);background:#fff}
