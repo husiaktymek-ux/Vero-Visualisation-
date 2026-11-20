@@ -105,13 +105,13 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .wizualizacja-interaktywna polygon:hover{stroke:#fff;}
 /* Klasy nadawane dynamicznie ze skryptu w oparciu o tabele */
 .wizualizacja-interaktywna polygon.status-dost:hover { fill:rgba(76, 175, 80, 0.25); }
-.wizualizacja-interaktywna polygon.status-rez { fill:rgba(234, 179, 8, 0.30); stroke:rgba(200, 155, 20, 0.75); }
-.wizualizacja-interaktywna polygon.status-rez:hover { fill:rgba(234, 179, 8, 0.45); }
+.wizualizacja-interaktywna polygon.status-rez { fill:rgba(255, 238, 0, 0.38); stroke:rgba(255, 230, 0, 0.9); }
+.wizualizacja-interaktywna polygon.status-rez:hover { fill:rgba(255, 238, 0, 0.52); }
 .wizualizacja-interaktywna polygon.status-sprz:hover { fill:rgba(181, 51, 46, 0.25); }
 
 .wizualizacja-interaktywna polygon.wybrany{stroke:#fff;}
 .wizualizacja-interaktywna polygon.status-dost.wybrany { fill:rgba(76, 175, 80, 0.45); stroke:#4A6B35; }
-.wizualizacja-interaktywna polygon.status-rez.wybrany { fill:rgba(234, 179, 8, 0.45); stroke:#C89B14; }
+.wizualizacja-interaktywna polygon.status-rez.wybrany { fill:rgba(255, 238, 0, 0.58); stroke:#FFEE00; }
 .wizualizacja-interaktywna polygon.status-sprz.wybrany { fill:rgba(181, 51, 46, 0.45); stroke:var(--jarz); }
 
 /* Nowy wygląd dymka na renderze 2D (a'la NOHO) */
@@ -196,7 +196,8 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .wiz-pin.wybrany .wiz-pin-cena { display: block; }
 
 .wiz-pin.st-dost .wiz-pin-box, .wiz-pin.st-dost::after { background-color: var(--zielen); }
-.wiz-pin.st-rez .wiz-pin-box, .wiz-pin.st-rez::after { background-color: var(--jesion); }
+.wiz-pin.st-rez .wiz-pin-box, .wiz-pin.st-rez::after { background-color: #FFEE00; }
+.wiz-pin.st-rez .wiz-pin-id, .wiz-pin.st-rez .wiz-pin-st, .wiz-pin.st-rez .wiz-pin-cena { color: var(--antracyt); }
 .wiz-pin.st-sprz .wiz-pin-box, .wiz-pin.st-sprz::after { background-color: var(--grafit); }
   /* Kompaktowe etykiety (kółka) na telefonach */
 @media (max-width: 700px) {
