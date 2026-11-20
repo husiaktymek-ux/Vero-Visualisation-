@@ -104,14 +104,15 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 /* Podświetlenie na hover zależne od statusu – ustawiane z JS, tu baza */
 .wizualizacja-interaktywna polygon:hover{stroke:#fff;}
 /* Klasy nadawane dynamicznie ze skryptu w oparciu o tabele */
-.wizualizacja-interaktywna polygon.status-dost:hover { fill:rgba(255,255,255,0.4); }
-.wizualizacja-interaktywna polygon.status-rez:hover { fill:rgba(255, 140, 0, 0.4); /* pomarańczowy */ }
-.wizualizacja-interaktywna polygon.status-sprz:hover { fill:rgba(181, 51, 46, 0.25); /* elegancki, mniej jaskrawy czerwony */ }
+.wizualizacja-interaktywna polygon.status-dost:hover { fill:rgba(76, 175, 80, 0.25); }
+.wizualizacja-interaktywna polygon.status-rez { fill:rgba(234, 179, 8, 0.30); stroke:rgba(200, 155, 20, 0.75); }
+.wizualizacja-interaktywna polygon.status-rez:hover { fill:rgba(234, 179, 8, 0.45); }
+.wizualizacja-interaktywna polygon.status-sprz:hover { fill:rgba(181, 51, 46, 0.25); }
 
-.wizualizacja-interaktywna polygon.wybrany{stroke:var(--jarz);}
-.wizualizacja-interaktywna polygon.status-dost.wybrany { fill:rgba(255,255,255,0.6); }
-.wizualizacja-interaktywna polygon.status-rez.wybrany { fill:rgba(255, 140, 0, 0.6); }
-.wizualizacja-interaktywna polygon.status-sprz.wybrany { fill:rgba(181, 51, 46, 0.45); }
+.wizualizacja-interaktywna polygon.wybrany{stroke:#fff;}
+.wizualizacja-interaktywna polygon.status-dost.wybrany { fill:rgba(76, 175, 80, 0.45); stroke:#4A6B35; }
+.wizualizacja-interaktywna polygon.status-rez.wybrany { fill:rgba(234, 179, 8, 0.45); stroke:#C89B14; }
+.wizualizacja-interaktywna polygon.status-sprz.wybrany { fill:rgba(181, 51, 46, 0.45); stroke:var(--jarz); }
 
 /* Nowy wygląd dymka na renderze 2D (a'la NOHO) */
 .wizualizacja-interaktywna .model__dymek {
@@ -631,17 +632,17 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1A">Historia zmian</button></td>
       </tr>
       <tr class="historia" id="h-1A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 819 000 zł (6 862,17 zł/m²)</span></li></ol></td></tr>
-          <tr id="dom-1B" data-dom="1B">
+        <tr id="dom-1B" data-dom="1B">
         <th scope="row">1B</th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
         <td data-l="Pokoje">4</td>
         <td class="p cena">879 000 zł</td>
         <td class="p" data-l="Cena za m²">7 364,89 zł</td>
-        <td data-l="Status"><span class="st st--sprz">Sprzedany</span></td>
+        <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
         <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1B">Historia zmian</button></td>
       </tr>
-      <tr class="historia" id="h-1B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: dostępny → sprzedany</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
+      <tr class="historia" id="h-1B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
           <tr id="dom-2A" data-dom="2A">
         <th scope="row">2A</th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
