@@ -344,7 +344,22 @@ h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
 .uwagi{margin:24px var(--m) 0;padding:0;list-style:none;font-size:14px;color:var(--grafit);max-width:90ch}
 .uwagi li + li{margin-top:6px}
 .uwagi b{color:var(--antracyt);font-weight:600}
-
+/* Zbiorcza rozwijana historia zmian pod cennikiem */
+.hist-zbiorcza{margin:20px var(--m) 0;border:1px solid var(--linia);background:var(--tlo-wybrane)}
+.hist-zbiorcza summary{list-style:none;cursor:pointer;padding:14px 20px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--antracyt);display:flex;align-items:center;justify-content:space-between;transition:background-color 0.2s}
+.hist-zbiorcza summary::-webkit-details-marker{display:none}
+.hist-zbiorcza summary::after{content:"↓";font-size:15px;transition:transform 0.2s}
+.hist-zbiorcza[open] summary{border-bottom:1px solid var(--linia)}
+.hist-zbiorcza[open] summary::after{transform:rotate(180deg)}
+.hist-zbiorcza summary:hover{background:#fff}
+.hist-zbiorcza__tresc{padding:8px 20px 18px;overflow-x:auto}
+.hist-tabela{width:100%;border-collapse:collapse;font-size:14px}
+.hist-tabela thead th{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--grafit);text-align:left;padding:12px 10px 10px 0;border-bottom:1px solid var(--linia)}
+.hist-tabela tbody th,.hist-tabela tbody td{padding:10px 10px 10px 0;border-bottom:1px solid var(--linia);text-align:left;vertical-align:top}
+.hist-tabela tbody tr:last-child > *{border-bottom:none}
+.hist-tabela tbody th{font:500 18px/1.2 var(--szeryf);color:var(--antracyt);white-space:nowrap;width:64px}
+.hist-tabela tbody td:nth-child(2){white-space:nowrap;color:var(--antracyt);font-weight:500;width:155px}
+.hist-tabela tbody td:nth-child(3){font-family:var(--szeryf);font-style:italic;font-size:15px;color:var(--grafit)}
 .dom{background:var(--mgla);padding:clamp(80px,9vw,140px) 0}
 .dom__glowa{row-gap:28px}
 .dom__glowa h2{grid-column:1/8}
@@ -617,11 +632,11 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
     </figure>
   </div>
 
-  <table class="cennik">
+ <table class="cennik">
     <caption class="sr">Cennik domów JARZĘBINOWE, ceny brutto z VAT 8%, stan deweloperski</caption>
-    <thead><tr><th scope="col">Dom</th><th scope="col">Pow. użytkowa</th><th scope="col">Działka</th><th scope="col">Pokoje</th><th scope="col" class="p">Cena brutto</th><th scope="col" class="p">Cena za m²</th><th scope="col">Status</th><th scope="col"><span class="sr">Historia zmian</span></th></tr></thead>
+    <thead><tr><th scope="col">Dom</th><th scope="col">Pow. użytkowa</th><th scope="col">Działka</th><th scope="col">Pokoje</th><th scope="col" class="p">Cena brutto</th><th scope="col" class="p">Cena za m²</th><th scope="col">Status</th><th scope="col"><span class="sr">Karta domu</span></th></tr></thead>
     <tbody>
-          <tr id="dom-1A" data-dom="1A">
+      <tr id="dom-1A" data-dom="1A">
         <th scope="row">1A<small>od zachodu sąsiad – istniejący dom</small></th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
@@ -629,10 +644,9 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">899 000 zł</td>
         <td class="p" data-l="Cena za m²">7 532,47 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1A">Historia zmian</button></td>
+        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_1A.pdf" target="_blank" rel="noopener">Karta domu</a></td>
       </tr>
-      <tr class="historia" id="h-1A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 819 000 zł (6 862,17 zł/m²)</span></li></ol></td></tr>
-        <tr id="dom-1B" data-dom="1B">
+      <tr id="dom-1B" data-dom="1B">
         <th scope="row">1B</th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
@@ -640,10 +654,9 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">879 000 zł</td>
         <td class="p" data-l="Cena za m²">7 364,89 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-1B">Historia zmian</button></td>
+        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_1B.pdf" target="_blank" rel="noopener">Karta domu</a></td>
       </tr>
-      <tr class="historia" id="h-1B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
-          <tr id="dom-2A" data-dom="2A">
+      <tr id="dom-2A" data-dom="2A">
         <th scope="row">2A</th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
@@ -651,10 +664,9 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">879 000 zł</td>
         <td class="p" data-l="Cena za m²">7 364,89 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-2A">Historia zmian</button></td>
+        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_2A.pdf" target="_blank" rel="noopener">Karta domu</a></td>
       </tr>
-      <tr class="historia" id="h-2A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
-          <tr id="dom-2B" data-dom="2B">
+      <tr id="dom-2B" data-dom="2B">
         <th scope="row">2B</th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
@@ -662,10 +674,9 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">879 000 zł</td>
         <td class="p" data-l="Cena za m²">7 364,89 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-2B">Historia zmian</button></td>
+        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_2B.pdf" target="_blank" rel="noopener">Karta domu</a></td>
       </tr>
-      <tr class="historia" id="h-2B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 809 000 zł (6 778,38 zł/m²)</span></li></ol></td></tr>
-          <tr id="dom-3A" data-dom="3A">
+      <tr id="dom-3A" data-dom="3A">
         <th scope="row">3A</th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
@@ -673,10 +684,9 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">899 000 zł</td>
         <td class="p" data-l="Cena za m²">7 532,47 zł</td>
         <td data-l="Status"><span class="st st--rez">Rezerwacja</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-3A">Historia zmian</button></td>
+        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_3A.pdf" target="_blank" rel="noopener">Karta domu</a></td>
       </tr>
-      <tr class="historia" id="h-3A" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: dostępny → rezerwacja</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: dostępny</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 819 000 zł (6 862,17 zł/m²)</span></li></ol></td></tr>
-          <tr id="dom-3B" data-dom="3B">
+      <tr id="dom-3B" data-dom="3B">
         <th scope="row">3B<small>skrajny od wschodu – otwarty widok na łąkę</small></th>
         <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
         <td data-l="Działka">371,2&nbsp;m²</td>
@@ -684,11 +694,39 @@ h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
         <td class="p cena">929 000 zł</td>
         <td class="p" data-l="Cena za m²">7 783,83 zł</td>
         <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><button class="hist" type="button" data-historia aria-expanded="false" aria-controls="h-3B">Historia zmian</button></td>
+        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_3B.pdf" target="_blank" rel="noopener">Karta domu</a></td>
       </tr>
-      <tr class="historia" id="h-3B" hidden><td colspan="8"><ol><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>status: rezerwacja → dostępny</span></li><li><time datetime="2026-11-16T09:49:43+01:00">16.11.2026, 09:49</time><span>cena 839 000 zł → 929 000 zł (7 783,83 zł/m²)</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>status: rezerwacja</span></li><li><time datetime="2026-10-27">27.10.2026</time><span>cena wyjściowa 839 000 zł (7 029,74 zł/m²)</span></li></ol></td></tr>
-        </tbody>
+    </tbody>
   </table>
+
+  <details class="hist-zbiorcza">
+    <summary>Historia zmian cen i statusów</summary>
+    <div class="hist-zbiorcza__tresc">
+      <table class="hist-tabela">
+        <thead>
+          <tr>
+            <th scope="col">Dom</th>
+            <th scope="col">Data</th>
+            <th scope="col">Zmiana</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th>1A</th><td>16.11.2026, 09:49</td><td>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</td></tr>
+          <tr><th>1A</th><td>27.10.2026</td><td>cena wyjściowa 819 000 zł (6 862,17 zł/m²), status: dostępny</td></tr>
+          <tr><th>1B</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
+          <tr><th>1B</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
+          <tr><th>2A</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
+          <tr><th>2A</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
+          <tr><th>2B</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
+          <tr><th>2B</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
+          <tr><th>3A</th><td>16.11.2026, 09:49</td><td>status: dostępny → rezerwacja; cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</td></tr>
+          <tr><th>3A</th><td>27.10.2026</td><td>cena wyjściowa 819 000 zł (6 862,17 zł/m²), status: dostępny</td></tr>
+          <tr><th>3B</th><td>16.11.2026, 09:49</td><td>status: rezerwacja → dostępny; cena 839 000 zł → 929 000 zł (7 783,83 zł/m²)</td></tr>
+          <tr><th>3B</th><td>27.10.2026</td><td>cena wyjściowa 839 000 zł (7 029,74 zł/m²), status: rezerwacja</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
   <ul class="uwagi">
     <li><b>W cenie:</b> 2 miejsca postojowe na działce (podjazd) – w cenie domu, 0 zł.</li>
     <li><b>Koszty po stronie kupującego:</b> [do uzupełnienia przez inwestora – np. koszty umowy notarialnej i wpisów do ksiąg wieczystych wg taksy, po stronie nabywcy].</li>
