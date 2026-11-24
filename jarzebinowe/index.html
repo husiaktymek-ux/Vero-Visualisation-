@@ -3,1392 +3,1731 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JARZĘBINOWE – sześć domów w zabudowie bliźniaczej, Mikołów-Mokre</title>
+<title>Jarzębinowe – sześć domów w zabudowie bliźniaczej, Mikołów-Mokre</title>
 <meta name="description" content="6 domów w trzech bliźniakach przy ul. Jarzębinowej w Mikołowie-Mokrem: 119 m², 4 pokoje, działka ok. 371 m², ogród od południa. Plan osiedla, ceny z historią, rzuty, kontakt.">
-<meta name="theme-color" content="#383E42">
+<meta name="theme-color" content="#FAF9F6">
+<meta property="og:title" content="Jarzębinowe – domy w zabudowie bliźniaczej, Mikołów-Mokre">
+<meta property="og:description" content="119 m², 4 pokoje, działka ok. 371 m², ogród od południa. Oddanie IV kw. 2027.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300..700&family=Bodoni+Moda:opsz,wght@6..96,400..700;400i&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Residence","name":"Jarzębinowe – domy w zabudowie bliźniaczej","address":{"@type":"PostalAddress","streetAddress":"ul. Jarzębinowa","addressLocality":"Mikołów-Mokre","addressCountry":"PL"},"url":"https://jarzebinowe.pl"}</script>
 <style>
+:root {
+  --bg: #FAF9F6;
+  --surface: #FFFFFF;
+  --surface-tint: #F3F1EC;
+  --surface-warm: #EBE8E0;
+  --line: #E4E1D9;
+  --line-strong: #C9C5BB;
+  --ink: #181817;
+  --muted: #6E6C66;
+  --forest: #263A29;
+  --forest-soft: rgba(38, 58, 41, 0.24);
+  --amber: #A67B43;
+  --amber-soft: rgba(166, 123, 67, 0.32);
+  --danger: #B5332E;
 
-:root{
-  --biel:#FFFFFF; --mgla:#EEF1F3; --linia:#D5DBDF; --antracyt:#383E42; --grafit:#5A6166;
-  --zielen:#4A6B35; --zielen-t:#E5EEDF; --jesion:#A4704A; --jesion-c:#7A5236; --jarz:#B5332E;
-  --m:clamp(20px,2.8vw,40px); --odst:clamp(14px,1.8vw,28px);
-  --font:"Albert Sans","Segoe UI",Arial,sans-serif;
-  --szeryf:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
-  
-  /* Kolory butikowe dla UI */
-  --tlo-wybrane: #F8F7F5;
-  --tlo-hover: #FDFDFD;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-padding-top:64px}
-@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-body{margin:0;background:var(--biel);color:var(--antracyt);font:400 17px/1.6 var(--font);font-variant-numeric:lining-nums}
-img,video,svg{display:block;max-width:100%}
-img{height:auto}
-a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.2em}
-a:hover{text-decoration-color:var(--jarz)}
-:focus-visible{outline:2px solid var(--jarz);outline-offset:3px}
-button,input,select,textarea{font:inherit;color:inherit}
-button{background:none;border:0;padding:0;cursor:pointer}
-h2{margin:0;font:400 clamp(38px,5.4vw,78px)/1.08 var(--szeryf);letter-spacing:-.01em;font-optical-sizing:auto}
-h3{margin:0;font:400 clamp(26px,2.4vw,34px)/1.2 var(--szeryf)}
-.wstep{font:300 clamp(20px,1.95vw,28px)/1.5 var(--font);margin:0;text-indent:2.2em;max-width:30em}
-.drobny{font-size:14px;color:var(--grafit)}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.pomin{position:absolute;left:-999px;top:8px;z-index:30;background:var(--antracyt);color:#fff;padding:8px 14px}
-.pomin:focus{left:8px}
-.siatka{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--odst);padding-inline:var(--m)}
+  --font-sans: "Albert Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Bodoni Moda", "Didot", Georgia, serif;
 
-.przycisk{display:inline-flex;align-items:center;min-height:44px;padding:10px 20px;border-radius:3px;background:var(--antracyt);color:#fff;font-size:15px;font-weight:600;text-decoration:none;border:1px solid var(--antracyt)}
-.przycisk:hover{background:#2B3033;text-decoration:none}
-.przycisk--jasny{background:#fff;color:var(--antracyt);border-color:#fff}
-.przycisk--jasny:hover{background:var(--mgla)}
-.przycisk--obrys{background:transparent;color:var(--antracyt)}
-.przycisk--obrys:hover{background:#fff}
-
-.nag{position:absolute;inset:0 0 auto;z-index:5;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px var(--m)}
-.nag__logo{display:block;background:transparent;padding:0;line-height:0}
-.nag__logo img{height:52px;width:auto}
-.nag__prawa{display:flex;align-items:center;gap:26px}
-.nag__tel{color:#fff;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap;text-shadow:0 1px 12px rgba(20,24,26,.4)}
-.nag__tel:hover{text-decoration:underline}
-
-.hero{position:relative;height:100svh;min-height:560px;max-height:1040px;overflow:hidden;background:#62696d;color:#fff}
-.hero__film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 62%}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);z-index:1}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:var(--antracyt);z-index:2}
-.hero__tekst{position:absolute;z-index:3;left:var(--m);right:var(--m);bottom:calc(16px + clamp(36px,5vw,72px))}
-.hero h1{margin:0;font:500 clamp(52px,9vw,136px)/.98 var(--szeryf);letter-spacing:-.012em;text-shadow:0 2px 34px rgba(20,24,26,.4)}
-.hero__tekst p{margin:14px 0 26px;font-size:clamp(17px,1.5vw,21px);font-weight:500;text-shadow:0 1px 16px rgba(20,24,26,.5)}
-.hero__pauza{position:absolute;z-index:3;right:var(--m);bottom:calc(16px + clamp(36px,5vw,72px));color:#fff;font-size:14px;font-weight:500;text-decoration:underline;text-underline-offset:.2em;text-shadow:0 1px 10px rgba(20,24,26,.5);min-height:44px}
-
-.kotwice{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;height:58px;padding:0 var(--m);background:#fff;border-bottom:1px solid var(--linia)}
-.kotwice__nazwa{display:flex;align-items:center;text-decoration:none;white-space:nowrap;height:100%}
-.kotwice__nazwa img{height:36px;width:auto}
-.kotwice__linki{display:flex;gap:clamp(18px,2.4vw,36px);font-size:14px;font-weight:500;color:var(--grafit);overflow-x:auto;scrollbar-width:none}
-.kotwice__linki::-webkit-scrollbar{display:none}
-.kotwice__linki a{text-decoration:none;white-space:nowrap;padding:18px 0}
-.kotwice__linki a:hover,.kotwice__linki a[aria-current=true]{color:var(--antracyt);box-shadow:inset 0 -2px 0 var(--antracyt)}
-
-.fakty{background:var(--mgla);padding:clamp(72px,9vw,140px) 0}
-.fakty__wstep{grid-column:1/7}
-.przyciski{display:flex;flex-wrap:wrap;gap:10px;margin:36px 0 0}
-.fakty__obraz{grid-column:8/13;grid-row:1/3;margin:0}
-.fakty__obraz img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:46% 50%}
-.fakty__siatka{grid-column:1/7;grid-row:2;align-self:end;margin:clamp(56px,7vw,110px) 0 0;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linia);border:1px solid var(--linia)}
-.fakty__siatka div{background:#fff;padding:20px 22px 22px;display:flex;flex-direction:column}
-.fakty__siatka dt{font-size:13px;font-weight:500;color:var(--grafit)}
-.fakty__siatka dd{margin:8px 0 0;font:400 clamp(22px,2.1vw,30px)/1.2 var(--szeryf)}
-.fakty__siatka .ciemne{background:var(--antracyt);color:#fff}
-.fakty__siatka .ciemne dt{color:rgba(255,255,255,.78)}
-
-.ceny{padding:clamp(80px,9vw,140px) 0 clamp(80px,9vw,130px)}
-.ceny__glowa{align-items:end}
-.ceny__glowa h2{grid-column:1/7}
-.ceny__glowa p{grid-column:8/13;margin:0;max-width:36em}
-.ceny__glowa p span{display:block;margin-top:10px;font-size:14px;color:var(--grafit)}
-.zakladki{display:inline-flex;gap:4px;margin:clamp(36px,4vw,56px) var(--m) 18px;padding:4px;border:1px solid var(--linia);border-radius:999px}
-.zakladki button{min-height:40px;padding:8px 20px;border-radius:999px;font-size:14px;font-weight:600;color:var(--grafit)}
-.zakladki button[aria-selected=true]{background:var(--antracyt);color:#fff}
-.widok{padding-inline:var(--m)}
-
-/* --- NOWA SEKCJA: Interaktywny Render --- */
-.wizualizacja-interaktywna{position:relative;margin:0;border:1px solid var(--linia);background:var(--mgla);overflow:hidden;}
-.wizualizacja-interaktywna img{width:100%;height:auto;display:block;}
-.wizualizacja-interaktywna svg{position:absolute;inset:0;width:100%;height:100%;z-index:1;}
-.wizualizacja-interaktywna polygon{fill:rgba(255,255,255,0);cursor:pointer;stroke:transparent;stroke-width:4px;transition:fill 0.3s, stroke 0.3s;}
-
-/* Podświetlenie na hover zależne od statusu – ustawiane z JS, tu baza */
-.wizualizacja-interaktywna polygon:hover{stroke:#fff;}
-/* Klasy nadawane dynamicznie ze skryptu w oparciu o tabele */
-.wizualizacja-interaktywna polygon.status-dost:hover { fill:rgba(76, 175, 80, 0.25); }
-.wizualizacja-interaktywna polygon.status-rez { fill:rgba(255, 238, 0, 0.38); stroke:rgba(255, 230, 0, 0.9); }
-.wizualizacja-interaktywna polygon.status-rez:hover { fill:rgba(255, 238, 0, 0.52); }
-.wizualizacja-interaktywna polygon.status-sprz:hover { fill:rgba(181, 51, 46, 0.25); }
-
-.wizualizacja-interaktywna polygon.wybrany{stroke:#fff;}
-.wizualizacja-interaktywna polygon.status-dost.wybrany { fill:rgba(76, 175, 80, 0.45); stroke:#4A6B35; }
-.wizualizacja-interaktywna polygon.status-rez.wybrany { fill:rgba(255, 238, 0, 0.58); stroke:#FFEE00; }
-.wizualizacja-interaktywna polygon.status-sprz.wybrany { fill:rgba(181, 51, 46, 0.45); stroke:var(--jarz); }
-
-/* Nowy wygląd dymka na renderze 2D (a'la NOHO) */
-.wizualizacja-interaktywna .model__dymek {
-    background: #111;
-    color: #fff;
-    border: none;
-    padding: 16px 20px;
-    font-size: 15px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-    min-width: 220px;
-    pointer-events: none; /* Dymek podąża za kursorem, nie przeszkadza w klikaniu */
-    border-radius: 4px;
-}
-.wizualizacja-interaktywna .model__dymek b {
-    display: block;
-    font: 600 22px/1.2 var(--font); /* większy i nowocześniejszy font dla ID */
-    margin-bottom: 6px;
-    color: #fff;
-    font-variation-settings: normal;
-}
-.wizualizacja-interaktywna .model__dymek span.cena-txt {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 2px;
-}
-.wizualizacja-interaktywna .model__dymek span.status-txt {
-    display: inline-block;
-    padding: 4px 10px;
-    margin-top: 6px;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: 3px;
-    font-weight: 700;
-}
-.wizualizacja-interaktywna .model__dymek span.status-txt.dost { background: rgba(255,255,255,0.2); }
-.wizualizacja-interaktywna .model__dymek span.status-txt.rez { background: rgba(255, 140, 0, 0.3); color: #FFA500; }
-.wizualizacja-interaktywna .model__dymek span.status-txt.sprz { background: rgba(255, 51, 51, 0.3); color: #FF6666; }
-
-.wizualizacja-interaktywna .model__dymek small {
-    display: block;
-    margin-top: 10px;
-    color: rgba(255,255,255,0.6);
-    font-size: 12px;
+  --container: 1320px;
+  --pad: clamp(20px, 4vw, 56px);
+  --sec-y: clamp(64px, 8vw, 120px);
 }
 
-/* Kopia przypiętych etykiet z modelu 3D (te kwadraciki z ID i statusem pokazujące się od razu) */
-.wizualizacja-interaktywna .etykiety-warstwa {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 2;
-}
-.wiz-pin {
-    position: absolute;
-    transform: translate(-50%, -100%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.wiz-pin::after {
-    content: '';
-    display: block;
-    width: 2px;
-    height: 15px; /* "Nóżka" etykiety */
-}
-.wiz-pin-box {
-    padding: 6px 12px;
-    border-radius: 3px;
-    text-align: center;
-    border: 1.5px solid #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-.wiz-pin.wybrany .wiz-pin-box {
-    border: 3px solid #B5332E;
-    padding: 10px 16px;
-}
-.wiz-pin-id { font: 500 17px var(--szeryf); color: #fff; margin-bottom: 2px;}
-.wiz-pin-st { font: 600 11px var(--font); color: #fff; text-transform: uppercase; letter-spacing: 0.1em; }
-.wiz-pin-cena { font: 600 13px var(--font); color: #fff; margin-top: 4px; display: none; }
-.wiz-pin.wybrany .wiz-pin-cena { display: block; }
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 76px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 
-.wiz-pin.st-dost .wiz-pin-box, .wiz-pin.st-dost::after { background-color: var(--zielen); }
-.wiz-pin.st-rez .wiz-pin-box, .wiz-pin.st-rez::after { background-color: #FFEE00; }
-.wiz-pin.st-rez .wiz-pin-id, .wiz-pin.st-rez .wiz-pin-st, .wiz-pin.st-rez .wiz-pin-cena { color: var(--antracyt); }
-.wiz-pin.st-sprz .wiz-pin-box, .wiz-pin.st-sprz::after { background-color: var(--grafit); }
-  /* Kompaktowe etykiety (kółka) na telefonach */
-@media (max-width: 700px) {
-    .wiz-pin::after {
-        height: 6px;
-        width: 1.5px;
-    }
-    .wiz-pin-box {
-        width: 26px;
-        height: 26px;
-        padding: 0;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-width: 1.5px;
-    }
-    .wiz-pin-id {
-        font-family: var(--font);
-        font-size: 11px;
-        font-weight: 700;
-        margin: 0;
-        line-height: 1;
-    }
-    .wiz-pin-st,
-    .wiz-pin.wybrany .wiz-pin-cena {
-        display: none;
-    }
-    .wiz-pin.wybrany .wiz-pin-box {
-        padding: 0;
-        border: 2.5px solid #B5332E;
-        transform: scale(1.15);
-    }
-  .wizualizacja-interaktywna .model__dymek {
-        padding: 8px 10px;
-        font-size: 12px;
-        min-width: 0;
-        max-width: 165px;
-        line-height: 1.3;
-    }
-    .wizualizacja-interaktywna .model__dymek b {
-        font-size: 15px;
-        margin-bottom: 3px;
-    }
-    .wizualizacja-interaktywna .model__dymek span.status-txt {
-        padding: 2px 6px;
-        margin-top: 4px;
-        font-size: 10px;
-    }
-    .wizualizacja-interaktywna .model__dymek small {
-        margin-top: 5px;
-        font-size: 10px;
-    }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 16px/1.6 var(--font-sans);
+  font-variant-numeric: lining-nums;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Model 3D osiedla (SVG rysowany skryptem; geometria wg projektu PAB) */
-.model{margin:0;border:1px solid var(--linia);background:#fff}
-.model__pasek{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:12px 16px;border-bottom:1px solid var(--linia)}
-.model__legenda{display:flex;flex-wrap:wrap;gap:6px 22px;margin:0;padding:0;list-style:none;font-size:14px;color:var(--grafit)}
-.m-zn{display:inline-block;width:18px;height:14px;margin-right:8px;vertical-align:-.15em;border:1px solid rgba(56,62,66,.35)}
-.m-zn--dost{background:#C3D9AE}
-.m-zn--rez{background:repeating-linear-gradient(45deg,#C49A74 0 2.4px,#F3EDE7 2.4px 7px)}
-.m-zn--sprz{background:#A3ACB2}
-.model__widoki{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--linia);border-radius:999px}
-.model__widoki button{min-height:36px;padding:6px 15px;border-radius:999px;font-size:13px;font-weight:600;color:var(--grafit)}
-.model__widoki button[aria-pressed=true]{background:var(--antracyt);color:#fff}
-.model__scena{position:relative;width:100%;aspect-ratio:16/9;max-height:82vh;background:#E6EBE3;overflow:hidden;cursor:grab;touch-action:pan-y;-webkit-user-select:none;user-select:none}
-.model__scena.ciagnie{cursor:grabbing}
-.model__scena svg{position:absolute;inset:0;width:100%;height:100%}
-.model__scena [data-dom]{cursor:pointer}
-.model__scena.ciagnie [data-dom]{cursor:grabbing}
-.model__brak{position:absolute;left:16px;bottom:12px;margin:0;font-size:14px;color:var(--grafit)}
-.model__scena.gotowy .model__brak{display:none}
-.model__dymek{position:absolute;z-index:2;max-width:270px;padding:10px 12px;background:#fff;border:1px solid var(--linia);border-radius:3px;font-size:14px;line-height:1.4;pointer-events:none;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
-.model__dymek b{font:500 19px/1 var(--szeryf);font-variation-settings:"opsz" 14;margin-right:4px}
-.model__dymek small{display:block;margin-top:4px;color:var(--grafit);font-size:13px}
-.m-pin__id{font:500 17px var(--szeryf);font-variation-settings:"opsz" 14;fill:#fff}
-.m-pin__id--maly{font:700 12px var(--font)}
-.m-pin__st{font:600 11px var(--font);fill:#fff}
-.m-pin__cena{font:600 13px var(--font);fill:#fff}
-.m-et{font:500 12px var(--font);fill:#5A6166;paint-order:stroke;stroke:#E6EBE3;stroke-width:3px;stroke-linejoin:round}
-.m-kompas text{font:700 11px var(--font);fill:#383E42}
+img, video, svg { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; color: inherit; }
+button { background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
 
-/* Edytowany wygląd kart modeli (usunięcie szarości i dodanie butikowego sznytu) */
-.model__domy{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;margin:0;padding:0;list-style:none;background:transparent;border-top:2px solid var(--antracyt);border-bottom:1px solid var(--linia)}
-.m-dom{--k:#4A6B35;display:flex;flex-direction:column;gap:3px;height:100%;padding:22px 18px;background:#fff;text-decoration:none;border-right:1px solid var(--linia);position:relative;transition:background-color 0.2s}
-.m-dom:last-child{border-right:none}
-.m-dom:hover{background:var(--tlo-hover)}
-.m-dom[aria-current=true]{background:var(--tlo-wybrane)}
-.m-dom[aria-current=true]::before{content:"";position:absolute;top:-2px;left:-1px;right:-1px;height:3px;background:var(--jesion);z-index:2}
-.m-dom b{font:400 34px/1.1 var(--szeryf);font-variation-settings:"opsz" 14;color:var(--antracyt)}
-.m-dom__st{font-size:11px;font-weight:600;color:var(--k);text-transform:uppercase;letter-spacing:0.1em;margin-top:8px}
-.m-dom__cena{font-size:18px;font-weight:500;color:var(--antracyt);margin-top:2px}
-.m-dom--rez{--k:#A4704A}.m-dom--rez .m-dom__st{color:var(--jesion-c)}
-.m-dom--sprz{--k:#5A6166}.m-dom--sprz .m-dom__cena{color:var(--grafit)}
-.model__uwaga{margin:0;padding:16px 20px;border-top:1px solid var(--linia);font-size:13px;color:var(--grafit)}
-@media (max-width:900px){
-  .model__domy{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .model__domy li:nth-child(3) .m-dom { border-right: none; }
-  .model__domy li:nth-child(n+4) .m-dom { border-top: 1px solid var(--linia); }
-  .model__pasek{padding:10px 12px}
-  .model__scena{aspect-ratio:16/10}
-  .m-dom{padding:16px 14px}
-  .m-dom b{font-size:28px}
+.sr {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+.skip {
+  position: absolute; left: -9999px; top: 10px; z-index: 100;
+  background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 999px;
+}
+.skip:focus { left: 16px; }
+
+.wrap {
+  width: 100%;
+  max-width: calc(var(--container) + 2 * var(--pad));
+  margin-inline: auto;
+  padding-inline: var(--pad);
 }
 
-/* Edytowana tabela (usunięcie AI-slop vibe) */
-.cennik{width:calc(100% - 2 * var(--m));margin:clamp(40px,4.5vw,64px) var(--m) 0;border-collapse:collapse;border-top:2px solid var(--antracyt);border-bottom:2px solid var(--antracyt)}
-.cennik thead th{background:transparent;font-size:11px;font-weight:600;color:var(--antracyt);text-align:left;padding:16px 20px;text-transform:uppercase;letter-spacing:0.12em;border-bottom:1px solid var(--antracyt)}
-.cennik td,.cennik tbody th{padding:26px 20px;text-align:left;border-bottom:1px solid var(--linia);vertical-align:middle;transition:background-color 0.25s ease}
-.cennik .p{text-align:right}
-.cennik tbody th{font:400 34px/1 var(--szeryf);white-space:nowrap;color:var(--antracyt)}
-.cennik tbody th small{display:block;font:400 italic 14px/1.4 var(--szeryf);color:var(--grafit);margin-top:10px;white-space:normal;max-width:24ch}
-.cennik .cena{font:500 24px/1.1 var(--font);white-space:nowrap;letter-spacing:-0.02em}
-.cennik tr[data-dom]{cursor:pointer}
-.cennik tr[data-dom]:hover > *{background:var(--tlo-hover)}
-.cennik tr.wybrany > *,.cennik tr:target > *{background:var(--tlo-wybrane) !important}
-.cennik tr.wybrany > th,.cennik tr:target > th{box-shadow:inset 4px 0 0 var(--jesion)}
-
-/* Tagi statusu (zamiast kropek) */
-.st{display:inline-flex;align-items:center;justify-content:center;padding:5px 12px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;white-space:nowrap;border:1px solid currentColor}
-.st::before{display:none}
-.st--dost{color:var(--zielen);background:transparent}
-.st--rez{color:var(--jesion-c);background:transparent}
-.st--sprz{color:var(--grafit);background:transparent;opacity:0.8}
-
-/* Przycisk historii zmian */
-.hist{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:var(--antracyt);text-transform:uppercase;letter-spacing:0.1em;text-decoration:none;border:1px solid var(--linia);padding:10px 18px;min-height:auto;border-radius:0;background:transparent;transition:all 0.2s}
-.hist::after{content:"→";font-size:15px;line-height:0;transition:transform 0.2s}
-.hist:hover{border-color:var(--antracyt);background:var(--antracyt);color:#fff}
-.hist:hover::after{transform:translateX(4px)}
-.hist[aria-expanded=true]{background:var(--antracyt);color:#fff;border-color:var(--antracyt)}
-.hist[aria-expanded=true]::after{content:"↓";transform:none}
-
-/* Oś czasu w historii */
-.historia[hidden]{display:none}
-.historia td{background:var(--tlo-wybrane);padding:30px 40px;border-bottom:1px solid var(--linia)}
-.historia ol{list-style:none;margin:0 0 0 10px;padding:0 0 0 24px;display:grid;gap:18px;font-size:15px;border-left:2px solid var(--jesion)}
-.historia li{display:grid;grid-template-columns:140px 1fr;gap:16px;position:relative}
-.historia li::before{content:"";position:absolute;left:-29px;top:4px;width:8px;height:8px;background:var(--jesion);border-radius:50%}
-.historia time{color:var(--antracyt);font-weight:600;font-size:13px;letter-spacing:0.02em}
-.historia span{font-family:var(--szeryf);font-style:italic;font-size:16px;color:var(--grafit)}
-
-.uwagi{margin:24px var(--m) 0;padding:0;list-style:none;font-size:14px;color:var(--grafit);max-width:90ch}
-.uwagi li + li{margin-top:6px}
-.uwagi b{color:var(--antracyt);font-weight:600}
-/* Zbiorcza rozwijana historia zmian pod cennikiem */
-.hist-zbiorcza{margin:20px var(--m) 0;border:1px solid var(--linia);background:var(--tlo-wybrane)}
-.hist-zbiorcza summary{list-style:none;cursor:pointer;padding:14px 20px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--antracyt);display:flex;align-items:center;justify-content:space-between;transition:background-color 0.2s}
-.hist-zbiorcza summary::-webkit-details-marker{display:none}
-.hist-zbiorcza summary::after{content:"↓";font-size:15px;transition:transform 0.2s}
-.hist-zbiorcza[open] summary{border-bottom:1px solid var(--linia)}
-.hist-zbiorcza[open] summary::after{transform:rotate(180deg)}
-.hist-zbiorcza summary:hover{background:#fff}
-.hist-zbiorcza__tresc{padding:8px 20px 18px;overflow-x:auto}
-.hist-tabela{width:100%;border-collapse:collapse;font-size:14px}
-.hist-tabela thead th{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--grafit);text-align:left;padding:12px 10px 10px 0;border-bottom:1px solid var(--linia)}
-.hist-tabela tbody th,.hist-tabela tbody td{padding:10px 10px 10px 0;border-bottom:1px solid var(--linia);text-align:left;vertical-align:top}
-.hist-tabela tbody tr:last-child > *{border-bottom:none}
-.hist-tabela tbody th{font:500 18px/1.2 var(--szeryf);color:var(--antracyt);white-space:nowrap;width:64px}
-.hist-tabela tbody td:nth-child(2){white-space:nowrap;color:var(--antracyt);font-weight:500;width:155px}
-.hist-tabela tbody td:nth-child(3){font-family:var(--szeryf);font-style:italic;font-size:15px;color:var(--grafit)}
-.dom{background:var(--mgla);padding:clamp(80px,9vw,140px) 0}
-.dom__glowa{row-gap:28px}
-.dom__glowa h2{grid-column:1/8}
-.dom__glowa .wstep{grid-column:1/8}
-.rzuty{margin-top:clamp(48px,5vw,72px);row-gap:48px}
-.rzuty figure{margin:0;grid-column:span 6;background:#fff;padding:clamp(16px,2vw,28px)}
-.rzuty figure > img,.rzuty figure picture img{width:100%}
-.rzuty figcaption{margin:18px 0 8px;font-size:15px}
-.rzuty figcaption b{font-weight:600;margin-right:6px}
-.pom{width:100%;border-collapse:collapse;font-size:15px}
-.pom th,.pom td{padding:7px 0;border-top:1px solid var(--linia);text-align:left;font-weight:400}
-.pom td{text-align:right;white-space:nowrap}
-.dom__przypis{padding-inline:var(--m);margin:22px 0 0;max-width:110ch}
-.standard{margin-top:clamp(64px,7vw,104px)}
-.standard h3{grid-column:1/4}
-.standard dl{grid-column:4/13;margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:var(--odst)}
-.standard dl div{padding:14px 0 16px;border-top:1px solid var(--linia)}
-.standard dt{font-size:13px;font-weight:600}
-.standard dd{margin:4px 0 0;font-size:15px;color:var(--grafit)}
-
-.wnetrza{padding:clamp(80px,9vw,140px) 0 clamp(56px,6vw,96px)}
-.kadr{position:relative;margin:0}
-.kadr img{width:100%;height:clamp(380px,56vw,880px);object-fit:cover}
-.kadr__tytul{position:absolute;left:0;bottom:0;background:var(--antracyt);color:#fff;padding:22px var(--m) 20px;font:400 clamp(26px,3.4vw,52px)/1.1 var(--szeryf);max-width:92%}
-.kadr__dalej{margin:clamp(28px,3vw,44px) 0 clamp(80px,9vw,140px);align-items:start}
-.kadr__dalej p{grid-column:1/6;margin:0;font:300 clamp(19px,1.6vw,23px)/1.55 var(--font);max-width:30em}
-.kadr__dalej figure{grid-column:7/13;margin:0}
-.kadr__dalej figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.wnetrza__przypis{padding-inline:var(--m);margin:-60px 0 0}
-
-.okolica{padding:clamp(80px,9vw,140px) 0;border-top:1px solid var(--linia)}
-.okolica__tekst{grid-column:1/6}
-.okolica__tekst .wstep{margin-top:28px;text-indent:0}
-.okolica__tekst p:last-child{margin-top:24px;font-weight:500}
-.okolica__mapa{grid-column:6/13;margin:0}
-.okolica__mapa img{width:100%;border:1px solid var(--linia)}
-.okolica__mapa figcaption{margin-top:10px;font-size:13px;color:var(--grafit)}
-
-.kontakt{background:var(--antracyt);color:#fff;padding:clamp(80px,9vw,140px) 0}
-.kontakt__dane{grid-column:1/6}
-.kontakt__dane p{color:rgba(255,255,255,.86);max-width:30em}
-.kontakt__tel{margin:28px 0 4px;font:400 clamp(32px,3.4vw,50px)/1.1 var(--szeryf)}
-.kontakt__tel a{color:#fff;text-decoration:none}
-.kontakt__tel a:hover{text-decoration:underline}
-.kontakt :focus-visible{outline-color:#fff}
-.formularz{grid-column:7/13;display:grid;grid-template-columns:1fr 1fr;gap:18px var(--odst);align-content:start}
-.formularz label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:500}
-.formularz label small{font-weight:400;color:rgba(255,255,255,.75)}
-.formularz .szeroko{grid-column:1/-1}
-.formularz input,.formularz select,.formularz textarea{min-height:48px;padding:11px 14px;border:1px solid rgba(255,255,255,.35);border-radius:3px;background:#fff;color:var(--antracyt);font-size:16px;font-weight:400}
-.formularz textarea{resize:vertical}
-.formularz .zgoda{flex-direction:row;align-items:flex-start;gap:12px;font-weight:400;font-size:13px;line-height:1.5;color:rgba(255,255,255,.86)}
-.formularz .zgoda input{min-height:0;width:20px;height:20px;margin:2px 0 0;flex:none;accent-color:var(--antracyt)}
-.formularz .hp{position:absolute;left:-9999px}
-.formularz button{justify-self:start}
-.komunikat{margin:0;padding:12px 16px;border-radius:3px;font-size:15px;background:#fff;color:var(--antracyt)}
-.komunikat--ok{box-shadow:inset 4px 0 0 var(--zielen)}
-.komunikat--blad{box-shadow:inset 4px 0 0 var(--jarz)}
-
-.stopka{padding:56px 0 64px;font-size:14px}
-.stopka img{grid-column:1/4;height:52px;width:auto}
-.stopka p{grid-column:4/8;margin:0}
-.stopka .drobny{grid-column:8/13;margin:0}
-
-.brak-obrazu{background:var(--mgla);aspect-ratio:16/9}
-
-@media (max-width:1100px){
-  .fakty__siatka dd{font-size:22px}
-}
-@media (max-width:900px){
-  .siatka > *{grid-column:1/-1 !important}
-  .nag{padding:16px var(--m)}
-  .nag__logo img{height:34px}
-  .nag__logo{padding:0}
-  .nag__tel{display:none}
-    .hero{height:auto;min-height:0;max-height:none;display:flex;flex-direction:column;background:var(--antracyt)}
-  .hero::before,.hero::after{display:none}
-  .hero__film{position:relative;inset:auto;height:auto;aspect-ratio:1/1}
-  .hero__tekst{position:static;padding:24px var(--m) 32px}
-  .hero h1,.hero__tekst p{text-shadow:none}
-  .hero__tekst p{margin:8px 0 22px;font-size:16px}
-  .hero__pauza{bottom:auto;top:76px;min-height:32px}
-  .kotwice{height:52px}
-  .kotwice__nazwa img{height:28px}
-  .kotwice__linki a{padding:15px 0}
-  .fakty__obraz{grid-row:auto;margin-top:44px}
-  .fakty__siatka{grid-row:auto;margin-top:44px}
-  .ceny__glowa p{margin-top:22px}
-  .rzuty figure{grid-column:1/-1}
-  .standard dl{grid-template-columns:1fr;margin-top:24px}
-  .kadr img{height:auto;aspect-ratio:4/3}
-  .kadr__tytul{position:static;max-width:none;padding:16px var(--m)}
-  .kadr__dalej figure{margin-top:28px}
-  .wnetrza__przypis{margin-top:-40px}
-  .okolica__mapa{margin-top:36px}
-  .formularz{margin-top:40px}
-  .stopka p,.stopka .drobny{margin-top:18px}
-  .widok{padding-inline:0}
-  .model,.lot{border-inline:0}
-    .cennik{width:auto;display:block;margin-inline:var(--m);border-top:none;border-bottom:none}
-  .cennik tbody{display:block}
-  .cennik thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
- .cennik tr[data-dom]{display:grid;grid-template-columns:1.1fr 1fr 0.6fr 1.2fr;column-gap:8px;row-gap:8px;padding:12px 0;border-bottom:1px solid var(--linia);font-size:13px;line-height:1.25}
-  .cennik tr[data-dom] > *{padding:0;border:0;background:none}
-  .cennik tbody th{grid-column:1 / 3;grid-row:1;font-size:24px}
-  .cennik tbody th small{font-size:12px;margin-top:2px;max-width:none}
-  .cennik td.cena{grid-column:3 / 5;grid-row:1;text-align:right;align-self:start;font-size:19px;padding-top:2px}
-  .cennik td[data-l]::before{content:attr(data-l);display:block;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--grafit);margin-bottom:2px}
-  .cennik td[data-l="Status"]{grid-column:1 / 3;align-self:center}
-  .cennik td[data-l="Status"]::before{display:none}
-  .cennik td.p:not(.cena){text-align:left}
-  .cennik td.h{grid-column:3 / 5;text-align:right;align-self:center}
-  .cennik .st{padding:3px 8px;font-size:10px}
-  .cennik .hist{padding:6px 10px;font-size:10px}
-  .cennik tr.wybrany,.cennik tr:target{background:var(--tlo-wybrane);box-shadow:-16px 0 0 var(--tlo-wybrane),16px 0 0 var(--tlo-wybrane)}
-  .cennik tr.wybrany > th,.cennik tr:target > th{box-shadow:none}
-  .historia{display:block}
-  .historia td{display:block;padding:20px 0 24px;background:none}
-  .historia li{grid-template-columns:1fr;gap:4px}
-  .uwagi{margin-inline:var(--m)}
-}
-@media (max-width:420px){
-  .formularz{grid-template-columns:1fr}
-  .fakty__siatka{grid-template-columns:1fr 1fr}
-  .fakty__siatka div{padding:16px 14px 18px}
-  .fakty__siatka dd{font-size:19px}
+/* Typografia editorial */
+.eyebrow {
+  margin: 0 0 14px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
-h2{font-variation-settings:"opsz" 34}
-.hero h1{font-variation-settings:"opsz" 26}
-h3,.kadr__tytul,.kontakt__tel{font-variation-settings:"opsz" 22}
-.kotwice__nazwa,.fakty__siatka dd,.cennik tbody th,.cennik .cena{font-variation-settings:"opsz" 14}
-.plan-id{font-variation-settings:"opsz" 11;font-weight:500}
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
 
+h1 {
+  font-size: clamp(44px, 6.2vw, 84px);
+  line-height: 1.02;
+  font-variation-settings: "opsz" 32;
+}
+
+h2 {
+  font-size: clamp(34px, 4.2vw, 56px);
+  line-height: 1.08;
+  font-variation-settings: "opsz" 28;
+}
+
+h3 {
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.2;
+  font-variation-settings: "opsz" 16;
+}
+
+/* Przyciski pill */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 9px 22px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+  transition: background-color .2s, color .2s, border-color .2s, opacity .2s;
+  white-space: nowrap;
+}
+.btn:hover { background: #2F2F2D; border-color: #2F2F2D; }
+
+.btn--outline {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+.btn--outline:hover {
+  border-color: var(--ink);
+  background: var(--surface);
+}
+
+/* ---------------- NAWIGACJA ---------------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(250, 249, 246, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav__in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 70px;
+}
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.nav__brand img {
+  height: 36px;
+  width: auto;
+}
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.4vw, 34px);
+  font-size: 14px;
+  color: var(--muted);
+}
+.nav__links a {
+  padding: 6px 0;
+  position: relative;
+  transition: color .2s;
+}
+.nav__links a:hover,
+.nav__links a[aria-current="true"] {
+  color: var(--ink);
+}
+.nav__links a[aria-current="true"]::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: var(--ink);
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  padding: clamp(40px, 5vw, 72px) 0 var(--sec-y);
+}
+.hero__top {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 24px 48px;
+  align-items: end;
+  margin-bottom: clamp(28px, 3.6vw, 48px);
+}
+.hero__meta-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 0 0 18px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hero__meta-top span:not(:last-child)::after {
+  content: "·";
+  margin-left: 18px;
+  color: var(--line-strong);
+}
+.hero__aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  text-align: right;
+  padding-bottom: 6px;
+}
+.hero__facts {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px 16px;
+}
+.hero__facts strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.hero__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 76vh;
+  background: var(--surface-warm);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 60% 60%;
+}
+.hero__pause {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(250, 249, 246, 0.9);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(24, 24, 23, 0.12);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.hero__pause:hover { background: #fff; }
+
+/* Intro & statystyki pod wideo */
+.intro {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(32px, 5vw, 72px);
+  padding-top: clamp(44px, 5.5vw, 76px);
+  align-items: start;
+}
+.intro__lead {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 2.8vw, 38px);
+  line-height: 1.24;
+  font-weight: 400;
+  color: var(--ink);
+  font-variation-settings: "opsz" 20;
+}
+.intro__sub {
+  margin: 22px 0 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 48ch;
+}
+.kpi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+}
+.kpi__item {
+  padding: 22px 20px 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.kpi__item:nth-child(even) {
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+}
+.kpi__val {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 2.6vw, 38px);
+  line-height: 1.1;
+  color: var(--ink);
+  font-variation-settings: "opsz" 18;
+}
+.kpi__val small {
+  font-size: 0.56em;
+  color: var(--muted);
+  margin-left: 4px;
+}
+.kpi__lbl {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* ---------------- GALERIA 3 ZDJĘĆ + 3 FILARY ---------------- */
+.triptych-sec {
+  padding: 0 0 var(--sec-y);
+}
+.triptych {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(14px, 1.8vw, 24px);
+}
+.triptych figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-warm);
+  border: 1px solid var(--line);
+}
+.triptych img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+.triptych figure:hover img { transform: scale(1.025); }
+.triptych figcaption {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  background: rgba(250, 249, 246, 0.94);
+  padding: 5px 11px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 3vw, 48px);
+  margin-top: clamp(40px, 5vw, 64px);
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid var(--line);
+}
+.pillar__num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.pillar h3 {
+  font-size: clamp(22px, 2vw, 26px);
+  margin-bottom: 10px;
+}
+.pillar p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* ---------------- DOMY I CENY ---------------- */
+.homes-sec {
+  padding: var(--sec-y) 0;
+  border-top: 1px solid var(--line);
+}
+.sec-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px 32px;
+  margin-bottom: clamp(28px, 3.5vw, 44px);
+}
+.sec-head__meta {
+  text-align: right;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.sec-head__meta strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Interaktywny plan osiedla */
+.plan-wrap {
+  position: relative;
+  margin: 0 0 clamp(28px, 3.2vw, 40px);
+  background: var(--surface-warm);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.plan-wrap > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.plan-wrap svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.plan-wrap polygon {
+  fill: rgba(255, 255, 255, 0);
+  stroke: transparent;
+  stroke-width: 3px;
+  cursor: pointer;
+  transition: fill .25s ease, stroke .25s ease;
+}
+.plan-wrap polygon.st-dost:hover {
+  fill: rgba(38, 58, 41, 0.22);
+  stroke: rgba(255, 255, 255, 0.9);
+}
+.plan-wrap polygon.st-rez {
+  fill: rgba(166, 123, 67, 0.22);
+  stroke: rgba(255, 255, 255, 0.55);
+}
+.plan-wrap polygon.st-rez:hover {
+  fill: rgba(166, 123, 67, 0.36);
+  stroke: rgba(255, 255, 255, 0.95);
+}
+.plan-wrap polygon.st-dost.active {
+  fill: rgba(38, 58, 41, 0.34);
+  stroke: #FFFFFF;
+}
+.plan-wrap polygon.st-rez.active {
+  fill: rgba(166, 123, 67, 0.44);
+  stroke: #FFFFFF;
+}
+
+/* Okrągłe piny 1:1 jak w PDF */
+.plan-pins {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.plan-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(58, 58, 54, 0.88);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.24);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform .2s, background-color .2s, color .2s, border-color .2s;
+}
+.plan-pin:hover { transform: translate(-50%, -50%) scale(1.1); }
+.plan-pin.st-rez {
+  background: rgba(154, 151, 144, 0.92);
+  color: #FFFFFF;
+}
+.plan-pin.active {
+  background: #FFFFFF;
+  color: var(--ink);
+  border-color: #FFFFFF;
+  transform: translate(-50%, -50%) scale(1.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.32);
+}
+
+.plan-badge {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 2;
+  background: rgba(250, 249, 246, 0.94);
+  padding: 6px 12px;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  pointer-events: none;
+}
+
+.plan-tooltip {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+  background: var(--ink);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 6px;
+  min-width: 190px;
+  font-size: 13px;
+  line-height: 1.45;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+.plan-tooltip b {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.plan-tooltip span { display: block; color: rgba(255,255,255,0.82); }
+.plan-tooltip small { display: block; margin-top: 6px; font-size: 11px; color: rgba(255,255,255,0.58); }
+
+/* Siatka 6 kart domów (3x2) */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  background: var(--surface);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 2.6vw, 34px);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  transition: background-color .22s ease;
+  cursor: pointer;
+}
+.card:hover { background: #FCFBFA; }
+.card.active { background: var(--surface-tint); }
+
+.card__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.card__id {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 3.8vw, 52px);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 24;
+}
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--ink);
+  padding-top: 6px;
+}
+.status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--forest);
+}
+.status--rez { color: var(--muted); }
+.status--rez::before { background: #A5A29B; }
+
+.card__price {
+  font-size: clamp(22px, 2vw, 26px);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+.card__m2 {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.card__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+.card__note {
+  margin: 14px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.homes-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.homes-foot a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--ink);
+}
+
+/* Rozwijana historia cen */
+.history {
+  margin-top: 20px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.history summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 15px 22px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.history summary::-webkit-details-marker { display: none; }
+.history summary::after { content: "+"; font-size: 18px; font-weight: 300; line-height: 1; }
+.history[open] summary { border-bottom: 1px solid var(--line); }
+.history[open] summary::after { content: "−"; }
+.history__body { padding: 8px 22px 18px; overflow-x: auto; }
+.history-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.history-table th, .history-table td {
+  padding: 10px 12px 10px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+.history-table thead th {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.history-table tbody tr:last-child > * { border-bottom: 0; }
+.history-table tbody th {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 400;
+  width: 60px;
+}
+.history-table tbody td:nth-child(2) { white-space: nowrap; width: 160px; color: var(--ink); }
+.history-table tbody td:nth-child(3) { color: var(--muted); }
+
+/* ---------------- DOM I RZUTY ---------------- */
+.house-sec {
+  padding: var(--sec-y) 0;
+  border-top: 1px solid var(--line);
+}
+.plans-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  margin-top: clamp(32px, 4vw, 52px);
+}
+.plan-card__img {
+  background: var(--surface-tint);
+  border: 1px solid var(--line);
+  padding: clamp(16px, 2.2vw, 28px);
+}
+.plan-card__img img { width: 100%; }
+.plan-card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 22px 0 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink);
+}
+.plan-card__head h3 { font-size: 26px; }
+.plan-card__head span { font-size: 15px; color: var(--muted); }
+
+.rooms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+}
+.rooms li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--line);
+}
+.rooms span { color: var(--muted); white-space: nowrap; }
+
+.standard {
+  margin-top: clamp(56px, 7vw, 96px);
+  padding-top: clamp(40px, 5vw, 64px);
+  border-top: 1px solid var(--line);
+}
+.standard__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px clamp(24px, 3vw, 44px);
+  margin: 28px 0 0;
+}
+.standard__grid div {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.standard__grid dt {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.standard__grid dd {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* ---------------- WNĘTRZA I OGRÓD ---------------- */
+.interiors-sec {
+  padding: var(--sec-y) 0;
+  border-top: 1px solid var(--line);
+}
+.interiors__head {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px 48px;
+  align-items: end;
+  margin-bottom: clamp(32px, 4vw, 52px);
+}
+.interiors__head p {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 44ch;
+}
+.interiors__hero {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--surface-warm);
+  overflow: hidden;
+}
+.interiors__hero img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.interiors__duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(16px, 2vw, 24px);
+  margin-top: clamp(16px, 2vw, 24px);
+}
+.interiors__duo figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--surface-warm);
+  overflow: hidden;
+}
+.interiors__duo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.interiors__note {
+  margin: 16px 0 0;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+/* ---------------- LOKALIZACJA ---------------- */
+.loc-sec {
+  padding: var(--sec-y) 0;
+  border-top: 1px solid var(--line);
+}
+.loc-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
+}
+.distances {
+  margin: clamp(28px, 3.5vw, 44px) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.distances li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.distances strong {
+  font-weight: 500;
+  color: var(--ink);
+}
+.distances span {
+  color: var(--muted);
+  white-space: nowrap;
+}
+.loc-map {
+  margin: 0;
+}
+.loc-map__frame {
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--surface-tint);
+  overflow: hidden;
+}
+.loc-map iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  filter: saturate(0.75) contrast(0.96);
+}
+.loc-map figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-top: 10px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.loc-map figcaption a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  color: var(--ink);
+}
+
+/* ---------------- KONTAKT ---------------- */
+.contact-sec {
+  padding: var(--sec-y) 0;
+  border-top: 1px solid var(--line);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(36px, 5vw, 80px);
+  align-items: start;
+}
+.contact__lead {
+  margin: 18px 0 0;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+  max-width: 40ch;
+}
+.contact__phone {
+  margin: 32px 0 6px;
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3vw, 42px);
+  line-height: 1.1;
+  font-variation-settings: "opsz" 20;
+}
+.contact__phone a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.contact__details {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.contact__details strong {
+  display: block;
+  margin-top: 14px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 20px;
+}
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.form label small { font-weight: 400; color: var(--muted); }
+.form .full { grid-column: 1 / -1; }
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  font-size: 15px;
+  color: var(--ink);
+  transition: border-color .2s;
+}
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  border-color: var(--ink);
+  outline: none;
+}
+.form textarea { resize: vertical; min-height: 112px; }
+.form .consent {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.form .consent input {
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  margin: 2px 0 0;
+  flex: none;
+  accent-color: var(--ink);
+}
+.form .hp { position: absolute; left: -9999px; }
+.form__msg {
+  margin: 0;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  background: var(--surface-tint);
+  border-left: 3px solid var(--forest);
+}
+.form__msg--err { border-left-color: var(--danger); }
+.form button[type="submit"] { justify-self: start; padding-inline: 28px; min-height: 44px; }
+
+/* ---------------- STOPKA ---------------- */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0 44px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.footer__in {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+}
+.footer__brand {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--ink);
+}
+.footer__note { margin: 0; max-width: 64ch; }
+.footer__link { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------------- RESPONSYWNOŚĆ ---------------- */
+@media (max-width: 1024px) {
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .standard__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 820px) {
+  .nav__in { height: 62px; }
+  .nav__links { display: none; }
+
+  .hero__top,
+  .intro,
+  .triptych,
+  .pillars,
+  .plans-grid,
+  .interiors__head,
+  .interiors__duo,
+  .loc-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__aside {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .hero__facts { justify-content: flex-start; }
+  .hero__media { aspect-ratio: 4 / 3; }
+
+  .sec-head__meta { text-align: left; }
+
+  .plan-pin {
+    width: 28px;
+    height: 28px;
+    font-size: 10.5px;
+  }
+  .plan-badge {
+    left: 10px;
+    bottom: 10px;
+    font-size: 9.5px;
+    padding: 4px 8px;
+  }
+
+  .cards { grid-template-columns: 1fr; }
+  .rooms { grid-template-columns: 1fr; }
+  .standard__grid { grid-template-columns: 1fr; }
+  .form { grid-template-columns: 1fr; }
+}
 </style>
-<meta property="og:title" content="JARZĘBINOWE – domy w zabudowie bliźniaczej, Mikołów-Mokre">
-<meta property="og:description" content="119 m², 4 pokoje, działka ok. 371 m², ogród od południa. Oddanie IV kw. 2027.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Residence","name":"JARZĘBINOWE – domy w zabudowie bliźniaczej","address":{"@type":"PostalAddress","streetAddress":"ul. Jarzębinowa","addressLocality":"Mikołów-Mokre","addressCountry":"PL"},"url":"https://jarzebinowe.pl"}</script>
 </head>
 <body data-statyczna>
-<a class="pomin" href="#tresc">Przejdź do treści</a>
+<a class="skip" href="#tresc">Przejdź do treści</a>
 
-<header class="nag">
-  <a class="nag__logo" href="#" aria-label="JARZĘBINOWE – początek strony"><img src="logo2.png" alt="JARZĘBINOWE" width="460" height="120"></a>
-  <div class="nag__prawa">
-    <a class="nag__tel" href="tel:+48672432888">+48 672 432 888</a>
-    <a class="przycisk przycisk--jasny" href="#kontakt">Zapytaj o dom</a>
+<header class="nav">
+  <div class="wrap nav__in">
+    <a class="nav__brand" href="#start" aria-label="Jarzębinowe – początek strony">
+      <img src="logo2.png" alt="Jarzębinowe" width="140" height="36">
+    </a>
+    <nav class="nav__links" aria-label="Główna nawigacja">
+      <a href="#start">Start</a>
+      <a href="#domy">Domy</a>
+      <a href="#dom">Rzuty</a>
+      <a href="#wnetrza">Wnętrza</a>
+      <a href="#lokalizacja">Lokalizacja</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn" href="#kontakt">Zapytaj o dom</a>
   </div>
 </header>
 
 <main id="tresc">
-<section class="hero" aria-labelledby="tytul">
-  <video class="hero__film" data-film autoplay muted loop playsinline preload="none" poster="Słoneczne%20osiedle%20domów%20bliźniaczych%20na%20skraju%20lasu.png" width="1280" height="720"
-    aria-label="Film: przejazd wzdłuż ulicy Jarzębinowej, bliźniaki z drewnianymi szczytami i jarzęby przed domami (wizualizacja)">
-    <source src="film.mp4" type="video/mp4">
-  </video>
-  <div class="hero__tekst">
-    <h1 id="tytul">Jarzębinowe</h1>
-    <p>Sześć domów w zabudowie bliźniaczej, Mikołów-Mokre</p>
-    <a class="przycisk przycisk--jasny" href="#ceny">Plan osiedla i ceny</a>
-  </div>
-  <button class="hero__pauza" type="button" data-film-przelacz aria-pressed="false">Zatrzymaj film</button>
-</section>
 
-<nav class="kotwice" aria-label="Sekcje strony">
-  <a class="kotwice__nazwa" href="#tresc" aria-label="JARZĘBINOWE"><img src="logo2.png" alt="JARZĘBINOWE"></a>
-  <div class="kotwice__linki">
-    <a href="#fakty">Najważniejsze</a><a href="#ceny">Plan i ceny</a><a href="#dom">Dom i rzuty</a><a href="#wnetrza">Wnętrza i ogród</a><a href="#okolica">Okolica</a><a href="#kontakt">Kontakt</a>
-  </div>
-</nav>
-
-<section class="fakty" id="fakty" aria-label="Najważniejsze informacje">
-  <div class="siatka">
-    <div class="fakty__wstep">
-      <p class="wstep">Sześć domów w&nbsp;trzech bliźniakach przy ul.&nbsp;Jarzębinowej w&nbsp;Mikołowie-Mokrem. Ogrody od południa, od wschodu łąka, a&nbsp;300&nbsp;metrów dalej las. Każdy dom ma 119&nbsp;m², cztery pokoje i&nbsp;własną działkę ok.&nbsp;371&nbsp;m².</p>
-      <p class="przyciski">
-        <a class="przycisk" href="#ceny">Plan i ceny</a>
-        <a class="przycisk przycisk--obrys" href="JARZ_karta_domu_A4_podglad.png" target="_blank" rel="noopener">Karta domu (rzuty)</a>      </p>
-    </div>
-    <figure class="fakty__obraz"><img src="front.png" alt="Bliźniak od frontu: białe ściany, wejścia w drewnie termojesionu, jarzęby przy podjazdach" width="1672" height="941" loading="lazy" decoding="async"></figure>
-    <dl class="fakty__siatka">
-      <div><dt>Powierzchnia użytkowa</dt><dd>119,35&nbsp;m²</dd></div>
-      <div><dt>Działka</dt><dd>ok. 371&nbsp;m²</dd></div>
-      <div><dt>Pokoje</dt><dd>4, w&nbsp;tym 3 sypialnie</dd></div>
-      <div><dt>Wyjście do ogrodu</dt><dd>drzwi 3,6&nbsp;m na południe</dd></div>
-      <div><dt>Do lasu</dt><dd>ok. 300&nbsp;m</dd></div>
-      <div><dt>Ogrzewanie</dt><dd>pompa ciepła, podłogówka</dd></div>
-      <div class="ciemne"><dt>Oddanie kluczy</dt><dd>IV kw. 2027</dd></div>
-      <div class="ciemne"><dt>Ceny brutto</dt><dd>od 879 000 zł</dd></div>
-    </dl>
-  </div>
-</section>
-
-<section class="ceny" id="ceny" aria-labelledby="ceny-t">
-  <div class="siatka ceny__glowa">
-    <h2 id="ceny-t">Plan osiedla i&nbsp;ceny</h2>
-    <p>Domy stoją w&nbsp;jednym rzędzie wzdłuż ulicy, ogrodami na południe. Kliknij dom na modelu, a&nbsp;strona przejdzie do jego ceny i&nbsp;historii zmian w&nbsp;tabeli. Model obrócisz, przeciągając go.<span>Wolne domy: <b data-wolne>4</b> z&nbsp;6. Stan na 16.11.2026, 09:49. Ceny brutto z&nbsp;VAT 8%, stan deweloperski.</span></p>
-  </div>
-
-  <div class="zakladki" role="tablist" aria-label="Widok osiedla">
-    <!-- Domyślnie wybrana Wizualizacja -->
-    <button type="button" role="tab" id="z-wiz" aria-selected="true" aria-controls="p-wiz">Wizualizacja</button>
-    <button type="button" role="tab" id="z-model" aria-selected="false" aria-controls="p-model" tabindex="-1">Model 3D</button>
-  </div>
-
- <!-- Nowa zakładka z renderem i poligonami (odkryta na start) -->
-  <div class="widok" id="p-wiz" role="tabpanel" aria-labelledby="z-wiz">
-    <figure class="wizualizacja-interaktywna" data-interaktywna>
-      <img src="gemini2.jfif" alt="Wizualizacja osiedla - interaktywna mapa" width="1920" height="1080">
-      
-     <svg viewBox="0 0 2000 1125" preserveAspectRatio="none">
-        <polygon data-dom="1A" points="2000,556.3 1998.8,555.3 1781.7,499.4 1779.6,499.9 1721.8,566.7 1577.8,528.3 1506.4,708.6 1498.6,825.3 1421.9,913.7 1745.8,1015.6 1757.9,1018.8 1999,683.1 2000,679.8" />
-        <polygon data-dom="1B" points="1779.6,498.9 1502.5,427.4 1437.9,490.5 1372.7,473.7 1316.6,610.9 1110.1,815.4 1421.3,913.7 1498,825.3 1505.9,708.6 1576.7,528.9 1577.8,527.8 1581.4,528.3 1721.8,566.2 1775.9,504.1" />
-        <polygon data-dom="2A" points="1501.5,427.4 1239.7,359.7 1169.3,420.7 1165.6,418 979,368.6 905.5,536.3 907.1,647.2 818.2,724 1109.5,815.4 1316,610.9 1368.5,481.6 1372.7,473.2 1437.9,490" />
-        <polygon data-dom="2B" points="1239.2,359.7 991.6,296.1 918.5,352.4 799.7,320.8 726.2,483.3 726.7,499.6 545.9,638.4 817.7,724 906.5,647.2 904.9,536.3 979,368.1 1165.6,417.5 1169.3,420.1" />
-        <polygon data-dom="3A" points="290.8,558 545.3,638.4 726.2,499.6 725.6,483.3 799.7,320.3 918.5,351.8 990,297.2 991.1,295.6 757.6,235.7 664.1,300.4 619.4,272.5 454.3,228.4 379.7,384.5 388.6,490.7" />
-        <polygon data-dom="3B" points="454.3,228.4 536.3,178.4 757.1,235.7 664.1,299.8 619.4,272 454.3,228.4 296.1,186.4 221.4,338.3 225.1,373.5 51.1,482.8 287.7,557.4 291.4,557.4 388.1,490.7 379.2,384.5" />
-        
-        <!-- Kompas przeskalowany pod nowy viewBox 2000x1125 -->
-        <g class="wiz-kompas" transform="translate(1925, 78) scale(1.15)" style="pointer-events: none; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.4));">
-          <circle cx="25" cy="25" r="23" fill="#fff" fill-opacity=".95" stroke="#D5DBDF" stroke-width="1.5"/>
-          <g style="transform-origin: 25px 25px; transform: rotate(-130deg);">
-            <path d="M25,6 L17,29 L25,24 L33,29 Z" fill="#B5332E"/>
-          </g>
-          <text x="33" y="22" text-anchor="middle" font-family="var(--font)" font-size="12" font-weight="bold" fill="#383E42">N</text>
-        </g>
-      </svg>
-      <!-- Nowa warstwa na stałe etykiety domków -->
-      <div class="etykiety-warstwa"></div>
-      <div class="model__dymek" hidden></div>
-    </figure>
-  </div>
-
-      <div class="model__dymek" hidden></div>
-    </figure>
-  </div>
-      <div class="model__dymek" hidden></div>
-    </figure>
-  </div>
-
-  <!-- Model ukryty na start -->
-  <div class="widok" id="p-model" role="tabpanel" aria-labelledby="z-model" hidden>
-    <figure class="model">
-      <div class="model__pasek">
-        <ul class="model__legenda" aria-label="Kolor działki oznacza status domu">
-          <li><span class="m-zn m-zn--dost"></span>dostępny</li>
-          <li><span class="m-zn m-zn--rez"></span>rezerwacja</li>
-          <li><span class="m-zn m-zn--sprz"></span>sprzedany</li>
-        </ul>
-        <div class="model__widoki" role="group" aria-label="Kierunek widoku modelu">
-          <button type="button" data-widok="ulica" aria-pressed="true">Od ulicy</button>
-          <button type="button" data-widok="ogrody" aria-pressed="false">Od ogrodów</button>
-          <button type="button" data-widok="gora" aria-pressed="false">Z góry</button>
+  <!-- HERO -->
+  <section class="hero" id="start" aria-labelledby="hero-tytul">
+    <div class="wrap">
+      <div class="hero__top">
+        <div>
+          <p class="hero__meta-top">
+            <span>Jarzębinowe</span>
+            <span>Mikołów-Mokre</span>
+            <span>Śląsk</span>
+          </p>
+          <h1 id="hero-tytul">Sześć domów,<br>jedna cicha ulica</h1>
+        </div>
+        <div class="hero__aside">
+          <p class="hero__facts">
+            <span>Bliźniak <strong>119 m²</strong></span>
+            <span>Działka <strong>ok. 371 m²</strong></span>
+            <span>Od <strong>879 000 zł</strong></span>
+          </p>
+          <a class="btn btn--outline" href="#domy">Zobacz wolne domy</a>
         </div>
       </div>
-      <div class="model__scena" data-model>
-        <svg role="img" aria-label="Model 3D osiedla: trzy bliźniaki w rzędzie wzdłuż ul. Jarzębinowej, od zachodu domy 1A, 1B, 2A, 2B, 3A i 3B. Od ulicy podjazdy i jarzęby, od południa ogrody z tarasami. Status i cenę każdego domu podaje lista pod modelem."></svg>
-        <p class="model__brak">Model osiedla wymaga włączonego JavaScriptu. Wybierz dom z listy poniżej.</p>
-        <div class="model__dymek" hidden></div>
+
+      <div class="hero__media">
+        <video class="hero__video" data-film autoplay muted loop playsinline preload="none"
+          poster="Słoneczne%20osiedle%20domów%20bliźniaczych%20na%20skraju%20lasu.png"
+          width="1280" height="720"
+          aria-label="Film: przejazd wzdłuż ulicy Jarzębinowej, bliźniaki z drewnianymi szczytami i jarzęby przed domami">
+          <source src="film.mp4" type="video/mp4">
+        </video>
+        <button class="hero__pause" type="button" data-film-przelacz aria-pressed="false">Zatrzymaj film</button>
       </div>
-      <ol class="model__domy" aria-label="Domy na osiedlu – wybierz, aby zobaczyć cenę i historię w tabeli">
-        <li><a class="m-dom m-dom--dost" href="#dom-1A" data-dom="1A"><b>1A</b><span class="m-dom__st">dostępny</span><span class="m-dom__cena">899 000 zł</span></a></li>
-        <li><a class="m-dom m-dom--sprz" href="#dom-1B" data-dom="1B"><b>1B</b><span class="m-dom__st">sprzedany</span><span class="m-dom__cena">879 000 zł</span></a></li>
-        <li><a class="m-dom m-dom--dost" href="#dom-2A" data-dom="2A"><b>2A</b><span class="m-dom__st">dostępny</span><span class="m-dom__cena">879 000 zł</span></a></li>
-        <li><a class="m-dom m-dom--dost" href="#dom-2B" data-dom="2B"><b>2B</b><span class="m-dom__st">dostępny</span><span class="m-dom__cena">879 000 zł</span></a></li>
-        <li><a class="m-dom m-dom--rez" href="#dom-3A" data-dom="3A"><b>3A</b><span class="m-dom__st">rezerwacja</span><span class="m-dom__cena">899 000 zł</span></a></li>
-        <li><a class="m-dom m-dom--dost" href="#dom-3B" data-dom="3B"><b>3B</b><span class="m-dom__st">dostępny</span><span class="m-dom__cena">929 000 zł</span></a></li>
-      </ol>
-      <figcaption class="model__uwaga">Model poglądowy wg projektu architektonicznego: bryły, dach 40°, okna, okna dachowe i panele PV, a&nbsp;także podjazdy, tarasy, ogrodzenia i&nbsp;jarzęby z&nbsp;planu zagospodarowania. Przeciągnij model, aby go obrócić. Kliknij dom albo działkę, aby przejść do ceny w&nbsp;tabeli.</figcaption>
-    </figure>
-  </div>
 
- <table class="cennik">
-    <caption class="sr">Cennik domów JARZĘBINOWE, ceny brutto z VAT 8%, stan deweloperski</caption>
-    <thead><tr><th scope="col">Dom</th><th scope="col">Pow. użytkowa</th><th scope="col">Działka</th><th scope="col">Pokoje</th><th scope="col" class="p">Cena brutto</th><th scope="col" class="p">Cena za m²</th><th scope="col">Status</th><th scope="col"><span class="sr">Karta domu</span></th></tr></thead>
-    <tbody>
-      <tr id="dom-1A" data-dom="1A">
-        <th scope="row">1A<small>od zachodu sąsiad – istniejący dom</small></th>
-        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
-        <td data-l="Działka">371,2&nbsp;m²</td>
-        <td data-l="Pokoje">4</td>
-        <td class="p cena">899 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 532,47 zł</td>
-        <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_1A.pdf" target="_blank" rel="noopener">Karta domu</a></td>
-      </tr>
-      <tr id="dom-1B" data-dom="1B">
-        <th scope="row">1B</th>
-        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
-        <td data-l="Działka">371,2&nbsp;m²</td>
-        <td data-l="Pokoje">4</td>
-        <td class="p cena">879 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
-        <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_1B.pdf" target="_blank" rel="noopener">Karta domu</a></td>
-      </tr>
-      <tr id="dom-2A" data-dom="2A">
-        <th scope="row">2A</th>
-        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
-        <td data-l="Działka">371,2&nbsp;m²</td>
-        <td data-l="Pokoje">4</td>
-        <td class="p cena">879 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
-        <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_2A.pdf" target="_blank" rel="noopener">Karta domu</a></td>
-      </tr>
-      <tr id="dom-2B" data-dom="2B">
-        <th scope="row">2B</th>
-        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
-        <td data-l="Działka">371,2&nbsp;m²</td>
-        <td data-l="Pokoje">4</td>
-        <td class="p cena">879 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 364,89 zł</td>
-        <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_2B.pdf" target="_blank" rel="noopener">Karta domu</a></td>
-      </tr>
-      <tr id="dom-3A" data-dom="3A">
-        <th scope="row">3A</th>
-        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
-        <td data-l="Działka">371,2&nbsp;m²</td>
-        <td data-l="Pokoje">4</td>
-        <td class="p cena">899 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 532,47 zł</td>
-        <td data-l="Status"><span class="st st--rez">Rezerwacja</span></td>
-        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_3A.pdf" target="_blank" rel="noopener">Karta domu</a></td>
-      </tr>
-      <tr id="dom-3B" data-dom="3B">
-        <th scope="row">3B<small>skrajny od wschodu – otwarty widok na łąkę</small></th>
-        <td data-l="Pow. użytkowa">119,35&nbsp;m²</td>
-        <td data-l="Działka">371,2&nbsp;m²</td>
-        <td data-l="Pokoje">4</td>
-        <td class="p cena">929 000 zł</td>
-        <td class="p" data-l="Cena za m²">7 783,83 zł</td>
-        <td data-l="Status"><span class="st st--dost">Dostępny</span></td>
-        <td class="h"><a class="hist" href="Jarzebinowe_karta_domu_3B.pdf" target="_blank" rel="noopener">Karta domu</a></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <details class="hist-zbiorcza">
-    <summary>Historia zmian cen i statusów</summary>
-    <div class="hist-zbiorcza__tresc">
-      <table class="hist-tabela">
-        <thead>
-          <tr>
-            <th scope="col">Dom</th>
-            <th scope="col">Data</th>
-            <th scope="col">Zmiana</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><th>1A</th><td>16.11.2026, 09:49</td><td>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</td></tr>
-          <tr><th>1A</th><td>27.10.2026</td><td>cena wyjściowa 819 000 zł (6 862,17 zł/m²), status: dostępny</td></tr>
-          <tr><th>1B</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
-          <tr><th>1B</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
-          <tr><th>2A</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
-          <tr><th>2A</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
-          <tr><th>2B</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
-          <tr><th>2B</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
-          <tr><th>3A</th><td>16.11.2026, 09:49</td><td>status: dostępny → rezerwacja; cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</td></tr>
-          <tr><th>3A</th><td>27.10.2026</td><td>cena wyjściowa 819 000 zł (6 862,17 zł/m²), status: dostępny</td></tr>
-          <tr><th>3B</th><td>16.11.2026, 09:49</td><td>status: rezerwacja → dostępny; cena 839 000 zł → 929 000 zł (7 783,83 zł/m²)</td></tr>
-          <tr><th>3B</th><td>27.10.2026</td><td>cena wyjściowa 839 000 zł (7 029,74 zł/m²), status: rezerwacja</td></tr>
-        </tbody>
-      </table>
+      <div class="intro">
+        <div>
+          <p class="intro__lead">Dom z&nbsp;ogrodem pod lasem, miasto pod ręką – sześć domów dla tych, którzy chcą więcej przestrzeni.</p>
+          <p class="intro__sub">Kameralna inwestycja przy ul.&nbsp;Jarzębinowej w&nbsp;Mikołowie-Mokrem. Od wschodu i&nbsp;od południa łąka, około 300&nbsp;m na południe las.</p>
+        </div>
+        <div class="kpi">
+          <div class="kpi__item">
+            <span class="kpi__val">119 m²</span>
+            <span class="kpi__lbl">powierzchni użytkowej, 4&nbsp;pokoje</span>
+          </div>
+          <div class="kpi__item">
+            <span class="kpi__val">371 m²</span>
+            <span class="kpi__lbl">działki z&nbsp;ogrodem od południa</span>
+          </div>
+          <div class="kpi__item">
+            <span class="kpi__val">IV kw. 2027</span>
+            <span class="kpi__lbl">oddanie kluczy</span>
+          </div>
+          <div class="kpi__item">
+            <span class="kpi__val"><span data-wolne>5</span><small>z 6</small></span>
+            <span class="kpi__lbl">domów wolnych · stan na 16.11.2026</span>
+          </div>
+        </div>
+      </div>
     </div>
-  </details>
-  <ul class="uwagi">
-    <li><b>W cenie:</b> 2 miejsca postojowe na działce (podjazd) – w cenie domu, 0 zł.</li>
-    <li><b>Koszty po stronie kupującego:</b> [do uzupełnienia przez inwestora – np. koszty umowy notarialnej i wpisów do ksiąg wieczystych wg taksy, po stronie nabywcy].</li>
-    <li>Każda zmiana ceny i statusu jest zapisywana z datą. <a href="data:text/csv;charset=utf-8;base64,77u/IkNlbm5payDigJMgc3RhbiBuYSI7IjE2LjExLjIwMjYsIDA5OjQ5Igpkb207YnVkeW5laztwb3dfdXp5dGtvd2FfbTI7ZHppYWxrYV9tMjtwb2tvamU7Y2VuYV9icnV0dG9femw7Y2VuYV96YV9tMl96bDtzdGF0dXM7cG9taWVzemN6ZW5pYV9wcnp5bmFsZXpuZTtrb3N6dHlfZG9kYXRrb3dlCjFBO0IxOzExOSwzNTszNzEsMjs0Ozg5OTAwMDs3NTMyLDQ3O0Rvc3TEmXBueTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKMUI7QjE7MTE5LDM1OzM3MSwyOzQ7ODc5MDAwOzczNjQsODk7U3ByemVkYW55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIGR6aWHFgmNlIChwb2RqYXpkKSDigJMgdyBjZW5pZSBkb211LCAwIHrFgiI7IltkbyB1enVwZcWCbmllbmlhIHByemV6IGlud2VzdG9yYSDigJMgbnAuIGtvc3p0eSB1bW93eSBub3RhcmlhbG5laiBpIHdwaXPDs3cgZG8ga3NpxIVnIHdpZWN6eXN0eWNoIHdnIHRha3N5LCBwbyBzdHJvbmllIG5hYnl3Y3ldIgoyQTtCMjsxMTksMzU7MzcxLDI7NDs4NzkwMDA7NzM2NCw4OTtEb3N0xJlwbnk7IjIgbWllanNjYSBwb3N0b2pvd2UgbmEgZHppYcWCY2UgKHBvZGphemQpIOKAkyB3IGNlbmllIGRvbXUsIDAgesWCIjsiW2RvIHV6dXBlxYJuaWVuaWEgcHJ6ZXogaW53ZXN0b3JhIOKAkyBucC4ga29zenR5IHVtb3d5IG5vdGFyaWFsbmVqIGkgd3Bpc8OzdyBkbyBrc2nEhWcgd2llY3p5c3R5Y2ggd2cgdGFrc3ksIHBvIHN0cm9uaWUgbmFieXdjeV0iCjJCO0IyOzExOSwzNTszNzEsMjs0Ozg3OTAwMDs3MzY0LDg5O0Rvc3TEmXBueTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKM0E7QjM7MTE5LDM1OzM3MSwyOzQ7ODk5MDAwOzc1MzIsNDc7UmV6ZXJ3YWNqYTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKM0I7QjM7MTE5LDM1OzM3MSwyOzQ7OTI5MDAwOzc3ODMsODM7RG9zdMSZcG55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIGR6aWHFgmNlIChwb2RqYXpkKSDigJMgdyBjZW5pZSBkb211LCAwIHrFgiI7IltkbyB1enVwZcWCbmllbmlhIHByemV6IGlud2VzdG9yYSDigJMgbnAuIGtvc3p0eSB1bW93eSBub3RhcmlhbG5laiBpIHdwaXPDs3cgZG8ga3NpxIVnIHdpZWN6eXN0eWNoIHdnIHRha3N5LCBwbyBzdHJvbmllIG5hYnl3Y3ldIgoKIkhpc3RvcmlhIHptaWFuIgpkYXRhX2lfZ29kemluYTtkb207cG9sZTtieWxvO2plc3Q7Y2VuYV9tMl9ieWxvO2NlbmFfbTJfamVzdAoyNy4xMC4yMDI2OzFBO2NlbmE7OzgxOTAwMDs7Njg2MiwxNwoyNy4xMC4yMDI2OzFBO3N0YXR1czs7RG9zdMSZcG55OzsKMjcuMTAuMjAyNjsxQjtjZW5hOzs4MDkwMDA7OzY3NzgsMzgKMjcuMTAuMjAyNjsxQjtzdGF0dXM7O0Rvc3TEmXBueTs7CjI3LjEwLjIwMjY7MkE7Y2VuYTs7ODA5MDAwOzs2Nzc4LDM4CjI3LjEwLjIwMjY7MkE7c3RhdHVzOztEb3N0xJlwbnk7OwoyNy4xMC4yMDI2OzJCO2NlbmE7OzgwOTAwMDs7Njc3OCwzOAoyNy4xMC4yMDI2OzJCO3N0YXR1czs7RG9zdMSZcG55OzsKMjcuMTAuMjAyNjszQTtjZW5hOzs4MTkwMDA7OzY4NjIsMTcKMjcuMTAuMjAyNjszQTtzdGF0dXM7O0Rvc3TEmXBueTs7CjI3LjEwLjIwMjY7M0I7Y2VuYTs7ODM5MDAwOzs3MDI5LDc0CjI3LjEwLjIwMjY7M0I7c3RhdHVzOztSZXplcndhY2phOzsKIjE2LjExLjIwMjYsIDA5OjQ5IjsxQTtjZW5hOzgxOTAwMDs4OTkwMDA7Njg2MiwxNzs3NTMyLDQ3CiIxNi4xMS4yMDI2LCAwOTo0OSI7MUI7Y2VuYTs4MDkwMDA7ODc5MDAwOzY3NzgsMzg7NzM2NCw4OQoiMTYuMTEuMjAyNiwgMDk6NDkiOzFCO3N0YXR1cztEb3N0xJlwbnk7U3ByemVkYW55OzsKIjE2LjExLjIwMjYsIDA5OjQ5IjsyQTtjZW5hOzgwOTAwMDs4NzkwMDA7Njc3OCwzODs3MzY0LDg5CiIxNi4xMS4yMDI2LCAwOTo0OSI7MkI7Y2VuYTs4MDkwMDA7ODc5MDAwOzY3NzgsMzg7NzM2NCw4OQoiMTYuMTEuMjAyNiwgMDk6NDkiOzNBO2NlbmE7ODE5MDAwOzg5OTAwMDs2ODYyLDE3Ozc1MzIsNDcKIjE2LjExLjIwMjYsIDA5OjQ5IjszQTtzdGF0dXM7RG9zdMSZcG55O1JlemVyd2FjamE7OwoiMTYuMTEuMjAyNiwgMDk6NDkiOzNCO2NlbmE7ODM5MDAwOzkyOTAwMDs3MDI5LDc0Ozc3ODMsODMKIjE2LjExLjIwMjYsIDA5OjQ5IjszQjtzdGF0dXM7UmV6ZXJ3YWNqYTtEb3N0xJlwbnk7Owo=" download="JARZEBINOWE_cennik.csv">Cennik z&nbsp;historią w&nbsp;pliku CSV</a>.</li>
-  </ul>
-</section>
+  </section>
 
-<section class="dom" id="dom" aria-labelledby="dom-t">
-  <div class="siatka dom__glowa">
-    <h2 id="dom-t">Dom 119&nbsp;m² na dwóch kondygnacjach</h2>
-    <p class="wstep">Wszystkie domy mają ten sam układ, domy B są jego lustrzanym odbiciem. Na parterze otwarta strefa dzienna z&nbsp;wyjściem na taras, na poddaszu trzy sypialnie, łazienka i&nbsp;garderoba.</p>
-  </div>
-  <div class="siatka rzuty">
-    <figure>
-      <img src="rzutparter.png" alt="Rzut parteru domu A z przykładowym umeblowaniem" width="1200" height="1697" loading="lazy" decoding="async">      <figcaption><b>Parter</b> 65,78&nbsp;m²</figcaption>
-      <table class="pom"><tbody><tr><th scope="row">Wiatrołap</th><td>4,05&nbsp;m²</td></tr><tr><th scope="row">WC</th><td>2,18&nbsp;m²</td></tr><tr><th scope="row">Hol</th><td>5,26&nbsp;m²</td></tr><tr><th scope="row">Kuchnia</th><td>9,30&nbsp;m²</td></tr><tr><th scope="row">Salon z jadalnią</th><td>42,69&nbsp;m²</td></tr><tr><th scope="row">Schowek</th><td>2,30&nbsp;m²</td></tr></tbody></table>
-    </figure>
-    <figure>
-      <img src="rzutpoddasze.png" alt="Rzut poddasza domu A z przykładowym umeblowaniem" width="1200" height="1697" loading="lazy" decoding="async">      <figcaption><b>Poddasze</b> 53,57&nbsp;m² powierzchni użytkowej</figcaption>
-      <table class="pom"><tbody><tr><th scope="row">Hol</th><td>8,94&nbsp;m²</td></tr><tr><th scope="row">Sypialnia 1</th><td>11,48&nbsp;m²</td></tr><tr><th scope="row">Sypialnia 2</th><td>12,50&nbsp;m²</td></tr><tr><th scope="row">Sypialnia 3</th><td>10,92&nbsp;m²</td></tr><tr><th scope="row">Łazienka</th><td>4,98&nbsp;m²</td></tr><tr><th scope="row">Garderoba</th><td>4,75&nbsp;m²</td></tr></tbody></table>
-    </figure>
-  </div>
-  <p class="drobny dom__przypis">Powierzchnia użytkowa wg PN-ISO 9836: parter 65,78&nbsp;m² + poddasze 53,57&nbsp;m² = 119,35&nbsp;m². Rzuty poglądowe, aranżacja przykładowa. <a href="JARZ_karta_domu_A4_podglad.png" target="_blank" rel="noopener">Karta domu (rzuty)</a>.</p>
+  <!-- 3 ZDJĘCIA + 3 FILARY -->
+  <section class="triptych-sec" aria-label="Atuty inwestycji">
+    <div class="wrap">
+      <div class="triptych">
+        <figure>
+          <img src="Słoneczne%20osiedle%20domów%20bliźniaczych%20na%20skraju%20lasu.png" alt="Ulica Jarzębinowa – osiedle na skraju lasu" loading="lazy" decoding="async">
+          <figcaption>Ulica — osiedle na skraju lasu</figcaption>
+        </figure>
+        <figure>
+          <img src="front.png" alt="Bliźniak od frontu: białe ściany, wejścia w drewnie termojesionu" loading="lazy" decoding="async">
+          <figcaption>Architektura i termojesion</figcaption>
+        </figure>
+        <figure>
+          <img src="Rodzinne%20popołudnie%20w%20ogrodzie%20nowoczesnych%20domów.png" alt="Ogród i taras od południa" loading="lazy" decoding="async">
+          <figcaption>Ogród i taras</figcaption>
+        </figure>
+      </div>
 
-  <div class="siatka standard">
-    <h3>Standard deweloperski</h3>
-    <dl><div><dt>Konstrukcja</dt><dd>ściany z bloczków silikatowych, ściana międzylokalowa podwójna z wełną (dobra akustyka), strop żelbetowy</dd></div><div><dt>Ocieplenie</dt><dd>styropian grafitowy 15 cm, dach – wełna 25 cm</dd></div><div><dt>Dach</dt><dd>blacha na rąbek stojący, antracyt, rynny ukryte, bez okapów</dd></div><div><dt>Elewacja</dt><dd>tynk silikonowy biały + deska z termojesionu (szczyty i strefa wejścia)</dd></div><div><dt>Okna</dt><dd>trzyszybowe, antracyt na zewnątrz; w salonie drzwi przesuwne HS 3,6 m; 3 okna dachowe</dd></div><div><dt>Drzwi wejściowe</dt><dd>aluminiowe, antywłamaniowe RC2, z doświetleniem</dd></div><div><dt>Ogrzewanie</dt><dd>pompa ciepła powietrze-woda, ogrzewanie podłogowe w całym domu</dd></div><div><dt>Wentylacja</dt><dd>przygotowanie pod rekuperację (kanały w stropie)</dd></div><div><dt>Fotowoltaika</dt><dd>instalacja PV ok. 3 kWp na każdym domu</dd></div><div><dt>Instalacje</dt><dd>elektryczna, wod.-kan., przygotowanie pod klimatyzację w sypialni 1, gniazda przy tarasie</dd></div><div><dt>Wnętrza</dt><dd>tynki gipsowe, wylewki, parapety wewnętrzne; schody dębowe w cenie</dd></div><div><dt>Teren</dt><dd>utwardzony podjazd na 2 auta, dojście, taras z płyt gres, ogrodzenie ogrodu, ekran prywatności tarasu</dd></div><div><dt>Nie w cenie</dt><dd>trawnik i nasadzenia w ogrodzie (poza drzewkiem od frontu), wykończenie wnętrz</dd></div></dl>
-  </div>
-</section>
-
-<section class="wnetrza" id="wnetrza" aria-label="Wnętrza i ogród">
-  <figure class="kadr">
-    <img src="Słoneczny%20salon%20z%20kuchnią%20i%20schodami.png" alt="Salon z jadalnią i kuchnią, schody na poddasze, jasna podłoga z drewna" width="1672" height="941" loading="lazy" decoding="async">    <figcaption class="kadr__tytul">Salon z&nbsp;kuchnią, 52&nbsp;m²</figcaption>
-  </figure>
-  <div class="siatka kadr__dalej">
-    <p>Parter to jedna otwarta przestrzeń: kuchnia, jadalnia i&nbsp;salon. Drzwi przesuwne o&nbsp;szerokości 3,6&nbsp;m prowadzą na taras od południa. Dębowe schody na poddasze są w&nbsp;cenie domu.</p>
-    <figure><img src="Jasne%20wnętrze%20z%20widokiem%20na%20ogród.png" alt="Strefa dzienna z wyjściem na taras i widokiem na łąkę" width="1672" height="941" loading="lazy" decoding="async"></figure>
-  </div>
-  <figure class="kadr">
-    <img src="Rodzinne%20popołudnie%20w%20ogrodzie%20nowoczesnych%20domów.png" alt="Ogród i taras od południa, rodzina przy stole na tarasie" width="1672" height="941" loading="lazy" decoding="async">    <figcaption class="kadr__tytul">Ogród od południa</figcaption>
-  </figure>
-  <div class="siatka kadr__dalej">
-    <p>Za domem ogród na działce ok.&nbsp;371&nbsp;m². W&nbsp;cenie są taras z&nbsp;płyt gres, ekran prywatności między tarasami, ogrodzenie ogrodu i&nbsp;podjazd na dwa auta. Trawnik i&nbsp;nasadzenia w&nbsp;ogrodzie urządza kupujący, drzewko przed domem jest w&nbsp;cenie.</p>
-    <figure><img src="Słoneczne%20osiedle%20domów%20bliźniaczych%20na%20skraju%20lasu.png" alt="Ulica Jarzębinowa: bliźniaki z drewnianymi szczytami, jarzęby przy chodniku" width="1672" height="941" loading="lazy" decoding="async"></figure>
-  </div>
-  <p class="drobny wnetrza__przypis">Wizualizacje mają charakter poglądowy. Zieleń pokazano ok. 2–3 lata po oddaniu osiedla.</p>
-</section>
-
-<section class="okolica" id="okolica" aria-labelledby="okolica-t">
-  <div class="siatka">
-    <div class="okolica__tekst">
-      <h2 id="okolica-t">ul. Jarzębinowa, Mikołów-Mokre</h2>
-      <p class="wstep">Spokojna ulica z&nbsp;domami jednorodzinnymi. Od wschodu i&nbsp;od południa łąka, około 300&nbsp;m na południe las. Dojazd ulicą asfaltową.</p>
-      <p><a href="https://www.openstreetmap.org/#map=16/50.1783/18.8591" rel="noopener" target="_blank">Otwórz mapę w&nbsp;OpenStreetMap</a></p>
+      <div class="pillars">
+        <article class="pillar">
+          <span class="pillar__num">01</span>
+          <h3>Lokalizacja</h3>
+          <p>Spokojna ulica domów jednorodzinnych z&nbsp;dojazdem drogą asfaltową. Do centrum Katowic [XX]&nbsp;minut samochodem.</p>
+        </article>
+        <article class="pillar">
+          <span class="pillar__num">02</span>
+          <h3>Standard</h3>
+          <p>Pompa ciepła, ogrzewanie podłogowe w&nbsp;całym domu, fotowoltaika ok.&nbsp;3&nbsp;kWp, okna trzyszybowe i&nbsp;dębowe schody w&nbsp;cenie.</p>
+        </article>
+        <article class="pillar">
+          <span class="pillar__num">03</span>
+          <h3>Otoczenie</h3>
+          <p>Łąka od wschodu i&nbsp;południa, las 300&nbsp;m dalej. Salon otwiera się na ogród drzwiami przesuwnymi o&nbsp;szerokości 3,6&nbsp;m.</p>
+        </article>
+      </div>
     </div>
-    <figure class="okolica__mapa"><iframe title="Mapa: Mikołów-Mokre" loading="lazy" style="width:100%;aspect-ratio:4/3;border:1px solid var(--linia)" src="https://www.openstreetmap.org/export/embed.html?bbox=18.8461%2C50.1723%2C18.8721%2C50.1843&amp;layer=mapnik&amp;marker=50.1783%2C18.8591"></iframe><figcaption>Przybliżony obszar inwestycji. Mapa © autorzy OpenStreetMap (licencja ODbL).</figcaption></figure>
-  </div>
-</section>
+  </section>
 
-<section class="kontakt" id="kontakt" aria-labelledby="kontakt-t">
-  <div class="siatka">
-    <div class="kontakt__dane">
-      <h2 id="kontakt-t">Zapytaj o&nbsp;dom</h2>
-      <p class="kontakt__tel"><a href="tel:+48672432888">+48 672 432 888</a></p>
-      <p>pon.–sob. 8:00–18:00</p>
-      <p>Pokażemy działki na miejscu i&nbsp;odpowiemy na pytania o&nbsp;standard, terminy i&nbsp;finansowanie.</p>
+  <!-- DOMY I CENY -->
+  <section class="homes-sec" id="domy" aria-labelledby="domy-tytul">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Domy i ceny</p>
+          <h2 id="domy-tytul">Wybierz swój dom</h2>
+        </div>
+        <div class="sec-head__meta">
+          <div>Wolne domy: <strong data-wolne>5</strong> z&nbsp;6 · stan na 16.11.2026</div>
+          <div>Ceny brutto z&nbsp;VAT 8%, stan deweloperski</div>
+        </div>
+      </div>
+
+      <!-- Interaktywny plan osiedla -->
+      <figure class="plan-wrap" data-interaktywna>
+        <img src="gemini2.jfif" alt="Plan osiedla Jarzębinowe – kliknij dom, aby przejść do oferty" width="1920" height="1080">
+        <svg viewBox="0 0 2000 1125" preserveAspectRatio="none" aria-label="Interaktywna mapa działek">
+          <polygon data-dom="1A" points="2000,556.3 1998.8,555.3 1781.7,499.4 1779.6,499.9 1721.8,566.7 1577.8,528.3 1506.4,708.6 1498.6,825.3 1421.9,913.7 1745.8,1015.6 1757.9,1018.8 1999,683.1 2000,679.8" />
+          <polygon data-dom="1B" points="1779.6,498.9 1502.5,427.4 1437.9,490.5 1372.7,473.7 1316.6,610.9 1110.1,815.4 1421.3,913.7 1498,825.3 1505.9,708.6 1576.7,528.9 1577.8,527.8 1581.4,528.3 1721.8,566.2 1775.9,504.1" />
+          <polygon data-dom="2A" points="1501.5,427.4 1239.7,359.7 1169.3,420.7 1165.6,418 979,368.6 905.5,536.3 907.1,647.2 818.2,724 1109.5,815.4 1316,610.9 1368.5,481.6 1372.7,473.2 1437.9,490" />
+          <polygon data-dom="2B" points="1239.2,359.7 991.6,296.1 918.5,352.4 799.7,320.8 726.2,483.3 726.7,499.6 545.9,638.4 817.7,724 906.5,647.2 904.9,536.3 979,368.1 1165.6,417.5 1169.3,420.1" />
+          <polygon data-dom="3A" points="290.8,558 545.3,638.4 726.2,499.6 725.6,483.3 799.7,320.3 918.5,351.8 990,297.2 991.1,295.6 757.6,235.7 664.1,300.4 619.4,272.5 454.3,228.4 379.7,384.5 388.6,490.7" />
+          <polygon data-dom="3B" points="454.3,228.4 536.3,178.4 757.1,235.7 664.1,299.8 619.4,272 454.3,228.4 296.1,186.4 221.4,338.3 225.1,373.5 51.1,482.8 287.7,557.4 291.4,557.4 388.1,490.7 379.2,384.5" />
+          <!-- Kompas -->
+          <g transform="translate(1922, 74) scale(1.1)" style="pointer-events: none; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));">
+            <circle cx="25" cy="25" r="23" fill="#FAF9F6" fill-opacity=".95" stroke="#E4E1D9" stroke-width="1.5"/>
+            <g style="transform-origin: 25px 25px; transform: rotate(-130deg);">
+              <path d="M25,6 L17,29 L25,24 L33,29 Z" fill="#263A29"/>
+            </g>
+            <text x="33" y="22" text-anchor="middle" font-family="Albert Sans, sans-serif" font-size="11" font-weight="600" fill="#181817">N</text>
+          </g>
+        </svg>
+        <div class="plan-pins" aria-hidden="true"></div>
+        <span class="plan-badge">Plan osiedla — kliknij dom</span>
+        <div class="plan-tooltip" hidden></div>
+      </figure>
+
+      <!-- 6 kart domów -->
+      <div class="cards" id="karty-domow">
+        <article class="card active" id="dom-1A" data-dom="1A" data-status="dost" data-status-txt="Wolny" data-cena="899 000 zł" data-m2="7 532,47 zł/m²">
+          <div class="card__head">
+            <span class="card__id">1A</span>
+            <span class="status">Wolny</span>
+          </div>
+          <div class="card__price">899 000 zł</div>
+          <div class="card__m2">7 532,47 zł/m²</div>
+          <ul class="card__specs">
+            <li>119,35 m²</li>
+            <li>działka ok. 371 m²</li>
+            <li>4 pokoje</li>
+          </ul>
+          <p class="card__note">Skrajny od zachodu, obok istniejący dom.</p>
+          <div class="card__actions">
+            <a class="btn" href="#kontakt" data-zapytaj="1A">Zapytaj</a>
+            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_1A.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
+          </div>
+        </article>
+
+        <article class="card" id="dom-1B" data-dom="1B" data-status="dost" data-status-txt="Wolny" data-cena="879 000 zł" data-m2="7 364,89 zł/m²">
+          <div class="card__head">
+            <span class="card__id">1B</span>
+            <span class="status">Wolny</span>
+          </div>
+          <div class="card__price">879 000 zł</div>
+          <div class="card__m2">7 364,89 zł/m²</div>
+          <ul class="card__specs">
+            <li>119,35 m²</li>
+            <li>działka ok. 371 m²</li>
+            <li>4 pokoje</li>
+          </ul>
+          <div class="card__actions">
+            <a class="btn" href="#kontakt" data-zapytaj="1B">Zapytaj</a>
+            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_1B.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
+          </div>
+        </article>
+
+        <article class="card" id="dom-2A" data-dom="2A" data-status="dost" data-status-txt="Wolny" data-cena="879 000 zł" data-m2="7 364,89 zł/m²">
+          <div class="card__head">
+            <span class="card__id">2A</span>
+            <span class="status">Wolny</span>
+          </div>
+          <div class="card__price">879 000 zł</div>
+          <div class="card__m2">7 364,89 zł/m²</div>
+          <ul class="card__specs">
+            <li>119,35 m²</li>
+            <li>działka ok. 371 m²</li>
+            <li>4 pokoje</li>
+          </ul>
+          <div class="card__actions">
+            <a class="btn" href="#kontakt" data-zapytaj="2A">Zapytaj</a>
+            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_2A.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
+          </div>
+        </article>
+
+        <article class="card" id="dom-2B" data-dom="2B" data-status="dost" data-status-txt="Wolny" data-cena="879 000 zł" data-m2="7 364,89 zł/m²">
+          <div class="card__head">
+            <span class="card__id">2B</span>
+            <span class="status">Wolny</span>
+          </div>
+          <div class="card__price">879 000 zł</div>
+          <div class="card__m2">7 364,89 zł/m²</div>
+          <ul class="card__specs">
+            <li>119,35 m²</li>
+            <li>działka ok. 371 m²</li>
+            <li>4 pokoje</li>
+          </ul>
+          <div class="card__actions">
+            <a class="btn" href="#kontakt" data-zapytaj="2B">Zapytaj</a>
+            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_2B.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
+          </div>
+        </article>
+
+        <article class="card" id="dom-3A" data-dom="3A" data-status="rez" data-status-txt="Rezerwacja" data-cena="899 000 zł" data-m2="7 532,47 zł/m²">
+          <div class="card__head">
+            <span class="card__id">3A</span>
+            <span class="status status--rez">Rezerwacja</span>
+          </div>
+          <div class="card__price">899 000 zł</div>
+          <div class="card__m2">7 532,47 zł/m²</div>
+          <ul class="card__specs">
+            <li>119,35 m²</li>
+            <li>działka ok. 371 m²</li>
+            <li>4 pokoje</li>
+          </ul>
+          <div class="card__actions">
+            <a class="btn" href="#kontakt" data-zapytaj="3A">Zapytaj</a>
+            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_3A.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
+          </div>
+        </article>
+
+        <article class="card" id="dom-3B" data-dom="3B" data-status="dost" data-status-txt="Wolny" data-cena="929 000 zł" data-m2="7 783,83 zł/m²">
+          <div class="card__head">
+            <span class="card__id">3B</span>
+            <span class="status">Wolny</span>
+          </div>
+          <div class="card__price">929 000 zł</div>
+          <div class="card__m2">7 783,83 zł/m²</div>
+          <ul class="card__specs">
+            <li>119,35 m²</li>
+            <li>działka ok. 371 m²</li>
+            <li>4 pokoje</li>
+          </ul>
+          <p class="card__note">Skrajny od wschodu, otwarty widok na łąkę.</p>
+          <div class="card__actions">
+            <a class="btn" href="#kontakt" data-zapytaj="3B">Zapytaj</a>
+            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_3B.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="homes-foot">
+        <span>W cenie 2 miejsca postojowe na podjeździe. Koszty notarialne i sądowe po stronie kupującego.</span>
+        <a href="data:text/csv;charset=utf-8;base64,77u/IkNlbm5payDigJMgc3RhbiBuYSI7IjE2LjExLjIwMjYsIDA5OjQ5Igpkb207YnVkeW5laztwb3dfdXp5dGtvd2FfbTI7ZHppYWxrYV9tMjtwb2tvamU7Y2VuYV9icnV0dG9femw7Y2VuYV96YV9tMl96bDtzdGF0dXM7cG9taWVzemN6ZW5pYV9wcnp5bmFsZXpuZTtrb3N6dHlfZG9kYXRrb3dlCjFBO0IxOzExOSwzNTszNzEsMjs0Ozg5OTAwMDs3NTMyLDQ3O0Rvc3TEmXBueTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKMUI7QjE7MTE5LDM1OzM3MSwyOzQ7ODc5MDAwOzczNjQsODk7RG9zdMSZcG55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIGR6aWHFgmNlIChwb2RqYXpkKSDigJMgdyBjZW5pZSBkb211LCAwIHrFgiI7IltkbyB1enVwZcWCbmllbmlhIHByemV6IGlud2VzdG9yYSDigJMgbnAuIGtvc3p0eSB1bW93eSBub3RhcmlhbG5laiBpIHdwaXPDs3cgZG8ga3NpxIVnIHdpZWN6eXN0eWNoIHdnIHRha3N5LCBwbyBzdHJvbmllIG5hYnl3Y3ldIgoyQTtCMjsxMTksMzU7MzcxLDI7NDs4NzkwMDA7NzM2NCw4OTtEb3N0xJlwbnk7IjIgbWllanNjYSBwb3N0b2pvd2UgbmEgZHppYcWCY2UgKHBvZGphemQpIOKAkyB3IGNlbmllIGRvbXUsIDAgesWCIjsiW2RvIHV6dXBlxYJuaWVuaWEgcHJ6ZXogaW53ZXN0b3JhIOKAkyBucC4ga29zenR5IHVtb3d5IG5vdGFyaWFsbmVqIGkgd3Bpc8OzdyBkbyBrc2nEhWcgd2llY3p5c3R5Y2ggd2cgdGFrc3ksIHBvIHN0cm9uaWUgbmFieXdjeV0iCjJCO0IyOzExOSwzNTszNzEsMjs0Ozg3OTAwMDs3MzY0LDg5O0Rvc3TEmXBueTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKM0E7QjM7MTE5LDM1OzM3MSwyOzQ7ODk5MDAwOzc1MzIsNDc7UmV6ZXJ3YWNqYTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKM0I7QjM7MTE5LDM1OzM3MSwyOzQ7OTI5MDAwOzc3ODMsODM7RG9zdMSZcG55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIGR6aWHFgmNlIChwb2RqYXpkKSDigJMgdyBjZW5pZSBkb211LCAwIHrFgiI7IltkbyB1enVwZcWCbmllbmlhIHByemV6IGlud2VzdG9yYSDigJMgbnAuIGtvc3p0eSB1bW93eSBub3RhcmlhbG5laiBpIHdwaXPDs3cgZG8ga3NpxIVnIHdpZWN6eXN0eWNoIHdnIHRha3N5LCBwbyBzdHJvbmllIG5hYnl3Y3ldIgo=" download="JARZEBINOWE_cennik.csv">Pobierz cennik (CSV)</a>
+      </div>
+
+      <details class="history">
+        <summary>Historia zmian cen i statusów</summary>
+        <div class="history__body">
+          <table class="history-table">
+            <thead>
+              <tr><th scope="col">Dom</th><th scope="col">Data</th><th scope="col">Zmiana</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>1A</th><td>16.11.2026, 09:49</td><td>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</td></tr>
+              <tr><th>1A</th><td>27.10.2026</td><td>cena wyjściowa 819 000 zł (6 862,17 zł/m²), status: dostępny</td></tr>
+              <tr><th>1B</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
+              <tr><th>1B</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
+              <tr><th>2A</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
+              <tr><th>2A</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
+              <tr><th>2B</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
+              <tr><th>2B</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
+              <tr><th>3A</th><td>16.11.2026, 09:49</td><td>status: dostępny → rezerwacja; cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</td></tr>
+              <tr><th>3A</th><td>27.10.2026</td><td>cena wyjściowa 819 000 zł (6 862,17 zł/m²), status: dostępny</td></tr>
+              <tr><th>3B</th><td>16.11.2026, 09:49</td><td>status: rezerwacja → dostępny; cena 839 000 zł → 929 000 zł (7 783,83 zł/m²)</td></tr>
+              <tr><th>3B</th><td>27.10.2026</td><td>cena wyjściowa 839 000 zł (7 029,74 zł/m²), status: rezerwacja</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
     </div>
-    <form class="formularz" method="post" action="mailto:jarzebinowa@biuro.pl" enctype="text/plain" novalidate>
-            <label>Imię i nazwisko<input name="imie" autocomplete="name" required maxlength="100"></label>
-      <label>E-mail<input name="email" type="email" autocomplete="email" required maxlength="150"></label>
-      <label>Telefon <small>(opcjonalnie)</small><input name="telefon" type="tel" autocomplete="tel" maxlength="30"></label>
-      <label>Dom <small>(opcjonalnie)</small><select name="dom"><option value="">dowolny</option><option>1A</option><option>1B</option><option>2A</option><option>2B</option><option>3A</option><option>3B</option></select></label>
-      <label class="szeroko">Wiadomość<textarea name="wiadomosc" rows="4" required maxlength="3000"></textarea></label>
-      <label class="hp" aria-hidden="true">Strona www<input name="strona" tabindex="-1" autocomplete="off"></label>
-      <input type="hidden" name="t" value="1794819200.701990b642b33556df5a">
-      <label class="zgoda szeroko"><input type="checkbox" name="zgoda" value="1" required> <span>Wyrażam zgodę na przetwarzanie moich danych podanych w formularzu w celu odpowiedzi na zapytanie. Administratorem danych jest Kaczmarczyk Inwestycje sp. z o.o.. Dane przechowujemy 12 miesięcy. Zgodę mogę wycofać w każdej chwili. Szczegóły: polityka prywatności (do uzupełnienia).</span></label>
-      <p class="komunikat szeroko" role="status" aria-live="polite" hidden></p>
-      <button class="przycisk przycisk--jasny" type="submit">Wyślij wiadomość</button>
-    </form>
-  </div>
-</section>
+  </section>
+
+  <!-- DOM I RZUTY -->
+  <section class="house-sec" id="dom" aria-labelledby="dom-tytul">
+    <div class="wrap">
+      <p class="eyebrow">Dom i rzuty</p>
+      <h2 id="dom-tytul">119&nbsp;m² na dwóch kondygnacjach</h2>
+
+      <div class="plans-grid">
+        <div class="plan-card">
+          <div class="plan-card__img">
+            <img src="rzutparter.png" alt="Rzut parteru domu z przykładowym umeblowaniem" width="1200" height="1697" loading="lazy" decoding="async">
+          </div>
+          <div class="plan-card__head">
+            <h3>Parter</h3>
+            <span>65,78 m²</span>
+          </div>
+          <ul class="rooms">
+            <li>Wiatrołap <span>4,05 m²</span></li>
+            <li>Kuchnia <span>9,30 m²</span></li>
+            <li>WC <span>2,18 m²</span></li>
+            <li>Salon z jadalnią <span>42,69 m²</span></li>
+            <li>Hol <span>5,26 m²</span></li>
+            <li>Schowek <span>2,30 m²</span></li>
+          </ul>
+        </div>
+
+        <div class="plan-card">
+          <div class="plan-card__img">
+            <img src="rzutpoddasze.png" alt="Rzut poddasza domu z przykładowym umeblowaniem" width="1200" height="1697" loading="lazy" decoding="async">
+          </div>
+          <div class="plan-card__head">
+            <h3>Poddasze</h3>
+            <span>53,57 m²</span>
+          </div>
+          <ul class="rooms">
+            <li>Hol <span>8,94 m²</span></li>
+            <li>Sypialnia 3 <span>10,92 m²</span></li>
+            <li>Sypialnia 1 <span>11,48 m²</span></li>
+            <li>Łazienka <span>4,98 m²</span></li>
+            <li>Sypialnia 2 <span>12,50 m²</span></li>
+            <li>Garderoba <span>4,75 m²</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="standard">
+        <p class="eyebrow">Standard deweloperski</p>
+        <dl class="standard__grid">
+          <div><dt>Konstrukcja</dt><dd>Bloczki silikatowe, podwójna ściana między domami z&nbsp;wełną, strop żelbetowy</dd></div>
+          <div><dt>Ocieplenie</dt><dd>Styropian grafitowy 15&nbsp;cm, dach wełna 25&nbsp;cm</dd></div>
+          <div><dt>Dach</dt><dd>Blacha na rąbek stojący, antracyt, rynny ukryte</dd></div>
+          <div><dt>Elewacja</dt><dd>Biały tynk silikonowy i&nbsp;deska z&nbsp;termojesionu</dd></div>
+          <div><dt>Okna</dt><dd>Trzyszybowe; w&nbsp;salonie HS 3,6&nbsp;m; 3&nbsp;okna dachowe</dd></div>
+          <div><dt>Drzwi wejściowe</dt><dd>Aluminiowe, antywłamaniowe RC2</dd></div>
+          <div><dt>Ogrzewanie</dt><dd>Pompa ciepła powietrze-woda, podłogówka w&nbsp;całym domu</dd></div>
+          <div><dt>Wentylacja</dt><dd>Przygotowanie pod rekuperację</dd></div>
+          <div><dt>Fotowoltaika</dt><dd>Instalacja PV ok.&nbsp;3&nbsp;kWp na każdym domu</dd></div>
+          <div><dt>Instalacje</dt><dd>Przygotowanie pod klimatyzację w&nbsp;sypialni&nbsp;1, gniazda przy tarasie</dd></div>
+          <div><dt>Teren</dt><dd>Podjazd na 2&nbsp;auta, taras z&nbsp;gresu, ogrodzenie, ekran prywatności</dd></div>
+          <div><dt>Nie w cenie</dt><dd>Trawnik i&nbsp;nasadzenia (poza drzewkiem od frontu), wykończenie wnętrz</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- WNĘTRZA I OGRÓD -->
+  <section class="interiors-sec" id="wnetrza" aria-labelledby="wnetrza-tytul">
+    <div class="wrap">
+      <div class="interiors__head">
+        <div>
+          <p class="eyebrow">Wnętrza i ogród</p>
+          <h2 id="wnetrza-tytul">Salon z&nbsp;kuchnią, 52&nbsp;m² światła</h2>
+        </div>
+        <p>Parter to jedna otwarta przestrzeń: kuchnia, jadalnia i&nbsp;salon, z&nbsp;wyjściem na taras od południa.</p>
+      </div>
+
+      <figure class="interiors__hero">
+        <img src="Słoneczny%20salon%20z%20kuchnią%20i%20schodami.png" alt="Salon z kuchnią i schodami na poddasze" width="1672" height="941" loading="lazy" decoding="async">
+      </figure>
+
+      <div class="interiors__duo">
+        <figure>
+          <img src="Jasne%20wnętrze%20z%20widokiem%20na%20ogród.png" alt="Jasne wnętrze z widokiem na ogród" width="1672" height="941" loading="lazy" decoding="async">
+        </figure>
+        <figure>
+          <img src="Rodzinne%20popołudnie%20w%20ogrodzie%20nowoczesnych%20domów.png" alt="Ogród od południa i taras" width="1672" height="941" loading="lazy" decoding="async">
+        </figure>
+      </div>
+
+      <p class="interiors__note">Wizualizacje mają charakter poglądowy. Zieleń pokazano ok. 2–3 lata po oddaniu osiedla.</p>
+    </div>
+  </section>
+
+  <!-- LOKALIZACJA -->
+  <section class="loc-sec" id="lokalizacja" aria-labelledby="lok-tytul">
+    <div class="wrap loc-grid">
+      <div>
+        <p class="eyebrow">Lokalizacja</p>
+        <h2 id="lok-tytul">ul. Jarzębinowa,<br>Mikołów-Mokre</h2>
+        <ul class="distances">
+          <li><strong>Las</strong> <span>ok. 300 m</span></li>
+          <li><strong>Szkoła podstawowa</strong> <span>[km]</span></li>
+          <li><strong>Sklep spożywczy</strong> <span>[km]</span></li>
+          <li><strong>Wjazd na autostradę</strong> <span>[min]</span></li>
+          <li><strong>Centrum Katowic</strong> <span>[min]</span></li>
+        </ul>
+      </div>
+
+      <figure class="loc-map">
+        <div class="loc-map__frame">
+          <iframe title="Mapa: ul. Jarzębinowa, Mikołów-Mokre" loading="lazy"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=18.8461%2C50.1723%2C18.8721%2C50.1843&amp;layer=mapnik&amp;marker=50.1783%2C18.8591"></iframe>
+        </div>
+        <figcaption>
+          <span>Przybliżony obszar inwestycji. Mapa © OpenStreetMap.</span>
+          <a href="https://www.openstreetmap.org/#map=16/50.1783/18.8591" target="_blank" rel="noopener">Otwórz w OpenStreetMap</a>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="contact-sec" id="kontakt" aria-labelledby="kontakt-tytul">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow">Kontakt</p>
+        <h2 id="kontakt-tytul">Przyjedź zobaczyć działki</h2>
+        <p class="contact__lead">Pokażemy działki na miejscu i&nbsp;odpowiemy na pytania o&nbsp;standard, terminy i&nbsp;finansowanie.</p>
+        <p class="contact__phone"><a href="tel:+48672432888">+48 672 432 888</a></p>
+        <p class="contact__details">
+          pon.–sob. 8:00–18:00<br>
+          Biuro sprzedaży: [adres biura sprzedaży]
+          <strong>Kaczmarczyk Inwestycje sp. z o.o.</strong>
+        </p>
+      </div>
+
+      <form class="form" method="post" action="mailto:jarzebinowa@biuro.pl" enctype="text/plain" novalidate>
+        <label>
+          Imię i nazwisko
+          <input name="imie" autocomplete="name" required maxlength="100">
+        </label>
+        <label>
+          E-mail
+          <input name="email" type="email" autocomplete="email" required maxlength="150">
+        </label>
+        <label>
+          <span>Telefon <small>(opcjonalnie)</small></span>
+          <input name="telefon" type="tel" autocomplete="tel" maxlength="30">
+        </label>
+        <label>
+          Dom
+          <select name="dom" id="wybor-domu">
+            <option value="">Dowolny</option>
+            <option value="1A">1A</option>
+            <option value="1B">1B</option>
+            <option value="2A">2A</option>
+            <option value="2B">2B</option>
+            <option value="3A">3A</option>
+            <option value="3B">3B</option>
+          </select>
+        </label>
+        <label class="full">
+          Wiadomość
+          <textarea name="wiadomosc" rows="4" placeholder="Np. kiedy możemy obejrzeć działkę?" required maxlength="3000"></textarea>
+        </label>
+        <label class="hp" aria-hidden="true">Strona www<input name="strona" tabindex="-1" autocomplete="off"></label>
+        <label class="consent full">
+          <input type="checkbox" name="zgoda" value="1" required>
+          <span>Wyrażam zgodę na przetwarzanie moich danych w&nbsp;celu odpowiedzi na zapytanie. Administrator: Kaczmarczyk Inwestycje sp. z&nbsp;o.o. Dane przechowujemy 12&nbsp;miesięcy; zgodę mogę wycofać w&nbsp;każdej chwili.</span>
+        </label>
+        <p class="form__msg full" role="status" aria-live="polite" hidden></p>
+        <button class="btn full" type="submit">Wyślij zapytanie</button>
+      </form>
+    </div>
+  </section>
+
 </main>
 
-<footer class="stopka">
-  <div class="siatka">
-    <img src="logo2.png" alt="JARZĘBINOWE" width="460" height="120" loading="lazy">
-    <p>Kaczmarczyk Inwestycje sp. z o.o.</p>
-    <p class="drobny">Wizualizacje i rzuty mają charakter poglądowy i nie stanowią oferty w rozumieniu Kodeksu cywilnego. Strona nie używa plików cookies ani narzędzi śledzących.</p>
+<footer class="footer">
+  <div class="wrap footer__in">
+    <span class="footer__brand">Jarzębinowe</span>
+    <p class="footer__note">Wizualizacje mają charakter poglądowy i&nbsp;nie stanowią oferty w&nbsp;rozumieniu Kodeksu cywilnego.</p>
+    <a class="footer__link" href="#kontakt">Polityka prywatności</a>
   </div>
 </footer>
+
 <script>
-// JARZĘBINOWE v2 – film, przełącznik planu, wybór domu (plan <-> tabela), historia cen, formularz.
-// Strona działa też bez JavaScriptu (plan prowadzi do wiersza tabeli przez #dom-XX).
 (() => {
-  const podglad = document.body.hasAttribute('data-podglad');
-
-  // ---------------------------------------------------------------- film w nagłówku
-  const v = document.querySelector('video[data-film]');
-  const b = document.querySelector('[data-film-przelacz]');
   const mniejRuchu = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const oszczedzaj = !!(navigator.connection && navigator.connection.saveData);
-  const wczytaj = () => {
-    if (!v || v.dataset.wczytany) return;
-    let zmiana = false;
-    v.querySelectorAll('source[data-src]').forEach((s) => { s.src = s.dataset.src; zmiana = true; });
-    v.dataset.wczytany = '1';
-    if (zmiana) v.load();
+
+  // 1. Film w hero (play/pause)
+  const video = document.querySelector('video[data-film]');
+  const btnPause = document.querySelector('[data-film-przelacz]');
+  const updatePauseBtn = (playing) => {
+    if (!btnPause) return;
+    btnPause.textContent = playing ? 'Zatrzymaj film' : 'Odtwórz film';
+    btnPause.setAttribute('aria-pressed', String(!playing));
   };
-  const przycisk = (gra) => { if (b) { b.textContent = gra ? 'Zatrzymaj film' : 'Odtwórz film'; b.setAttribute('aria-pressed', String(!gra)); } };
-  if (v) {
-    if (mniejRuchu || oszczedzaj) { v.removeAttribute('autoplay'); v.pause(); przycisk(false); }
-    else if (!podglad) {
-      const start = () => { wczytaj(); v.play().catch(() => przycisk(false)); };
-      if (document.readyState === 'complete') setTimeout(start, 200);
-      else addEventListener('load', () => setTimeout(start, 200), { once: true });
+  if (video) {
+    if (mniejRuchu) {
+      video.removeAttribute('autoplay');
+      video.pause();
+      updatePauseBtn(false);
+    } else {
+      addEventListener('load', () => {
+        video.play().catch(() => updatePauseBtn(false));
+      }, { once: true });
     }
-    v.addEventListener('play', () => przycisk(true));
-    v.addEventListener('pause', () => przycisk(false));
-    if (b) b.addEventListener('click', () => { if (v.paused) { wczytaj(); v.play(); } else v.pause(); });
+    video.addEventListener('play', () => updatePauseBtn(true));
+    video.addEventListener('pause', () => updatePauseBtn(false));
+    if (btnPause) {
+      btnPause.addEventListener('click', () => {
+        if (video.paused) video.play();
+        else video.pause();
+      });
+    }
   }
 
-  // ---------------------------------------------------------------- zakładki: plan / z lotu ptaka
-  const zakl = [...document.querySelectorAll('.zakladki [role=tab]')];
-  const pokaz = (t) => zakl.forEach((x) => {
-    const on = x === t;
-    x.setAttribute('aria-selected', String(on)); x.tabIndex = on ? 0 : -1;
-    document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
-  });
-  zakl.forEach((t, i) => {
-    t.addEventListener('click', () => pokaz(t));
-    t.addEventListener('keydown', (e) => {
-      const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
-      if (k) { const n = zakl[(i + k + zakl.length) % zakl.length]; pokaz(n); n.focus(); }
-    });
-  });
+  // 2. Interaktywny plan osiedla <-> karty domów
+  const planWrap = document.querySelector('[data-interaktywna]');
+  const cards = [...document.querySelectorAll('.card[data-dom]')];
+  const selectDom = document.getElementById('wybor-domu');
 
-  // ---------------------------------------------------------------- model 3D osiedla (SVG, bez bibliotek)
-  const model = (() => {
-    const scena = document.querySelector('[data-model]');
-    const svg = scena && scena.querySelector('svg');
-    if (!svg) return null;
-    const dymek = scena.querySelector('.model__dymek');
-    const DOMY = ['1A', '1B', '2A', '2B', '3A', '3B'];
-    const KOL = { dost: '#4A6B35', rez: '#A4704A', sprz: '#5A6166' };
-    const DZ = { dost: '#C3D9AE', rez: 'url(#m-rez)', sprz: '#A3ACB2' };
+  // Licznik wolnych domów na bazie kart
+  const wolneCount = cards.filter(c => c.dataset.status === 'dost').length;
+  document.querySelectorAll('[data-wolne]').forEach(el => { el.textContent = wolneCount; });
 
-    // ---- dane z tabeli cen
-    const dane = {};
-    DOMY.forEach((id) => {
-      const r = document.querySelector('.cennik tr[data-dom="' + id + '"]');
-      const q = (s) => (r && r.querySelector(s) ? r.querySelector(s).textContent.trim() : '');
-      const st = r && r.querySelector('.st');
-      const k = st && (st.className.match(/st--(dost|rez|sprz)/) || [])[1];
-      dane[id] = { st: k || 'dost', status: q('.st').toLowerCase() || 'dostępny', cena: q('.cena'), m2: q('td[data-l="Cena za m²"]') };
-    });
-    document.querySelectorAll('.model__domy [data-dom]').forEach((a) => {
-      const d = dane[a.dataset.dom];
+  // Pozycje okrągłych pinów (środki poligonów w %)
+  const pinCoords = {
+    '1A': { left: 86.5, top: 64.5 },
+    '1B': { left: 71.5, top: 58.0 },
+    '2A': { left: 56.5, top: 50.8 },
+    '2B': { left: 43.8, top: 44.2 },
+    '3A': { left: 30.8, top: 37.8 },
+    '3B': { left: 18.4, top: 32.2 }
+  };
+
+  const getHouseData = (id) => {
+    const card = document.querySelector(`.card[data-dom="${id}"]`);
+    if (!card) return null;
+    return {
+      id,
+      status: card.dataset.status || 'dost',
+      statusTxt: card.dataset.statusTxt || 'Wolny',
+      cena: card.dataset.cena || '',
+      m2: card.dataset.m2 || ''
+    };
+  };
+
+  const selectHouse = (id, scrollToCard = false) => {
+    cards.forEach(c => c.classList.toggle('active', c.dataset.dom === id));
+    document.querySelectorAll('.plan-wrap polygon').forEach(p => p.classList.toggle('active', p.dataset.dom === id));
+    document.querySelectorAll('.plan-pin').forEach(pin => pin.classList.toggle('active', pin.dataset.dom === id));
+
+    if (scrollToCard) {
+      const target = document.getElementById('dom-' + id);
+      if (target) {
+        const y = target.getBoundingClientRect().top + window.scrollY - 96;
+        window.scrollTo({ top: y, behavior: mniejRuchu ? 'auto' : 'smooth' });
+      }
+    }
+  };
+
+  if (planWrap) {
+    const svg = planWrap.querySelector('svg');
+    const pinsLayer = planWrap.querySelector('.plan-pins');
+    const tooltip = planWrap.querySelector('.plan-tooltip');
+
+    Object.keys(pinCoords).forEach((id) => {
+      const d = getHouseData(id);
       if (!d) return;
-      a.className = 'm-dom m-dom--' + d.st;
-      a.querySelector('.m-dom__st').textContent = d.status;
-      a.querySelector('.m-dom__cena').textContent = d.cena;
-    });
-    const wolne = document.querySelector('[data-wolne]');
-    if (wolne) wolne.textContent = DOMY.filter((id) => dane[id].st === 'dost').length;
 
-    // ---- geometria (metry)
-    const dot = (a, b) => a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
-    const SL = [-0.569, -0.478, 0.669];
-    const odcien = (h, k) => '#' + [1, 3, 5].map((i) => Math.min(255, Math.round(parseInt(h.slice(i, i + 2), 16) * k)).toString(16).padStart(2, '0')).join('');
-    const cien = (h, n) => (n ? odcien(h, 0.86 + 0.16 * Math.max(0, dot(n, SL))) : h);
-    const T = -0.3, OK = 4.28, KA = 8.64, KAT = 40 * Math.PI / 180, TG = Math.tan(KAT), SN = Math.sin(KAT), CS = Math.cos(KAT);
-    const Y0 = 15.6, Y1 = 26, YM = 20.8, BX = [4, 27.2, 50.4];
-    const C = { biel: '#F3F2EE', drewno: '#A4704A', antr: '#383E42', dach: '#41474B', cokol: '#4A4D50', szyba: '#5E6F7A',
-      satyna: '#A7B2B8', okd: '#4F5C66', pv: '#232A33', rama: '#2B3033', kostka: '#C4C6C7', taras: '#D5D7D4', chodnik: '#CDD1D3', asfalt: '#8A9095' };
-    const N = [0, 1, 0], S = [0, -1, 0], W = [-1, 0, 0], E = [1, 0, 0], G = [0, 0, 1], RN = [0, SN, CS], RS = [0, -SN, CS];
-    const ziemia = [], obiekty = [];
+      const poly = svg.querySelector(`polygon[data-dom="${id}"]`);
+      if (poly) poly.classList.add('st-' + d.status);
 
-    function polowa(id, b, A) {
-      const bx = BX[b], x0 = bx + (A ? 0 : 7.6), x1 = x0 + 7.6, xg = A ? x0 : x1, NG = A ? W : E;
-      const zk = (a, c) => (A ? [bx + a, bx + c] : [bx + 15.2 - c, bx + 15.2 - a]);
-      const cz = [];
-      const dodaj = (p, n, f, o) => cz.push(Object.assign({ p, n, f: cien(f, n), dom: id }, o));
-      const okno = (p, n, f) => dodaj(p, n, f || C.szyba, { s: C.rama, w: 0.7 });
-      const pN = (a, c, za, zb) => [[a, Y1, za], [c, Y1, za], [c, Y1, zb], [a, Y1, zb]];
-      const pS = (a, c, za, zb) => [[a, Y0, za], [c, Y0, za], [c, Y0, zb], [a, Y0, zb]];
-      const pG = (a, c, za, zb) => [[xg, Y0 + a, za], [xg, Y0 + c, za], [xg, Y0 + c, zb], [xg, Y0 + a, zb]];
-      const zN = (y) => OK + (Y1 - y) * TG, zS = (y) => OK + (y - Y0) * TG;
-      const pDN = (a, c, ya, yb) => [[a, ya, zN(ya)], [c, ya, zN(ya)], [c, yb, zN(yb)], [a, yb, zN(yb)]];
-      const pDS = (a, c, ya, yb) => [[a, ya, zS(ya)], [c, ya, zS(ya)], [c, yb, zS(yb)], [a, yb, zS(yb)]];
-      
-      dodaj(pN(x0, x1, T, OK), N, C.biel, { k: 1 });
-      dodaj(pN(...zk(5.3, 7.6), 0.15, 4.18), N, C.drewno);
-      dodaj(pN(x0, x1, T, 0.15), N, C.cokol);
-      dodaj(pN(x0, x1, 4.18, OK), N, C.antr);
-      okno(pN(...zk(1.2, 2.7), 1, 2.4), N);
-      okno(pN(...zk(3.96, 4.56), 1.6, 2.4), N, C.satyna);
-      okno(pN(...zk(5.6, 6.7), 0, 2.4), N, C.antr);
-      okno(pN(...zk(6.7, 7.2), 0, 2.4), N, C.satyna);
-      
-      const [da, dc] = zk(5.2, 7.6), dz = A ? da : dc;
-      dodaj([[da, Y1, 2.78], [dc, Y1, 2.78], [dc, Y1 + 1, 2.78], [da, Y1 + 1, 2.78]], G, C.antr, { v: [N], s: C.rama, w: 0.5 });
-      dodaj([[da, Y1 + 1, 2.62], [dc, Y1 + 1, 2.62], [dc, Y1 + 1, 2.78], [da, Y1 + 1, 2.78]], N, C.antr, { s: C.rama, w: 0.5 });
-      dodaj([[dz, Y1, 2.62], [dz, Y1 + 1, 2.62], [dz, Y1 + 1, 2.78], [dz, Y1, 2.78]], NG, C.antr, { v: [N, NG] });
-      
-      dodaj(pS(x0, x1, T, OK), S, C.biel, { k: 1 });
-      dodaj(pS(x0, x1, T, 0.15), S, C.cokol);
-      dodaj(pS(x0, x1, 4.18, OK), S, C.antr);
-      const [ha, hc] = zk(1, 4.6);
-      okno(pS(ha, hc, 0, 2.4), S);
-      cz.push({ l: [[[(ha + hc) / 2, Y0, 0], [(ha + hc) / 2, Y0, 2.4]]], n: S, s: C.rama, w: 1.2 });
-      okno(pS(...zk(5.2, 6.8), 0, 2.4), S);
-      
-      dodaj([[xg, Y0, T], [xg, Y1, T], [xg, Y1, OK], [xg, YM, KA], [xg, Y0, OK]], NG, C.antr, { k: 1 });
-      dodaj([[xg, Y0, 2.85], [xg, Y1, 2.85], [xg, Y1, OK - 0.25], [xg, YM, KA - 0.25], [xg, Y0, OK - 0.25]], NG, C.drewno);
-      dodaj(pG(0, 10.4, T, 2.85), NG, C.biel);
-      dodaj(pG(0, 10.4, T, 0.15), NG, C.cokol);
-      [[3.2, 5, 0.5, 2.4], [8, 9, 1, 2.4], [2.1, 3.5, 2.95, 5.25], [4.5, 5.7, 3.85, 5.25], [6.8, 8, 3.85, 5.25]]
-        .forEach(([a, c, za, zb]) => okno(pG(a, c, za, zb), NG));
-      
-      dodaj([[x0, Y1, OK], [x1, Y1, OK], [x1, YM, KA], [x0, YM, KA]], RN, C.dach, { k: 1 });
-      dodaj([[x0, Y0, OK], [x1, Y0, OK], [x1, YM, KA], [x0, YM, KA]], RS, C.dach, { k: 1 });
-      const rabki = [];
-      for (let k = 0; k < 30; k++) { const x = bx + 0.25 + 0.5 * k; if (x > x0 && x < x1) rabki.push(x); }
-      cz.push({ l: rabki.map((x) => [[x, Y1, OK], [x, YM, KA]]), n: RN, s: '#30363A', w: 0.5 });
-      cz.push({ l: rabki.map((x) => [[x, Y0, OK], [x, YM, KA]]), n: RS, s: '#30363A', w: 0.5 });
-      [[2.11, 2.89], [5.67, 6.45]].forEach(([a, c]) => okno(pDN(...zk(a, c), Y0 + 8.55, Y0 + 9.45), RN, C.okd));
-      okno(pDS(...zk(2.11, 2.89), Y0 + 0.95, Y0 + 1.85), RS, C.okd);
-      const xc = A ? bx + 3.8 : bx + 11.4;
-      const panel = (xa, s0) => {
-        const s1 = s0 + 1.722, ya = Y0 + s0 * CS, yb = Y0 + s1 * CS, za = OK + s0 * SN, zb = OK + s1 * SN;
-        dodaj([[xa, ya, za], [xa + 1.134, ya, za], [xa + 1.134, yb, zb], [xa, yb, zb]], RS, C.pv, { s: '#5B6773', w: 0.5 });
-      };
-      for (let i = 0; i < 4; i++) panel(xc - 2.298 + i * 1.154, 2.72);
-      for (let i = 0; i < 3; i++) panel(xc - 1.721 + i * 1.154, 4.462);
-      obiekty.push({ id, c: [(x0 + x1) / 2, YM, 4], cz });
-    }
-    BX.forEach((_, b) => { polowa(DOMY[2 * b], b, true); polowa(DOMY[2 * b + 1], b, false); });
-
-    // ---- teren wg PZT
-    const pros = (xa, ya, xb, yb, f, dom) => ziemia.push({ p: [[xa, ya, T], [xb, ya, T], [xb, yb, T], [xa, yb, T]], f, dom });
-    DOMY.forEach((id, i) => pros(11.6 * i, 0, 11.6 * (i + 1), 32, null, id));
-    const linieMP = [];
-    BX.forEach((_, b) => {
-      const o = 23.2 * b, dA = DOMY[2 * b], dB = DOMY[2 * b + 1];
-      pros(o + 0.4, 26.5, o + 5.4, 32, C.kostka, dA); pros(o + 17.8, 26.5, o + 22.8, 32, C.kostka, dB);
-      pros(o + 9.4, 27, o + 10.9, 32, C.kostka, dA); pros(o + 12.3, 27, o + 13.8, 32, C.kostka, dB);
-      pros(o + 9.1, 26, o + 11.2, 27, C.kostka, dA); pros(o + 12, 26, o + 14.1, 27, C.kostka, dB);
-      pros(o + 6, 30.3, o + 7.6, 31.1, C.kostka, dA); pros(o + 15.6, 30.3, o + 17.2, 31.1, C.kostka, dB);
-      pros(o + 4.4, 12.1, o + 9.4, 15.6, C.taras, dA); pros(o + 13.8, 12.1, o + 18.8, 15.6, C.taras, dB);
-      linieMP.push([[o + 2.9, 26.8, T], [o + 2.9, 31.7, T]], [[o + 20.3, 26.8, T], [o + 20.3, 31.7, T]]);
-    });
-    pros(-60, 32, 130, 34, C.chodnik);
-    pros(-60, 34, 130, 39.5, C.asfalt);
-    const zywoplot = [];
-    BX.forEach((_, b) => { const o = 23.2 * b; zywoplot.push([o + 5.9, o + 9.1], [o + 11.15, o + 12.05], [o + 14.1, o + 17.3]); });
-
-    // ---- ogrodzenie, ekrany, drzewa, sąsiad
-    [[0, 0, 69.6, 0], [0, 0, 0, 26], [69.6, 0, 69.6, 26], [11.6, 0, 11.6, 12.6], [34.8, 0, 34.8, 12.6], [58, 0, 58, 12.6],
-      [23.2, 0, 23.2, 26], [46.4, 0, 46.4, 26], [0, 26, 1.5, 26], [2.5, 26, 4, 26], [19.2, 26, 20.2, 26], [21.2, 26, 25.2, 26],
-      [26.2, 26, 27.2, 26], [42.4, 26, 43.4, 26], [44.4, 26, 48.4, 26], [49.4, 26, 50.4, 26], [65.6, 26, 67.1, 26], [68.1, 26, 69.6, 26]]
-      .forEach(([xa, ya, xb, yb]) => {
-        const n = Math.max(1, Math.ceil(Math.hypot(xb - xa, yb - ya) / 3));
-        for (let i = 0; i < n; i++) {
-          const a = [xa + (xb - xa) * i / n, ya + (yb - ya) * i / n], c = [xa + (xb - xa) * (i + 1) / n, ya + (yb - ya) * (i + 1) / n];
-          obiekty.push({ c: [(a[0] + c[0]) / 2, (a[1] + c[1]) / 2, 0.45], cz: [
-            { p: [[a[0], a[1], T], [c[0], c[1], T], [c[0], c[1], 1.2], [a[0], a[1], 1.2]], f: C.antr, op: 0.16 },
-            { l: [[[a[0], a[1], 1.2], [c[0], c[1], 1.2]], [[a[0], a[1], T], [a[0], a[1], 1.2]]], s: C.antr, w: 0.8 }] });
-        }
-      });
-    [11.6, 34.8, 58].forEach((x) => [[12.6, 14.1], [14.1, 15.6]].forEach(([ya, yb]) => obiekty.push({ c: [x, (ya + yb) / 2, 0.6],
-      cz: [{ p: [[x, ya, T], [x, yb, T], [x, yb, 1.5], [x, ya, 1.5]], f: C.drewno, s: '#7A5236', w: 0.6 }] })));
-    const JAG = [[-0.32, 0.3], [0.08, 0.42], [0.38, 0.14], [-0.08, 0.02], [0.22, -0.28], [-0.4, -0.22], [0.02, -0.46]];
-    [7.2, 16, 30.4, 39.2, 53.6, 62.4].forEach((x) => obiekty.push({ c: [x, 28.3, 2.6], drzewo: [x, 28.3] }));
-    (() => {
-      const cz = [], x0 = -9, x1 = -3, y0 = 15, y1 = 25, ym = 20, ok = 3.2, ka = ok + 5 * TG, k = '#DCE0E3';
-      const d = (p, n) => cz.push({ p, n, f: cien(k, n), k: 1 });
-      d([[x0, y1, T], [x1, y1, T], [x1, y1, ok], [x0, y1, ok]], N);
-      d([[x0, y0, T], [x1, y0, T], [x1, y0, ok], [x0, y0, ok]], S);
-      d([[x0, y0, T], [x0, y1, T], [x0, y1, ok], [x0, ym, ka], [x0, y0, ok]], W);
-      d([[x1, y0, T], [x1, y1, T], [x1, y1, ok], [x1, ym, ka], [x1, y0, ok]], E);
-      d([[x0, y1, ok], [x1, y1, ok], [x1, ym, ka], [x0, ym, ka]], RN);
-      d([[x0, y0, ok], [x1, y0, ok], [x1, ym, ka], [x0, ym, ka]], RS);
-      obiekty.push({ c: [-6, 20, 3], cz, kontur: '#B3BBC1', etykieta: ['sąsiedni dom', [-6, 20, ka + 0.6]] });
-    })();
-
-    // ---- kamera i rzutowanie
-    const WIDOKI = { ulica: { a: 330, f: 30 }, ogrody: { a: 150, f: 30 }, gora: { a: 180, f: 89 } };
-    const kam = { a: 330, f: 30 }, stan = { hov: null, wyb: null };
-    let B = null, Wd = 0, Hd = 0, anim = 0;
-    const P2 = (p) => [B.ox + B.s * dot(p, B.r), B.oy - B.s * dot(p, B.u)];
-    const pt = (p) => { const q = P2(p); return q[0].toFixed(1) + ',' + q[1].toFixed(1); };
-    function ustawKamere() {
-      const a = kam.a * Math.PI / 180, f = kam.f * Math.PI / 180;
-      const c = [Math.sin(a) * Math.cos(f), Math.cos(a) * Math.cos(f), Math.sin(f)];
-      const r = [-Math.cos(a), Math.sin(a), 0];
-      const u = [-r[1] * c[2], r[0] * c[2], -(r[0] * c[1] - r[1] * c[0])];
-      B = { c, r, u, d: [-c[0], -c[1], -c[2]], s: 1, ox: 0, oy: 0 };
-      const maly = Wd < 640, pkt = [];
-      (maly ? [0, 69.6] : [-1.5, 71.1]).forEach((x) => [-0.5, 34.5].forEach((y) => pkt.push([x, y, T])));
-      [4, 65.6].forEach((x) => [Y0, Y1].forEach((y) => pkt.push([x, y, KA + 2.5])));
-      let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
-      pkt.forEach((p) => { const x = dot(p, r), y = -dot(p, u); x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); });
-      const m = maly ? 8 : 22, mg = maly ? 26 : 44;
-      B.s = Math.min((Wd - 2 * m) / (x1 - x0), (Hd - m - mg) / (y1 - y0));
-      B.ox = (Wd - B.s * (x0 + x1)) / 2;
-      B.oy = mg + (Hd - m - mg - B.s * (y1 - y0)) / 2 - B.s * y0;
-    }
-
-    // ---- rysowanie
-    const widoczna = (cz) => (cz.v || (cz.n ? [cz.n] : [])).every((n) => dot(n, B.c) > 0.002);
-    const poly = (p, at) => '<polygon points="' + p.map(pt).join(' ') + '"' + at + '/>';
-    const linie = (l, s, w) => '<path d="' + l.map((o) => 'M' + pt(o[0]) + 'L' + pt(o[1])).join('') + '" fill="none" stroke="' + s + '" stroke-width="' + w + '"/>';
-    const czesc = (cz) => {
-      if (!widoczna(cz)) return '';
-      if (cz.l) return linie(cz.l, cz.s, cz.w || 0.6);
-      return poly(cz.p, ' fill="' + cz.f + '"' + (cz.op ? ' fill-opacity="' + cz.op + '"' : '') +
-        (cz.s ? ' stroke="' + cz.s + '" stroke-width="' + cz.w + '" stroke-linejoin="round"' : '') + (cz.dom ? ' data-dom="' + cz.dom + '"' : ''));
-    };
-    const naZiemie = (p) => { const k = (p[2] - T) / SL[2]; return [p[0] - SL[0] * k, p[1] - SL[1] * k, T]; };
-    const otoczka = (P) => {
-      P = P.slice().sort((a, b) => a[0] - b[0] || a[1] - b[1]);
-      const kr = (o, a, b) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
-      const d = [], g = [];
-      P.forEach((p) => { while (d.length > 1 && kr(d[d.length - 2], d[d.length - 1], p) <= 0) d.pop(); d.push(p); });
-      for (let i = P.length - 1; i >= 0; i--) { const p = P[i]; while (g.length > 1 && kr(g[g.length - 2], g[g.length - 1], p) <= 0) g.pop(); g.push(p); }
-      return d.slice(0, -1).concat(g.slice(0, -1));
-    };
-    const et = (t, p, dy) => { const [x, y] = P2(p); return '<text class="m-et" x="' + x.toFixed(1) + '" y="' + (y + (dy || 0)).toFixed(1) + '" text-anchor="middle">' + t + '</text>'; };
-    const ctx = document.createElement('canvas').getContext('2d');
-    const mierz = (t, f) => { ctx.font = f; return ctx.measureText(t).width; };
-    const pozycja = (id) => { const i = DOMY.indexOf(id), b = i >> 1; return [BX[b] + (i % 2 ? 11.4 : 3.8), YM, KA]; };
-
-    function pinezka(id, kompakt) {
-      const d = dane[id], [x, y] = P2(pozycja(id)), wyb = stan.wyb === id, hov = stan.hov === id, k = KOL[d.st];
-      const obw = wyb ? ' stroke="#B5332E" stroke-width="3"' : hov ? ' stroke="#383E42" stroke-width="2"' : ' stroke="#fff" stroke-width="1.5"';
-      let t = '<g class="m-pin" data-dom="' + id + '">';
-      if (kompakt && !wyb) {
-        const r = 12, cy = y - 9 - r;
-        t += '<line x1="' + x.toFixed(1) + '" y1="' + y.toFixed(1) + '" x2="' + x.toFixed(1) + '" y2="' + (cy + r).toFixed(1) + '" stroke="' + k + '" stroke-width="1.5"/>';
-        t += '<circle cx="' + x.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + r + '" fill="' + k + '"' + obw + '/>';
-        return t + '<text class="m-pin__id m-pin__id--maly" x="' + x.toFixed(1) + '" y="' + (cy + 4.2).toFixed(1) + '" text-anchor="middle">' + id + '</text></g>';
-      }
-      const w1 = mierz(id, '500 17px "Bodoni Moda", Georgia, serif'), w2 = mierz(d.status, '600 11px "Albert Sans", Arial, sans-serif');
-      const w3 = wyb ? mierz(d.cena, '600 13px "Albert Sans", Arial, sans-serif') : 0;
-      const w = Math.ceil(Math.max(w1, w2, w3) + 20), h = wyb ? 58 : 42, x0 = x - w / 2, y0 = y - 10 - h;
-      t += '<line x1="' + x.toFixed(1) + '" y1="' + y.toFixed(1) + '" x2="' + x.toFixed(1) + '" y2="' + (y0 + h).toFixed(1) + '" stroke="' + k + '" stroke-width="1.5"/>';
-      t += '<rect x="' + x0.toFixed(1) + '" y="' + y0.toFixed(1) + '" width="' + w + '" height="' + h + '" rx="3" fill="' + k + '"' + obw + '/>';
-      t += '<text class="m-pin__id" x="' + (x0 + 10).toFixed(1) + '" y="' + (y0 + 19).toFixed(1) + '">' + id + '</text>';
-      t += '<text class="m-pin__st" x="' + (x0 + 10).toFixed(1) + '" y="' + (y0 + 34).toFixed(1) + '">' + d.status + '</text>';
-      if (wyb) t += '<text class="m-pin__cena" x="' + (x0 + 10).toFixed(1) + '" y="' + (y0 + 50).toFixed(1) + '">' + d.cena + '</text>';
-      return t + '</g>';
-    }
-
-    function rysuj() {
-      if (Wd < 10 || Hd < 10) return;
-      ustawKamere();
-      let s = '<defs><pattern id="m-rez" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">' +
-        '<rect width="7" height="7" fill="#F3EDE7"/><rect width="2.4" height="7" fill="#C49A74"/></pattern></defs>';
-      ziemia.forEach((g) => { s += poly(g.p, ' fill="' + (g.f || DZ[dane[g.dom].st]) + '"' + (g.f ? '' : ' stroke="#fff" stroke-width="1"') + (g.dom ? ' data-dom="' + g.dom + '"' : '')); });
-      s += linie(linieMP, '#E9EBEC', 1);
-      s += linie([[[-60, 34, T], [130, 34, T]], [[-60, 39.5, T], [130, 39.5, T]]], '#F4F5F5', 1.2);
-      s += '<path d="' + zywoplot.map(([a, c]) => 'M' + pt([a, 31.65, T]) + 'L' + pt([c, 31.65, T])).join('') +
-        '" stroke="#6F8F5E" stroke-width="' + Math.max(2, 0.6 * B.s).toFixed(1) + '" stroke-linecap="round" fill="none"/>';
-      if (B.c[1] > -0.3) s += et('ul. Jarzębinowa', [34.8, 36.75, T], 4);
-      if (Wd >= 640 && B.c[1] < 0.3) s += et('ogrody od południa, dalej łąka i las', [34.8, -1.4, T], 4);
-      if (Wd >= 640 && B.c[0] > -0.3) s += et('łąka', [74, 13, T], 4);
-      [[stan.hov, '#383E42', 2], [stan.wyb, '#B5332E', 3]].forEach(([id, k, w]) => {
-        const g = id && ziemia.find((z) => z.dom === id && !z.f);
-        if (g) s += poly(g.p, ' fill="none" stroke="' + k + '" stroke-width="' + w + '" stroke-linejoin="round" pointer-events="none"');
-      });
-      s += '<g fill="#1E262C" fill-opacity=".14" pointer-events="none">';
-      BX.forEach((bx) => {
-        const pk = [];
-        [bx, bx + 15.2].forEach((x) => { [Y0, Y1].forEach((y) => { pk.push([x, y, T], naZiemie([x, y, OK])); }); pk.push(naZiemie([x, YM, KA])); });
-        s += '<polygon points="' + otoczka(pk.map(P2)).map((q) => q[0].toFixed(1) + ',' + q[1].toFixed(1)).join(' ') + '"/>';
-      });
-      obiekty.forEach((o) => {
-        if (!o.drzewo) return;
-        const [x, y] = P2(naZiemie([o.drzewo[0], o.drzewo[1], 3.4]));
-        s += '<ellipse cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" rx="' + (1.5 * B.s).toFixed(1) + '" ry="' + (1.5 * B.s * Math.max(0.05, B.c[2])).toFixed(1) + '"/>';
-      });
-      s += '</g>';
-      obiekty.map((o) => [dot(o.c, B.d), o]).sort((a, b) => b[0] - a[0]).forEach(([, o]) => {
-        if (o.drzewo) {
-          const [x, y] = o.drzewo, [px, py] = P2([x, y, T]), [kx, ky] = P2([x, y, 3.4]), r = 1.5 * B.s;
-          s += '<line x1="' + px.toFixed(1) + '" y1="' + py.toFixed(1) + '" x2="' + kx.toFixed(1) + '" y2="' + ky.toFixed(1) + '" stroke="#6B5A4A" stroke-width="' + Math.max(1.2, 0.16 * B.s).toFixed(1) + '"/>';
-          s += '<circle cx="' + kx.toFixed(1) + '" cy="' + ky.toFixed(1) + '" r="' + r.toFixed(1) + '" fill="#8AA875" stroke="#66844F" stroke-width=".8"/>';
-          JAG.forEach(([a, b]) => { s += '<circle cx="' + (kx + a * r).toFixed(1) + '" cy="' + (ky + b * r).toFixed(1) + '" r="' + Math.max(1.1, 0.08 * r).toFixed(1) + '" fill="#B5332E"/>'; });
-          return;
-        }
-        o.cz.forEach((cz) => { s += czesc(cz); });
-        const k = o.id && stan.wyb === o.id ? ['#B5332E', 2.4] : o.id && stan.hov === o.id ? ['#383E42', 1.8] : [o.kontur || C.rama, 0.9];
-        o.cz.forEach((cz) => { if (cz.k && widoczna(cz)) s += poly(cz.p, ' fill="none" stroke="' + k[0] + '" stroke-width="' + k[1] + '" stroke-linejoin="round" pointer-events="none"'); });
-        if (o.etykieta && Wd >= 640) s += et(o.etykieta[0], o.etykieta[1], 0);
-      });
-      const [a1, a2] = [P2(pozycja('1A')), P2(pozycja('1B'))];
-      const kompakt = Math.hypot(a1[0] - a2[0], a1[1] - a2[1]) < 84;
-      DOMY.slice().sort((a, b) => (a === stan.wyb) - (b === stan.wyb) || (a === stan.hov) - (b === stan.hov) || dot(pozycja(b), B.d) - dot(pozycja(a), B.d))
-        .forEach((id) => { s += pinezka(id, kompakt); });
-      const nx = B.r[1], ny = -B.u[1], nl = Math.hypot(nx, ny) || 1, cx = Wd - 30, cy = Hd - 30, ux = nx / nl, uy = ny / nl;
-      s += '<g class="m-kompas" pointer-events="none"><circle cx="' + cx + '" cy="' + cy + '" r="18" fill="#fff" fill-opacity=".85" stroke="#D5DBDF"/>' +
-        '<path d="M' + (cx + ux * 11).toFixed(1) + ',' + (cy + uy * 11).toFixed(1) + 'L' + (cx - uy * 5 - ux * 6).toFixed(1) + ',' + (cy + ux * 5 - uy * 6).toFixed(1) +
-        'L' + (cx + uy * 5 - ux * 6).toFixed(1) + ',' + (cy - ux * 5 - uy * 6).toFixed(1) + 'Z" fill="#B5332E"/>' +
-        '<text x="' + (cx - ux * 11).toFixed(1) + '" y="' + (cy - uy * 11 + 4).toFixed(1) + '" text-anchor="middle">N</text></g>';
-      svg.innerHTML = s;
-    }
-
-    const przyciski = [...document.querySelectorAll('[data-widok]')];
-    const zaznaczWidok = (w) => przyciski.forEach((p) => p.setAttribute('aria-pressed', String(p.dataset.widok === w)));
-    function jedz(cel) {
-      cancelAnimationFrame(anim);
-      const a0 = kam.a, f0 = kam.f, da = ((cel.a - a0) % 360 + 540) % 360 - 180;
-      if (mniejRuchu) { kam.a = cel.a; kam.f = cel.f; rysuj(); return; }
-      const t0 = performance.now();
-      const krok = (t) => {
-        const k = Math.min(1, (t - t0) / 700), e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
-        kam.a = a0 + da * e; kam.f = f0 + (cel.f - f0) * e; rysuj();
-        if (k < 1) anim = requestAnimationFrame(krok);
-      };
-      anim = requestAnimationFrame(krok);
-    }
-    przyciski.forEach((p) => p.addEventListener('click', () => { zaznaczWidok(p.dataset.widok); jedz(WIDOKI[p.dataset.widok]); }));
-
-    const idPod = (e) => { const el = e.target.closest && e.target.closest('[data-dom]'); return el ? el.getAttribute('data-dom') : null; };
-    const pokazDymek = (id, e) => {
-      if (!id || e.pointerType !== 'mouse') { dymek.hidden = true; return; }
-      const d = dane[id];
-      dymek.innerHTML = '<b>' + id + '</b>' + d.cena + (d.m2 ? ', ' + d.m2 + '/m²' : '') + ', ' + d.status + '<small>Kliknij, aby zobaczyć w cenniku.</small>';
-      dymek.hidden = false;
-      const r = scena.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
-      dymek.style.left = Math.min(x + 16, r.width - dymek.offsetWidth - 8) + 'px';
-      dymek.style.top = (y + 18 + dymek.offsetHeight > r.height ? y - dymek.offsetHeight - 12 : y + 18) + 'px';
-    };
-    let ciag = null;
-    svg.addEventListener('pointerdown', (e) => {
-      if (e.button) return;
-      cancelAnimationFrame(anim);
-      ciag = { x: e.clientX, y: e.clientY, a: kam.a, f: kam.f, ruch: false, id: e.pointerId };
-    });
-    svg.addEventListener('pointermove', (e) => {
-      if (ciag) {
-        const dx = e.clientX - ciag.x, dy = e.clientY - ciag.y;
-        if (!ciag.ruch && Math.hypot(dx, dy) > 6) {
-          ciag.ruch = true; stan.hov = null; scena.classList.add('ciagnie'); dymek.hidden = true;
-          try { svg.setPointerCapture(ciag.id); } catch (_) { }
-        }
-        if (ciag.ruch) {
-          kam.a = ciag.a - dx * 0.4;
-          if (e.pointerType === 'mouse') kam.f = Math.max(12, Math.min(89, ciag.f + dy * 0.3));
-          zaznaczWidok(null); rysuj();
-          return;
-        }
-      }
-      const id = idPod(e);
-      if (id !== stan.hov) { stan.hov = id; rysuj(); }
-      pokazDymek(id, e);
-    });
-    const koniec = (e) => {
-      if (!ciag) return;
-      const byl = ciag.ruch;
-      ciag = null; scena.classList.remove('ciagnie');
-      if (byl || e.type !== 'pointerup') return;
-      const id = idPod(e);
-      if (id) { wybierz(id, true); history.replaceState(null, '', '#dom-' + id); }
-    };
-    svg.addEventListener('pointerup', koniec);
-    svg.addEventListener('pointercancel', koniec);
-    svg.addEventListener('pointerleave', () => { if (!ciag && stan.hov) { stan.hov = null; rysuj(); } dymek.hidden = true; });
-
-    const rozmiar = () => {
-      const w = scena.clientWidth, h = scena.clientHeight;
-      if (w === Wd && h === Hd) return;
-      Wd = w; Hd = h;
-      svg.setAttribute('viewBox', '0 0 ' + Wd + ' ' + Hd);
-      rysuj();
-    };
-    if ('ResizeObserver' in window) new ResizeObserver(rozmiar).observe(scena);
-    else addEventListener('resize', rozmiar);
-    rozmiar();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(rysuj);
-    scena.classList.add('gotowy');
-    return { wybierz: (id) => { stan.wyb = id; rysuj(); } };
-  })();
-
-  // ---------------------------------------------------------------- wybór domu: model / lista <-> tabela
-  const wybierz = (id, przewin) => {
-    document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.classList.toggle('wybrany', r.dataset.dom === id));
-    document.querySelectorAll('.model__domy [data-dom]').forEach((a) => a.setAttribute('aria-current', String(a.dataset.dom === id)));
-    if (model) model.wybierz(id);
-    
-    document.querySelectorAll('.wizualizacja-interaktywna polygon').forEach((p) => p.classList.toggle('wybrany', p.dataset.dom === id));
-
-    const wiersz = document.getElementById('dom-' + id);
-    if (wiersz && przewin) {
-      const y = wiersz.getBoundingClientRect().top + window.scrollY - (window.innerHeight / 3);
-      window.scrollTo({ top: y, behavior: mniejRuchu ? 'auto' : 'smooth' });
-    }
-  };
-  document.querySelectorAll('.model__domy [data-dom]').forEach((a) => a.addEventListener('click', (e) => {
-    e.preventDefault();
-    wybierz(a.dataset.dom, true);
-    history.replaceState(null, '', '#dom-' + a.dataset.dom);
-  }));
-  document.querySelectorAll('.cennik tr[data-dom]').forEach((r) => r.addEventListener('click', (e) => {
-    if (e.target.closest('button, a')) return;
-    wybierz(r.dataset.dom, false);
-  }));
-  const zAdresu = location.hash.match(/^#dom-([1-3][AB])$/);
-  if (zAdresu) wybierz(zAdresu[1], false);
-
-  // ---------------------------------------------------------------- interaktywna wizualizacja (nowa)
-  const wiz = document.querySelector('[data-interaktywna]');
-  if (wiz) {
-    const wizSvg = wiz.querySelector('svg');
-    const wizDymek = wiz.querySelector('.model__dymek');
-    const etykietyWarstwa = wiz.querySelector('.etykiety-warstwa');
-    const idPodWiz = (e) => { const el = e.target.closest && e.target.closest('[data-dom]'); return el ? el.getAttribute('data-dom') : null; };
-
-    const wizPunkty = {
-      '1A': { left: 85, top: 60 },
-      '1B': { left: 70, top: 50 },
-      '2A': { left: 55, top: 40 },
-      '2B': { left: 45, top: 35 },
-      '3A': { left: 25, top: 25 },
-      '3B': { left: 15, top: 20 }
-    };
-
-    const getDane = (id) => {
-      const r = document.querySelector('.cennik tr[data-dom="' + id + '"]');
-      if (!r) return null;
-      const q = (s) => (r.querySelector(s) ? r.querySelector(s).textContent.trim() : '');
-      const stEl = r.querySelector('.st');
-      const klasa = stEl ? (stEl.className.match(/st--(dost|rez|sprz)/) || [])[1] : 'dost';
-      return { 
-          status: q('.st').toLowerCase() || 'dostępny', 
-          cena: q('.cena'), 
-          m2: q('td[data-l="Cena za m²"]'),
-          klasa: klasa || 'dost'
-      };
-    };
-
-    Object.keys(wizPunkty).forEach(id => {
-      const d = getDane(id);
-      if(!d) return;
-      const pin = document.createElement('div');
-      pin.className = `wiz-pin st-${d.klasa}`;
+      const pin = document.createElement('button');
+      pin.type = 'button';
+      pin.className = `plan-pin st-${d.status}${id === '1A' ? ' active' : ''}`;
       pin.dataset.dom = id;
-      pin.style.left = `${wizPunkty[id].left}%`;
-      pin.style.top = `${wizPunkty[id].top}%`;
-      
-      pin.innerHTML = `
-        <div class="wiz-pin-box">
-          <div class="wiz-pin-id">${id}</div>
-          <div class="wiz-pin-st">${d.status}</div>
-          <div class="wiz-pin-cena">${d.cena}</div>
-        </div>
-      `;
-      etykietyWarstwa.appendChild(pin);
-      
-      const pol = wizSvg.querySelector(`polygon[data-dom="${id}"]`);
-      if(pol) { pol.classList.add(`status-${d.klasa}`); }
+      pin.textContent = id;
+      pin.setAttribute('aria-label', `Dom ${id}, ${d.statusTxt}, ${d.cena}`);
+      pin.style.left = pinCoords[id].left + '%';
+      pin.style.top = pinCoords[id].top + '%';
+      pin.addEventListener('click', () => selectHouse(id, true));
+      pinsLayer.appendChild(pin);
     });
 
-    wizSvg.addEventListener('mousemove', (e) => {
-      const id = idPodWiz(e);
-      if (!id) { wizDymek.hidden = true; return; }
+    // Domyślnie aktywny 1A
+    selectHouse('1A', false);
 
-      const d = getDane(id);
-      if (d) {
-        wizDymek.innerHTML = `
-            <b>${id}</b>
-            <span class="cena-txt">${d.cena}</span>
-            ${d.m2 ? `<span>${d.m2}</span>` : ''}
-            <span class="status-txt ${d.klasa}">${d.status}</span>
-            <small>Kliknij, aby zobaczyć w cenniku.</small>
-        `;
-        wizDymek.hidden = false;
-        const r = wiz.getBoundingClientRect();
-        const x = e.clientX - r.left, y = e.clientY - r.top;
-        
-       wizDymek.style.left = Math.max(8, Math.min(x + 12, r.width - wizDymek.offsetWidth - 8)) + 'px';
-        const gora = y + 14 + wizDymek.offsetHeight > r.height ? y - wizDymek.offsetHeight - 10 : y + 14;
-        wizDymek.style.top = Math.max(8, gora) + 'px';
-      }
-    });
-    
-    wizSvg.addEventListener('mouseleave', () => { wizDymek.hidden = true; });
-    wizSvg.addEventListener('click', (e) => {
-      const id = idPodWiz(e);
-      if (id) { 
-          wybierz(id, true); 
-          history.replaceState(null, '', '#dom-' + id); 
-      }
+    svg.addEventListener('mousemove', (e) => {
+      const poly = e.target.closest('polygon[data-dom]');
+      if (!poly) { tooltip.hidden = true; return; }
+      const d = getHouseData(poly.dataset.dom);
+      if (!d) return;
+      tooltip.innerHTML = `<b>${d.id}</b><span>${d.cena} · ${d.statusTxt}</span><span>${d.m2}</span><small>Kliknij, aby przejść do oferty</small>`;
+      tooltip.hidden = false;
+      const r = planWrap.getBoundingClientRect();
+      const x = e.clientX - r.left;
+      const y = e.clientY - r.top;
+      tooltip.style.left = Math.max(10, Math.min(x + 14, r.width - tooltip.offsetWidth - 10)) + 'px';
+      const topPos = y + 16 + tooltip.offsetHeight > r.height ? y - tooltip.offsetHeight - 12 : y + 16;
+      tooltip.style.top = Math.max(10, topPos) + 'px';
     });
 
-    const oryginalnyWybierz = window.wybierz || function(){};
-    const aktualizujEtykiety = (id) => {
-        document.querySelectorAll('.wiz-pin').forEach(pin => pin.classList.toggle('wybrany', pin.dataset.dom === id));
-    };
-    document.addEventListener('click', (e) => {
-        setTimeout(() => {
-            const selectedPoly = document.querySelector('.wizualizacja-interaktywna polygon.wybrany');
-            if(selectedPoly) {
-                aktualizujEtykiety(selectedPoly.dataset.dom);
-            }
-        }, 10);
+    svg.addEventListener('mouseleave', () => { tooltip.hidden = true; });
+    svg.addEventListener('click', (e) => {
+      const poly = e.target.closest('polygon[data-dom]');
+      if (poly) selectHouse(poly.dataset.dom, true);
     });
   }
 
-  // ---------------------------------------------------------------- historia cen
-  document.querySelectorAll('[data-historia]').forEach((btn) => btn.addEventListener('click', () => {
-    const el = document.getElementById(btn.getAttribute('aria-controls'));
-    const otw = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!otw));
-    el.hidden = otw;
-    const wiersz = btn.closest('tr[data-dom]');
-    if (!otw && wiersz) wybierz(wiersz.dataset.dom, false);
-  }));
-
-  // ---------------------------------------------------------------- pasek sekcji: zaznaczenie bieżącej
-  const linki = [...document.querySelectorAll('.kotwice__linki a')];
-  if ('IntersectionObserver' in window && linki.length) {
-    const io = new IntersectionObserver((wpisy) => wpisy.forEach((w) => {
-      if (!w.isIntersecting) return;
-      linki.forEach((l) => l.setAttribute('aria-current', String(l.getAttribute('href') === '#' + w.target.id)));
-    }), { rootMargin: '-45% 0px -50% 0px' });
-    linki.forEach((l) => { const s = document.querySelector(l.getAttribute('href')); if (s) io.observe(s); });
-  }
-
-  // ---------------------------------------------------------------- formularz: wysyłka bez przeładowania
-  const f = document.querySelector('.formularz');
-  if (f) f.addEventListener('submit', (e) => {
-    const msg = f.querySelector('.komunikat[aria-live]');
-    const pokazMsg = (ok, txt) => { msg.hidden = false; msg.textContent = txt; msg.className = 'komunikat szeroko ' + (ok ? 'komunikat--ok' : 'komunikat--blad'); };
-    if (!f.checkValidity()) { e.preventDefault(); f.reportValidity(); return; }
-    e.preventDefault();
-    if (podglad) { pokazMsg(true, 'To jest plik podglądu: na stronie formularz wyśle wiadomość na adres biura sprzedaży.'); return; }
-    if (document.body.hasAttribute('data-statyczna')) {
-      const d = new FormData(f), g = (k) => (d.get(k) || '').toString().trim();
-      const temat = 'Zapytanie ze strony JARZĘBINOWE' + (g('dom') ? ' – dom ' + g('dom') : '');
-      const tresc = `Imię i nazwisko: ${g('imie')}
-E-mail: ${g('email')}
-Telefon: ${g('telefon') || '-'}
-Dom: ${g('dom') || 'dowolny'}
-
-${g('wiadomosc')}
-
-Zgoda na przetwarzanie danych w celu odpowiedzi: TAK`;
-      location.href = f.action + '?subject=' + encodeURIComponent(temat) + '&body=' + encodeURIComponent(tresc);
-      pokazMsg(true, 'Otwieramy program pocztowy z gotową wiadomością. Jeśli się nie otworzył, zadzwoń: +48 672 432 888.');
-      return;
-    }
-    if (!window.fetch) { f.submit(); return; }
-    const btn = f.querySelector('button[type=submit]'); btn.disabled = true;
-    fetch(f.action, { method: 'POST', body: new FormData(f), headers: { Accept: 'application/json' } })
-      .then((r) => r.json())
-      .then((d) => { pokazMsg(d.ok, d.komunikat); if (d.ok) f.reset(); })
-      .catch(() => pokazMsg(false, 'Nie udało się wysłać wiadomości. Prosimy o telefon.'))
-      .then(() => { btn.disabled = false; });
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a, button')) return;
+      selectHouse(card.dataset.dom, false);
+    });
   });
-})();
 
+  // Przycisk "Zapytaj" w karcie ustawia wybrany dom w formularzu
+  document.querySelectorAll('[data-zapytaj]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (selectDom) selectDom.value = btn.dataset.zapytaj;
+    });
+  });
+
+  // 3. Podświetlanie aktywnej sekcji w nawigacji
+  const navLinks = [...document.querySelectorAll('.nav__links a')];
+  if ('IntersectionObserver' in window && navLinks.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(l => l.setAttribute('aria-current', String(l.getAttribute('href') === '#' + entry.target.id)));
+      });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    navLinks.forEach(l => {
+      const sec = document.querySelector(l.getAttribute('href'));
+      if (sec) io.observe(sec);
+    });
+  }
+
+  // 4. Formularz kontaktowy (mailto dla strony statycznej)
+  const form = document.querySelector('.form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      const msg = form.querySelector('.form__msg');
+      if (!form.checkValidity()) {
+        e.preventDefault();
+        form.reportValidity();
+        return;
+      }
+      e.preventDefault();
+      const d = new FormData(form);
+      const g = (k) => (d.get(k) || '').toString().trim();
+      const temat = 'Zapytanie ze strony Jarzębinowe' + (g('dom') ? ' – dom ' + g('dom') : '');
+      const tresc = `Imię i nazwisko: ${g('imie')}\nE-mail: ${g('email')}\nTelefon: ${g('telefon') || '-'}\nDom: ${g('dom') || 'Dowolny'}\n\n${g('wiadomosc')}\n\nZgoda na przetwarzanie danych: TAK`;
+      location.href = form.action + '?subject=' + encodeURIComponent(temat) + '&body=' + encodeURIComponent(tresc);
+      msg.hidden = false;
+      msg.className = 'form__msg full';
+      msg.textContent = 'Otwieramy program pocztowy z gotową wiadomością. Jeśli się nie otworzył, zadzwoń: +48 672 432 888.';
+    });
+  }
+})();
 </script>
 </body>
 </html>
