@@ -7,14 +7,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
 <style>
-:root{color-scheme:light;--bg:#fff;--ink:#191A17;--mut:#5E6058;--line:#E4E1D9;--acc:#2F4A35;--warm:#F6F4EF}
+:root{color-scheme:light;--bg:#fff;--ink:#191A17;--mut:#5E6058;--line:#E4E1D9;--acc:#2F4A35;--warm:#F6F4EF;--m:clamp(20px,2.8vw,40px)}
 *{box-sizing:border-box;min-width:0}
 html{scroll-padding-top:72px}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,p{margin:0}
 em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
-.wrap{max-width:1240px;margin:0 auto;padding:0 max(5vw,18px)}
+.wrap{width:100%;margin:0 auto;padding:0 var(--m)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border-radius:999px;border:1px solid currentColor;font:500 15px Inter,sans-serif;cursor:pointer;background:transparent;color:inherit;white-space:nowrap}
 .btn.fill{background:var(--acc);border-color:var(--acc);color:#fff}
 .btn.dark-b{background:var(--ink);border-color:var(--ink);color:#fff}
@@ -22,7 +22,7 @@ em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
 .btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
 .k{font-size:13px;color:var(--mut)}
 .h2{font-family:'Inter Tight',sans-serif;font-weight:400;font-size:clamp(34px,4.6vw,64px);line-height:1.04;letter-spacing:-.035em;text-wrap:balance}
-.nav{position:fixed;inset:0 0 auto;z-index:50;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 max(5vw,18px);color:#fff;transition:background .35s,color .35s,border-color .35s;border-bottom:1px solid transparent}
+.nav{position:fixed;inset:0 0 auto;z-index:50;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 var(--m);color:#fff;transition:background .35s,color .35s,border-color .35s;border-bottom:1px solid transparent}
 .nav.solid{background:rgba(255,255,255,.96);color:var(--ink);border-color:var(--line);backdrop-filter:blur(8px)}
 .logo{font-family:'Instrument Serif',serif;font-size:26px;letter-spacing:-.01em}
 .links{display:flex;gap:4px}
@@ -39,7 +39,7 @@ em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
 .shot:first-child{opacity:1}
 .shade{position:absolute;inset:0;background:rgba(16,18,14,.34);pointer-events:none}
 #journey .cap,#journey .hero{text-shadow:0 1px 18px rgba(0,0,0,.35)}
-.hero{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 max(5vw,18px) clamp(28px,6vh,64px)}
+.hero{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--m) clamp(28px,6vh,64px)}
 .hero h1{font-family:'Inter Tight',sans-serif;font-weight:400;font-size:clamp(56px,13vw,200px);line-height:.82;letter-spacing:-.06em}
 .hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:22px}
 .hero-row p{font-size:clamp(18px,2vw,24px);max-width:520px;line-height:1.3}
@@ -47,19 +47,19 @@ em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
 .hint{display:flex;align-items:center;gap:10px;font-size:13px;opacity:.85}
 .hint i{width:1px;height:34px;background:#fff;animation:hint 1.8s ease-in-out infinite;transform-origin:top}
 @keyframes hint{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
-.cap{position:absolute;left:max(5vw,18px);bottom:clamp(28px,8vh,80px);max-width:560px;opacity:0;transform:translateY(20px)}
+.cap{position:absolute;left:var(--m);bottom:clamp(28px,8vh,80px);max-width:560px;opacity:0;transform:translateY(20px)}
 .cap span{display:block;font-size:13px;opacity:.85;margin-bottom:10px}
 .cap b{display:block;font-family:'Inter Tight',sans-serif;font-weight:400;font-size:clamp(32px,4.4vw,60px);line-height:1.04;letter-spacing:-.03em}
 .cap b em{font-size:1.1em}
 .cap p{font-size:16px;margin-top:12px;opacity:.9;max-width:440px}
-.rail{position:absolute;right:max(5vw,18px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:22px;font-size:12px}
+.rail{position:absolute;right:var(--m);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:22px;font-size:12px}
 .rail::before{content:"";position:absolute;right:4px;top:6px;bottom:6px;width:1px;background:rgba(255,255,255,.35)}
 .rail .fillbar{position:absolute;right:4px;top:6px;width:1px;height:0;background:#fff}
 .rail div{display:flex;align-items:center;justify-content:flex-end;gap:12px;opacity:.55;transition:opacity .3s}
 .rail div.on{opacity:1}
 .rail div i{width:9px;height:9px;border-radius:50%;border:1px solid #fff;background:#1c1e1a;position:relative;z-index:1}
 .rail div.on i{background:#fff}
-.sec{padding:clamp(80px,11vw,150px) 0}
+.sec{padding:clamp(80px,10vw,140px) 0}
 .intro{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:56px;align-items:end}
 .big{font-family:'Inter Tight',sans-serif;font-size:clamp(30px,4vw,58px);line-height:1.08;letter-spacing:-.035em;text-wrap:balance}
 .big em{font-size:1.08em}
@@ -76,7 +76,7 @@ em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
 .vband .stat span{color:#D5D7CF}
 .vband .big,.vband .stat b{text-shadow:0 1px 20px rgba(0,0,0,.3)}
 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;flex-wrap:wrap;margin-bottom:48px}
-.head p{font-size:14px;color:var(--mut);max-width:360px}
+.head p{font-size:14px;color:var(--mut);max-width:420px}
 .st{display:inline-flex;align-items:center;gap:8px;font-size:13px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--acc)}
 .dot.res{background:#B0ACA1}
@@ -110,12 +110,27 @@ em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
 .pt td:last-child{text-align:right}
 .pt .btn{min-height:44px;font-size:14px;padding:0 16px}
 .pt .acts{display:inline-flex;gap:8px}
+.hist-zbiorcza{margin-top:28px;border:1px solid var(--line);background:var(--warm)}
+.hist-zbiorcza summary{list-style:none;cursor:pointer;padding:18px 24px;font:500 14px Inter,sans-serif;color:var(--ink);display:flex;align-items:center;justify-content:space-between;transition:background-color .2s}
+.hist-zbiorcza summary::-webkit-details-marker{display:none}
+.hist-zbiorcza summary::after{content:"↓";font-size:16px;color:var(--mut);transition:transform .25s}
+.hist-zbiorcza[open] summary{border-bottom:1px solid var(--line)}
+.hist-zbiorcza[open] summary::after{transform:rotate(180deg)}
+.hist-zbiorcza summary:hover{background:#EFECE5}
+.hist-zbiorcza__tresc{padding:8px 24px 20px;overflow-x:auto}
+.hist-tabela{width:100%;border-collapse:collapse;font-size:14px}
+.hist-tabela thead th{font-size:12px;font-weight:500;color:var(--mut);text-align:left;padding:14px 12px 10px 0;border-bottom:1px solid var(--ink)}
+.hist-tabela tbody th,.hist-tabela tbody td{padding:12px 12px 12px 0;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+.hist-tabela tbody tr:last-child>*{border-bottom:none}
+.hist-tabela tbody th{font-family:'Instrument Serif',serif;font-weight:400;font-size:26px;line-height:1;color:var(--ink);white-space:nowrap;width:72px}
+.hist-tabela tbody td:nth-child(2){white-space:nowrap;color:var(--ink);font-weight:500;width:170px}
+.hist-tabela tbody td:nth-child(3){color:#45473F}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .gal{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:20px}
 .frame{position:relative;overflow:hidden;background:#E2DED4}
 .frame img{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;will-change:transform}
-.gal .a{grid-row:span 2;min-height:640px}
-.gal .b,.gal .c{min-height:310px}
+.gal .a{grid-row:span 2;min-height:clamp(420px,44vw,760px)}
+.gal .b,.gal .c{min-height:clamp(200px,21vw,370px)}
 .capline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-top:28px}
 .capline b{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:28px}
 .capline p{font-size:15px;color:#45473F;margin-top:6px}
@@ -147,11 +162,13 @@ footer{display:flex;justify-content:space-between;gap:16px 40px;flex-wrap:wrap;p
  .pt td[data-m]{display:none}
  .pt td:last-child{grid-column:1/-1;text-align:left;margin-top:10px}
  .pt .acts{width:100%}.pt .acts .btn{flex:1}
+ .hist-zbiorcza summary{padding:16px}
+ .hist-zbiorcza__tresc{padding:4px 16px 16px}
  .gal{grid-template-columns:1fr}
  .gal .a{grid-row:auto;min-height:360px}
  .gal .b,.gal .c{min-height:240px}
  .capline{grid-template-columns:1fr;gap:20px}
- .contact{grid-template-columns:1fr;margin:0 -18px}
+ .contact{grid-template-columns:1fr;margin:0 calc(-1 * var(--m))}
  form{grid-template-columns:1fr}
  .sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:40;gap:8px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:999px;transform:translateY(140%);transition:transform .35s}
  .sticky.on{transform:none}
@@ -230,6 +247,28 @@ footer{display:flex;justify-content:space-between;gap:16px 40px;flex-wrap:wrap;p
 <div class="wrap">
 <div class="head"><div><p class="k">Domy i ceny</p><h2 class="h2" style="margin-top:12px">Wybierz <em>swój</em> dom</h2></div><p>Ceny brutto z VAT 8%, stan deweloperski. Stan na 16.11.2026. W cenie 2 miejsca postojowe na podjeździe.</p></div>
 <div class="tbl"><table class="pt" id="pt"><thead><tr><th>Dom</th><th>Pow. użytkowa</th><th>Działka</th><th>Cena brutto</th><th>Cena za m²</th><th>Status</th><th><span class="sr">Akcje</span></th></tr></thead><tbody></tbody></table></div>
+<details class="hist-zbiorcza">
+<summary>Historia zmian cen i statusów</summary>
+<div class="hist-zbiorcza__tresc">
+<table class="hist-tabela">
+<thead><tr><th scope="col">Dom</th><th scope="col">Data</th><th scope="col">Zmiana</th></tr></thead>
+<tbody>
+<tr><th>1A</th><td>16.11.2026, 09:49</td><td>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</td></tr>
+<tr><th>1A</th><td>27.10.2026</td><td>cena wyjściowa 819 000 zł (6 862,17 zł/m²), status: dostępny</td></tr>
+<tr><th>1B</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
+<tr><th>1B</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
+<tr><th>2A</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
+<tr><th>2A</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
+<tr><th>2B</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
+<tr><th>2B</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
+<tr><th>3A</th><td>16.11.2026, 09:49</td><td>status: dostępny → rezerwacja; cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</td></tr>
+<tr><th>3A</th><td>27.10.2026</td><td>cena wyjściowa 819 000 zł (6 862,17 zł/m²), status: dostępny</td></tr>
+<tr><th>3B</th><td>16.11.2026, 09:49</td><td>status: rezerwacja → dostępny; cena 839 000 zł → 929 000 zł (7 783,83 zł/m²)</td></tr>
+<tr><th>3B</th><td>27.10.2026</td><td>cena wyjściowa 839 000 zł (7 029,74 zł/m²), status: rezerwacja</td></tr>
+</tbody>
+</table>
+</div>
+</details>
 </div>
 </section>
 
