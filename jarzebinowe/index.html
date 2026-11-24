@@ -125,6 +125,21 @@ em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
 .hist-tabela tbody th{font-family:'Instrument Serif',serif;font-weight:400;font-size:26px;line-height:1;color:var(--ink);white-space:nowrap;width:72px}
 .hist-tabela tbody td:nth-child(2){white-space:nowrap;color:var(--ink);font-weight:500;width:170px}
 .hist-tabela tbody td:nth-child(3){color:#45473F}
+.rt{position:relative;height:340vh;background:var(--warm);color:var(--ink)}
+.rt-stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(24px,4vw,64px);align-items:center;padding:84px var(--m) 40px;width:100%;margin:0 auto}
+.rt-k{font-size:13px;color:var(--mut);margin:0}
+.rt-h{font-family:'Inter Tight',sans-serif;font-weight:400;font-size:clamp(34px,4.6vw,64px);line-height:1.04;letter-spacing:-.035em;margin:12px 0 0}
+.rt-h em,.rt-steps b{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+.rt-steps{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--line)}
+.rt-steps li{display:grid;grid-template-columns:1fr auto;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);color:#9C9E95;transition:color .3s}
+.rt-steps b{font-size:clamp(22px,2.4vw,30px);line-height:1.1}
+.rt-steps span{font-size:14px;align-self:center;white-space:nowrap}
+.rt-steps li.on{color:var(--ink)}
+.rt-plan{position:relative;width:100%;aspect-ratio:4/3;max-height:calc(100svh - 140px);margin:auto}
+.rt-plan img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.rt-plan svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.rt-pin{opacity:0;transition:opacity .35s}
+.rt-pin.on{opacity:1}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .gal{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:20px}
 .frame{position:relative;overflow:hidden;background:#E2DED4}
@@ -164,6 +179,13 @@ footer{display:flex;justify-content:space-between;gap:16px 40px;flex-wrap:wrap;p
  .pt .acts{width:100%}.pt .acts .btn{flex:1}
  .hist-zbiorcza summary{padding:16px}
  .hist-zbiorcza__tresc{padding:4px 16px 16px}
+ .rt{height:300vh}
+ .rt-stage{grid-template-columns:1fr;align-content:center;gap:16px;padding:76px var(--m) 24px}
+ .rt-plan{max-height:42svh;order:-1}
+ .rt-h{font-size:28px}
+ .rt-steps{margin-top:14px}
+ .rt-steps li{padding:8px 0}
+ .rt-steps b{font-size:21px}
  .gal{grid-template-columns:1fr}
  .gal .a{grid-row:auto;min-height:360px}
  .gal .b,.gal .c{min-height:240px}
@@ -178,6 +200,9 @@ footer{display:flex;justify-content:space-between;gap:16px 40px;flex-wrap:wrap;p
 @media (prefers-reduced-motion:reduce){
  #journey{height:100svh}
  .hint i{animation:none}
+ .rt{height:auto}
+ .rt-stage{position:relative;height:auto}
+ .rt-pin{opacity:1}
 }
 </style>
 </head>
@@ -272,7 +297,34 @@ footer{display:flex;justify-content:space-between;gap:16px 40px;flex-wrap:wrap;p
 </div>
 </section>
 
-<section class="sec" id="wnetrza" style="padding-top:0">
+<section class="rt" id="trasa" aria-label="Trasa przez parter">
+<div class="rt-stage">
+<div>
+<p class="rt-k">Parter · 65,78 m²</p>
+<h2 class="rt-h">Jedna linia, <em>cały dom</em></h2>
+<ol class="rt-steps" id="rtSteps">
+<li><b>Wejście</b><span>wiatrołap 4,05 m²</span></li>
+<li><b>Hol</b><span>5,26 m² · WC 2,18 m²</span></li>
+<li><b>Kuchnia</b><span>9,30 m²</span></li>
+<li><b>Salon z jadalnią</b><span>42,69 m²</span></li>
+<li><b>Taras</b><span>17,50 m², od południa</span></li>
+</ol>
+</div>
+<div class="rt-plan">
+<img src="A_parter_izo.jpg" alt="Przekrój 3D parteru domu: wejście, hol, kuchnia z wyspą, salon z jadalnią i taras" loading="lazy">
+<svg viewBox="0 0 1000 750" aria-hidden="true">
+<path id="rtPath" d="M392 82 C400 140 430 170 432 200 C434 250 330 270 300 300 C270 330 360 360 440 370 C520 380 560 410 575 440 C590 470 640 500 660 520 C690 560 740 590 790 620" fill="none" stroke="#2F4A35" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<g class="rt-pin"><circle cx="392" cy="82" r="11" fill="#2F4A35"/><circle cx="392" cy="82" r="22" fill="none" stroke="#2F4A35" stroke-width="2" opacity=".4"/></g>
+<g class="rt-pin"><circle cx="432" cy="200" r="11" fill="#2F4A35"/></g>
+<g class="rt-pin"><circle cx="300" cy="300" r="11" fill="#2F4A35"/></g>
+<g class="rt-pin"><circle cx="460" cy="372" r="11" fill="#2F4A35"/></g>
+<g class="rt-pin"><circle cx="790" cy="620" r="11" fill="#2F4A35"/><circle cx="790" cy="620" r="22" fill="none" stroke="#2F4A35" stroke-width="2" opacity=".4"/></g>
+</svg>
+</div>
+</div>
+</section>
+
+<section class="sec" id="wnetrza">
 <div class="wrap">
 <div class="head"><div><p class="k">Wnętrza i ogród</p><h2 class="h2" style="margin-top:12px">Światło <em>od południa</em></h2></div><p>Wizualizacje mają charakter poglądowy. Zieleń pokazano ok. 2–3 lata po oddaniu osiedla.</p></div>
 <div class="gal">
@@ -364,6 +416,36 @@ function tick(){
 }
 let raf=0;addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;tick()})},{passive:true});
 addEventListener('resize',tick);tick();
+}
+{
+const sec=document.getElementById('trasa');
+const path=document.getElementById('rtPath');
+const pins=[...sec.querySelectorAll('.rt-pin')];
+const steps=[...document.querySelectorAll('#rtSteps li')];
+const marks=[0,.2,.42,.62,1];
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+const L=path.getTotalLength();
+path.style.strokeDasharray=L;
+path.style.strokeDashoffset=L;
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+ path.style.strokeDashoffset=0;
+ steps.forEach(s=>s.classList.add('on'));
+}else{
+ const tick=()=>{
+  const r=sec.getBoundingClientRect();
+  const p=clamp(-r.top/(r.height-innerHeight));
+  const q=clamp((p-.05)/.85);
+  path.style.strokeDashoffset=L*(1-q);
+  let cur=0;
+  marks.forEach((m,i)=>{if(q>=m-.001)cur=i});
+  pins.forEach((g,i)=>g.classList.toggle('on',q>0&&q>=marks[i]-.001));
+  steps.forEach((s,i)=>s.classList.toggle('on',q>0&&i<=cur));
+ };
+ let raf=0;
+ addEventListener('scroll',()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;tick()})},{passive:true});
+ addEventListener('resize',tick);
+ tick();
+}
 }
 </script>
 </body>
