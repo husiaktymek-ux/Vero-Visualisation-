@@ -2,1731 +2,831 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jarzębinowe – sześć domów w zabudowie bliźniaczej, Mikołów-Mokre</title>
-<meta name="description" content="6 domów w trzech bliźniakach przy ul. Jarzębinowej w Mikołowie-Mokrem: 119 m², 4 pokoje, działka ok. 371 m², ogród od południa. Plan osiedla, ceny z historią, rzuty, kontakt.">
-<meta name="theme-color" content="#FAF9F6">
+<meta name="description" content="Sześć domów w trzech bliźniakach przy ul. Jarzębinowej w Mikołowie-Mokrem: 119 m², 4 pokoje, działka ok. 371 m², ogród od południa, las 300 m. Plan osiedla, ceny z historią zmian, rzuty, kontakt.">
+<meta name="theme-color" content="#ffffff">
 <meta property="og:title" content="Jarzębinowe – domy w zabudowie bliźniaczej, Mikołów-Mokre">
-<meta property="og:description" content="119 m², 4 pokoje, działka ok. 371 m², ogród od południa. Oddanie IV kw. 2027.">
+<meta property="og:description" content="119 m², 4 pokoje, działka ok. 371 m², ogród od południa. Klucze IV kw. 2027.">
+<meta property="og:image" content="Słoneczne%20osiedle%20domów%20bliźniaczych%20na%20skraju%20lasu.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&display=swap">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Residence","name":"Jarzębinowe – domy w zabudowie bliźniaczej","address":{"@type":"PostalAddress","streetAddress":"ul. Jarzębinowa","addressLocality":"Mikołów-Mokre","addressCountry":"PL"},"url":"https://jarzebinowe.pl"}</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<script>document.documentElement.classList.add('js')</script>
 <style>
-:root {
-  --bg: #FAF9F6;
-  --surface: #FFFFFF;
-  --surface-tint: #F3F1EC;
-  --surface-warm: #EBE8E0;
-  --line: #E4E1D9;
-  --line-strong: #C9C5BB;
-  --ink: #181817;
-  --muted: #6E6C66;
-  --forest: #263A29;
-  --forest-soft: rgba(38, 58, 41, 0.24);
-  --amber: #A67B43;
-  --amber-soft: rgba(166, 123, 67, 0.32);
-  --danger: #B5332E;
+:root{
+  --ink:#191917; --ink-2:#5c5b56; --ink-3:#8b8a85;
+  --line:#e8e7e2; --line-2:#dfdcd4;
+  --paper:#faf9f5; --stone:#f1f0eb; --sand:#e2ded3;
+  --green:#2f4b35; --olive:#3b4137;
+  --pin:#73726d; --pin-rez:#b0ada6; --dot-rez:#aaa89c;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --tight:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --serif:"Instrument Serif","Times New Roman",Georgia,serif;
+  --pad:40px; --nav:72px; --sek:120px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--nav) + 16px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:#fff;color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img,video,svg{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+h1,h2,h3,p,figure,dl,dd,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.wrap{max-width:1360px;margin-inline:auto;padding-inline:var(--pad)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pomin{position:absolute;left:-999px;top:8px;z-index:60;background:var(--ink);color:#fff;padding:8px 14px}
+.pomin:focus{left:8px}
 
-  --font-sans: "Albert Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-serif: "Bodoni Moda", "Didot", Georgia, serif;
+/* ---------- typografia ---------- */
+.h2{font:400 70px/1 var(--tight);letter-spacing:-.045em}
+.h2 em,.wstep__tytul em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}
+.brw{margin-bottom:16px;font:500 11.5px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#656460}
+.przypis{margin-top:6px;font-size:13px;line-height:1.5;color:var(--ink-2)}
 
-  --container: 1320px;
-  --pad: clamp(20px, 4vw, 56px);
-  --sec-y: clamp(64px, 8vw, 120px);
-}
+/* ---------- przyciski ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 18px;border:1px solid transparent;border-radius:999px;font:500 14px/1 var(--sans);text-decoration:none;white-space:nowrap;transition:background-color .2s,color .2s,border-color .2s}
+.btn--ink{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn--ink:hover{background:#3a3a35;border-color:#3a3a35}
+.btn--obrys{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn--obrys:hover{background:var(--ink);color:#fff}
+.btn--bialy{background:#fff;border-color:#fff;color:var(--ink)}
+.btn--bialy:hover{background:var(--stone);border-color:var(--stone)}
+.btn--zielony{background:var(--green);border-color:var(--green);color:#fff}
+.btn--zielony:hover{background:#243b2a;border-color:#243b2a}
+.btn__strz{font-size:17px;line-height:1;transition:transform .2s}
+.btn:hover .btn__strz{transform:translateX(3px)}
 
-*, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-padding-top: 76px; }
-@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+/* ---------- nawigacja ---------- */
+.nav{position:fixed;inset:0 0 auto;z-index:40;background:rgba(255,255,255,.94);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);transition:box-shadow .25s}
+.nav.przewiniety{box-shadow:0 1px 0 var(--line)}
+.nav__in{height:var(--nav);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.nav__linki{display:flex;gap:6px}
+.nav__linki a{display:inline-flex;align-items:center;height:36px;padding:0 16px;border:1px solid var(--line-2);border-radius:999px;font-size:14px;line-height:1;text-decoration:none;white-space:nowrap;transition:background-color .2s,color .2s,border-color .2s}
+.nav__linki a:hover{border-color:var(--ink)}
+.nav__linki a[aria-current="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.nav__logo{font:400 25px/1 var(--serif);text-decoration:none;white-space:nowrap}
+.nav__cta{padding:0 24px}
+.nav__burger{display:none;justify-self:end;width:44px;height:44px;margin-right:-10px;padding:0;border:0;background:none;place-content:center;gap:7px}
+.nav__burger span{display:block;width:22px;height:1.5px;background:var(--ink);transition:transform .25s}
+.nav__burger[aria-expanded="true"] span:first-child{transform:translateY(4.25px) rotate(45deg)}
+.nav__burger[aria-expanded="true"] span:last-child{transform:translateY(-4.25px) rotate(-45deg)}
+.menu{position:fixed;inset:var(--nav) 0 0;z-index:39;overflow-y:auto;background:#fff;padding:16px 20px 40px}
+.menu[hidden]{display:none}
+.menu a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font:400 40px/1.1 var(--tight);letter-spacing:-.045em;text-decoration:none}
+.menu a[aria-current="true"]{font-family:var(--serif);font-style:italic;letter-spacing:-.01em}
+.menu__tel{margin-top:32px;font:400 36px/1 var(--serif)}
+.menu__tel a{border:0;font:inherit;letter-spacing:0}
+body.menu-otwarte{overflow:hidden}
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font: 400 16px/1.6 var(--font-sans);
-  font-variant-numeric: lining-nums;
-  -webkit-font-smoothing: antialiased;
-}
+/* ---------- hero ---------- */
+.hero{padding-top:var(--nav)}
+.hero__meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-top:28px;font-size:13px;line-height:1.4}
+.hero__meta p:nth-child(2){text-align:center}
+.hero__meta p:nth-child(3){text-align:right}
+.hero__tytul{position:relative;z-index:2;font:500 clamp(48px,14.6vw,208px)/.8 var(--tight);letter-spacing:-.065em;text-align:center;white-space:nowrap;pointer-events:none}
+.hero__film{position:relative;aspect-ratio:2/1;overflow:hidden;background:var(--olive);color:#fff}
+.hero__film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero__film::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(to top,rgba(18,20,16,.38),rgba(18,20,16,0));pointer-events:none}
+.hero__dol{position:absolute;z-index:1;left:24px;right:24px;bottom:24px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.chipy{display:flex;flex-wrap:wrap;gap:6px}
+.chip{padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-size:13px;line-height:16px;color:#fff;white-space:nowrap}
+.chip--jasny{background:#fff;color:var(--ink)}
+.btn--duzy{height:48px;padding:0 24px;font-size:15px}
+.hero__pauza{position:absolute;z-index:1;top:16px;right:16px;display:grid;place-items:center;width:36px;height:36px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.16);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;opacity:.85;transition:opacity .2s,background-color .2s}
+.hero__pauza:hover{opacity:1;background:rgba(255,255,255,.28)}
+.hero__pauza .i-play,.hero__pauza[data-gra="1"] .i-pauza{display:block}
+.hero__pauza .i-pauza,.hero__pauza[data-gra="1"] .i-play{display:none}
 
-img, video, svg { display: block; max-width: 100%; }
-img { height: auto; }
-a { color: inherit; text-decoration: none; }
-button, input, select, textarea { font: inherit; color: inherit; }
-button { background: none; border: 0; padding: 0; cursor: pointer; }
-:focus-visible { outline: 2px solid var(--forest); outline-offset: 3px; }
+/* ---------- wstęp + liczby ---------- */
+.wstep{padding-top:var(--sek)}
+.wstep__gora{display:flex;align-items:flex-end;justify-content:space-between;gap:48px}
+.wstep__tytul{max-width:830px;font:400 clamp(36px,4.5vw,64px)/1.06 var(--tight);letter-spacing:-.045em}
+.wstep__opis{flex:0 0 416px;font-size:16px;line-height:1.625;color:var(--ink-2)}
+.liczby{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:96px;border-top:1px solid var(--line)}
+.liczby li{display:flex;flex-direction:column;padding:30px 32px 16px;border-left:1px solid var(--line)}
+.liczby li:first-child{padding-left:0;border-left:0}
+.liczby b{font:400 82px/1 var(--tight);letter-spacing:-.065em;white-space:nowrap}
+.liczby li > span{margin-top:14px;font-size:14px;line-height:1.4;color:var(--ink-2)}
 
-.sr {
-  position: absolute; width: 1px; height: 1px;
-  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
-}
-.skip {
-  position: absolute; left: -9999px; top: 10px; z-index: 100;
-  background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 999px;
-}
-.skip:focus { left: 16px; }
+/* ---------- trzy atuty ---------- */
+.atuty{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-block:calc(var(--sek) + 8px) calc(var(--sek) + 12px)}
+.foto{position:relative;overflow:hidden;background:var(--sand)}
+.foto img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:14px;bottom:14px;max-width:calc(100% - 28px);padding:6px 10px;background:#fff;font:500 10.5px/1.3 var(--sans);letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2)}
+.tag--prawo{left:auto;right:14px;bottom:auto;top:14px}
+.atut .foto{aspect-ratio:4/5}
+.atut h3{display:flex;align-items:baseline;gap:14px;margin-top:26px;font:400 33px/1.1 var(--serif)}
+.atut h3 span{font:400 12px/1 var(--sans);color:var(--ink-2)}
+.atut p{max-width:410px;margin-top:16px;font-size:15px;line-height:1.6;color:var(--ink-2)}
 
-.wrap {
-  width: 100%;
-  max-width: calc(var(--container) + 2 * var(--pad));
-  margin-inline: auto;
-  padding-inline: var(--pad);
-}
+/* ---------- domy i ceny ---------- */
+.domy{background:var(--paper);padding-block:var(--sek)}
+.naglowek{display:flex;align-items:flex-end;justify-content:space-between;gap:32px}
+.naglowek__meta{font-size:14px;line-height:1.6;color:var(--ink-2);text-align:right}
+.naglowek__opis{flex:0 0 420px;font-size:15px;line-height:1.6;color:var(--ink-2)}
+.plan{position:relative;margin-top:48px;aspect-ratio:21/9;overflow:hidden;background:var(--sand)}
+.plan svg{position:absolute;inset:0;width:100%;height:100%}
+.plan polygon{fill:rgba(255,255,255,0);stroke:rgba(255,255,255,0);stroke-width:3;stroke-linejoin:round;vector-effect:non-scaling-stroke;cursor:pointer;transition:fill .2s,stroke .2s}
+.plan polygon.hover{fill:rgba(255,255,255,.16);stroke:#fff}
+.plan polygon.wybrany{fill:rgba(255,255,255,.14)}
+.plan polygon.wybrany.hover{fill:rgba(255,255,255,.2);stroke:#fff}
+.plan__piny{display:none}
+.js .plan__piny{display:block}
+.pin{position:absolute;left:0;top:0;z-index:2;display:grid;place-items:center;width:46px;height:46px;padding:0;border:1.5px solid #fff;border-radius:50%;background:var(--pin);box-shadow:0 4px 14px rgba(20,20,18,.28);color:#fff;font:600 13px/1 var(--sans);transform:translate(-50%,-50%);transition:transform .2s,background-color .2s,color .2s}
+.pin.hover{transform:translate(-50%,-50%) scale(1.1)}
+.pin--rezerwacja,.pin--sprzedany{text-decoration:line-through;text-decoration-thickness:1.5px}
+.pin--rezerwacja{background:var(--pin-rez)}
+.pin--sprzedany{background:#9d9b95}
+.pin[aria-pressed="true"]{background:#fff;color:var(--ink)}
+.plan__dymek{position:absolute;z-index:3;min-width:180px;padding:12px 14px 13px;border-radius:2px;background:#fff;box-shadow:0 10px 28px rgba(20,20,18,.2);font-size:13px;line-height:1.45;pointer-events:none}
+.plan__dymek[hidden]{display:none}
+.plan__dymek b{display:block;margin-bottom:6px;font:400 30px/1 var(--serif)}
+.plan__dymek small{display:block;margin-top:6px;color:var(--ink-2);font-size:12px}
 
-/* Typografia editorial */
-.eyebrow {
-  margin: 0 0 14px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
+.karty{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:40px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.karty > li{display:flex}
+.karta{flex:1;display:flex;flex-direction:column;padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper);cursor:pointer;transition:background-color .2s}
+.karta.hover{background:#f6f5f0}
+.karta[aria-current="true"]{background:var(--stone)}
+.karta__gora{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.karta__nr{font:400 75px/.8 var(--serif);letter-spacing:-.01em}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:2px;font-size:13.5px;line-height:1.3;white-space:nowrap}
+.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green)}
+.status--rezerwacja::before{background:var(--dot-rez)}
+.status--sprzedany::before{background:var(--ink-3)}
+.karta__cena{margin-top:17px;font:400 29.5px/1.15 var(--tight);letter-spacing:-.04em}
+.karta__m2{margin-top:4px;font-size:13px;color:var(--ink-2)}
+.karta__dane{display:flex;flex-wrap:wrap;gap:4px 20px;margin-top:12px;font-size:14px;color:var(--ink-2)}
+.karta__uwaga{margin-top:12px;font-size:13px;line-height:1.5;color:var(--ink-2)}
+.karta__akcje{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:20px}
 
-h1, h2, h3 {
-  margin: 0;
-  font-family: var(--font-serif);
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  color: var(--ink);
-}
+.historia{margin-top:32px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.historia summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0;list-style:none;cursor:pointer;font-size:14px;font-weight:500}
+.historia summary::-webkit-details-marker{display:none}
+.historia summary::after{content:"+";font:300 24px/1 var(--sans);transition:transform .2s}
+.historia[open] summary::after{transform:rotate(45deg)}
+.historia__tresc{overflow-x:auto;padding-bottom:20px}
+.historia table{width:100%;min-width:560px;border-collapse:collapse;font-size:13px}
+.historia th,.historia td{padding:10px 20px 10px 0;border-top:1px solid var(--line);text-align:left;vertical-align:top;font-weight:400}
+.historia thead th{border-top:0;font-size:11px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:#656460}
+.historia tbody th{font:400 22px/1 var(--serif)}
+.historia tbody td:nth-child(2){white-space:nowrap}
+.historia tbody td:last-child{color:var(--ink-2)}
+.historia__csv{margin-top:16px;font-size:13px;color:var(--ink-2)}
 
-h1 {
-  font-size: clamp(44px, 6.2vw, 84px);
-  line-height: 1.02;
-  font-variation-settings: "opsz" 32;
-}
+/* ---------- dom i rzuty ---------- */
+.rzuty-sek{padding-top:var(--sek)}
+.rzuty{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:48px}
+.rzut__obraz{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--stone)}
+.rzut__obraz img{position:absolute;inset:32px;width:calc(100% - 64px);height:calc(100% - 64px);object-fit:contain;mix-blend-mode:multiply}
+.rzut__glowa{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-top:22px;padding-bottom:12px}
+.rzut__nazwa{font:400 34px/1 var(--serif)}
+.rzut__glowa span:last-child{font-size:16px}
+.pomieszczenia{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,auto);grid-auto-flow:column;column-gap:32px}
+.pomieszczenia div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:14px;line-height:1.35}
+.pomieszczenia dd{font-weight:600;white-space:nowrap}
+.standard{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:40px;margin-top:96px}
+.standard div{padding:16px 0 19px;border-top:1px solid var(--line)}
+.standard dt{font-size:14px;font-weight:600;line-height:1.5}
+.standard dd{margin-top:3px;font-size:14px;line-height:1.55;color:var(--ink-2)}
 
-h2 {
-  font-size: clamp(34px, 4.2vw, 56px);
-  line-height: 1.08;
-  font-variation-settings: "opsz" 28;
-}
+/* ---------- wnętrza ---------- */
+.wnetrza{padding-top:var(--sek)}
+.galeria{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:24px;margin-top:48px;aspect-ratio:1280/760}
+.galeria .foto:first-child{grid-row:span 2}
 
-h3 {
-  font-size: clamp(22px, 2vw, 28px);
-  line-height: 1.2;
-  font-variation-settings: "opsz" 16;
-}
+/* ---------- lokalizacja ---------- */
+.lok{display:grid;grid-template-columns:minmax(0,33fr) minmax(0,43fr);align-items:start;column-gap:64px;padding-top:calc(var(--sek) - 12px)}
+.odleglosci{margin-top:48px;border-bottom:1px solid var(--line)}
+.odleglosci div{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-top:1px solid var(--line);font-size:16px;line-height:1.5}
+.odleglosci dd{font-weight:500;white-space:nowrap}
+.mapa{position:relative;aspect-ratio:5/4}
+.mapa__bloki{position:absolute;inset:0 0 19%;display:grid;grid-template-columns:30% minmax(0,1fr);grid-template-rows:51% minmax(0,1fr);gap:8px}
+.mapa__bloki span{background:var(--stone)}
+.mapa__las{position:absolute;inset:auto 0 0;height:19%;background:#dce0d2}
+.mapa__pkt{position:absolute;z-index:1;transform:translate(-50%,-50%);padding:6px 14px;border:1px solid var(--line-2);border-radius:999px;background:#fff;font:500 13px/1.3 var(--sans);white-space:nowrap;text-decoration:none}
+.mapa__pkt--dom{border-color:var(--green);background:var(--green);color:#fff;font-weight:600}
+a.mapa__pkt--dom:hover{background:#243b2a}
 
-/* Przyciski pill */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 40px;
-  padding: 9px 22px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  border: 1px solid var(--ink);
-  background: var(--ink);
-  color: #fff;
-  transition: background-color .2s, color .2s, border-color .2s, opacity .2s;
-  white-space: nowrap;
-}
-.btn:hover { background: #2F2F2D; border-color: #2F2F2D; }
+/* ---------- kontakt ---------- */
+.kontakt-sek{padding-top:calc(var(--sek) + 8px)}
+.kontakt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px;padding:72px;background:var(--stone)}
+.kontakt .h2{line-height:1}
+.kontakt__opis{max-width:500px;margin-top:24px;font-size:16px;line-height:1.6;color:var(--ink-2)}
+.kontakt__tel{margin-top:44px;font:400 51px/1.1 var(--serif)}
+.kontakt__tel a{text-decoration:none}
+.kontakt__tel a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.12em}
+.kontakt__info{margin-top:10px;font-size:15px;line-height:1.75;color:var(--ink-2)}
+.formularz{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px;align-content:start}
+.formularz label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500;line-height:1.3}
+.formularz input,.formularz select,.formularz textarea{width:100%;height:46px;padding:0 14px;border:1px solid var(--line-2);border-radius:2px;background:#fff;font-size:16px;font-weight:400;color:var(--ink)}
+.formularz textarea{height:106px;padding:11px 14px;resize:vertical;line-height:1.5}
+.formularz ::placeholder{color:#8b8a85}
+.formularz input:focus,.formularz select:focus,.formularz textarea:focus{outline:none;border-color:var(--ink)}
+.formularz .szeroko{grid-column:1/-1}
+.formularz .zgoda{flex-direction:row;align-items:flex-start;gap:12px;margin-top:2px;font-size:13px;font-weight:400;line-height:1.5;color:var(--ink-2)}
+.formularz .zgoda input{flex:none;width:20px;height:20px;margin:0;padding:0;accent-color:var(--green)}
+.formularz .hp{position:absolute;left:-9999px}
+.formularz button{justify-self:start;height:52px;margin-top:8px;padding:0 32px;font-size:15px;font-weight:600}
+.komunikat{margin:0;padding:12px 16px;background:#fff;font-size:14px}
+.komunikat[hidden]{display:none}
+.komunikat--ok{box-shadow:inset 3px 0 0 var(--green)}
+.komunikat--blad{box-shadow:inset 3px 0 0 #b5332e}
 
-.btn--outline {
-  background: transparent;
-  color: var(--ink);
-  border-color: var(--line-strong);
-}
-.btn--outline:hover {
-  border-color: var(--ink);
-  background: var(--surface);
-}
+/* ---------- stopka ---------- */
+.stopka{display:grid;grid-template-columns:27% minmax(0,520px) minmax(0,1fr);align-items:start;gap:24px 0;padding-block:48px 56px}
+.stopka__logo{font:400 25px/1 var(--serif);text-decoration:none}
+.stopka p{font-size:13px;line-height:1.3;color:var(--ink-2)}
+.stopka__pp{justify-self:end;font-size:13px;line-height:1.3;color:var(--ink-2);text-underline-offset:.15em}
 
-/* ---------------- NAWIGACJA ---------------- */
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  background: rgba(250, 249, 246, 0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-}
-.nav__in {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  height: 70px;
-}
-.nav__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-serif);
-  font-size: 24px;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-}
-.nav__brand img {
-  height: 36px;
-  width: auto;
-}
-.nav__links {
-  display: flex;
-  align-items: center;
-  gap: clamp(18px, 2.4vw, 34px);
-  font-size: 14px;
-  color: var(--muted);
-}
-.nav__links a {
-  padding: 6px 0;
-  position: relative;
-  transition: color .2s;
-}
-.nav__links a:hover,
-.nav__links a[aria-current="true"] {
-  color: var(--ink);
-}
-.nav__links a[aria-current="true"]::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 1px;
-  background: var(--ink);
-}
+/* ---------- pasek na telefonie ---------- */
+.pasek{display:none}
 
-/* ---------------- HERO ---------------- */
-.hero {
-  padding: clamp(40px, 5vw, 72px) 0 var(--sec-y);
-}
-.hero__top {
-  display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
-  gap: 24px 48px;
-  align-items: end;
-  margin-bottom: clamp(28px, 3.6vw, 48px);
-}
-.hero__meta-top {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
-  margin: 0 0 18px;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.hero__meta-top span:not(:last-child)::after {
-  content: "·";
-  margin-left: 18px;
-  color: var(--line-strong);
-}
-.hero__aside {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 14px;
-  text-align: right;
-  padding-bottom: 6px;
-}
-.hero__facts {
-  margin: 0;
-  font-size: 14px;
-  color: var(--muted);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 6px 16px;
-}
-.hero__facts strong {
-  color: var(--ink);
-  font-weight: 500;
-}
-
-.hero__media {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  max-height: 76vh;
-  background: var(--surface-warm);
-  overflow: hidden;
-  border: 1px solid var(--line);
-}
-.hero__video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 60% 60%;
-}
-.hero__pause {
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-  z-index: 2;
-  padding: 7px 14px;
-  border-radius: 999px;
-  background: rgba(250, 249, 246, 0.9);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(24, 24, 23, 0.12);
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--ink);
-}
-.hero__pause:hover { background: #fff; }
-
-/* Intro & statystyki pod wideo */
-.intro {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(32px, 5vw, 72px);
-  padding-top: clamp(44px, 5.5vw, 76px);
-  align-items: start;
-}
-.intro__lead {
-  margin: 0;
-  font-family: var(--font-serif);
-  font-size: clamp(26px, 2.8vw, 38px);
-  line-height: 1.24;
-  font-weight: 400;
-  color: var(--ink);
-  font-variation-settings: "opsz" 20;
-}
-.intro__sub {
-  margin: 22px 0 0;
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--muted);
-  max-width: 48ch;
-}
-.kpi {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--line);
-}
-.kpi__item {
-  padding: 22px 20px 22px 0;
-  border-bottom: 1px solid var(--line);
-}
-.kpi__item:nth-child(even) {
-  padding-left: 24px;
-  border-left: 1px solid var(--line);
-}
-.kpi__val {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: clamp(28px, 2.6vw, 38px);
-  line-height: 1.1;
-  color: var(--ink);
-  font-variation-settings: "opsz" 18;
-}
-.kpi__val small {
-  font-size: 0.56em;
-  color: var(--muted);
-  margin-left: 4px;
-}
-.kpi__lbl {
-  display: block;
-  margin-top: 6px;
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.4;
-}
-
-/* ---------------- GALERIA 3 ZDJĘĆ + 3 FILARY ---------------- */
-.triptych-sec {
-  padding: 0 0 var(--sec-y);
-}
-.triptych {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(14px, 1.8vw, 24px);
-}
-.triptych figure {
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  background: var(--surface-warm);
-  border: 1px solid var(--line);
-}
-.triptych img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  transition: transform .5s ease;
-}
-.triptych figure:hover img { transform: scale(1.025); }
-.triptych figcaption {
-  position: absolute;
-  left: 14px;
-  bottom: 14px;
-  background: rgba(250, 249, 246, 0.94);
-  padding: 5px 11px;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-
-.pillars {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 3vw, 48px);
-  margin-top: clamp(40px, 5vw, 64px);
-  padding-top: clamp(32px, 4vw, 48px);
-  border-top: 1px solid var(--line);
-}
-.pillar__num {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 15px;
-  color: var(--muted);
-  margin-bottom: 10px;
-}
-.pillar h3 {
-  font-size: clamp(22px, 2vw, 26px);
-  margin-bottom: 10px;
-}
-.pillar p {
-  margin: 0;
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: var(--muted);
-}
-
-/* ---------------- DOMY I CENY ---------------- */
-.homes-sec {
-  padding: var(--sec-y) 0;
-  border-top: 1px solid var(--line);
-}
-.sec-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 20px 32px;
-  margin-bottom: clamp(28px, 3.5vw, 44px);
-}
-.sec-head__meta {
-  text-align: right;
-  font-size: 13.5px;
-  color: var(--muted);
-  line-height: 1.55;
-}
-.sec-head__meta strong {
-  color: var(--ink);
-  font-weight: 500;
-}
-
-/* Interaktywny plan osiedla */
-.plan-wrap {
-  position: relative;
-  margin: 0 0 clamp(28px, 3.2vw, 40px);
-  background: var(--surface-warm);
-  border: 1px solid var(--line);
-  overflow: hidden;
-}
-.plan-wrap > img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.plan-wrap svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-.plan-wrap polygon {
-  fill: rgba(255, 255, 255, 0);
-  stroke: transparent;
-  stroke-width: 3px;
-  cursor: pointer;
-  transition: fill .25s ease, stroke .25s ease;
-}
-.plan-wrap polygon.st-dost:hover {
-  fill: rgba(38, 58, 41, 0.22);
-  stroke: rgba(255, 255, 255, 0.9);
-}
-.plan-wrap polygon.st-rez {
-  fill: rgba(166, 123, 67, 0.22);
-  stroke: rgba(255, 255, 255, 0.55);
-}
-.plan-wrap polygon.st-rez:hover {
-  fill: rgba(166, 123, 67, 0.36);
-  stroke: rgba(255, 255, 255, 0.95);
-}
-.plan-wrap polygon.st-dost.active {
-  fill: rgba(38, 58, 41, 0.34);
-  stroke: #FFFFFF;
-}
-.plan-wrap polygon.st-rez.active {
-  fill: rgba(166, 123, 67, 0.44);
-  stroke: #FFFFFF;
-}
-
-/* Okrągłe piny 1:1 jak w PDF */
-.plan-pins {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-.plan-pin {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  background: rgba(58, 58, 54, 0.88);
-  color: #FFFFFF;
-  border: 1.5px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.24);
-  pointer-events: auto;
-  cursor: pointer;
-  transition: transform .2s, background-color .2s, color .2s, border-color .2s;
-}
-.plan-pin:hover { transform: translate(-50%, -50%) scale(1.1); }
-.plan-pin.st-rez {
-  background: rgba(154, 151, 144, 0.92);
-  color: #FFFFFF;
-}
-.plan-pin.active {
-  background: #FFFFFF;
-  color: var(--ink);
-  border-color: #FFFFFF;
-  transform: translate(-50%, -50%) scale(1.12);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.32);
-}
-
-.plan-badge {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  z-index: 2;
-  background: rgba(250, 249, 246, 0.94);
-  padding: 6px 12px;
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
-  pointer-events: none;
-}
-
-.plan-tooltip {
-  position: absolute;
-  z-index: 5;
-  pointer-events: none;
-  background: var(--ink);
-  color: #fff;
-  padding: 12px 16px;
-  border-radius: 6px;
-  min-width: 190px;
-  font-size: 13px;
-  line-height: 1.45;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
-}
-.plan-tooltip b {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 22px;
-  font-weight: 400;
-  line-height: 1.1;
-  margin-bottom: 4px;
-}
-.plan-tooltip span { display: block; color: rgba(255,255,255,0.82); }
-.plan-tooltip small { display: block; margin-top: 6px; font-size: 11px; color: rgba(255,255,255,0.58); }
-
-/* Siatka 6 kart domów (3x2) */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-  background: var(--surface);
-}
-.card {
-  display: flex;
-  flex-direction: column;
-  padding: clamp(24px, 2.6vw, 34px);
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: var(--surface);
-  transition: background-color .22s ease;
-  cursor: pointer;
-}
-.card:hover { background: #FCFBFA; }
-.card.active { background: var(--surface-tint); }
-
-.card__head {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
-}
-.card__id {
-  font-family: var(--font-serif);
-  font-size: clamp(40px, 3.8vw, 52px);
-  line-height: 0.95;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  font-variation-settings: "opsz" 24;
-}
-.status {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--ink);
-  padding-top: 6px;
-}
-.status::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--forest);
-}
-.status--rez { color: var(--muted); }
-.status--rez::before { background: #A5A29B; }
-
-.card__price {
-  font-size: clamp(22px, 2vw, 26px);
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  line-height: 1.2;
-}
-.card__m2 {
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 3px;
-}
-.card__specs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 16px;
-  margin: 18px 0 0;
-  padding: 0;
-  list-style: none;
-  font-size: 13.5px;
-  color: var(--muted);
-}
-.card__note {
-  margin: 14px 0 0;
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.5;
-}
-.card__actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  margin-top: auto;
-  padding-top: 24px;
-}
-
-.homes-foot {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px 24px;
-  margin-top: 18px;
-  font-size: 13px;
-  color: var(--muted);
-}
-.homes-foot a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  color: var(--ink);
-}
-
-/* Rozwijana historia cen */
-.history {
-  margin-top: 20px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-}
-.history summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 15px 22px;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.history summary::-webkit-details-marker { display: none; }
-.history summary::after { content: "+"; font-size: 18px; font-weight: 300; line-height: 1; }
-.history[open] summary { border-bottom: 1px solid var(--line); }
-.history[open] summary::after { content: "−"; }
-.history__body { padding: 8px 22px 18px; overflow-x: auto; }
-.history-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-.history-table th, .history-table td {
-  padding: 10px 12px 10px 0;
-  border-bottom: 1px solid var(--line);
-  text-align: left;
-  vertical-align: top;
-}
-.history-table thead th {
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
-}
-.history-table tbody tr:last-child > * { border-bottom: 0; }
-.history-table tbody th {
-  font-family: var(--font-serif);
-  font-size: 17px;
-  font-weight: 400;
-  width: 60px;
-}
-.history-table tbody td:nth-child(2) { white-space: nowrap; width: 160px; color: var(--ink); }
-.history-table tbody td:nth-child(3) { color: var(--muted); }
-
-/* ---------------- DOM I RZUTY ---------------- */
-.house-sec {
-  padding: var(--sec-y) 0;
-  border-top: 1px solid var(--line);
-}
-.plans-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(28px, 4vw, 56px);
-  margin-top: clamp(32px, 4vw, 52px);
-}
-.plan-card__img {
-  background: var(--surface-tint);
-  border: 1px solid var(--line);
-  padding: clamp(16px, 2.2vw, 28px);
-}
-.plan-card__img img { width: 100%; }
-.plan-card__head {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  margin: 22px 0 14px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--ink);
-}
-.plan-card__head h3 { font-size: 26px; }
-.plan-card__head span { font-size: 15px; color: var(--muted); }
-
-.rooms {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 28px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  font-size: 14px;
-}
-.rooms li {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 9px 0;
-  border-bottom: 1px solid var(--line);
-}
-.rooms span { color: var(--muted); white-space: nowrap; }
-
-.standard {
-  margin-top: clamp(56px, 7vw, 96px);
-  padding-top: clamp(40px, 5vw, 64px);
-  border-top: 1px solid var(--line);
-}
-.standard__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px clamp(24px, 3vw, 44px);
-  margin: 28px 0 0;
-}
-.standard__grid div {
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
-}
-.standard__grid dt {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 6px;
-}
-.standard__grid dd {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
-/* ---------------- WNĘTRZA I OGRÓD ---------------- */
-.interiors-sec {
-  padding: var(--sec-y) 0;
-  border-top: 1px solid var(--line);
-}
-.interiors__head {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 24px 48px;
-  align-items: end;
-  margin-bottom: clamp(32px, 4vw, 52px);
-}
-.interiors__head p {
-  margin: 0;
-  font-size: 15.5px;
-  line-height: 1.65;
-  color: var(--muted);
-  max-width: 44ch;
-}
-.interiors__hero {
-  margin: 0;
-  border: 1px solid var(--line);
-  background: var(--surface-warm);
-  overflow: hidden;
-}
-.interiors__hero img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-}
-.interiors__duo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(16px, 2vw, 24px);
-  margin-top: clamp(16px, 2vw, 24px);
-}
-.interiors__duo figure {
-  margin: 0;
-  border: 1px solid var(--line);
-  background: var(--surface-warm);
-  overflow: hidden;
-}
-.interiors__duo img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-.interiors__note {
-  margin: 16px 0 0;
-  font-size: 12.5px;
-  color: var(--muted);
-}
-
-/* ---------------- LOKALIZACJA ---------------- */
-.loc-sec {
-  padding: var(--sec-y) 0;
-  border-top: 1px solid var(--line);
-}
-.loc-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(32px, 5vw, 72px);
-  align-items: start;
-}
-.distances {
-  margin: clamp(28px, 3.5vw, 44px) 0 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid var(--line);
-}
-.distances li {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 15px;
-}
-.distances strong {
-  font-weight: 500;
-  color: var(--ink);
-}
-.distances span {
-  color: var(--muted);
-  white-space: nowrap;
-}
-.loc-map {
-  margin: 0;
-}
-.loc-map__frame {
-  position: relative;
-  border: 1px solid var(--line);
-  background: var(--surface-tint);
-  overflow: hidden;
-}
-.loc-map iframe {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border: 0;
-  filter: saturate(0.75) contrast(0.96);
-}
-.loc-map figcaption {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px 16px;
-  margin-top: 10px;
-  font-size: 12.5px;
-  color: var(--muted);
-}
-.loc-map figcaption a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  color: var(--ink);
-}
-
-/* ---------------- KONTAKT ---------------- */
-.contact-sec {
-  padding: var(--sec-y) 0;
-  border-top: 1px solid var(--line);
-}
-.contact-grid {
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: clamp(36px, 5vw, 80px);
-  align-items: start;
-}
-.contact__lead {
-  margin: 18px 0 0;
-  font-size: 15px;
-  line-height: 1.65;
-  color: var(--muted);
-  max-width: 40ch;
-}
-.contact__phone {
-  margin: 32px 0 6px;
-  font-family: var(--font-serif);
-  font-size: clamp(30px, 3vw, 42px);
-  line-height: 1.1;
-  font-variation-settings: "opsz" 20;
-}
-.contact__phone a:hover { text-decoration: underline; text-underline-offset: 4px; }
-.contact__details {
-  margin: 0;
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.8;
-}
-.contact__details strong {
-  display: block;
-  margin-top: 14px;
-  color: var(--ink);
-  font-weight: 500;
-}
-
-.form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px 20px;
-}
-.form label {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--ink);
-}
-.form label small { font-weight: 400; color: var(--muted); }
-.form .full { grid-column: 1 / -1; }
-.form input,
-.form select,
-.form textarea {
-  width: 100%;
-  min-height: 46px;
-  padding: 10px 14px;
-  background: var(--surface);
-  border: 1px solid var(--line-strong);
-  border-radius: 6px;
-  font-size: 15px;
-  color: var(--ink);
-  transition: border-color .2s;
-}
-.form input:focus,
-.form select:focus,
-.form textarea:focus {
-  border-color: var(--ink);
-  outline: none;
-}
-.form textarea { resize: vertical; min-height: 112px; }
-.form .consent {
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 12.5px;
-  font-weight: 400;
-  line-height: 1.55;
-  color: var(--muted);
-}
-.form .consent input {
-  width: 18px;
-  height: 18px;
-  min-height: 0;
-  margin: 2px 0 0;
-  flex: none;
-  accent-color: var(--ink);
-}
-.form .hp { position: absolute; left: -9999px; }
-.form__msg {
-  margin: 0;
-  padding: 12px 16px;
-  border-radius: 6px;
-  font-size: 14px;
-  background: var(--surface-tint);
-  border-left: 3px solid var(--forest);
-}
-.form__msg--err { border-left-color: var(--danger); }
-.form button[type="submit"] { justify-self: start; padding-inline: 28px; min-height: 44px; }
-
-/* ---------------- STOPKA ---------------- */
-.footer {
-  border-top: 1px solid var(--line);
-  padding: 32px 0 44px;
-  font-size: 13px;
-  color: var(--muted);
-}
-.footer__in {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px 32px;
-}
-.footer__brand {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  color: var(--ink);
-}
-.footer__note { margin: 0; max-width: 64ch; }
-.footer__link { text-decoration: underline; text-underline-offset: 3px; }
-
-/* ---------------- RESPONSYWNOŚĆ ---------------- */
-@media (max-width: 1024px) {
-  .cards { grid-template-columns: repeat(2, 1fr); }
-  .standard__grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 820px) {
-  .nav__in { height: 62px; }
-  .nav__links { display: none; }
-
-  .hero__top,
-  .intro,
-  .triptych,
-  .pillars,
-  .plans-grid,
-  .interiors__head,
-  .interiors__duo,
-  .loc-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero__aside {
-    align-items: flex-start;
-    text-align: left;
-  }
-  .hero__facts { justify-content: flex-start; }
-  .hero__media { aspect-ratio: 4 / 3; }
-
-  .sec-head__meta { text-align: left; }
-
-  .plan-pin {
-    width: 28px;
-    height: 28px;
-    font-size: 10.5px;
-  }
-  .plan-badge {
-    left: 10px;
-    bottom: 10px;
-    font-size: 9.5px;
-    padding: 4px 8px;
-  }
-
-  .cards { grid-template-columns: 1fr; }
-  .rooms { grid-template-columns: 1fr; }
-  .standard__grid { grid-template-columns: 1fr; }
-  .form { grid-template-columns: 1fr; }
+/* ---------- responsywność ---------- */
+@media (max-width:1200px){
+  .h2{font-size:60px}
+  .liczby b{font-size:68px}
+  .kontakt{padding:56px}
+}
+@media (max-width:960px){
+  .nav__in{gap:16px}
+  .nav__linki{display:none}
+  .nav__logo{margin-right:auto}
+  .nav__cta{height:40px;padding:0 18px}
+  .nav__burger{display:grid}
+  .h2{font-size:52px}
+  .wstep__gora,.naglowek{flex-direction:column;align-items:flex-start;gap:24px}
+  .wstep__opis,.naglowek__opis{flex:none;max-width:560px}
+  .naglowek__meta{text-align:left}
+  .liczby b{font-size:56px}
+  .liczby li{padding:24px 20px 12px}
+  .atuty{grid-template-columns:1fr 1fr}
+  .atuty .atut:last-child{grid-column:1/-1}
+  .atuty .atut:last-child .foto{aspect-ratio:16/9}
+  .karty{grid-template-columns:1fr 1fr}
+  .standard{grid-template-columns:1fr 1fr}
+  .lok{grid-template-columns:1fr;row-gap:48px}
+  .kontakt{grid-template-columns:1fr;row-gap:48px}
+  .stopka{grid-template-columns:1fr 1fr}
+  .stopka p{grid-column:1/-1;grid-row:2;max-width:560px}
+}
+@media (max-width:760px){
+  :root{--pad:20px;--sek:80px}
+  .nav__cta{display:none}
+  .hero__meta{grid-template-columns:1fr 1fr}
+  .hero__meta p:nth-child(2){display:none}
+  .hero__tytul{font-size:17.1vw}
+  .hero__film{aspect-ratio:3/4}
+  .hero__dol{left:16px;right:16px;bottom:16px}
+  .chipy{display:none}
+  .hero__dol .btn{flex:1;height:52px;font-size:16px}
+  .h2{font-size:clamp(36px,10.5vw,48px);line-height:1.04}
+  .liczby{grid-template-columns:1fr;margin-top:56px}
+  .liczby li,.liczby li:first-child{padding:22px 0 18px;border-left:0}
+  .liczby li + li{border-top:1px solid var(--line)}
+  .liczby b{font-size:60px}
+  .atuty{grid-template-columns:1fr;row-gap:48px}
+  .atut .foto,.atuty .atut:last-child .foto{aspect-ratio:4/3}
+  .atut h3{margin-top:22px;font-size:30px}
+  .plan{aspect-ratio:16/9;margin-top:32px;margin-inline:calc(var(--pad) * -1)}
+  .pin{width:32px;height:32px;font-size:11px;border-width:1.25px}
+  .plan .tag{left:10px;bottom:10px;font-size:9.5px}
+  .karty{grid-template-columns:1fr;margin-top:24px}
+  .karta{padding:24px 20px}
+  .karta__nr{font-size:60px}
+  .rzuty{grid-template-columns:1fr;row-gap:48px;margin-top:32px}
+  .rzut__obraz img{inset:16px;width:calc(100% - 32px);height:calc(100% - 32px)}
+  .standard{grid-template-columns:1fr;margin-top:64px}
+  .galeria{grid-template-columns:1fr;grid-template-rows:none;aspect-ratio:auto;gap:12px;margin-top:32px}
+  .galeria .foto{aspect-ratio:4/3}
+  .galeria .foto:first-child{grid-row:auto;aspect-ratio:4/5}
+  .odleglosci{margin-top:32px}
+  .mapa__pkt{padding:5px 11px;font-size:12px}
+  .mapa .tag--prawo{display:none}
+  .kontakt-sek{padding-inline:0}
+  .kontakt{padding:48px 20px}
+  .kontakt__tel{margin-top:32px;font-size:40px}
+  .formularz{grid-template-columns:1fr}
+  .stopka{grid-template-columns:1fr;padding-block:40px 32px}
+  .stopka p{grid-row:auto}
+  .stopka__pp{justify-self:start}
+  body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+  .pasek{position:fixed;z-index:45;inset:auto 0 0;display:flex;gap:12px;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid #e7e4db}
+  .pasek__tel{flex:none;display:grid;place-items:center;width:50px;height:50px;border:1px solid var(--ink);border-radius:50%;color:var(--ink)}
+  .pasek .btn{flex:1;height:50px;font-size:16px}
+}
+@media (max-width:420px){
+  .pomieszczenia{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}
+}
+@media print{
+  .nav,.pasek,.hero__pauza{display:none}
+  .hero{padding-top:0}
 }
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Residence","name":"Jarzębinowe – domy w zabudowie bliźniaczej","address":{"@type":"PostalAddress","streetAddress":"ul. Jarzębinowa","addressLocality":"Mikołów-Mokre","addressCountry":"PL"},"url":"https://jarzebinowe.pl"}</script>
 </head>
 <body data-statyczna>
-<a class="skip" href="#tresc">Przejdź do treści</a>
+<a class="pomin" href="#tresc">Przejdź do treści</a>
 
-<header class="nav">
+<header class="nav" data-nav>
   <div class="wrap nav__in">
-    <a class="nav__brand" href="#start" aria-label="Jarzębinowe – początek strony">
-      <img src="logo2.png" alt="Jarzębinowe" width="140" height="36">
-    </a>
-    <nav class="nav__links" aria-label="Główna nawigacja">
-      <a href="#start">Start</a>
+    <nav class="nav__linki" aria-label="Sekcje strony">
+      <a href="#start" aria-current="true">Start</a>
       <a href="#domy">Domy</a>
-      <a href="#dom">Rzuty</a>
       <a href="#wnetrza">Wnętrza</a>
       <a href="#lokalizacja">Lokalizacja</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <a class="btn" href="#kontakt">Zapytaj o dom</a>
+    <a class="nav__logo" href="#start" aria-label="Jarzębinowe – początek strony">Jarzębinowe</a>
+    <a class="btn btn--ink nav__cta" href="#kontakt">Zapytaj o dom</a>
+    <button class="nav__burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otwórz menu"><span></span><span></span></button>
   </div>
+  <nav class="menu" id="menu" aria-label="Menu" hidden>
+    <a href="#start">Start</a>
+    <a href="#domy">Domy</a>
+    <a href="#wnetrza">Wnętrza</a>
+    <a href="#lokalizacja">Lokalizacja</a>
+    <a href="#kontakt">Kontakt</a>
+    <p class="menu__tel"><a href="tel:+48672432888">+48 672 432 888</a></p>
+  </nav>
 </header>
 
 <main id="tresc">
-
-  <!-- HERO -->
-  <section class="hero" id="start" aria-labelledby="hero-tytul">
-    <div class="wrap">
-      <div class="hero__top">
-        <div>
-          <p class="hero__meta-top">
-            <span>Jarzębinowe</span>
-            <span>Mikołów-Mokre</span>
-            <span>Śląsk</span>
-          </p>
-          <h1 id="hero-tytul">Sześć domów,<br>jedna cicha ulica</h1>
-        </div>
-        <div class="hero__aside">
-          <p class="hero__facts">
-            <span>Bliźniak <strong>119 m²</strong></span>
-            <span>Działka <strong>ok. 371 m²</strong></span>
-            <span>Od <strong>879 000 zł</strong></span>
-          </p>
-          <a class="btn btn--outline" href="#domy">Zobacz wolne domy</a>
-        </div>
-      </div>
-
-      <div class="hero__media">
-        <video class="hero__video" data-film autoplay muted loop playsinline preload="none"
-          poster="Słoneczne%20osiedle%20domów%20bliźniaczych%20na%20skraju%20lasu.png"
-          width="1280" height="720"
-          aria-label="Film: przejazd wzdłuż ulicy Jarzębinowej, bliźniaki z drewnianymi szczytami i jarzęby przed domami">
-          <source src="film.mp4" type="video/mp4">
-        </video>
-        <button class="hero__pause" type="button" data-film-przelacz aria-pressed="false">Zatrzymaj film</button>
-      </div>
-
-      <div class="intro">
-        <div>
-          <p class="intro__lead">Dom z&nbsp;ogrodem pod lasem, miasto pod ręką – sześć domów dla tych, którzy chcą więcej przestrzeni.</p>
-          <p class="intro__sub">Kameralna inwestycja przy ul.&nbsp;Jarzębinowej w&nbsp;Mikołowie-Mokrem. Od wschodu i&nbsp;od południa łąka, około 300&nbsp;m na południe las.</p>
-        </div>
-        <div class="kpi">
-          <div class="kpi__item">
-            <span class="kpi__val">119 m²</span>
-            <span class="kpi__lbl">powierzchni użytkowej, 4&nbsp;pokoje</span>
-          </div>
-          <div class="kpi__item">
-            <span class="kpi__val">371 m²</span>
-            <span class="kpi__lbl">działki z&nbsp;ogrodem od południa</span>
-          </div>
-          <div class="kpi__item">
-            <span class="kpi__val">IV kw. 2027</span>
-            <span class="kpi__lbl">oddanie kluczy</span>
-          </div>
-          <div class="kpi__item">
-            <span class="kpi__val"><span data-wolne>5</span><small>z 6</small></span>
-            <span class="kpi__lbl">domów wolnych · stan na 16.11.2026</span>
-          </div>
-        </div>
-      </div>
+<section class="hero" id="start" data-sekcja="start" aria-labelledby="tytul">
+  <div class="wrap">
+    <div class="hero__meta">
+      <p>Sześć domów,<br>jedna cicha ulica</p>
+      <p>Mikołów-Mokre<br>Śląsk</p>
+      <p>Klucze<br>IV kw. 2027</p>
     </div>
-  </section>
-
-  <!-- 3 ZDJĘCIA + 3 FILARY -->
-  <section class="triptych-sec" aria-label="Atuty inwestycji">
-    <div class="wrap">
-      <div class="triptych">
-        <figure>
-          <img src="Słoneczne%20osiedle%20domów%20bliźniaczych%20na%20skraju%20lasu.png" alt="Ulica Jarzębinowa – osiedle na skraju lasu" loading="lazy" decoding="async">
-          <figcaption>Ulica — osiedle na skraju lasu</figcaption>
-        </figure>
-        <figure>
-          <img src="front.png" alt="Bliźniak od frontu: białe ściany, wejścia w drewnie termojesionu" loading="lazy" decoding="async">
-          <figcaption>Architektura i termojesion</figcaption>
-        </figure>
-        <figure>
-          <img src="Rodzinne%20popołudnie%20w%20ogrodzie%20nowoczesnych%20domów.png" alt="Ogród i taras od południa" loading="lazy" decoding="async">
-          <figcaption>Ogród i taras</figcaption>
-        </figure>
-      </div>
-
-      <div class="pillars">
-        <article class="pillar">
-          <span class="pillar__num">01</span>
-          <h3>Lokalizacja</h3>
-          <p>Spokojna ulica domów jednorodzinnych z&nbsp;dojazdem drogą asfaltową. Do centrum Katowic [XX]&nbsp;minut samochodem.</p>
-        </article>
-        <article class="pillar">
-          <span class="pillar__num">02</span>
-          <h3>Standard</h3>
-          <p>Pompa ciepła, ogrzewanie podłogowe w&nbsp;całym domu, fotowoltaika ok.&nbsp;3&nbsp;kWp, okna trzyszybowe i&nbsp;dębowe schody w&nbsp;cenie.</p>
-        </article>
-        <article class="pillar">
-          <span class="pillar__num">03</span>
-          <h3>Otoczenie</h3>
-          <p>Łąka od wschodu i&nbsp;południa, las 300&nbsp;m dalej. Salon otwiera się na ogród drzwiami przesuwnymi o&nbsp;szerokości 3,6&nbsp;m.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- DOMY I CENY -->
-  <section class="homes-sec" id="domy" aria-labelledby="domy-tytul">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <p class="eyebrow">Domy i ceny</p>
-          <h2 id="domy-tytul">Wybierz swój dom</h2>
-        </div>
-        <div class="sec-head__meta">
-          <div>Wolne domy: <strong data-wolne>5</strong> z&nbsp;6 · stan na 16.11.2026</div>
-          <div>Ceny brutto z&nbsp;VAT 8%, stan deweloperski</div>
-        </div>
-      </div>
-
-      <!-- Interaktywny plan osiedla -->
-      <figure class="plan-wrap" data-interaktywna>
-        <img src="gemini2.jfif" alt="Plan osiedla Jarzębinowe – kliknij dom, aby przejść do oferty" width="1920" height="1080">
-        <svg viewBox="0 0 2000 1125" preserveAspectRatio="none" aria-label="Interaktywna mapa działek">
-          <polygon data-dom="1A" points="2000,556.3 1998.8,555.3 1781.7,499.4 1779.6,499.9 1721.8,566.7 1577.8,528.3 1506.4,708.6 1498.6,825.3 1421.9,913.7 1745.8,1015.6 1757.9,1018.8 1999,683.1 2000,679.8" />
-          <polygon data-dom="1B" points="1779.6,498.9 1502.5,427.4 1437.9,490.5 1372.7,473.7 1316.6,610.9 1110.1,815.4 1421.3,913.7 1498,825.3 1505.9,708.6 1576.7,528.9 1577.8,527.8 1581.4,528.3 1721.8,566.2 1775.9,504.1" />
-          <polygon data-dom="2A" points="1501.5,427.4 1239.7,359.7 1169.3,420.7 1165.6,418 979,368.6 905.5,536.3 907.1,647.2 818.2,724 1109.5,815.4 1316,610.9 1368.5,481.6 1372.7,473.2 1437.9,490" />
-          <polygon data-dom="2B" points="1239.2,359.7 991.6,296.1 918.5,352.4 799.7,320.8 726.2,483.3 726.7,499.6 545.9,638.4 817.7,724 906.5,647.2 904.9,536.3 979,368.1 1165.6,417.5 1169.3,420.1" />
-          <polygon data-dom="3A" points="290.8,558 545.3,638.4 726.2,499.6 725.6,483.3 799.7,320.3 918.5,351.8 990,297.2 991.1,295.6 757.6,235.7 664.1,300.4 619.4,272.5 454.3,228.4 379.7,384.5 388.6,490.7" />
-          <polygon data-dom="3B" points="454.3,228.4 536.3,178.4 757.1,235.7 664.1,299.8 619.4,272 454.3,228.4 296.1,186.4 221.4,338.3 225.1,373.5 51.1,482.8 287.7,557.4 291.4,557.4 388.1,490.7 379.2,384.5" />
-          <!-- Kompas -->
-          <g transform="translate(1922, 74) scale(1.1)" style="pointer-events: none; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));">
-            <circle cx="25" cy="25" r="23" fill="#FAF9F6" fill-opacity=".95" stroke="#E4E1D9" stroke-width="1.5"/>
-            <g style="transform-origin: 25px 25px; transform: rotate(-130deg);">
-              <path d="M25,6 L17,29 L25,24 L33,29 Z" fill="#263A29"/>
-            </g>
-            <text x="33" y="22" text-anchor="middle" font-family="Albert Sans, sans-serif" font-size="11" font-weight="600" fill="#181817">N</text>
-          </g>
-        </svg>
-        <div class="plan-pins" aria-hidden="true"></div>
-        <span class="plan-badge">Plan osiedla — kliknij dom</span>
-        <div class="plan-tooltip" hidden></div>
-      </figure>
-
-      <!-- 6 kart domów -->
-      <div class="cards" id="karty-domow">
-        <article class="card active" id="dom-1A" data-dom="1A" data-status="dost" data-status-txt="Wolny" data-cena="899 000 zł" data-m2="7 532,47 zł/m²">
-          <div class="card__head">
-            <span class="card__id">1A</span>
-            <span class="status">Wolny</span>
-          </div>
-          <div class="card__price">899 000 zł</div>
-          <div class="card__m2">7 532,47 zł/m²</div>
-          <ul class="card__specs">
-            <li>119,35 m²</li>
-            <li>działka ok. 371 m²</li>
-            <li>4 pokoje</li>
-          </ul>
-          <p class="card__note">Skrajny od zachodu, obok istniejący dom.</p>
-          <div class="card__actions">
-            <a class="btn" href="#kontakt" data-zapytaj="1A">Zapytaj</a>
-            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_1A.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
-          </div>
-        </article>
-
-        <article class="card" id="dom-1B" data-dom="1B" data-status="dost" data-status-txt="Wolny" data-cena="879 000 zł" data-m2="7 364,89 zł/m²">
-          <div class="card__head">
-            <span class="card__id">1B</span>
-            <span class="status">Wolny</span>
-          </div>
-          <div class="card__price">879 000 zł</div>
-          <div class="card__m2">7 364,89 zł/m²</div>
-          <ul class="card__specs">
-            <li>119,35 m²</li>
-            <li>działka ok. 371 m²</li>
-            <li>4 pokoje</li>
-          </ul>
-          <div class="card__actions">
-            <a class="btn" href="#kontakt" data-zapytaj="1B">Zapytaj</a>
-            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_1B.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
-          </div>
-        </article>
-
-        <article class="card" id="dom-2A" data-dom="2A" data-status="dost" data-status-txt="Wolny" data-cena="879 000 zł" data-m2="7 364,89 zł/m²">
-          <div class="card__head">
-            <span class="card__id">2A</span>
-            <span class="status">Wolny</span>
-          </div>
-          <div class="card__price">879 000 zł</div>
-          <div class="card__m2">7 364,89 zł/m²</div>
-          <ul class="card__specs">
-            <li>119,35 m²</li>
-            <li>działka ok. 371 m²</li>
-            <li>4 pokoje</li>
-          </ul>
-          <div class="card__actions">
-            <a class="btn" href="#kontakt" data-zapytaj="2A">Zapytaj</a>
-            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_2A.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
-          </div>
-        </article>
-
-        <article class="card" id="dom-2B" data-dom="2B" data-status="dost" data-status-txt="Wolny" data-cena="879 000 zł" data-m2="7 364,89 zł/m²">
-          <div class="card__head">
-            <span class="card__id">2B</span>
-            <span class="status">Wolny</span>
-          </div>
-          <div class="card__price">879 000 zł</div>
-          <div class="card__m2">7 364,89 zł/m²</div>
-          <ul class="card__specs">
-            <li>119,35 m²</li>
-            <li>działka ok. 371 m²</li>
-            <li>4 pokoje</li>
-          </ul>
-          <div class="card__actions">
-            <a class="btn" href="#kontakt" data-zapytaj="2B">Zapytaj</a>
-            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_2B.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
-          </div>
-        </article>
-
-        <article class="card" id="dom-3A" data-dom="3A" data-status="rez" data-status-txt="Rezerwacja" data-cena="899 000 zł" data-m2="7 532,47 zł/m²">
-          <div class="card__head">
-            <span class="card__id">3A</span>
-            <span class="status status--rez">Rezerwacja</span>
-          </div>
-          <div class="card__price">899 000 zł</div>
-          <div class="card__m2">7 532,47 zł/m²</div>
-          <ul class="card__specs">
-            <li>119,35 m²</li>
-            <li>działka ok. 371 m²</li>
-            <li>4 pokoje</li>
-          </ul>
-          <div class="card__actions">
-            <a class="btn" href="#kontakt" data-zapytaj="3A">Zapytaj</a>
-            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_3A.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
-          </div>
-        </article>
-
-        <article class="card" id="dom-3B" data-dom="3B" data-status="dost" data-status-txt="Wolny" data-cena="929 000 zł" data-m2="7 783,83 zł/m²">
-          <div class="card__head">
-            <span class="card__id">3B</span>
-            <span class="status">Wolny</span>
-          </div>
-          <div class="card__price">929 000 zł</div>
-          <div class="card__m2">7 783,83 zł/m²</div>
-          <ul class="card__specs">
-            <li>119,35 m²</li>
-            <li>działka ok. 371 m²</li>
-            <li>4 pokoje</li>
-          </ul>
-          <p class="card__note">Skrajny od wschodu, otwarty widok na łąkę.</p>
-          <div class="card__actions">
-            <a class="btn" href="#kontakt" data-zapytaj="3B">Zapytaj</a>
-            <a class="btn btn--outline" href="Jarzebinowe_karta_domu_3B.pdf" target="_blank" rel="noopener">Karta domu PDF</a>
-          </div>
-        </article>
-      </div>
-
-      <div class="homes-foot">
-        <span>W cenie 2 miejsca postojowe na podjeździe. Koszty notarialne i sądowe po stronie kupującego.</span>
-        <a href="data:text/csv;charset=utf-8;base64,77u/IkNlbm5payDigJMgc3RhbiBuYSI7IjE2LjExLjIwMjYsIDA5OjQ5Igpkb207YnVkeW5laztwb3dfdXp5dGtvd2FfbTI7ZHppYWxrYV9tMjtwb2tvamU7Y2VuYV9icnV0dG9femw7Y2VuYV96YV9tMl96bDtzdGF0dXM7cG9taWVzemN6ZW5pYV9wcnp5bmFsZXpuZTtrb3N6dHlfZG9kYXRrb3dlCjFBO0IxOzExOSwzNTszNzEsMjs0Ozg5OTAwMDs3NTMyLDQ3O0Rvc3TEmXBueTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKMUI7QjE7MTE5LDM1OzM3MSwyOzQ7ODc5MDAwOzczNjQsODk7RG9zdMSZcG55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIGR6aWHFgmNlIChwb2RqYXpkKSDigJMgdyBjZW5pZSBkb211LCAwIHrFgiI7IltkbyB1enVwZcWCbmllbmlhIHByemV6IGlud2VzdG9yYSDigJMgbnAuIGtvc3p0eSB1bW93eSBub3RhcmlhbG5laiBpIHdwaXPDs3cgZG8ga3NpxIVnIHdpZWN6eXN0eWNoIHdnIHRha3N5LCBwbyBzdHJvbmllIG5hYnl3Y3ldIgoyQTtCMjsxMTksMzU7MzcxLDI7NDs4NzkwMDA7NzM2NCw4OTtEb3N0xJlwbnk7IjIgbWllanNjYSBwb3N0b2pvd2UgbmEgZHppYcWCY2UgKHBvZGphemQpIOKAkyB3IGNlbmllIGRvbXUsIDAgesWCIjsiW2RvIHV6dXBlxYJuaWVuaWEgcHJ6ZXogaW53ZXN0b3JhIOKAkyBucC4ga29zenR5IHVtb3d5IG5vdGFyaWFsbmVqIGkgd3Bpc8OzdyBkbyBrc2nEhWcgd2llY3p5c3R5Y2ggd2cgdGFrc3ksIHBvIHN0cm9uaWUgbmFieXdjeV0iCjJCO0IyOzExOSwzNTszNzEsMjs0Ozg3OTAwMDs3MzY0LDg5O0Rvc3TEmXBueTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKM0E7QjM7MTE5LDM1OzM3MSwyOzQ7ODk5MDAwOzc1MzIsNDc7UmV6ZXJ3YWNqYTsiMiBtaWVqc2NhIHBvc3Rvam93ZSBuYSBkemlhxYJjZSAocG9kamF6ZCkg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJbZG8gdXp1cGXFgm5pZW5pYSBwcnpleiBpbndlc3RvcmEg4oCTIG5wLiBrb3N6dHkgdW1vd3kgbm90YXJpYWxuZWogaSB3cGlzw7N3IGRvIGtzacSFZyB3aWVjenlzdHljaCB3ZyB0YWtzeSwgcG8gc3Ryb25pZSBuYWJ5d2N5XSIKM0I7QjM7MTE5LDM1OzM3MSwyOzQ7OTI5MDAwOzc3ODMsODM7RG9zdMSZcG55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIGR6aWHFgmNlIChwb2RqYXpkKSDigJMgdyBjZW5pZSBkb211LCAwIHrFgiI7IltkbyB1enVwZcWCbmllbmlhIHByemV6IGlud2VzdG9yYSDigJMgbnAuIGtvc3p0eSB1bW93eSBub3RhcmlhbG5laiBpIHdwaXPDs3cgZG8ga3NpxIVnIHdpZWN6eXN0eWNoIHdnIHRha3N5LCBwbyBzdHJvbmllIG5hYnl3Y3ldIgo=" download="JARZEBINOWE_cennik.csv">Pobierz cennik (CSV)</a>
-      </div>
-
-      <details class="history">
-        <summary>Historia zmian cen i statusów</summary>
-        <div class="history__body">
-          <table class="history-table">
-            <thead>
-              <tr><th scope="col">Dom</th><th scope="col">Data</th><th scope="col">Zmiana</th></tr>
-            </thead>
-            <tbody>
-              <tr><th>1A</th><td>16.11.2026, 09:49</td><td>cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</td></tr>
-              <tr><th>1A</th><td>27.10.2026</td><td>cena wyjściowa 819 000 zł (6 862,17 zł/m²), status: dostępny</td></tr>
-              <tr><th>1B</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
-              <tr><th>1B</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
-              <tr><th>2A</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
-              <tr><th>2A</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
-              <tr><th>2B</th><td>16.11.2026, 09:49</td><td>cena 809 000 zł → 879 000 zł (7 364,89 zł/m²)</td></tr>
-              <tr><th>2B</th><td>27.10.2026</td><td>cena wyjściowa 809 000 zł (6 778,38 zł/m²), status: dostępny</td></tr>
-              <tr><th>3A</th><td>16.11.2026, 09:49</td><td>status: dostępny → rezerwacja; cena 819 000 zł → 899 000 zł (7 532,47 zł/m²)</td></tr>
-              <tr><th>3A</th><td>27.10.2026</td><td>cena wyjściowa 819 000 zł (6 862,17 zł/m²), status: dostępny</td></tr>
-              <tr><th>3B</th><td>16.11.2026, 09:49</td><td>status: rezerwacja → dostępny; cena 839 000 zł → 929 000 zł (7 783,83 zł/m²)</td></tr>
-              <tr><th>3B</th><td>27.10.2026</td><td>cena wyjściowa 839 000 zł (7 029,74 zł/m²), status: rezerwacja</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <!-- DOM I RZUTY -->
-  <section class="house-sec" id="dom" aria-labelledby="dom-tytul">
-    <div class="wrap">
-      <p class="eyebrow">Dom i rzuty</p>
-      <h2 id="dom-tytul">119&nbsp;m² na dwóch kondygnacjach</h2>
-
-      <div class="plans-grid">
-        <div class="plan-card">
-          <div class="plan-card__img">
-            <img src="rzutparter.png" alt="Rzut parteru domu z przykładowym umeblowaniem" width="1200" height="1697" loading="lazy" decoding="async">
-          </div>
-          <div class="plan-card__head">
-            <h3>Parter</h3>
-            <span>65,78 m²</span>
-          </div>
-          <ul class="rooms">
-            <li>Wiatrołap <span>4,05 m²</span></li>
-            <li>Kuchnia <span>9,30 m²</span></li>
-            <li>WC <span>2,18 m²</span></li>
-            <li>Salon z jadalnią <span>42,69 m²</span></li>
-            <li>Hol <span>5,26 m²</span></li>
-            <li>Schowek <span>2,30 m²</span></li>
-          </ul>
-        </div>
-
-        <div class="plan-card">
-          <div class="plan-card__img">
-            <img src="rzutpoddasze.png" alt="Rzut poddasza domu z przykładowym umeblowaniem" width="1200" height="1697" loading="lazy" decoding="async">
-          </div>
-          <div class="plan-card__head">
-            <h3>Poddasze</h3>
-            <span>53,57 m²</span>
-          </div>
-          <ul class="rooms">
-            <li>Hol <span>8,94 m²</span></li>
-            <li>Sypialnia 3 <span>10,92 m²</span></li>
-            <li>Sypialnia 1 <span>11,48 m²</span></li>
-            <li>Łazienka <span>4,98 m²</span></li>
-            <li>Sypialnia 2 <span>12,50 m²</span></li>
-            <li>Garderoba <span>4,75 m²</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="standard">
-        <p class="eyebrow">Standard deweloperski</p>
-        <dl class="standard__grid">
-          <div><dt>Konstrukcja</dt><dd>Bloczki silikatowe, podwójna ściana między domami z&nbsp;wełną, strop żelbetowy</dd></div>
-          <div><dt>Ocieplenie</dt><dd>Styropian grafitowy 15&nbsp;cm, dach wełna 25&nbsp;cm</dd></div>
-          <div><dt>Dach</dt><dd>Blacha na rąbek stojący, antracyt, rynny ukryte</dd></div>
-          <div><dt>Elewacja</dt><dd>Biały tynk silikonowy i&nbsp;deska z&nbsp;termojesionu</dd></div>
-          <div><dt>Okna</dt><dd>Trzyszybowe; w&nbsp;salonie HS 3,6&nbsp;m; 3&nbsp;okna dachowe</dd></div>
-          <div><dt>Drzwi wejściowe</dt><dd>Aluminiowe, antywłamaniowe RC2</dd></div>
-          <div><dt>Ogrzewanie</dt><dd>Pompa ciepła powietrze-woda, podłogówka w&nbsp;całym domu</dd></div>
-          <div><dt>Wentylacja</dt><dd>Przygotowanie pod rekuperację</dd></div>
-          <div><dt>Fotowoltaika</dt><dd>Instalacja PV ok.&nbsp;3&nbsp;kWp na każdym domu</dd></div>
-          <div><dt>Instalacje</dt><dd>Przygotowanie pod klimatyzację w&nbsp;sypialni&nbsp;1, gniazda przy tarasie</dd></div>
-          <div><dt>Teren</dt><dd>Podjazd na 2&nbsp;auta, taras z&nbsp;gresu, ogrodzenie, ekran prywatności</dd></div>
-          <div><dt>Nie w cenie</dt><dd>Trawnik i&nbsp;nasadzenia (poza drzewkiem od frontu), wykończenie wnętrz</dd></div>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <!-- WNĘTRZA I OGRÓD -->
-  <section class="interiors-sec" id="wnetrza" aria-labelledby="wnetrza-tytul">
-    <div class="wrap">
-      <div class="interiors__head">
-        <div>
-          <p class="eyebrow">Wnętrza i ogród</p>
-          <h2 id="wnetrza-tytul">Salon z&nbsp;kuchnią, 52&nbsp;m² światła</h2>
-        </div>
-        <p>Parter to jedna otwarta przestrzeń: kuchnia, jadalnia i&nbsp;salon, z&nbsp;wyjściem na taras od południa.</p>
-      </div>
-
-      <figure class="interiors__hero">
-        <img src="Słoneczny%20salon%20z%20kuchnią%20i%20schodami.png" alt="Salon z kuchnią i schodami na poddasze" width="1672" height="941" loading="lazy" decoding="async">
-      </figure>
-
-      <div class="interiors__duo">
-        <figure>
-          <img src="Jasne%20wnętrze%20z%20widokiem%20na%20ogród.png" alt="Jasne wnętrze z widokiem na ogród" width="1672" height="941" loading="lazy" decoding="async">
-        </figure>
-        <figure>
-          <img src="Rodzinne%20popołudnie%20w%20ogrodzie%20nowoczesnych%20domów.png" alt="Ogród od południa i taras" width="1672" height="941" loading="lazy" decoding="async">
-        </figure>
-      </div>
-
-      <p class="interiors__note">Wizualizacje mają charakter poglądowy. Zieleń pokazano ok. 2–3 lata po oddaniu osiedla.</p>
-    </div>
-  </section>
-
-  <!-- LOKALIZACJA -->
-  <section class="loc-sec" id="lokalizacja" aria-labelledby="lok-tytul">
-    <div class="wrap loc-grid">
-      <div>
-        <p class="eyebrow">Lokalizacja</p>
-        <h2 id="lok-tytul">ul. Jarzębinowa,<br>Mikołów-Mokre</h2>
-        <ul class="distances">
-          <li><strong>Las</strong> <span>ok. 300 m</span></li>
-          <li><strong>Szkoła podstawowa</strong> <span>[km]</span></li>
-          <li><strong>Sklep spożywczy</strong> <span>[km]</span></li>
-          <li><strong>Wjazd na autostradę</strong> <span>[min]</span></li>
-          <li><strong>Centrum Katowic</strong> <span>[min]</span></li>
+    <h1 class="hero__tytul" id="tytul">Jarzębinowe</h1>
+    <div class="hero__film">
+      <video data-film muted loop playsinline preload="none" poster="Słoneczne%20osiedle%20domów%20bliźniaczych%20na%20skraju%20lasu.png" width="1280" height="720"
+        aria-label="Film: przejazd wzdłuż ulicy Jarzębinowej, bliźniaki z drewnianymi szczytami i jarzęby przed domami (wizualizacja)">
+        <source src="film.mp4" type="video/mp4">
+      </video>
+      <button class="hero__pauza" type="button" data-film-przelacz data-gra="0" aria-label="Odtwórz film">
+        <svg class="i-pauza" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1" width="2.6" height="10" fill="currentColor"/><rect x="7.4" y="1" width="2.6" height="10" fill="currentColor"/></svg>
+        <svg class="i-play" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.2v9.6L10.6 6z" fill="currentColor"/></svg>
+      </button>
+      <div class="hero__dol">
+        <ul class="chipy" aria-label="Najważniejsze dane">
+          <li class="chip chip--jasny">Bliźniak 119&nbsp;m²</li>
+          <li class="chip">Działka ok. 371&nbsp;m²</li>
+          <li class="chip">Od 879&nbsp;000&nbsp;zł</li>
         </ul>
+        <a class="btn btn--bialy btn--duzy" href="#domy">Zobacz wolne domy <span class="btn__strz" aria-hidden="true">→</span></a>
       </div>
-
-      <figure class="loc-map">
-        <div class="loc-map__frame">
-          <iframe title="Mapa: ul. Jarzębinowa, Mikołów-Mokre" loading="lazy"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=18.8461%2C50.1723%2C18.8721%2C50.1843&amp;layer=mapnik&amp;marker=50.1783%2C18.8591"></iframe>
-        </div>
-        <figcaption>
-          <span>Przybliżony obszar inwestycji. Mapa © OpenStreetMap.</span>
-          <a href="https://www.openstreetmap.org/#map=16/50.1783/18.8591" target="_blank" rel="noopener">Otwórz w OpenStreetMap</a>
-        </figcaption>
-      </figure>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- KONTAKT -->
-  <section class="contact-sec" id="kontakt" aria-labelledby="kontakt-tytul">
-    <div class="wrap contact-grid">
-      <div>
-        <p class="eyebrow">Kontakt</p>
-        <h2 id="kontakt-tytul">Przyjedź zobaczyć działki</h2>
-        <p class="contact__lead">Pokażemy działki na miejscu i&nbsp;odpowiemy na pytania o&nbsp;standard, terminy i&nbsp;finansowanie.</p>
-        <p class="contact__phone"><a href="tel:+48672432888">+48 672 432 888</a></p>
-        <p class="contact__details">
-          pon.–sob. 8:00–18:00<br>
-          Biuro sprzedaży: [adres biura sprzedaży]
-          <strong>Kaczmarczyk Inwestycje sp. z o.o.</strong>
-        </p>
+<section class="wstep wrap" data-sekcja="start" aria-label="O inwestycji">
+  <div class="wstep__gora">
+    <h2 class="wstep__tytul">Dom z ogrodem <em>pod lasem</em>, miasto <em>pod ręką</em> — sześć domów dla tych, którzy chcą <em>więcej przestrzeni</em>.</h2>
+    <p class="wstep__opis">Kameralna inwestycja przy ul.&nbsp;Jarzębinowej w&nbsp;Mikołowie-Mokrem. Od wschodu i&nbsp;od południa łąka, około 300&nbsp;m na południe las.</p>
+  </div>
+  <ul class="liczby">
+    <li><b>119&nbsp;m²</b><span>powierzchni użytkowej, 4&nbsp;pokoje</span></li>
+    <li><b>371&nbsp;m²</b><span>działki z&nbsp;ogrodem od południa</span></li>
+    <li><b><span data-wolne>5</span>&nbsp;z&nbsp;6</b><span>domów wolnych · stan na 16.11.2026</span></li>
+  </ul>
+</section>
+
+<section class="atuty wrap" data-sekcja="start" aria-label="Lokalizacja, standard i otoczenie">
+  <article class="atut">
+    <figure class="foto">
+      <img src="Słoneczne%20osiedle%20domów%20bliźniaczych%20na%20skraju%20lasu.png" alt="Ulica Jarzębinowa: bliźniaki z drewnianymi szczytami, jarzęby przy chodniku" width="1672" height="941" loading="lazy" decoding="async" style="object-position:58% 50%">
+      <figcaption class="tag">Ulica — osiedle na skraju lasu</figcaption>
+    </figure>
+    <h3><span>01</span>Lokalizacja</h3>
+    <p>Spokojna ulica domów jednorodzinnych z&nbsp;dojazdem drogą asfaltową. Do centrum Katowic [XX]&nbsp;minut samochodem.</p>
+  </article>
+  <article class="atut">
+    <figure class="foto">
+      <img src="front.png" alt="Bliźniak od frontu: białe ściany, wejścia w drewnie termojesionu, jarzęby przy podjazdach" width="1672" height="941" loading="lazy" decoding="async" style="object-position:46% 50%">
+      <figcaption class="tag">Bliźniak od frontu</figcaption>
+    </figure>
+    <h3><span>02</span>Standard</h3>
+    <p>Pompa ciepła, ogrzewanie podłogowe w&nbsp;całym domu, fotowoltaika ok.&nbsp;3&nbsp;kWp, okna trzyszybowe i&nbsp;dębowe schody w&nbsp;cenie.</p>
+  </article>
+  <article class="atut">
+    <figure class="foto">
+      <img src="Rodzinne%20popołudnie%20w%20ogrodzie%20nowoczesnych%20domów.png" alt="Ogród i taras od południa, rodzina przy stole na tarasie" width="1672" height="941" loading="lazy" decoding="async" style="object-position:35% 50%">
+      <figcaption class="tag">Ogród i taras</figcaption>
+    </figure>
+    <h3><span>03</span>Otoczenie</h3>
+    <p>Łąka od wschodu i&nbsp;południa, las 300&nbsp;m dalej. Salon otwiera się na ogród drzwiami przesuwnymi o&nbsp;szerokości 3,6&nbsp;m.</p>
+  </article>
+</section>
+
+<section class="domy" id="domy" data-sekcja="domy" aria-labelledby="domy-t">
+  <div class="wrap">
+    <p class="brw">Domy i ceny</p>
+    <div class="naglowek">
+      <h2 class="h2" id="domy-t">Wybierz <em>swój</em> dom</h2>
+      <p class="naglowek__meta">Wolne domy: <span data-wolne>5</span> z&nbsp;6 · stan na 16.11.2026<br>Ceny brutto z&nbsp;VAT 8%, stan deweloperski</p>
+    </div>
+
+    <figure class="plan" data-plan>
+      <svg viewBox="0 0 2000 1125" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Plan osiedla z lotu ptaka: trzy bliźniaki w rzędzie wzdłuż ul. Jarzębinowej, domy od prawej 1A, 1B, 2A, 2B, 3A i 3B. Cena i status każdego domu są na kartach pod planem.">
+        <image href="gemini2.jfif" width="2000" height="1125" preserveAspectRatio="none"/>
+        <a href="#dom-1A" aria-hidden="true" tabindex="-1"><polygon class="wybrany" data-dom="1A" points="2000,556.3 1998.8,555.3 1781.7,499.4 1779.6,499.9 1721.8,566.7 1577.8,528.3 1506.4,708.6 1498.6,825.3 1421.9,913.7 1745.8,1015.6 1757.9,1018.8 1999,683.1 2000,679.8"/></a>
+        <a href="#dom-1B" aria-hidden="true" tabindex="-1"><polygon data-dom="1B" points="1779.6,498.9 1502.5,427.4 1437.9,490.5 1372.7,473.7 1316.6,610.9 1110.1,815.4 1421.3,913.7 1498,825.3 1505.9,708.6 1576.7,528.9 1577.8,527.8 1581.4,528.3 1721.8,566.2 1775.9,504.1"/></a>
+        <a href="#dom-2A" aria-hidden="true" tabindex="-1"><polygon data-dom="2A" points="1501.5,427.4 1239.7,359.7 1169.3,420.7 1165.6,418 979,368.6 905.5,536.3 907.1,647.2 818.2,724 1109.5,815.4 1316,610.9 1368.5,481.6 1372.7,473.2 1437.9,490"/></a>
+        <a href="#dom-2B" aria-hidden="true" tabindex="-1"><polygon data-dom="2B" points="1239.2,359.7 991.6,296.1 918.5,352.4 799.7,320.8 726.2,483.3 726.7,499.6 545.9,638.4 817.7,724 906.5,647.2 904.9,536.3 979,368.1 1165.6,417.5 1169.3,420.1"/></a>
+        <a href="#dom-3A" aria-hidden="true" tabindex="-1"><polygon data-dom="3A" points="290.8,558 545.3,638.4 726.2,499.6 725.6,483.3 799.7,320.3 918.5,351.8 990,297.2 991.1,295.6 757.6,235.7 664.1,300.4 619.4,272.5 454.3,228.4 379.7,384.5 388.6,490.7"/></a>
+        <a href="#dom-3B" aria-hidden="true" tabindex="-1"><polygon data-dom="3B" points="454.3,228.4 536.3,178.4 757.1,235.7 664.1,299.8 619.4,272 454.3,228.4 296.1,186.4 221.4,338.3 225.1,373.5 51.1,482.8 287.7,557.4 291.4,557.4 388.1,490.7 379.2,384.5"/></a>
+      </svg>
+      <div class="plan__piny">
+        <button class="pin" type="button" data-dom="1A" data-xy="1676,628" aria-pressed="true">1A</button>
+        <button class="pin" type="button" data-dom="1B" data-xy="1440,596" aria-pressed="false">1B</button>
+        <button class="pin" type="button" data-dom="2A" data-xy="1056,468" aria-pressed="false">2A</button>
+        <button class="pin" type="button" data-dom="2B" data-xy="856,432" aria-pressed="false">2B</button>
+        <button class="pin" type="button" data-dom="3A" data-xy="527,342" aria-pressed="false">3A</button>
+        <button class="pin" type="button" data-dom="3B" data-xy="336,298" aria-pressed="false">3B</button>
       </div>
+      <figcaption class="tag">Plan osiedla — kliknij dom</figcaption>
+      <div class="plan__dymek" hidden></div>
+    </figure>
 
-      <form class="form" method="post" action="mailto:jarzebinowa@biuro.pl" enctype="text/plain" novalidate>
-        <label>
-          Imię i nazwisko
-          <input name="imie" autocomplete="name" required maxlength="100">
-        </label>
-        <label>
-          E-mail
-          <input name="email" type="email" autocomplete="email" required maxlength="150">
-        </label>
-        <label>
-          <span>Telefon <small>(opcjonalnie)</small></span>
-          <input name="telefon" type="tel" autocomplete="tel" maxlength="30">
-        </label>
-        <label>
-          Dom
-          <select name="dom" id="wybor-domu">
-            <option value="">Dowolny</option>
-            <option value="1A">1A</option>
-            <option value="1B">1B</option>
-            <option value="2A">2A</option>
-            <option value="2B">2B</option>
-            <option value="3A">3A</option>
-            <option value="3B">3B</option>
-          </select>
-        </label>
-        <label class="full">
-          Wiadomość
-          <textarea name="wiadomosc" rows="4" placeholder="Np. kiedy możemy obejrzeć działkę?" required maxlength="3000"></textarea>
-        </label>
-        <label class="hp" aria-hidden="true">Strona www<input name="strona" tabindex="-1" autocomplete="off"></label>
-        <label class="consent full">
-          <input type="checkbox" name="zgoda" value="1" required>
-          <span>Wyrażam zgodę na przetwarzanie moich danych w&nbsp;celu odpowiedzi na zapytanie. Administrator: Kaczmarczyk Inwestycje sp. z&nbsp;o.o. Dane przechowujemy 12&nbsp;miesięcy; zgodę mogę wycofać w&nbsp;każdej chwili.</span>
-        </label>
-        <p class="form__msg full" role="status" aria-live="polite" hidden></p>
-        <button class="btn full" type="submit">Wyślij zapytanie</button>
-      </form>
+    <ul class="karty" aria-label="Domy na osiedlu">
+      <li>
+        <article class="karta" id="dom-1A" data-dom="1A" data-status="wolny" aria-current="true">
+          <div class="karta__gora"><h3 class="karta__nr">1A</h3><p class="status status--wolny">Wolny</p></div>
+          <p class="karta__cena">899&nbsp;000&nbsp;zł</p>
+          <p class="karta__m2">7&nbsp;532,47&nbsp;zł/m²</p>
+          <ul class="karta__dane"><li>119,35&nbsp;m²</li><li>działka ok.&nbsp;371&nbsp;m²</li><li>4&nbsp;pokoje</li></ul>
+          <p class="karta__uwaga">Skrajny od zachodu, obok istniejący dom.</p>
+          <div class="karta__akcje"><a class="btn btn--ink" href="#kontakt" data-zapytaj="1A">Zapytaj</a><a class="btn btn--obrys" href="Jarzebinowe_karta_domu_1A.pdf" target="_blank" rel="noopener">Karta domu PDF</a></div>
+        </article>
+      </li>
+      <li>
+        <article class="karta" id="dom-1B" data-dom="1B" data-status="wolny" aria-current="false">
+          <div class="karta__gora"><h3 class="karta__nr">1B</h3><p class="status status--wolny">Wolny</p></div>
+          <p class="karta__cena">879&nbsp;000&nbsp;zł</p>
+          <p class="karta__m2">7&nbsp;364,89&nbsp;zł/m²</p>
+          <ul class="karta__dane"><li>119,35&nbsp;m²</li><li>działka ok.&nbsp;371&nbsp;m²</li><li>4&nbsp;pokoje</li></ul>
+          <div class="karta__akcje"><a class="btn btn--ink" href="#kontakt" data-zapytaj="1B">Zapytaj</a><a class="btn btn--obrys" href="Jarzebinowe_karta_domu_1B.pdf" target="_blank" rel="noopener">Karta domu PDF</a></div>
+        </article>
+      </li>
+      <li>
+        <article class="karta" id="dom-2A" data-dom="2A" data-status="wolny" aria-current="false">
+          <div class="karta__gora"><h3 class="karta__nr">2A</h3><p class="status status--wolny">Wolny</p></div>
+          <p class="karta__cena">879&nbsp;000&nbsp;zł</p>
+          <p class="karta__m2">7&nbsp;364,89&nbsp;zł/m²</p>
+          <ul class="karta__dane"><li>119,35&nbsp;m²</li><li>działka ok.&nbsp;371&nbsp;m²</li><li>4&nbsp;pokoje</li></ul>
+          <div class="karta__akcje"><a class="btn btn--ink" href="#kontakt" data-zapytaj="2A">Zapytaj</a><a class="btn btn--obrys" href="Jarzebinowe_karta_domu_2A.pdf" target="_blank" rel="noopener">Karta domu PDF</a></div>
+        </article>
+      </li>
+      <li>
+        <article class="karta" id="dom-2B" data-dom="2B" data-status="wolny" aria-current="false">
+          <div class="karta__gora"><h3 class="karta__nr">2B</h3><p class="status status--wolny">Wolny</p></div>
+          <p class="karta__cena">879&nbsp;000&nbsp;zł</p>
+          <p class="karta__m2">7&nbsp;364,89&nbsp;zł/m²</p>
+          <ul class="karta__dane"><li>119,35&nbsp;m²</li><li>działka ok.&nbsp;371&nbsp;m²</li><li>4&nbsp;pokoje</li></ul>
+          <div class="karta__akcje"><a class="btn btn--ink" href="#kontakt" data-zapytaj="2B">Zapytaj</a><a class="btn btn--obrys" href="Jarzebinowe_karta_domu_2B.pdf" target="_blank" rel="noopener">Karta domu PDF</a></div>
+        </article>
+      </li>
+      <li>
+        <article class="karta" id="dom-3A" data-dom="3A" data-status="rezerwacja" aria-current="false">
+          <div class="karta__gora"><h3 class="karta__nr">3A</h3><p class="status status--rezerwacja">Rezerwacja</p></div>
+          <p class="karta__cena">899&nbsp;000&nbsp;zł</p>
+          <p class="karta__m2">7&nbsp;532,47&nbsp;zł/m²</p>
+          <ul class="karta__dane"><li>119,35&nbsp;m²</li><li>działka ok.&nbsp;371&nbsp;m²</li><li>4&nbsp;pokoje</li></ul>
+          <div class="karta__akcje"><a class="btn btn--ink" href="#kontakt" data-zapytaj="3A">Zapytaj</a><a class="btn btn--obrys" href="Jarzebinowe_karta_domu_3A.pdf" target="_blank" rel="noopener">Karta domu PDF</a></div>
+        </article>
+      </li>
+      <li>
+        <article class="karta" id="dom-3B" data-dom="3B" data-status="wolny" aria-current="false">
+          <div class="karta__gora"><h3 class="karta__nr">3B</h3><p class="status status--wolny">Wolny</p></div>
+          <p class="karta__cena">929&nbsp;000&nbsp;zł</p>
+          <p class="karta__m2">7&nbsp;783,83&nbsp;zł/m²</p>
+          <ul class="karta__dane"><li>119,35&nbsp;m²</li><li>działka ok.&nbsp;371&nbsp;m²</li><li>4&nbsp;pokoje</li></ul>
+          <p class="karta__uwaga">Skrajny od wschodu, otwarty widok na łąkę.</p>
+          <div class="karta__akcje"><a class="btn btn--ink" href="#kontakt" data-zapytaj="3B">Zapytaj</a><a class="btn btn--obrys" href="Jarzebinowe_karta_domu_3B.pdf" target="_blank" rel="noopener">Karta domu PDF</a></div>
+        </article>
+      </li>
+    </ul>
+    <p class="przypis">W&nbsp;cenie 2&nbsp;miejsca postojowe na podjeździe. Koszty notarialne i&nbsp;sądowe po stronie kupującego.</p>
+
+    <details class="historia">
+      <summary>Historia zmian cen i&nbsp;statusów</summary>
+      <div class="historia__tresc">
+        <table>
+          <thead><tr><th scope="col">Dom</th><th scope="col">Data</th><th scope="col">Zmiana</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">1A</th><td>16.11.2026, 09:49</td><td>cena 819&nbsp;000&nbsp;zł → 899&nbsp;000&nbsp;zł (7&nbsp;532,47&nbsp;zł/m²)</td></tr>
+            <tr><th scope="row">1A</th><td>27.10.2026</td><td>cena wyjściowa 819&nbsp;000&nbsp;zł (6&nbsp;862,17&nbsp;zł/m²), status: dostępny</td></tr>
+            <tr><th scope="row">1B</th><td>16.11.2026, 09:49</td><td>cena 809&nbsp;000&nbsp;zł → 879&nbsp;000&nbsp;zł (7&nbsp;364,89&nbsp;zł/m²)</td></tr>
+            <tr><th scope="row">1B</th><td>27.10.2026</td><td>cena wyjściowa 809&nbsp;000&nbsp;zł (6&nbsp;778,38&nbsp;zł/m²), status: dostępny</td></tr>
+            <tr><th scope="row">2A</th><td>16.11.2026, 09:49</td><td>cena 809&nbsp;000&nbsp;zł → 879&nbsp;000&nbsp;zł (7&nbsp;364,89&nbsp;zł/m²)</td></tr>
+            <tr><th scope="row">2A</th><td>27.10.2026</td><td>cena wyjściowa 809&nbsp;000&nbsp;zł (6&nbsp;778,38&nbsp;zł/m²), status: dostępny</td></tr>
+            <tr><th scope="row">2B</th><td>16.11.2026, 09:49</td><td>cena 809&nbsp;000&nbsp;zł → 879&nbsp;000&nbsp;zł (7&nbsp;364,89&nbsp;zł/m²)</td></tr>
+            <tr><th scope="row">2B</th><td>27.10.2026</td><td>cena wyjściowa 809&nbsp;000&nbsp;zł (6&nbsp;778,38&nbsp;zł/m²), status: dostępny</td></tr>
+            <tr><th scope="row">3A</th><td>16.11.2026, 09:49</td><td>status: dostępny → rezerwacja; cena 819&nbsp;000&nbsp;zł → 899&nbsp;000&nbsp;zł (7&nbsp;532,47&nbsp;zł/m²)</td></tr>
+            <tr><th scope="row">3A</th><td>27.10.2026</td><td>cena wyjściowa 819&nbsp;000&nbsp;zł (6&nbsp;862,17&nbsp;zł/m²), status: dostępny</td></tr>
+            <tr><th scope="row">3B</th><td>16.11.2026, 09:49</td><td>status: rezerwacja → dostępny; cena 839&nbsp;000&nbsp;zł → 929&nbsp;000&nbsp;zł (7&nbsp;783,83&nbsp;zł/m²)</td></tr>
+            <tr><th scope="row">3B</th><td>27.10.2026</td><td>cena wyjściowa 839&nbsp;000&nbsp;zł (7&nbsp;029,74&nbsp;zł/m²), status: rezerwacja</td></tr>
+          </tbody>
+        </table>
+        <p class="historia__csv">Każda zmiana ceny i&nbsp;statusu jest zapisywana z&nbsp;datą. <a href="data:text/csv;charset=utf-8;base64,77u/IkNlbm5payDigJMgc3RhbiBuYSI7IjE2LjExLjIwMjYsIDA5OjQ5Igpkb207YnVkeW5laztwb3dfdXp5dGtvd2FfbTI7ZHppYWxrYV9tMjtwb2tvamU7Y2VuYV9icnV0dG9femw7Y2VuYV96YV9tMl96bDtzdGF0dXM7cG9taWVzemN6ZW5pYV9wcnp5bmFsZXpuZTtrb3N6dHlfZG9kYXRrb3dlCjFBO0IxOzExOSwzNTszNzEsMjs0Ozg5OTAwMDs3NTMyLDQ3O1dvbG55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIHBvZGplxbpkemllIOKAkyB3IGNlbmllIGRvbXUsIDAgesWCIjsia29zenR5IG5vdGFyaWFsbmUgaSBzxIVkb3dlIHBvIHN0cm9uaWUga3VwdWrEhWNlZ28iCjFCO0IxOzExOSwzNTszNzEsMjs0Ozg3OTAwMDs3MzY0LDg5O1dvbG55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIHBvZGplxbpkemllIOKAkyB3IGNlbmllIGRvbXUsIDAgesWCIjsia29zenR5IG5vdGFyaWFsbmUgaSBzxIVkb3dlIHBvIHN0cm9uaWUga3VwdWrEhWNlZ28iCjJBO0IyOzExOSwzNTszNzEsMjs0Ozg3OTAwMDs3MzY0LDg5O1dvbG55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIHBvZGplxbpkemllIOKAkyB3IGNlbmllIGRvbXUsIDAgesWCIjsia29zenR5IG5vdGFyaWFsbmUgaSBzxIVkb3dlIHBvIHN0cm9uaWUga3VwdWrEhWNlZ28iCjJCO0IyOzExOSwzNTszNzEsMjs0Ozg3OTAwMDs3MzY0LDg5O1dvbG55OyIyIG1pZWpzY2EgcG9zdG9qb3dlIG5hIHBvZGplxbpkemllIOKAkyB3IGNlbmllIGRvbXUsIDAgesWCIjsia29zenR5IG5vdGFyaWFsbmUgaSBzxIVkb3dlIHBvIHN0cm9uaWUga3VwdWrEhWNlZ28iCjNBO0IzOzExOSwzNTszNzEsMjs0Ozg5OTAwMDs3NTMyLDQ3O1JlemVyd2FjamE7IjIgbWllanNjYSBwb3N0b2pvd2UgbmEgcG9kamXFumR6aWUg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJrb3N6dHkgbm90YXJpYWxuZSBpIHPEhWRvd2UgcG8gc3Ryb25pZSBrdXB1asSFY2VnbyIKM0I7QjM7MTE5LDM1OzM3MSwyOzQ7OTI5MDAwOzc3ODMsODM7V29sbnk7IjIgbWllanNjYSBwb3N0b2pvd2UgbmEgcG9kamXFumR6aWUg4oCTIHcgY2VuaWUgZG9tdSwgMCB6xYIiOyJrb3N6dHkgbm90YXJpYWxuZSBpIHPEhWRvd2UgcG8gc3Ryb25pZSBrdXB1asSFY2VnbyIKCiJIaXN0b3JpYSB6bWlhbiIKZGF0YV9pX2dvZHppbmE7ZG9tO3BvbGU7YnlsbztqZXN0O2NlbmFfbTJfYnlsbztjZW5hX20yX2plc3QKMjcuMTAuMjAyNjsxQTtjZW5hOzs4MTkwMDA7OzY4NjIsMTcKMjcuMTAuMjAyNjsxQTtzdGF0dXM7O0Rvc3TEmXBueTs7CjI3LjEwLjIwMjY7MUI7Y2VuYTs7ODA5MDAwOzs2Nzc4LDM4CjI3LjEwLjIwMjY7MUI7c3RhdHVzOztEb3N0xJlwbnk7OwoyNy4xMC4yMDI2OzJBO2NlbmE7OzgwOTAwMDs7Njc3OCwzOAoyNy4xMC4yMDI2OzJBO3N0YXR1czs7RG9zdMSZcG55OzsKMjcuMTAuMjAyNjsyQjtjZW5hOzs4MDkwMDA7OzY3NzgsMzgKMjcuMTAuMjAyNjsyQjtzdGF0dXM7O0Rvc3TEmXBueTs7CjI3LjEwLjIwMjY7M0E7Y2VuYTs7ODE5MDAwOzs2ODYyLDE3CjI3LjEwLjIwMjY7M0E7c3RhdHVzOztEb3N0xJlwbnk7OwoyNy4xMC4yMDI2OzNCO2NlbmE7OzgzOTAwMDs7NzAyOSw3NAoyNy4xMC4yMDI2OzNCO3N0YXR1czs7UmV6ZXJ3YWNqYTs7CiIxNi4xMS4yMDI2LCAwOTo0OSI7MUE7Y2VuYTs4MTkwMDA7ODk5MDAwOzY4NjIsMTc7NzUzMiw0NwoiMTYuMTEuMjAyNiwgMDk6NDkiOzFCO2NlbmE7ODA5MDAwOzg3OTAwMDs2Nzc4LDM4OzczNjQsODkKIjE2LjExLjIwMjYsIDA5OjQ5IjsyQTtjZW5hOzgwOTAwMDs4NzkwMDA7Njc3OCwzODs3MzY0LDg5CiIxNi4xMS4yMDI2LCAwOTo0OSI7MkI7Y2VuYTs4MDkwMDA7ODc5MDAwOzY3NzgsMzg7NzM2NCw4OQoiMTYuMTEuMjAyNiwgMDk6NDkiOzNBO2NlbmE7ODE5MDAwOzg5OTAwMDs2ODYyLDE3Ozc1MzIsNDcKIjE2LjExLjIwMjYsIDA5OjQ5IjszQTtzdGF0dXM7RG9zdMSZcG55O1JlemVyd2FjamE7OwoiMTYuMTEuMjAyNiwgMDk6NDkiOzNCO2NlbmE7ODM5MDAwOzkyOTAwMDs3MDI5LDc0Ozc3ODMsODMKIjE2LjExLjIwMjYsIDA5OjQ5IjszQjtzdGF0dXM7UmV6ZXJ3YWNqYTtEb3N0xJlwbnk7Owo=" download="JARZEBINOWE_cennik.csv">Cennik z&nbsp;historią w&nbsp;pliku CSV</a>.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="rzuty-sek wrap" id="rzuty" data-sekcja="domy" aria-labelledby="rzuty-t">
+  <p class="brw">Dom i rzuty</p>
+  <h2 class="h2" id="rzuty-t">119&nbsp;m² <em>na dwóch</em> kondygnacjach</h2>
+  <div class="rzuty">
+    <figure class="rzut">
+      <div class="rzut__obraz"><img src="rzutparter.png" alt="Rzut parteru domu A z przykładowym umeblowaniem" width="1200" height="1697" loading="lazy" decoding="async"></div>
+      <figcaption class="rzut__glowa"><span class="rzut__nazwa">Parter</span><span>65,78&nbsp;m²</span></figcaption>
+      <dl class="pomieszczenia">
+        <div><dt>Wiatrołap</dt><dd>4,05&nbsp;m²</dd></div>
+        <div><dt>WC</dt><dd>2,18&nbsp;m²</dd></div>
+        <div><dt>Hol</dt><dd>5,26&nbsp;m²</dd></div>
+        <div><dt>Kuchnia</dt><dd>9,30&nbsp;m²</dd></div>
+        <div><dt>Salon z&nbsp;jadalnią</dt><dd>42,69&nbsp;m²</dd></div>
+        <div><dt>Schowek</dt><dd>2,30&nbsp;m²</dd></div>
+      </dl>
+    </figure>
+    <figure class="rzut">
+      <div class="rzut__obraz"><img src="rzutpoddasze.png" alt="Rzut poddasza domu A z przykładowym umeblowaniem" width="1200" height="1697" loading="lazy" decoding="async"></div>
+      <figcaption class="rzut__glowa"><span class="rzut__nazwa">Poddasze</span><span>53,57&nbsp;m²</span></figcaption>
+      <dl class="pomieszczenia">
+        <div><dt>Hol</dt><dd>8,94&nbsp;m²</dd></div>
+        <div><dt>Sypialnia 1</dt><dd>11,48&nbsp;m²</dd></div>
+        <div><dt>Sypialnia 2</dt><dd>12,50&nbsp;m²</dd></div>
+        <div><dt>Sypialnia 3</dt><dd>10,92&nbsp;m²</dd></div>
+        <div><dt>Łazienka</dt><dd>4,98&nbsp;m²</dd></div>
+        <div><dt>Garderoba</dt><dd>4,75&nbsp;m²</dd></div>
+      </dl>
+    </figure>
+  </div>
+  <dl class="standard" aria-label="Standard deweloperski">
+    <div><dt>Konstrukcja</dt><dd>Bloczki silikatowe, podwójna ściana między domami z&nbsp;wełną, strop żelbetowy</dd></div>
+    <div><dt>Ocieplenie</dt><dd>Styropian grafitowy 15&nbsp;cm, dach — wełna 25&nbsp;cm</dd></div>
+    <div><dt>Dach</dt><dd>Blacha na rąbek stojący, antracyt, rynny ukryte</dd></div>
+    <div><dt>Elewacja</dt><dd>Biały tynk silikonowy i&nbsp;deska z&nbsp;termojesionu</dd></div>
+    <div><dt>Okna</dt><dd>Trzyszybowe; w&nbsp;salonie HS 3,6&nbsp;m; 3&nbsp;okna dachowe</dd></div>
+    <div><dt>Drzwi wejściowe</dt><dd>Aluminiowe, antywłamaniowe RC2</dd></div>
+    <div><dt>Ogrzewanie</dt><dd>Pompa ciepła powietrze-woda, podłogówka w&nbsp;całym domu</dd></div>
+    <div><dt>Wentylacja</dt><dd>Przygotowanie pod rekuperację</dd></div>
+    <div><dt>Fotowoltaika</dt><dd>Instalacja PV ok.&nbsp;3&nbsp;kWp na każdym domu</dd></div>
+    <div><dt>Instalacje</dt><dd>Przygotowanie pod klimatyzację w&nbsp;sypialni&nbsp;1, gniazda przy tarasie</dd></div>
+    <div><dt>Teren</dt><dd>Podjazd na 2&nbsp;auta, taras z&nbsp;gresu, ogrodzenie, ekran prywatności</dd></div>
+    <div><dt>Nie w&nbsp;cenie</dt><dd>Trawnik i&nbsp;nasadzenia (poza drzewkiem od frontu), wykończenie wnętrz</dd></div>
+  </dl>
+</section>
+
+<section class="wnetrza wrap" id="wnetrza" data-sekcja="wnetrza" aria-labelledby="wnetrza-t">
+  <p class="brw">Wnętrza i&nbsp;ogród</p>
+  <div class="naglowek">
+    <h2 class="h2" id="wnetrza-t">Salon z&nbsp;kuchnią, <em>52&nbsp;m² światła</em></h2>
+    <p class="naglowek__opis">Parter to jedna otwarta przestrzeń: kuchnia, jadalnia i&nbsp;salon, z&nbsp;wyjściem na taras od południa.</p>
+  </div>
+  <div class="galeria">
+    <figure class="foto">
+      <img src="Słoneczny%20salon%20z%20kuchnią%20i%20schodami.png" alt="Salon z jadalnią i kuchnią, schody na poddasze, jasna podłoga z drewna" width="1672" height="941" loading="lazy" decoding="async">
+      <figcaption class="tag">Salon z&nbsp;kuchnią i&nbsp;schodami</figcaption>
+    </figure>
+    <figure class="foto">
+      <img src="Jasne%20wnętrze%20z%20widokiem%20na%20ogród.png" alt="Strefa dzienna z wyjściem na taras i widokiem na łąkę" width="1672" height="941" loading="lazy" decoding="async">
+      <figcaption class="tag">Jasne wnętrze z&nbsp;widokiem na ogród</figcaption>
+    </figure>
+    <figure class="foto">
+      <img src="Rodzinne%20popołudnie%20w%20ogrodzie%20nowoczesnych%20domów.png" alt="Ogród od południa z tarasem przy domu" width="1672" height="941" loading="lazy" decoding="async" style="object-position:70% 50%">
+      <figcaption class="tag">Ogród od południa</figcaption>
+    </figure>
+  </div>
+  <p class="przypis">Wizualizacje mają charakter poglądowy. Zieleń pokazano ok.&nbsp;2–3 lata po oddaniu osiedla.</p>
+</section>
+
+<section class="lok wrap" id="lokalizacja" data-sekcja="lokalizacja" aria-labelledby="lok-t">
+  <div>
+    <p class="brw">Lokalizacja</p>
+    <h2 class="h2" id="lok-t">ul.&nbsp;Jarzębinowa,<br><em>Mikołów-Mokre</em></h2>
+    <dl class="odleglosci">
+      <div><dt>Las</dt><dd>ok.&nbsp;300&nbsp;m</dd></div>
+      <div><dt>Szkoła podstawowa</dt><dd>[__&nbsp;km]</dd></div>
+      <div><dt>Sklep spożywczy</dt><dd>[__&nbsp;km]</dd></div>
+      <div><dt>Wjazd na autostradę</dt><dd>[__&nbsp;min]</dd></div>
+      <div><dt>Centrum Katowic</dt><dd>[__&nbsp;min]</dd></div>
+    </dl>
+  </div>
+  <figure class="mapa" aria-label="Schemat okolicy: osiedle, szkoła, sklep, wjazd na autostradę i las na południu">
+    <div class="mapa__bloki" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="mapa__las" aria-hidden="true"></div>
+    <span class="mapa__pkt" style="left:16.1%;top:19.6%">Szkoła</span>
+    <span class="mapa__pkt" style="left:81.6%;top:13.6%">Autostrada</span>
+    <a class="mapa__pkt mapa__pkt--dom" style="left:59.8%;top:47.8%" href="https://www.openstreetmap.org/#map=16/50.1783/18.8591" target="_blank" rel="noopener" title="Otwórz mapę w OpenStreetMap">Jarzębinowe</a>
+    <span class="mapa__pkt" style="left:16.1%;top:61.6%">Sklep</span>
+    <span class="mapa__pkt" style="left:61.7%;top:90%">Las</span>
+    <figcaption class="tag tag--prawo">Schemat — nie w&nbsp;skali</figcaption>
+  </figure>
+</section>
+
+<section class="kontakt-sek wrap" id="kontakt" data-sekcja="kontakt" aria-labelledby="kontakt-t">
+  <div class="kontakt">
+    <div>
+      <p class="brw">Kontakt</p>
+      <h2 class="h2" id="kontakt-t">Przyjedź <em>zobaczyć</em> działki</h2>
+      <p class="kontakt__opis">Pokażemy działki na miejscu i&nbsp;odpowiemy na pytania o&nbsp;standard, terminy i&nbsp;finansowanie.</p>
+      <p class="kontakt__tel"><a href="tel:+48672432888">+48 672 432 888</a></p>
+      <p class="kontakt__info">pon.–sob. 8:00–18:00<br>Biuro sprzedaży: [adres biura sprzedaży]<br>Kaczmarczyk Inwestycje sp. z&nbsp;o.o.</p>
     </div>
-  </section>
-
+    <form class="formularz" method="post" action="mailto:jarzebinowa@biuro.pl" enctype="text/plain" novalidate>
+      <label>Imię i nazwisko<input name="imie" autocomplete="name" required maxlength="100"></label>
+      <label>E-mail<input name="email" type="email" autocomplete="email" required maxlength="150"></label>
+      <label>Telefon (opcjonalnie)<input name="telefon" type="tel" autocomplete="tel" maxlength="30"></label>
+      <label>Dom<select name="dom"><option value="">Dowolny</option><option>1A</option><option>1B</option><option>2A</option><option>2B</option><option>3A</option><option>3B</option></select></label>
+      <label class="szeroko">Wiadomość<textarea name="wiadomosc" rows="4" required maxlength="3000" placeholder="Np. kiedy możemy obejrzeć działkę?"></textarea></label>
+      <label class="hp" aria-hidden="true">Strona www<input name="strona" tabindex="-1" autocomplete="off"></label>
+      <label class="zgoda szeroko"><input type="checkbox" name="zgoda" value="1" required><span>Wyrażam zgodę na przetwarzanie moich danych w&nbsp;celu odpowiedzi na zapytanie. Administrator: Kaczmarczyk Inwestycje sp. z&nbsp;o.o. Dane przechowujemy 12&nbsp;miesięcy; zgodę mogę wycofać w&nbsp;każdej chwili.</span></label>
+      <p class="komunikat szeroko" role="status" aria-live="polite" hidden></p>
+      <button class="btn btn--zielony" type="submit">Wyślij zapytanie <span class="btn__strz" aria-hidden="true">→</span></button>
+    </form>
+  </div>
+</section>
 </main>
 
-<footer class="footer">
-  <div class="wrap footer__in">
-    <span class="footer__brand">Jarzębinowe</span>
-    <p class="footer__note">Wizualizacje mają charakter poglądowy i&nbsp;nie stanowią oferty w&nbsp;rozumieniu Kodeksu cywilnego.</p>
-    <a class="footer__link" href="#kontakt">Polityka prywatności</a>
-  </div>
+<footer class="stopka wrap">
+  <a class="stopka__logo" href="#start">Jarzębinowe</a>
+  <p>Wizualizacje mają charakter poglądowy i&nbsp;nie stanowią oferty w&nbsp;rozumieniu Kodeksu cywilnego.</p>
+  <a class="stopka__pp" href="polityka-prywatnosci.html">Polityka prywatności</a>
 </footer>
 
+<div class="pasek" aria-label="Szybki kontakt">
+  <a class="pasek__tel" href="tel:+48672432888" aria-label="Zadzwoń: +48 672 432 888">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+  </a>
+  <a class="btn btn--zielony" href="#kontakt">Zapytaj o dom</a>
+</div>
+
 <script>
+// JARZĘBINOWE – wersja B (editorial). Nawigacja, menu, film, plan osiedla <-> karty domów, formularz.
+// Strona działa też bez JavaScriptu: obrysy na planie prowadzą do kart (#dom-XX), formularz otwiera pocztę.
 (() => {
   const mniejRuchu = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // 1. Film w hero (play/pause)
-  const video = document.querySelector('video[data-film]');
-  const btnPause = document.querySelector('[data-film-przelacz]');
-  const updatePauseBtn = (playing) => {
-    if (!btnPause) return;
-    btnPause.textContent = playing ? 'Zatrzymaj film' : 'Odtwórz film';
-    btnPause.setAttribute('aria-pressed', String(!playing));
+  // ------------------------------------------------ nawigacja: cień po przewinięciu, aktywna sekcja
+  const nav = document.querySelector('[data-nav]');
+  const naScroll = () => nav.classList.toggle('przewiniety', scrollY > 8);
+  addEventListener('scroll', naScroll, { passive: true });
+  naScroll();
+  const linki = [...document.querySelectorAll('.nav__linki a, .menu > a')];
+  const aktywna = (id) => linki.forEach((a) => a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + id)));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((wpisy) => wpisy.forEach((w) => { if (w.isIntersecting) aktywna(w.target.dataset.sekcja); }),
+      { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('[data-sekcja]').forEach((s) => io.observe(s));
+  }
+
+  // ------------------------------------------------ menu na telefonie
+  const burger = document.querySelector('.nav__burger');
+  const menu = document.getElementById('menu');
+  const ustawMenu = (otw) => {
+    burger.setAttribute('aria-expanded', String(otw));
+    burger.setAttribute('aria-label', otw ? 'Zamknij menu' : 'Otwórz menu');
+    menu.hidden = !otw;
+    document.body.classList.toggle('menu-otwarte', otw);
   };
-  if (video) {
-    if (mniejRuchu) {
-      video.removeAttribute('autoplay');
-      video.pause();
-      updatePauseBtn(false);
-    } else {
-      addEventListener('load', () => {
-        video.play().catch(() => updatePauseBtn(false));
-      }, { once: true });
-    }
-    video.addEventListener('play', () => updatePauseBtn(true));
-    video.addEventListener('pause', () => updatePauseBtn(false));
-    if (btnPause) {
-      btnPause.addEventListener('click', () => {
-        if (video.paused) video.play();
-        else video.pause();
-      });
+  burger.addEventListener('click', () => ustawMenu(burger.getAttribute('aria-expanded') !== 'true'));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) ustawMenu(false); });
+  addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { ustawMenu(false); burger.focus(); } });
+  matchMedia('(min-width: 961px)').addEventListener('change', (e) => { if (e.matches) ustawMenu(false); });
+
+  // ------------------------------------------------ film
+  const v = document.querySelector('video[data-film]');
+  const pb = document.querySelector('[data-film-przelacz]');
+  if (v && pb) {
+    const ikona = (gra) => { pb.dataset.gra = gra ? '1' : '0'; pb.setAttribute('aria-label', gra ? 'Zatrzymaj film' : 'Odtwórz film'); };
+    v.addEventListener('play', () => ikona(true));
+    v.addEventListener('pause', () => ikona(false));
+    pb.addEventListener('click', () => { if (v.paused) v.play().catch(() => {}); else v.pause(); });
+    const oszczedzaj = !!(navigator.connection && navigator.connection.saveData);
+    if (!mniejRuchu && !oszczedzaj) {
+      const start = () => v.play().catch(() => ikona(false));
+      if (document.readyState === 'complete') setTimeout(start, 150);
+      else addEventListener('load', () => setTimeout(start, 150), { once: true });
     }
   }
 
-  // 2. Interaktywny plan osiedla <-> karty domów
-  const planWrap = document.querySelector('[data-interaktywna]');
-  const cards = [...document.querySelectorAll('.card[data-dom]')];
-  const selectDom = document.getElementById('wybor-domu');
+  // ------------------------------------------------ dane domów (z kart) i liczba wolnych
+  const karty = [...document.querySelectorAll('.karta[data-dom]')];
+  const DANE = {};
+  karty.forEach((k) => {
+    const t = (s) => { const el = k.querySelector(s); return el ? el.textContent.trim() : ''; };
+    DANE[k.dataset.dom] = { status: k.dataset.status, statusTxt: t('.status'), cena: t('.karta__cena'), m2: t('.karta__m2') };
+  });
+  const wolne = karty.filter((k) => k.dataset.status === 'wolny').length;
+  document.querySelectorAll('[data-wolne]').forEach((el) => { el.textContent = wolne; });
 
-  // Licznik wolnych domów na bazie kart
-  const wolneCount = cards.filter(c => c.dataset.status === 'dost').length;
-  document.querySelectorAll('[data-wolne]').forEach(el => { el.textContent = wolneCount; });
+  // ------------------------------------------------ plan osiedla <-> karty
+  const plan = document.querySelector('[data-plan]');
+  const piny = [...document.querySelectorAll('.pin[data-dom]')];
+  const obrysy = plan ? [...plan.querySelectorAll('polygon[data-dom]')] : [];
+  piny.forEach((p) => {
+    const d = DANE[p.dataset.dom];
+    if (!d) return;
+    p.classList.add('pin--' + d.status);
+    p.setAttribute('aria-label', 'Dom ' + p.dataset.dom + ': ' + d.statusTxt.toLowerCase() + ', ' + d.cena);
+  });
 
-  // Pozycje okrągłych pinów (środki poligonów w %)
-  const pinCoords = {
-    '1A': { left: 86.5, top: 64.5 },
-    '1B': { left: 71.5, top: 58.0 },
-    '2A': { left: 56.5, top: 50.8 },
-    '2B': { left: 43.8, top: 44.2 },
-    '3A': { left: 30.8, top: 37.8 },
-    '3B': { left: 18.4, top: 32.2 }
+  const wybierz = (id, przewin) => {
+    karty.forEach((k) => k.setAttribute('aria-current', String(k.dataset.dom === id)));
+    piny.forEach((p) => p.setAttribute('aria-pressed', String(p.dataset.dom === id)));
+    obrysy.forEach((o) => o.classList.toggle('wybrany', o.dataset.dom === id));
+    if (przewin) {
+      const k = document.getElementById('dom-' + id);
+      if (k) {
+        const r = k.getBoundingClientRect();
+        if (r.top < 90 || r.bottom > innerHeight) k.scrollIntoView({ behavior: mniejRuchu ? 'auto' : 'smooth', block: 'nearest' });
+      }
+    }
+  };
+  const podswietl = (id) => {
+    piny.forEach((p) => p.classList.toggle('hover', p.dataset.dom === id));
+    obrysy.forEach((o) => o.classList.toggle('hover', o.dataset.dom === id));
+    karty.forEach((k) => k.classList.toggle('hover', k.dataset.dom === id));
   };
 
-  const getHouseData = (id) => {
-    const card = document.querySelector(`.card[data-dom="${id}"]`);
-    if (!card) return null;
-    return {
-      id,
-      status: card.dataset.status || 'dost',
-      statusTxt: card.dataset.statusTxt || 'Wolny',
-      cena: card.dataset.cena || '',
-      m2: card.dataset.m2 || ''
+  if (plan) {
+    const dymek = plan.querySelector('.plan__dymek');
+    // piny nad dachami: współrzędne w układzie obrazu 2000×1125, obraz przycięty jak CSS „cover”
+    const ustawPiny = () => {
+      const w = plan.clientWidth, h = plan.clientHeight, s = Math.max(w / 2000, h / 1125);
+      const ox = (w - 2000 * s) / 2, oy = (h - 1125 * s) / 2;
+      piny.forEach((p) => {
+        const [x, y] = p.dataset.xy.split(',').map(Number);
+        p.style.left = (ox + x * s).toFixed(1) + 'px';
+        p.style.top = (oy + y * s).toFixed(1) + 'px';
+      });
     };
-  };
+    if ('ResizeObserver' in window) new ResizeObserver(ustawPiny).observe(plan);
+    else addEventListener('resize', ustawPiny);
+    ustawPiny();
 
-  const selectHouse = (id, scrollToCard = false) => {
-    cards.forEach(c => c.classList.toggle('active', c.dataset.dom === id));
-    document.querySelectorAll('.plan-wrap polygon').forEach(p => p.classList.toggle('active', p.dataset.dom === id));
-    document.querySelectorAll('.plan-pin').forEach(pin => pin.classList.toggle('active', pin.dataset.dom === id));
-
-    if (scrollToCard) {
-      const target = document.getElementById('dom-' + id);
-      if (target) {
-        const y = target.getBoundingClientRect().top + window.scrollY - 96;
-        window.scrollTo({ top: y, behavior: mniejRuchu ? 'auto' : 'smooth' });
-      }
-    }
-  };
-
-  if (planWrap) {
-    const svg = planWrap.querySelector('svg');
-    const pinsLayer = planWrap.querySelector('.plan-pins');
-    const tooltip = planWrap.querySelector('.plan-tooltip');
-
-    Object.keys(pinCoords).forEach((id) => {
-      const d = getHouseData(id);
-      if (!d) return;
-
-      const poly = svg.querySelector(`polygon[data-dom="${id}"]`);
-      if (poly) poly.classList.add('st-' + d.status);
-
-      const pin = document.createElement('button');
-      pin.type = 'button';
-      pin.className = `plan-pin st-${d.status}${id === '1A' ? ' active' : ''}`;
-      pin.dataset.dom = id;
-      pin.textContent = id;
-      pin.setAttribute('aria-label', `Dom ${id}, ${d.statusTxt}, ${d.cena}`);
-      pin.style.left = pinCoords[id].left + '%';
-      pin.style.top = pinCoords[id].top + '%';
-      pin.addEventListener('click', () => selectHouse(id, true));
-      pinsLayer.appendChild(pin);
+    const idPod = (e) => { const el = e.target.closest && e.target.closest('[data-dom]'); return el ? el.getAttribute('data-dom') : null; };
+    plan.addEventListener('pointermove', (e) => {
+      const id = idPod(e);
+      podswietl(id);
+      if (!id || e.pointerType !== 'mouse') { dymek.hidden = true; return; }
+      const d = DANE[id];
+      dymek.innerHTML = '<b>' + id + '</b>' + d.cena + ' · ' + d.m2 + '<br>' + d.statusTxt + '<small>Kliknij, aby wybrać dom.</small>';
+      dymek.hidden = false;
+      const r = plan.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+      dymek.style.left = Math.max(8, Math.min(x + 16, r.width - dymek.offsetWidth - 8)) + 'px';
+      dymek.style.top = Math.max(8, y + 18 + dymek.offsetHeight > r.height ? y - dymek.offsetHeight - 12 : y + 18) + 'px';
     });
-
-    // Domyślnie aktywny 1A
-    selectHouse('1A', false);
-
-    svg.addEventListener('mousemove', (e) => {
-      const poly = e.target.closest('polygon[data-dom]');
-      if (!poly) { tooltip.hidden = true; return; }
-      const d = getHouseData(poly.dataset.dom);
-      if (!d) return;
-      tooltip.innerHTML = `<b>${d.id}</b><span>${d.cena} · ${d.statusTxt}</span><span>${d.m2}</span><small>Kliknij, aby przejść do oferty</small>`;
-      tooltip.hidden = false;
-      const r = planWrap.getBoundingClientRect();
-      const x = e.clientX - r.left;
-      const y = e.clientY - r.top;
-      tooltip.style.left = Math.max(10, Math.min(x + 14, r.width - tooltip.offsetWidth - 10)) + 'px';
-      const topPos = y + 16 + tooltip.offsetHeight > r.height ? y - tooltip.offsetHeight - 12 : y + 16;
-      tooltip.style.top = Math.max(10, topPos) + 'px';
-    });
-
-    svg.addEventListener('mouseleave', () => { tooltip.hidden = true; });
-    svg.addEventListener('click', (e) => {
-      const poly = e.target.closest('polygon[data-dom]');
-      if (poly) selectHouse(poly.dataset.dom, true);
-    });
-  }
-
-  cards.forEach(card => {
-    card.addEventListener('click', (e) => {
-      if (e.target.closest('a, button')) return;
-      selectHouse(card.dataset.dom, false);
-    });
-  });
-
-  // Przycisk "Zapytaj" w karcie ustawia wybrany dom w formularzu
-  document.querySelectorAll('[data-zapytaj]').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (selectDom) selectDom.value = btn.dataset.zapytaj;
-    });
-  });
-
-  // 3. Podświetlanie aktywnej sekcji w nawigacji
-  const navLinks = [...document.querySelectorAll('.nav__links a')];
-  if ('IntersectionObserver' in window && navLinks.length) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach(l => l.setAttribute('aria-current', String(l.getAttribute('href') === '#' + entry.target.id)));
-      });
-    }, { rootMargin: '-40% 0px -50% 0px' });
-    navLinks.forEach(l => {
-      const sec = document.querySelector(l.getAttribute('href'));
-      if (sec) io.observe(sec);
-    });
-  }
-
-  // 4. Formularz kontaktowy (mailto dla strony statycznej)
-  const form = document.querySelector('.form');
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      const msg = form.querySelector('.form__msg');
-      if (!form.checkValidity()) {
-        e.preventDefault();
-        form.reportValidity();
-        return;
-      }
+    plan.addEventListener('pointerleave', () => { podswietl(null); dymek.hidden = true; });
+    plan.addEventListener('click', (e) => {
+      const id = idPod(e);
+      if (!id) return;
       e.preventDefault();
-      const d = new FormData(form);
-      const g = (k) => (d.get(k) || '').toString().trim();
-      const temat = 'Zapytanie ze strony Jarzębinowe' + (g('dom') ? ' – dom ' + g('dom') : '');
-      const tresc = `Imię i nazwisko: ${g('imie')}\nE-mail: ${g('email')}\nTelefon: ${g('telefon') || '-'}\nDom: ${g('dom') || 'Dowolny'}\n\n${g('wiadomosc')}\n\nZgoda na przetwarzanie danych: TAK`;
-      location.href = form.action + '?subject=' + encodeURIComponent(temat) + '&body=' + encodeURIComponent(tresc);
-      msg.hidden = false;
-      msg.className = 'form__msg full';
-      msg.textContent = 'Otwieramy program pocztowy z gotową wiadomością. Jeśli się nie otworzył, zadzwoń: +48 672 432 888.';
+      wybierz(id, true);
+      history.replaceState(null, '', '#dom-' + id);
     });
   }
+
+  karty.forEach((k) => {
+    k.addEventListener('mouseenter', () => podswietl(k.dataset.dom));
+    k.addEventListener('mouseleave', () => podswietl(null));
+    k.addEventListener('click', (e) => { if (!e.target.closest('a, button')) wybierz(k.dataset.dom, false); });
+  });
+
+  // „Zapytaj” na karcie: wybiera dom w formularzu
+  const wyborDomu = document.querySelector('.formularz select[name="dom"]');
+  document.querySelectorAll('[data-zapytaj]').forEach((a) => a.addEventListener('click', () => {
+    if (wyborDomu) wyborDomu.value = a.dataset.zapytaj;
+    wybierz(a.dataset.zapytaj, false);
+  }));
+
+  const zAdresu = location.hash.match(/^#dom-([1-3][AB])$/);
+  if (zAdresu) wybierz(zAdresu[1], false);
+
+  // ------------------------------------------------ formularz (strona statyczna: gotowa wiadomość w programie pocztowym)
+  const f = document.querySelector('.formularz');
+  if (f) f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const msg = f.querySelector('.komunikat');
+    const pokaz = (ok, txt) => { msg.hidden = false; msg.textContent = txt; msg.className = 'komunikat szeroko ' + (ok ? 'komunikat--ok' : 'komunikat--blad'); };
+    if (!f.checkValidity()) { f.reportValidity(); return; }
+    if (f.elements.strona && f.elements.strona.value) return;
+    const d = new FormData(f), g = (k) => (d.get(k) || '').toString().trim();
+    const temat = 'Zapytanie ze strony Jarzębinowe' + (g('dom') ? ' – dom ' + g('dom') : '');
+    const tresc = 'Imię i nazwisko: ' + g('imie') + '\nE-mail: ' + g('email') + '\nTelefon: ' + (g('telefon') || '-') +
+      '\nDom: ' + (g('dom') || 'dowolny') + '\n\n' + g('wiadomosc') + '\n\nZgoda na przetwarzanie danych w celu odpowiedzi: TAK';
+    location.href = f.getAttribute('action') + '?subject=' + encodeURIComponent(temat) + '&body=' + encodeURIComponent(tresc);
+    pokaz(true, 'Otwieramy program pocztowy z gotową wiadomością. Jeśli się nie otworzył, zadzwoń: +48 672 432 888.');
+  });
 })();
 </script>
 </body>
