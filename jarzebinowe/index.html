@@ -37,7 +37,7 @@ em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
 .shot{position:absolute;inset:0;opacity:0;will-change:transform,opacity}
 .shot img{width:100%;height:100%;object-fit:cover;display:block}
 .shot:first-child{opacity:1}
-.shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(16,18,14,.42) 0%,rgba(16,18,14,.18) 40%,rgba(16,18,14,.55) 100%);pointer-events:none}
+.shade{position:absolute;inset:0;background:rgba(16,18,14,.34);pointer-events:none}
 #journey .cap,#journey .hero{text-shadow:0 1px 18px rgba(0,0,0,.35)}
 .hero{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--m) clamp(28px,6vh,64px)}
 .hero h1{font-family:'Inter Tight',sans-serif;font-weight:400;font-size:clamp(56px,13vw,200px);line-height:.82;letter-spacing:-.06em}
@@ -166,9 +166,8 @@ footer{display:flex;justify-content:space-between;gap:16px 40px;flex-wrap:wrap;p
 @media (max-width:860px){
  .links{display:none}
  .rail{display:none}
- .shot:first-child{transform-origin:50% 36% !important}
- .shot:first-child img{object-fit:contain;object-position:50% 36% !important}
- .shade{background:linear-gradient(to bottom,rgba(16,18,14,.3) 0%,rgba(16,18,14,.05) 36%,rgba(16,18,14,.45) 70%,rgba(16,18,14,.75) 100%)}
+ .shot:first-child{transform-origin:52% 45% !important}
+ .shot:first-child img{object-fit:cover;object-position:52% 45% !important}
  .map-scroll{overflow:visible;margin:0 calc(-1 * var(--m))}
  .map{min-width:0;width:100%}
  .map polygon{stroke-width:6px}
@@ -405,13 +404,13 @@ const frames=[...document.querySelectorAll('.frame img')];
 const nav=document.getElementById('nav'), sticky=document.getElementById('sticky');
 const N=shots.length;
 function tick(){
- const y=scrollY;
+ const y=scrollY, mob=innerWidth<=860;
  nav.classList.toggle('solid',y>J.offsetHeight-innerHeight-10);
  sticky.classList.toggle('on',y>innerHeight*.6);
  if(!reduce){
   const p=prog(J), seg=p*N;
   shots.forEach((s,i)=>{
-   const t=clamp(seg-i), z=+s.dataset.z;
+   const t=clamp(seg-i), z=mob?1+(+s.dataset.z-1)*.3:+s.dataset.z;
    const fadeIn=i===0?1:clamp((seg-i+.18)/.18), fadeOut=i===N-1?1:1-clamp((seg-i-.82)/.18);
    s.style.opacity=Math.min(fadeIn,fadeOut);
    s.style.transform=`scale(${1+(z-1)*ease(t)})`;
