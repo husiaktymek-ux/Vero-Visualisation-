@@ -418,7 +418,7 @@ const N=shots.length;
 function tick(){
  const y=scrollY, mob=innerWidth<=860;
  nav.classList.toggle('solid',y>J.offsetHeight-innerHeight-10);
- sticky.classList.toggle('on',y>innerHeight*.6);
+ sticky.classList.toggle('on',y>J.offsetHeight-innerHeight*.35);
  if(!reduce){
   const p=prog(J), seg=p*N;
   shots.forEach((s,i)=>{
