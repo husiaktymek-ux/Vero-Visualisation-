@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jarzębinowe — podróż przez dom</title>
+<link rel="icon" type="image/png" href="logojarzeb%20(1).png">
+<link rel="apple-touch-icon" href="logojarzeb%20(1).png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
 <style>
@@ -24,7 +26,11 @@ em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
 .h2{font-family:'Inter Tight',sans-serif;font-weight:400;font-size:clamp(34px,4.6vw,64px);line-height:1.04;letter-spacing:-.035em;text-wrap:balance}
 .nav{position:fixed;inset:0 0 auto;z-index:50;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 var(--m);color:#fff;transition:background .35s,color .35s,border-color .35s;border-bottom:1px solid transparent}
 .nav.solid{background:rgba(255,255,255,.96);color:var(--ink);border-color:var(--line);backdrop-filter:blur(8px)}
-.logo{font-family:'Instrument Serif',serif;font-size:26px;letter-spacing:-.01em}
+.logo{display:inline-flex;align-items:center;gap:10px;font-family:'Instrument Serif',serif;font-size:26px;letter-spacing:-.01em;line-height:1}
+.logo img{height:44px;width:auto;display:block;transform:translateY(-3px)}
+.nav:not(.solid) .logo img{filter:drop-shadow(0 1px 6px rgba(255,255,255,.55))}
+footer .logo{font-size:22px;gap:8px;color:var(--ink)}
+footer .logo img{height:36px}
 .links{display:flex;gap:4px}
 .links a{font-size:14px;padding:9px 14px;border-radius:999px;border:1px solid transparent}
 .links a:hover{border-color:currentColor}
@@ -161,11 +167,13 @@ form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .consent input{width:20px;height:20px;accent-color:var(--acc);flex:none;margin:1px 0 0}
 .sent{background:#fff;padding:18px;display:none}
 .sent.on{display:block}
-footer{display:flex;justify-content:space-between;gap:16px 40px;flex-wrap:wrap;padding:40px 0 56px;font-size:13px;color:var(--mut)}
+footer{display:flex;justify-content:space-between;align-items:center;gap:16px 40px;flex-wrap:wrap;padding:40px 0 56px;font-size:13px;color:var(--mut)}
 .sticky{display:none}
 @media (max-width:860px){
  .links{display:none}
  .rail{display:none}
+ .logo{font-size:22px;gap:8px}
+ .logo img{height:36px}
  .shot:first-child{transform-origin:52% 45% !important}
  .shot:first-child img{object-fit:cover;object-position:52% 45% !important}
  .map-scroll{overflow:visible;margin:0 calc(-1 * var(--m))}
@@ -216,7 +224,7 @@ footer{display:flex;justify-content:space-between;gap:16px 40px;flex-wrap:wrap;p
 </head>
 <body>
 <header class="nav" id="nav">
-<a href="#journey" class="logo" aria-label="Jarzębinowe — początek">Jarzębinowe</a>
+<a href="#journey" class="logo" aria-label="Jarzębinowe — początek"><img src="logojarzeb%20(1).png" alt="" aria-hidden="true"><span>Jarzębinowe</span></a>
 <nav class="links" aria-label="Nawigacja"><a href="#inwestycja">Inwestycja</a><a href="#plan">Plan</a><a href="#domy">Domy</a><a href="#wnetrza">Wnętrza</a><a href="#kontakt">Kontakt</a></nav>
 <a href="#kontakt" class="btn">Zapytaj o dom</a>
 </header>
@@ -367,7 +375,7 @@ footer{display:flex;justify-content:space-between;gap:16px 40px;flex-wrap:wrap;p
 <div><button class="btn fill" type="submit" style="min-height:54px;padding:0 30px">Wyślij zapytanie →</button></div>
 </form>
 </div>
-<footer><span class="logo" style="font-size:22px">Jarzębinowe</span><span>Wizualizacje mają charakter poglądowy i nie stanowią oferty w rozumieniu Kodeksu cywilnego.</span></footer>
+<footer><span class="logo"><img src="logojarzeb%20(1).png" alt="" aria-hidden="true"><span>Jarzębinowe</span></span><span>Wizualizacje mają charakter poglądowy i nie stanowią oferty w rozumieniu Kodeksu cywilnego.</span></footer>
 </div>
 </section>
 
