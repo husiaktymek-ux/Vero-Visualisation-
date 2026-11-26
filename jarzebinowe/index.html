@@ -29,6 +29,8 @@ em{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
 .logo{display:inline-flex;align-items:center;gap:10px;font-family:'Instrument Serif',serif;font-size:26px;letter-spacing:-.01em;line-height:1}
 .logo img{height:44px;width:auto;display:block;transform:translateY(-3px)}
 .nav:not(.solid) .logo img{filter:drop-shadow(0 1px 6px rgba(255,255,255,.55))}
+.j-i{position:relative;display:inline-block;line-height:1}
+.j-i::after{content:"";position:absolute;left:50%;top:.13em;width:.18em;height:.18em;border-radius:50%;background:#CC1B1F;transform:translateX(-50%)}
 footer .logo{font-size:22px;gap:8px;color:var(--ink)}
 footer .logo img{height:36px}
 .links{display:flex;gap:4px}
@@ -224,7 +226,7 @@ footer{display:flex;justify-content:space-between;align-items:center;gap:16px 40
 </head>
 <body>
 <header class="nav" id="nav">
-<a href="#journey" class="logo" aria-label="Jarzębinowe — początek"><img src="logojarzeb%20(1).png" alt="" aria-hidden="true"><span>Jarzębinowe</span></a>
+<a href="#journey" class="logo" aria-label="Jarzębinowe — początek"><img src="logojarzeb%20(1).png" alt="" aria-hidden="true"><span aria-hidden="true">Jarzęb<span class="j-i">ı</span>nowe</span></a>
 <nav class="links" aria-label="Nawigacja"><a href="#inwestycja">Inwestycja</a><a href="#plan">Plan</a><a href="#domy">Domy</a><a href="#wnetrza">Wnętrza</a><a href="#kontakt">Kontakt</a></nav>
 <a href="#kontakt" class="btn">Zapytaj o dom</a>
 </header>
@@ -375,7 +377,7 @@ footer{display:flex;justify-content:space-between;align-items:center;gap:16px 40
 <div><button class="btn fill" type="submit" style="min-height:54px;padding:0 30px">Wyślij zapytanie →</button></div>
 </form>
 </div>
-<footer><span class="logo"><img src="logojarzeb%20(1).png" alt="" aria-hidden="true"><span>Jarzębinowe</span></span><span>Wizualizacje mają charakter poglądowy i nie stanowią oferty w rozumieniu Kodeksu cywilnego.</span></footer>
+<footer><span class="logo" aria-label="Jarzębinowe"><img src="logojarzeb%20(1).png" alt="" aria-hidden="true"><span aria-hidden="true">Jarzęb<span class="j-i">ı</span>nowe</span></span><span>Wizualizacje mają charakter poglądowy i nie stanowią oferty w rozumieniu Kodeksu cywilnego.</span></footer>
 </div>
 </section>
 
